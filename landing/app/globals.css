@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Базилик · дизайн-токены
+   Источник истины — product/brand-book-v50.html (Стиль 50 · Изумруд).
+   Менять значения только вместе с бренд-буком.
+   ============================================================ */
+
+:root {
+  --ground: #f7f6f1;
+  --surface: #efede4;
+  --panel: #e9e7dd;
+  --line: #e1dfd4;
+  --ink: #16231c;
+  --muted: #5c675f;
+  --accent: #1f7a4d;
+  --accent-deep: #12583a;
+  --accent-soft: #ddece3;
+  --secondary: #2a2116;
+  --herb: #5e7238;
+  --amber: #b26d24;
+  --gold: #b8863a;
+  --danger: #c0392b;
+  --on-accent: #ffffff;
+}
+
+/* Системная тёмная тема — только если пользователь не выбрал светлую вручную. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0e1712;
+    --surface: #15211a;
+    --panel: #1b2a22;
+    --line: #26362c;
+    --ink: #eaf2ec;
+    --muted: #90a398;
+    --accent: #35b06e;
+    --accent-deep: #5fc98d;
+    --accent-soft: #16301f;
+    --secondary: #c9c2b4;
+    --herb: #9bb169;
+    --amber: #e4a24e;
+    --gold: #e0bd5a;
+    --danger: #e15c4d;
+    --on-accent: #07120c;
+  }
+}
+
+:root[data-theme="dark"] {
+  --ground: #0e1712;
+  --surface: #15211a;
+  --panel: #1b2a22;
+  --line: #26362c;
+  --ink: #eaf2ec;
+  --muted: #90a398;
+  --accent: #35b06e;
+  --accent-deep: #5fc98d;
+  --accent-soft: #16301f;
+  --secondary: #c9c2b4;
+  --herb: #9bb169;
+  --amber: #e4a24e;
+  --gold: #e0bd5a;
+  --danger: #e15c4d;
+  --on-accent: #07120c;
+}
+
+@theme inline {
+  --color-ground: var(--ground);
+  --color-surface: var(--surface);
+  --color-panel: var(--panel);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
+  --color-accent-soft: var(--accent-soft);
+  --color-secondary: var(--secondary);
+  --color-herb: var(--herb);
+  --color-amber: var(--amber);
+  --color-gold: var(--gold);
+  --color-danger: var(--danger);
+  --color-on-accent: var(--on-accent);
+
+  /* Переменные подставляет next/font в layout; системный стек остаётся
+     запасным вариантом, если файл шрифта не догрузится. */
+  --font-sans: var(--font-brand-sans), -apple-system, BlinkMacSystemFont,
+    "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
+  --font-mono: var(--font-brand-mono), ui-monospace, "SF Mono", Menlo, Consolas,
+    monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background: var(--ground);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+}
+
+@layer base {
+  /* Стартовое состояние reveal-блоков.
+     Только под классом `js` (его ставит инлайн-скрипт в layout): без
+     работающего JS контент обязан остаться видимым, а не исчезнуть. */
+  .js [data-reveal] {
+    opacity: 0;
+  }
+
+  /* Системное «уменьшить движение» может включиться уже после загрузки —
+     тогда GSAP пересоберёт matchMedia, но подстраховаться стоит. */
+  @media (prefers-reduced-motion: reduce) {
+    .js [data-reveal] {
+      opacity: 1;
+    }
+  }
+}
+
+@layer components {
+  /* Моно-капс: эйбрау, метрики, версии. Никогда для длинного текста. */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent-deep);
+  }
+
+  /* Инвертированная секция переопределяет сами токены, поэтому все
+     Tailwind-классы внутри (bg-surface, text-muted, …) подхватывают
+     тёмную палитру без единого dark:-варианта. */
+  .inverted {
+    --ground: #0a120e;
+    --surface: #131f18;
+    --panel: #1b2a22;
+    --line: #26362c;
+    --ink: #eaf2ec;
+    --muted: #90a398;
+    --accent: #35b06e;
+    --accent-deep: #5fc98d;
+    --accent-soft: #16301f;
+    --herb: #9bb169;
+    --amber: #e4a24e;
+    --on-accent: #07120c;
+
+    background: var(--ground);
+    color: var(--ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
