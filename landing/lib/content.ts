@@ -5,20 +5,48 @@
  * не говорим «революция / умное питание / усталость решений как факт».
  */
 
-/** Живые формы исследования из product/about/. */
-export const FORMS = {
-  pros: "https://forms.gle/MNS8dqdwTtxWYHB9A",
-  home: "https://forms.gle/MHkNqWukmGZao65R9",
-} as const;
-
-export const NAV_LINKS = [
+/**
+ * Специалисты (b2b2c) и дома (b2c) — разные страницы, поэтому у каждой
+ * страницы свой набор ссылок навигации: якоря внутри неё плюс переход
+ * на соседнюю аудиторию.
+ */
+export const NAV_LINKS_ROOT = [
   { href: "#how", label: "Как работает" },
   { href: "#assembly", label: "Сборка" },
   { href: "#engine", label: "Механики" },
-  { href: "#pros", label: "Специалистам" },
-  { href: "#home", label: "Дома" },
+  { href: "#audience", label: "Для кого" },
   { href: "#open", label: "Что проверяем" },
   { href: "#cta", label: "Попробовать" },
+] as const;
+
+export const NAV_LINKS_SPECIALISTS = [
+  { href: "#pros", label: "О продукте" },
+  { href: "#open", label: "Что проверяем" },
+  { href: "#cta", label: "Попробовать" },
+  { href: "/home", label: "Дома" },
+] as const;
+
+export const NAV_LINKS_HOME = [
+  { href: "#home", label: "О продукте" },
+  { href: "#open", label: "Что проверяем" },
+  { href: "#cta", label: "Попробовать" },
+  { href: "/specialists", label: "Специалистам" },
+] as const;
+
+/** Карточки-развилка на главной: с неё расходятся на страницы аудиторий. */
+export const AUDIENCE_ROUTES = [
+  {
+    href: "/specialists",
+    eyebrow: "Нутрициологам · диетологам · фитнес-коучам",
+    title: "Специалистам",
+    body: "Конструктор планов вместо Word и Excel: рецепты, автоматический КБЖУ, список покупок и маркетплейс готовых планов.",
+  },
+  {
+    href: "/home",
+    eyebrow: "Тем, кто отвечает за еду дома",
+    title: "Дома",
+    body: "Купленный план ложится в календарь. Дальше — открыть текущий приём пищи и готовить пошагово, без «что на ужин».",
+  },
 ] as const;
 
 export const HERO = {
@@ -216,12 +244,6 @@ export const CTA = {
   /** Честность про демо — требование бренд-бука: не выдавать прикидку за расчёт. */
   disclaimer:
     "Демо-расчёт по упрощённой модели. Настоящий планировщик считает по рецептам, остаткам и вашему поведению за неделю.",
-  formsLead:
-    "Мы набираем пилотную группу. Пять минут опроса — и продукт станет точнее.",
-  actions: [
-    { label: "Опрос для специалистов", href: FORMS.pros, primary: true },
-    { label: "Опрос про питание дома", href: FORMS.home, primary: false },
-  ],
 } as const;
 
 export const FOOTER_GROUPS = [
@@ -238,13 +260,6 @@ export const FOOTER_GROUPS = [
     links: [
       { href: "#pros", label: "Специалистам" },
       { href: "#home", label: "Дома" },
-    ],
-  },
-  {
-    title: "Участвовать",
-    links: [
-      { href: FORMS.pros, label: "Опрос · специалисты", external: true },
-      { href: FORMS.home, label: "Опрос · дома", external: true },
     ],
   },
 ] as const;

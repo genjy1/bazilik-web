@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="border-t border-line bg-surface py-14">
       <div className="mx-auto max-w-[1180px] px-6">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.6fr_repeat(3,1fr)]">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.6fr_repeat(2,1fr)]">
           <div>
             <div className="flex items-center gap-2.5 text-[18px] font-extrabold tracking-tight">
               <BrandMark className="size-6.5" />
