@@ -4,7 +4,12 @@ import { Activity, Gauge, Recycle, Shuffle } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { useRef } from "react";
 import { ENGINE, type EngineIcon } from "@/lib/content";
-import { MOTION_QUERIES, gsap, useIsomorphicLayoutEffect } from "@/lib/gsap";
+import {
+  MOTION_OK,
+  MOTION_QUERIES,
+  gsap,
+  useIsomorphicLayoutEffect,
+} from "@/lib/gsap";
 
 const icons: Record<EngineIcon, LucideIcon> = {
   gauge: Gauge,
@@ -21,8 +26,7 @@ const TILT = 6;
  * запрошено отключение движения. На тач-экранах наклон по курсору бессмыслен,
  * и там остаётся статичная карточка с ховер-состоянием из CSS.
  */
-const POINTER_QUERY =
-  "(prefers-reduced-motion: no-preference) and (pointer: fine)";
+const POINTER_QUERY = `${MOTION_OK} and (pointer: fine)`;
 
 /**
  * Одна карточка механики с собственным указательным слоем.
@@ -56,10 +60,13 @@ function EngineCard({ item }: { item: (typeof ENGINE)[number] }) {
         ease: "power3.out",
       });
 
-      const onMove = (e: PointerEvent) => {
-        const r = el.getBoundingClientRect();
-        const px = (e.clientX - r.left) / r.width; // 0..1 по горизонтали
-        const py = (e.clientY - r.top) / r.height; // 0..1 по вертикали
+      // Геометрия карточки не меняется во время наведения, поэтому снимаем
+      // её один раз на pointerenter, а не на каждый pointermove.
+      let rect = el.getBoundingClientRect();
+
+      const applyPointer = (e: PointerEvent) => {
+        const px = (e.clientX - rect.left) / rect.width; // 0..1 по горизонтали
+        const py = (e.clientY - rect.top) / rect.height; // 0..1 по вертикали
         rotY((px - 0.5) * 2 * TILT);
         rotX((0.5 - py) * 2 * TILT);
         if (glow) {
@@ -68,16 +75,31 @@ function EngineCard({ item }: { item: (typeof ENGINE)[number] }) {
         }
       };
 
-      const onEnter = () => {
-        gsap.to(inner, { scale: 1.02, duration: 0.4, ease: "power3.out" });
-        gsap.to(glow, { opacity: 1, duration: 0.3, ease: "power2.out" });
+      const onMove = (e: PointerEvent) => {
+        applyPointer(e);
+      };
+
+      const onEnter = (e: PointerEvent) => {
+        rect = el.getBoundingClientRect();
+        applyPointer(e);
+        gsap.to(inner, {
+          scale: 1.02,
+          y: -4,
+          duration: 0.4,
+          ease: "power3.out",
+        });
+        if (glow) {
+          gsap.to(glow, { opacity: 1, duration: 0.3, ease: "power2.out" });
+        }
       };
 
       const onLeave = () => {
         rotX(0);
         rotY(0);
-        gsap.to(inner, { scale: 1, duration: 0.5, ease: "power3.out" });
-        gsap.to(glow, { opacity: 0, duration: 0.45, ease: "power2.out" });
+        gsap.to(inner, { scale: 1, y: 0, duration: 0.5, ease: "power3.out" });
+        if (glow) {
+          gsap.to(glow, { opacity: 0, duration: 0.45, ease: "power2.out" });
+        }
       };
 
       el.addEventListener("pointermove", onMove);
@@ -88,6 +110,11 @@ function EngineCard({ item }: { item: (typeof ENGINE)[number] }) {
         el.removeEventListener("pointermove", onMove);
         el.removeEventListener("pointerenter", onEnter);
         el.removeEventListener("pointerleave", onLeave);
+        // onEnter/onLeave tween через gsap.to() создаются вне синхронного
+        // исполнения mm.add(), поэтому matchMedia их не отслеживает — глушим
+        // явно, иначе они продолжат писать в узел после unmount.
+        gsap.killTweensOf(inner);
+        if (glow) gsap.killTweensOf(glow);
       };
     });
 
