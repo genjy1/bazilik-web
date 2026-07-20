@@ -180,6 +180,10 @@ export function RecipeAssembly() {
       building = true;
 
       const THREE = await import("three");
+      // Скруглённые коробки (лоток фарша) — из jsm, тоже отдельным чанком.
+      const { RoundedBoxGeometry } = await import(
+        "three/examples/jsm/geometries/RoundedBoxGeometry.js"
+      );
       if (disposed) return;
 
       const geos: THREE.BufferGeometry[] = [];
@@ -206,11 +210,17 @@ export function RecipeAssembly() {
       canvas.style.height = "100%";
       host!.appendChild(canvas);
 
-      scene.add(new THREE.AmbientLight(0xffffff, 1.05));
-      const key = new THREE.DirectionalLight(0xffffff, 2.0);
+      // Небо сверху — тёплая земля снизу: мягкая объёмная база под все продукты.
+      scene.add(new THREE.HemisphereLight(0xffffff, 0x3a2a1c, 0.7));
+      scene.add(new THREE.AmbientLight(0xffffff, 0.35));
+      // Ключевой свет даёт бликам форму, заполняющий снимает провалы в тенях.
+      const key = new THREE.DirectionalLight(0xfff4e6, 2.2);
       key.position.set(3, 5, 3);
       scene.add(key);
-      const rim = new THREE.DirectionalLight(0x8fd6a6, 1.1);
+      const fill = new THREE.DirectionalLight(0xffffff, 0.55);
+      fill.position.set(-2.5, 1.5, 4);
+      scene.add(fill);
+      const rim = new THREE.DirectionalLight(0x8fd6a6, 1.2);
       rim.position.set(-3, 1, -2);
       scene.add(rim);
 
@@ -261,42 +271,100 @@ export function RecipeAssembly() {
           }),
           mats,
         );
+      // Физический материал — для глянца (кожица томата, плёнка на лотке).
+      const physMat = (params: THREE.MeshPhysicalMaterialParameters) =>
+        track(new THREE.MeshPhysicalMaterial({ transparent: true, ...params }), mats);
 
-      // Помидор — приплюснутый шар с зелёным хвостиком.
+      // Обход вершин геометрии — общая обёртка для «лепки» форм.
+      const sculpt = (
+        geo: THREE.BufferGeometry,
+        fn: (v: THREE.Vector3) => void,
+      ) => {
+        const attr = geo.attributes.position;
+        const v = new THREE.Vector3();
+        for (let i = 0; i < attr.count; i++) {
+          v.fromBufferAttribute(attr, i);
+          fn(v);
+          attr.setXYZ(i, v.x, v.y, v.z);
+        }
+        attr.needsUpdate = true;
+        geo.computeVertexNormals();
+      };
+
+      // Помидор — приплюснутая глянцевая кожица с ямкой и звёздочкой чашелистика.
       {
         const g = new THREE.Group();
-        const bodyMat = stdMat(0xd8412f, 0.34);
-        const body = new THREE.Mesh(
-          track(new THREE.SphereGeometry(0.34, 28, 22), geos),
-          bodyMat,
-        );
-        body.scale.set(1, 0.86, 1);
-        const stemMat = stdMat(0x3f7d3a, 0.6);
+        const bodyGeo = track(new THREE.SphereGeometry(0.34, 40, 28), geos);
+        sculpt(bodyGeo, (v) => {
+          v.y *= 0.84; // приплюснуть по вертикали
+          // ямка у верхнего полюса, куда садится чашелистик
+          const top = Math.max(0, (v.y - 0.12) / 0.18);
+          v.y -= top * top * 0.05;
+        });
+        const bodyMat = physMat({
+          color: 0xd63a29,
+          roughness: 0.24,
+          clearcoat: 0.7,
+          clearcoatRoughness: 0.28,
+        });
+        g.add(new THREE.Mesh(bodyGeo, bodyMat));
+
+        // Пять зелёных лепестков звездой + короткий черешок.
+        const calyxMat = stdMat(0x4f8a3c, 0.55);
+        const calyxGeo = track(new THREE.ConeGeometry(0.055, 0.17, 4), geos);
+        for (let i = 0; i < 5; i++) {
+          const pivot = new THREE.Group();
+          pivot.rotation.y = (i / 5) * Math.PI * 2;
+          pivot.position.y = 0.235;
+          const leaf = new THREE.Mesh(calyxGeo, calyxMat);
+          leaf.position.set(0, 0.02, 0.075);
+          leaf.rotation.x = 1.15; // распластать наружу
+          leaf.scale.set(1, 1, 0.5);
+          pivot.add(leaf);
+          g.add(pivot);
+        }
+        const stemMat = stdMat(0x6f5a2e, 0.7);
         const stem = new THREE.Mesh(
-          track(new THREE.ConeGeometry(0.07, 0.14, 6), geos),
+          track(new THREE.CylinderGeometry(0.02, 0.028, 0.08, 6), geos),
           stemMat,
         );
-        stem.position.y = 0.3;
-        g.add(body, stem);
+        stem.position.y = 0.29;
+        g.add(stem);
+
         dishGroup.add(g);
-        items.push({ group: g, mats: [bodyMat, stemMat], move: MOVES.tomato });
+        items.push({
+          group: g,
+          mats: [bodyMat, calyxMat, stemMat],
+          move: MOVES.tomato,
+        });
       }
 
-      // Куриное филе — вытянутый приплюснутый эллипсоид.
+      // Куриное филе — шар, растянутый и сужающийся к носу (форма грудки).
       {
         const g = new THREE.Group();
-        const mat = stdMat(0xe9d3ab, 0.72);
-        const m = new THREE.Mesh(
-          track(new THREE.SphereGeometry(0.34, 24, 18), geos),
-          mat,
-        );
-        m.scale.set(1.25, 0.5, 0.85);
-        g.add(m);
+        const R = 0.3;
+        const geo = track(new THREE.SphereGeometry(R, 32, 22), geos);
+        sculpt(geo, (v) => {
+          const nx = v.x / R; // −1 хвост .. +1 нос
+          v.x *= 1.7;
+          v.y *= 0.44;
+          v.z *= 0.92;
+          const taper = 1 - Math.max(0, nx) * 0.6 - Math.max(0, -nx) * 0.12;
+          v.y *= taper;
+          v.z *= taper;
+        });
+        const mat = physMat({
+          color: 0xe7cfa4,
+          roughness: 0.62,
+          clearcoat: 0.25,
+          clearcoatRoughness: 0.5,
+        });
+        g.add(new THREE.Mesh(geo, mat));
         dishGroup.add(g);
         items.push({ group: g, mats: [mat], move: MOVES.chicken });
       }
 
-      // Базилик — три листа из общей кривой Безье (тот же силуэт, что в знаке).
+      // Базилик — веточка: лист из кривой знака, изогнутый и со срединной складкой.
       {
         const shape = new THREE.Shape();
         const k = 1 / 52;
@@ -305,52 +373,108 @@ export function RecipeAssembly() {
         shape.bezierCurveTo(14 * k, 36 * k, 13 * k, 10 * k, 0, 0);
         const leafGeo = track(
           new THREE.ExtrudeGeometry(shape, {
-            depth: 0.03,
+            depth: 0.02,
             bevelEnabled: true,
-            bevelThickness: 0.01,
-            bevelSize: 0.008,
+            bevelThickness: 0.006,
+            bevelSize: 0.006,
             bevelSegments: 1,
-            curveSegments: 12,
+            curveSegments: 16,
           }),
           geos,
         );
         leafGeo.center();
-        const mat = stdMat(0x3f9d4a, 0.5, { side: THREE.DoubleSide });
+        leafGeo.computeBoundingBox();
+        const bb = leafGeo.boundingBox!;
+        const hgt = bb.max.y - bb.min.y;
+        const halfW = Math.max(Math.abs(bb.min.x), Math.abs(bb.max.x)) || 1;
+        sculpt(leafGeo, (v) => {
+          const ty = (v.y - bb.min.y) / hgt; // 0 черешок .. 1 кончик
+          v.z += Math.pow(ty, 1.6) * 0.13; // загиб кончика вперёд
+          v.z -= (Math.abs(v.x) / halfW) * 0.05; // срединная складка
+        });
+
+        const leafMat = stdMat(0x3f9d4a, 0.42, { side: THREE.DoubleSide });
+        const stemMat = stdMat(0x4a7a35, 0.6);
         const g = new THREE.Group();
+        const stem = new THREE.Mesh(
+          track(new THREE.CylinderGeometry(0.01, 0.018, 0.3, 6), geos),
+          stemMat,
+        );
+        stem.position.y = -0.12;
+        g.add(stem);
         (
           [
-            [-0.12, 0, -20],
-            [0, 0.03, 0],
-            [0.12, 0, 20],
+            [0, 0.1, 0, 0, 0, 0.6],
+            [-0.02, 0.0, 0.02, 22, -24, 0.5],
+            [0.02, 0.0, 0.02, -22, 24, 0.5],
+            [-0.03, -0.1, -0.01, 46, -40, 0.42],
+            [0.03, -0.1, -0.01, -46, 40, 0.42],
           ] as const
-        ).forEach(([x, y, deg]) => {
-          const leaf = new THREE.Mesh(leafGeo, mat);
-          leaf.scale.setScalar(0.5);
-          leaf.position.set(x, y, 0);
-          leaf.rotation.z = (deg * Math.PI) / 180;
+        ).forEach(([x, y, z, rz, ry, s]) => {
+          const leaf = new THREE.Mesh(leafGeo, leafMat);
+          leaf.position.set(x, y, z);
+          leaf.rotation.set(0, (ry * Math.PI) / 180, (rz * Math.PI) / 180);
+          leaf.scale.setScalar(s);
           g.add(leaf);
         });
         dishGroup.add(g);
-        items.push({ group: g, mats: [mat], move: MOVES.basil });
+        items.push({ group: g, mats: [leafMat, stemMat], move: MOVES.basil });
       }
 
-      // Пачка фарша — тёмный брусок под светлой «обёрткой».
+      // Пачка фарша — пенопластовый лоток, зернистый фарш и глянцевая плёнка.
       {
         const g = new THREE.Group();
-        const meatMat = stdMat(0x9e2b26, 0.55);
-        const box = new THREE.Mesh(
-          track(new THREE.BoxGeometry(0.66, 0.34, 0.44), geos),
-          meatMat,
+        const trayMat = stdMat(0xece7db, 0.85);
+        const tray = new THREE.Mesh(
+          track(new RoundedBoxGeometry(0.74, 0.16, 0.52, 4, 0.045), geos),
+          trayMat,
         );
-        const wrapMat = stdMat(0xf2ede1, 0.4);
-        const wrap = new THREE.Mesh(
-          track(new THREE.BoxGeometry(0.68, 0.06, 0.46), geos),
-          wrapMat,
+        tray.position.y = -0.02;
+        g.add(tray);
+
+        const meatGeo = track(new RoundedBoxGeometry(0.62, 0.2, 0.42, 5, 0.07), geos);
+        sculpt(meatGeo, (v) => {
+          if (v.y <= 0.02) return;
+          // мелкая бугристость сверху — «прокрученный» вид
+          const n = Math.sin(v.x * 47) * Math.cos(v.z * 51) + Math.sin(v.z * 29);
+          v.y += n * 0.012;
+          v.x += Math.sin(v.z * 40) * 0.006;
+        });
+        const meatMat = stdMat(0x9c2f27, 0.72);
+        const meat = new THREE.Mesh(meatGeo, meatMat);
+        meat.position.y = 0.08;
+        g.add(meat);
+
+        const filmMat = physMat({
+          color: 0xffffff,
+          roughness: 0.12,
+          clearcoat: 1,
+          clearcoatRoughness: 0.08,
+          opacity: 0.14,
+        });
+        filmMat.depthWrite = false;
+        filmMat.userData.baseOpacity = 0.14;
+        const film = new THREE.Mesh(
+          track(new RoundedBoxGeometry(0.76, 0.03, 0.54, 3, 0.03), geos),
+          filmMat,
         );
-        wrap.position.y = 0.19;
-        g.add(box, wrap);
+        film.position.y = 0.185;
+        g.add(film);
+
+        const labelMat = stdMat(0xf6f2e9, 0.5);
+        const label = new THREE.Mesh(
+          track(new THREE.BoxGeometry(0.22, 0.012, 0.15), geos),
+          labelMat,
+        );
+        label.position.set(-0.19, 0.2, 0.13);
+        g.add(label);
+
         dishGroup.add(g);
-        items.push({ group: g, mats: [meatMat, wrapMat], move: MOVES.meat });
+        items.push({
+          group: g,
+          mats: [trayMat, meatMat, filmMat, labelMat],
+          move: MOVES.meat,
+        });
       }
 
       dishGroup.rotation.x = -0.06;
@@ -390,7 +514,10 @@ export function RecipeAssembly() {
           const inFade = remap(p, move.enter[0], move.enter[0] + 0.04);
           const outFade = 1 - remap(p, move.exit[0], move.exit[1]);
           const opacity = Math.min(inFade, outFade);
-          for (const m of gm) m.opacity = opacity;
+          // Базовая прозрачность материала (плёнка ≈ 0.14) сохраняется —
+          // fade лишь домножает её, а не делает плёнку непрозрачной.
+          for (const m of gm)
+            m.opacity = opacity * ((m.userData.baseOpacity as number) ?? 1);
         }
 
         renderer.render(scene, camera);
