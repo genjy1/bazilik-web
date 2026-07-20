@@ -8,6 +8,7 @@ import { Hypotheses } from "@/components/Hypotheses";
 import { Nav } from "@/components/Nav";
 import { Problem } from "@/components/Problem";
 import { Process } from "@/components/Process";
+import { RecipeAssembly } from "@/components/RecipeAssembly";
 import { ProofStrip } from "@/components/ProofStrip";
 import { SectionDivider } from "@/components/SectionDivider";
 import { HomePanel } from "@/components/panels/HomePanel";
@@ -31,6 +32,12 @@ export default function Page() {
         <Hero />
         <ProofStrip />
         <Problem />
+
+        {/* Главная механика: продукты собираются в блюдо, блюдо распадается
+            в КБЖУ и список покупок. Полноэкранная закреплённая сцена, поэтому
+            обходится без разделителей вокруг. */}
+        <RecipeAssembly />
+
         <Engine />
 
         <SectionDivider />
