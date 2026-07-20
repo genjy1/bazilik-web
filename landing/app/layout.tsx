@@ -1,14 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { JetBrains_Mono, Manrope } from "next/font/google";
+import { IBM_Plex_Mono, Manrope } from "next/font/google";
 import { InlineScript } from "@/components/InlineScript";
 import "./globals.css";
 
 /**
  * Бренд-бук требует гротеск с весом 800 и трекингом −0.03…−0.05em плюс
- * моноширинный в капсе для эйбрау и метрик. Manrope и JetBrains Mono
+ * моноширинный в капсе для эйбрау и метрик. Manrope и IBM Plex Mono
  * закрывают обе роли и, что критично для русского лендинга, имеют
  * полноценную кириллицу — иначе браузер подставил бы системный шрифт
  * и вся типографика поехала бы.
+ *
+ * Под предметную область — операционный слой планирования питания —
+ * IBM Plex Mono подходит лучше «терминального» JetBrains Mono: он
+ * гуманистичный и тёплый, читается как шрифт кассового чека и накладной,
+ * то есть попадает в регистр списков покупок и кухонной ведомости.
+ * Начертания перечислены явно: у IBM Plex Mono на Google Fonts нет
+ * вариативной версии, а вёрстка использует 400/500/600/700.
  *
  * next/font самостоятельно хостит файлы и подставляет метрики запасного
  * шрифта, поэтому внешних запросов в рантайме нет и текст не прыгает.
@@ -19,8 +26,9 @@ const sans = Manrope({
   display: "swap",
 });
 
-const mono = JetBrains_Mono({
+const mono = IBM_Plex_Mono({
   subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-brand-mono",
   display: "swap",
 });
