@@ -6,11 +6,11 @@ import { Reveal } from "./ui/Reveal";
 type CheckItem = { title: string; body: string };
 
 /**
- * Блок «текст + панель интерфейса». `reversed` меняет местами колонки
- * на десктопе; на мобильном текст всегда идёт первым.
+ * Блок «текст + панель интерфейса» — открывает страницу своей аудитории
+ * (/specialists или /home), поэтому заголовок здесь h1. `reversed` меняет
+ * местами колонки на десктопе; на мобильном текст всегда идёт первым.
  *
- * Своей кнопки-призыва у секции нет, ссылки на опросы живут в подвале.
- * Границу сверху рисует SectionDivider на уровне страницы — своего border-t
+ * Границу снизу рисует SectionDivider на уровне страницы — своего border-t
  * здесь быть не должно, иначе линий окажется две.
  */
 export function AudienceSection({
@@ -39,7 +39,7 @@ export function AudienceSection({
           </Reveal>
 
           <Reveal delay={60}>
-            <h2 className="mt-3.5 text-[clamp(26px,3.6vw,40px)]">{title}</h2>
+            <h1 className="mt-3.5 text-[clamp(26px,3.6vw,40px)]">{title}</h1>
           </Reveal>
 
           <Reveal delay={120}>

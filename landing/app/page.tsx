@@ -1,4 +1,4 @@
-import { AudienceSection } from "@/components/AudienceSection";
+import { AudienceLinks } from "@/components/AudienceLinks";
 import { BackgroundFX } from "@/components/BackgroundFX";
 import { CtaSection } from "@/components/CtaSection";
 import { Engine } from "@/components/Engine";
@@ -11,9 +11,7 @@ import { Process } from "@/components/Process";
 import { RecipeAssembly } from "@/components/RecipeAssembly";
 import { ProofStrip } from "@/components/ProofStrip";
 import { SectionDivider } from "@/components/SectionDivider";
-import { HomePanel } from "@/components/panels/HomePanel";
-import { ProsPanel } from "@/components/panels/ProsPanel";
-import { HOME, PROS } from "@/lib/content";
+import { NAV_LINKS_ROOT } from "@/lib/content";
 
 export default function Page() {
   return (
@@ -26,7 +24,7 @@ export default function Page() {
       </a>
 
       <BackgroundFX />
-      <Nav />
+      <Nav links={NAV_LINKS_ROOT} />
 
       <main id="main">
         <Hero />
@@ -41,32 +39,9 @@ export default function Page() {
         <Engine />
 
         <SectionDivider />
-        {/* Фаза 1 — специалист, он же покупатель. Идёт раньше B2C намеренно. */}
-        <AudienceSection
-          id="pros"
-          eyebrow={PROS.eyebrow}
-          title={PROS.title}
-          lead={PROS.lead}
-          checks={PROS.checks}
-          media={<ProsPanel />}
-        />
-
-        <SectionDivider />
-        <AudienceSection
-          id="home"
-          eyebrow={HOME.eyebrow}
-          title={
-            <>
-              План твоего специалиста —
-              <br />
-              которому легко следовать
-            </>
-          }
-          lead={HOME.lead}
-          checks={HOME.checks}
-          media={<HomePanel />}
-          reversed
-        />
+        {/* Специалисты (b2b2c) и дома (b2c) — разные страницы, здесь только
+            развилка между ними. */}
+        <AudienceLinks />
 
         <SectionDivider />
         <Process />

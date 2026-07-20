@@ -1,6 +1,5 @@
 import { CTA } from "@/lib/content";
 import { PlanConfigurator } from "./PlanConfigurator";
-import { Button } from "./ui/Button";
 import { Reveal } from "./ui/Reveal";
 
 /**
@@ -34,27 +33,6 @@ export function CtaSection() {
             <p className="mt-6 font-mono text-[10.5px] tracking-wide text-muted">
               {CTA.disclaimer}
             </p>
-          </div>
-        </Reveal>
-
-        <Reveal delay={240}>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-[46ch] text-[15.5px] text-muted">
-              {CTA.formsLead}
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {CTA.actions.map((a) => (
-                <Button
-                  key={a.href}
-                  href={a.href}
-                  external
-                  withArrow
-                  variant={a.primary ? "primary" : "secondary"}
-                >
-                  {a.label}
-                </Button>
-              ))}
-            </div>
           </div>
         </Reveal>
       </div>
