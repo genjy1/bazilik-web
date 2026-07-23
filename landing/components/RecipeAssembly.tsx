@@ -625,9 +625,10 @@ export function RecipeAssembly() {
           }}
         />
 
-        {/* Наложение: текст, полоса времени и панель плана. Декоративно —
-            перехватывать курсор не должно. */}
-        <div className="pointer-events-none absolute inset-0">
+        {/* Наложение: текст, полоса времени и панель плана — настоящий
+            читаемый контент, не декорация, поэтому курсор не блокируем
+            (иначе название блюда и список покупок нельзя выделить). */}
+        <div className="absolute inset-0">
           <div className="mx-auto flex h-full max-w-[1180px] flex-col px-6">
             <header className="pt-20 md:pt-24">
               <span className="eyebrow">{ASSEMBLY.eyebrow}</span>

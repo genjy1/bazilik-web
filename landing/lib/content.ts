@@ -246,7 +246,11 @@ export const CTA = {
     "Демо-расчёт по упрощённой модели. Настоящий планировщик считает по рецептам, остаткам и вашему поведению за неделю.",
 } as const;
 
-export const FOOTER_GROUPS = [
+/**
+ * Футер — отдельный набор групп на каждую страницу, как и NAV_LINKS_*:
+ * якоря валидны только на своей странице, общие ссылки уводят на соседнюю.
+ */
+export const FOOTER_GROUPS_ROOT = [
   {
     title: "Продукт",
     links: [
@@ -258,8 +262,36 @@ export const FOOTER_GROUPS = [
   {
     title: "Для кого",
     links: [
-      { href: "#pros", label: "Специалистам" },
-      { href: "#home", label: "Дома" },
+      { href: "/specialists", label: "Специалистам" },
+      { href: "/home", label: "Дома" },
     ],
+  },
+] as const;
+
+export const FOOTER_GROUPS_SPECIALISTS = [
+  {
+    title: "Продукт",
+    links: [
+      { href: "#pros", label: "О продукте" },
+      { href: "#open", label: "Что проверяем" },
+    ],
+  },
+  {
+    title: "Для кого",
+    links: [{ href: "/home", label: "Дома" }],
+  },
+] as const;
+
+export const FOOTER_GROUPS_HOME = [
+  {
+    title: "Продукт",
+    links: [
+      { href: "#home", label: "О продукте" },
+      { href: "#open", label: "Что проверяем" },
+    ],
+  },
+  {
+    title: "Для кого",
+    links: [{ href: "/specialists", label: "Специалистам" }],
   },
 ] as const;

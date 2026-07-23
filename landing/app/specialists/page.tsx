@@ -8,7 +8,7 @@ import { Nav } from "@/components/Nav";
 import { Process } from "@/components/Process";
 import { SectionDivider } from "@/components/SectionDivider";
 import { ProsPanel } from "@/components/panels/ProsPanel";
-import { NAV_LINKS_SPECIALISTS, PROS } from "@/lib/content";
+import { FOOTER_GROUPS_SPECIALISTS, NAV_LINKS_SPECIALISTS, PROS } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Базилик для специалистов — конструктор планов питания",
@@ -49,7 +49,7 @@ export default function SpecialistsPage() {
         <CtaSection />
       </main>
 
-      <Footer />
+      <Footer groups={FOOTER_GROUPS_SPECIALISTS} />
     </>
   );
 }

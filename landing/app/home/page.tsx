@@ -8,7 +8,7 @@ import { Nav } from "@/components/Nav";
 import { Process } from "@/components/Process";
 import { SectionDivider } from "@/components/SectionDivider";
 import { HomePanel } from "@/components/panels/HomePanel";
-import { HOME, NAV_LINKS_HOME } from "@/lib/content";
+import { FOOTER_GROUPS_HOME, HOME, NAV_LINKS_HOME } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Базилик дома — план недели без «что на ужин»",
@@ -55,7 +55,7 @@ export default function HomePage() {
         <CtaSection />
       </main>
 
-      <Footer />
+      <Footer groups={FOOTER_GROUPS_HOME} />
     </>
   );
 }

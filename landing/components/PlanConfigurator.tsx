@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useRef, useState } from "react";
+import type { ReactNode } from "react";
 import {
   DEFAULT_CONFIG,
   DIETS,
@@ -27,7 +28,7 @@ function Group({
   children,
 }: {
   label: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <div>

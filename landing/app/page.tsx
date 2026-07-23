@@ -11,7 +11,7 @@ import { Process } from "@/components/Process";
 import { RecipeAssembly } from "@/components/RecipeAssembly";
 import { ProofStrip } from "@/components/ProofStrip";
 import { SectionDivider } from "@/components/SectionDivider";
-import { NAV_LINKS_ROOT } from "@/lib/content";
+import { FOOTER_GROUPS_ROOT, NAV_LINKS_ROOT } from "@/lib/content";
 
 export default function Page() {
   return (
@@ -53,7 +53,7 @@ export default function Page() {
         <CtaSection />
       </main>
 
-      <Footer />
+      <Footer groups={FOOTER_GROUPS_ROOT} />
     </>
   );
 }

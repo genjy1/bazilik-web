@@ -1,7 +1,11 @@
-import { FOOTER_GROUPS } from "@/lib/content";
 import { BrandMark } from "./BrandMark";
 
-export function Footer() {
+type FooterGroup = {
+  title: string;
+  links: ReadonlyArray<{ href: string; label: string }>;
+};
+
+export function Footer({ groups }: { groups: readonly FooterGroup[] }) {
   return (
     <footer className="border-t border-line bg-surface py-14">
       <div className="mx-auto max-w-[1180px] px-6">
@@ -16,7 +20,7 @@ export function Footer() {
             </p>
           </div>
 
-          {FOOTER_GROUPS.map((g) => (
+          {groups.map((g) => (
             <div key={g.title}>
               <h4 className="mb-3.5 font-mono text-[10.5px] font-semibold uppercase tracking-[0.18em] text-muted">
                 {g.title}
@@ -26,9 +30,6 @@ export function Footer() {
                   <li key={l.href}>
                     <a
                       href={l.href}
-                      {...("external" in l && l.external
-                        ? { target: "_blank", rel: "noopener noreferrer" }
-                        : {})}
                       className="text-[14.5px] text-ink transition-colors hover:text-accent-deep"
                     >
                       {l.label}
@@ -41,7 +42,7 @@ export function Footer() {
         </div>
 
         <div className="mt-11 flex flex-wrap justify-between gap-4 border-t border-line pt-5.5 font-mono text-[10.5px] uppercase tracking-[0.1em] text-muted">
-          <span>© 2026 Базилик · Bazilik</span>
+          <span>© {new Date().getFullYear()} Базилик · Bazilik</span>
           <span>Изумруд · #1F7A4D</span>
         </div>
       </div>
