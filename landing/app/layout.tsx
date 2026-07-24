@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Mono, Manrope } from "next/font/google";
 import { InlineScript } from "@/components/InlineScript";
+import { HashScrollManager } from "@/components/HashScrollManager";
 import "./globals.css";
 
 /**
@@ -91,8 +92,10 @@ export default function RootLayout({
           (Grammarly, ColorZilla и подобные) — без этого React считает такой
           случай ошибкой гидратации у совершенно исправной страницы. */}
       <body className="antialiased" suppressHydrationWarning>
+        <HashScrollManager />
         {children}
       </body>
     </html>
   );
 }
+

@@ -74,8 +74,6 @@ export const CHAIN_BEFORE = [
   "съесть",
 ] as const;
 
-export const CHAIN_AFTER = ["приготовить", "съесть"] as const;
-
 export type EngineIcon = "gauge" | "recycle" | "shuffle" | "activity";
 
 export const ENGINE: ReadonlyArray<{
