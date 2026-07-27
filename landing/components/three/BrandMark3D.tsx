@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
 
 /**
  * Знак «Базилик» в объёме: те же три листа, что и в плоском логотипе,
@@ -47,6 +48,10 @@ export function BrandMark3D() {
     // Выше 2 прирост качества незаметен, а стоимость растёт квадратично.
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setClearAlpha(0);
+    // ACES + физически корректная экспозиция — без этого PBR-материалы
+    // выглядят пластиково плоскими даже с окружением.
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1;
 
     const canvas = renderer.domElement;
     canvas.style.display = "block";
@@ -54,25 +59,40 @@ export function BrandMark3D() {
     canvas.style.height = "100%";
     host.appendChild(canvas);
 
+    // PMREM-окружение даёт материалам блики и отражения окружения —
+    // без него глянец листа читается как плоская заливка, а не воск.
+    const pmrem = new THREE.PMREMGenerator(renderer);
+    const room = new RoomEnvironment();
+    const envMap = pmrem.fromScene(room, 0.04).texture;
+    scene.environment = envMap;
+    room.dispose();
+    pmrem.dispose();
+
     const geometry = new THREE.ExtrudeGeometry(leafShape(), {
       depth: 0.07,
       bevelEnabled: true,
       bevelThickness: 0.02,
       bevelSize: 0.018,
-      bevelSegments: 3,
-      curveSegments: 24,
+      bevelSegments: 5,
+      curveSegments: 32,
     });
     geometry.center();
 
-    const outer = new THREE.MeshStandardMaterial({
+    const outer = new THREE.MeshPhysicalMaterial({
       color: 0x1f7a4d,
-      roughness: 0.52,
-      metalness: 0.08,
+      roughness: 0.42,
+      metalness: 0.05,
+      clearcoat: 0.6,
+      clearcoatRoughness: 0.28,
+      envMapIntensity: 0.55,
     });
-    const inner = new THREE.MeshStandardMaterial({
+    const inner = new THREE.MeshPhysicalMaterial({
       color: 0x12583a,
-      roughness: 0.45,
-      metalness: 0.1,
+      roughness: 0.36,
+      metalness: 0.06,
+      clearcoat: 0.6,
+      clearcoatRoughness: 0.25,
+      envMapIntensity: 0.55,
     });
 
     const group = new THREE.Group();
@@ -90,13 +110,16 @@ export function BrandMark3D() {
     group.rotation.x = -0.12;
     scene.add(group);
 
-    scene.add(new THREE.AmbientLight(0xffffff, 1.15));
+    // Заполняющий свет теперь в основном даёт PMREM-окружение — прямые
+    // источники приглушены, чтобы не удваивать засветку и не смывать блики
+    // в ровную яркость.
+    scene.add(new THREE.AmbientLight(0xffffff, 0.35));
 
-    const key = new THREE.DirectionalLight(0xffffff, 2.1);
+    const key = new THREE.DirectionalLight(0xffffff, 1.5);
     key.position.set(2.5, 3.5, 2.5);
     scene.add(key);
 
-    const rim = new THREE.DirectionalLight(0x9bb169, 1.3);
+    const rim = new THREE.DirectionalLight(0x9bb169, 0.8);
     rim.position.set(-3, -1, -2);
     scene.add(rim);
 
@@ -175,6 +198,7 @@ export function BrandMark3D() {
       geometry.dispose();
       outer.dispose();
       inner.dispose();
+      envMap.dispose();
       renderer.dispose();
       canvas.remove();
     };

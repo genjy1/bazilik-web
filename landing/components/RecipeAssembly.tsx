@@ -184,10 +184,14 @@ export function RecipeAssembly() {
       const { RoundedBoxGeometry } = await import(
         "three/examples/jsm/geometries/RoundedBoxGeometry.js"
       );
+      const { RoomEnvironment } = await import(
+        "three/examples/jsm/environments/RoomEnvironment.js"
+      );
       if (disposed) return;
 
       const geos: THREE.BufferGeometry[] = [];
       const mats: THREE.Material[] = [];
+      const textures: THREE.Texture[] = [];
       const track = <T,>(item: T, bin: T[]) => (bin.push(item), item);
 
       const scene = new THREE.Scene();
@@ -203,6 +207,10 @@ export function RecipeAssembly() {
       });
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.setClearAlpha(0);
+      // ACES + физическая экспозиция — иначе кожица томата и плёнка на лотке
+      // остаются плоскими даже с бликами от direct-light.
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1;
 
       const canvas = renderer.domElement;
       canvas.style.display = "block";
@@ -210,17 +218,28 @@ export function RecipeAssembly() {
       canvas.style.height = "100%";
       host!.appendChild(canvas);
 
-      // Небо сверху — тёплая земля снизу: мягкая объёмная база под все продукты.
-      scene.add(new THREE.HemisphereLight(0xffffff, 0x3a2a1c, 0.7));
-      scene.add(new THREE.AmbientLight(0xffffff, 0.35));
+      // PMREM-окружение: даёт всем материалам отражения и заполняющий свет
+      // со всех сторон — без него глянец (томат, плёнка) читается как блик
+      // от одной лампы, а не как настоящая поверхность в комнате.
+      const pmrem = new THREE.PMREMGenerator(renderer);
+      const envScene = new RoomEnvironment();
+      const envMap = track(pmrem.fromScene(envScene, 0.04).texture, textures);
+      scene.environment = envMap;
+      envScene.dispose();
+      pmrem.dispose();
+
+      // Небо и ambient приглушены: заполняющий свет теперь в основном даёт
+      // PMREM-окружение, прямые источники лишь лепят форму бликами и тенью.
+      scene.add(new THREE.HemisphereLight(0xffffff, 0x3a2a1c, 0.35));
+      scene.add(new THREE.AmbientLight(0xffffff, 0.12));
       // Ключевой свет даёт бликам форму, заполняющий снимает провалы в тенях.
-      const key = new THREE.DirectionalLight(0xfff4e6, 2.2);
+      const key = new THREE.DirectionalLight(0xfff4e6, 1.5);
       key.position.set(3, 5, 3);
       scene.add(key);
-      const fill = new THREE.DirectionalLight(0xffffff, 0.55);
+      const fill = new THREE.DirectionalLight(0xffffff, 0.4);
       fill.position.set(-2.5, 1.5, 4);
       scene.add(fill);
-      const rim = new THREE.DirectionalLight(0x8fd6a6, 1.2);
+      const rim = new THREE.DirectionalLight(0x8fd6a6, 0.75);
       rim.position.set(-3, 1, -2);
       scene.add(rim);
 
@@ -234,6 +253,7 @@ export function RecipeAssembly() {
           roughness: 0.3,
           metalness: 0.02,
           transparent: true,
+          envMapIntensity: 0.5,
         }),
         mats,
       );
@@ -242,6 +262,7 @@ export function RecipeAssembly() {
           color: 0xe7e1d4,
           roughness: 0.35,
           transparent: true,
+          envMapIntensity: 0.5,
         }),
         mats,
       );
@@ -261,19 +282,29 @@ export function RecipeAssembly() {
       type Item = { group: THREE.Group; mats: THREE.Material[]; move: Move };
       const items: Item[] = [];
 
+      // envMapIntensity приглушён: окружение должно добавлять отражения,
+      // а не удваивать яркость поверх direct-light.
       const stdMat = (color: number, roughness: number, extra = {}) =>
         track(
           new THREE.MeshStandardMaterial({
             color,
             roughness,
             transparent: true,
+            envMapIntensity: 0.5,
             ...extra,
           }),
           mats,
         );
       // Физический материал — для глянца (кожица томата, плёнка на лотке).
       const physMat = (params: THREE.MeshPhysicalMaterialParameters) =>
-        track(new THREE.MeshPhysicalMaterial({ transparent: true, ...params }), mats);
+        track(
+          new THREE.MeshPhysicalMaterial({
+            transparent: true,
+            envMapIntensity: 0.5,
+            ...params,
+          }),
+          mats,
+        );
 
       // Обход вершин геометрии — общая обёртка для «лепки» форм.
       const sculpt = (
@@ -546,6 +577,7 @@ export function RecipeAssembly() {
         ro.disconnect();
         for (const g of geos) g.dispose();
         for (const m of mats) m.dispose();
+        for (const t of textures) t.dispose();
         renderer.dispose();
         canvas.remove();
       };
