@@ -20,7 +20,7 @@ export function Problem() {
           n="01"
           title={
             <>
-              Восемь решений в день
+              Восемь решений в день{" "}
               <br />
               ради одного ужина
             </>
@@ -39,7 +39,7 @@ export function Problem() {
                   type="button"
                   aria-pressed={collapsed}
                   onClick={() => setCollapsed((v) => !v)}
-                  className="group inline-flex items-center gap-2 rounded-full border border-transparent bg-accent px-4 py-2 text-sm font-bold tracking-tight text-on-accent shadow-[0_10px_26px_rgba(31,122,77,0.24)] transition-[transform,background-color,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-accent-deep active:translate-y-0"
+                  className="group inline-flex min-h-11 items-center gap-2 rounded-full border border-transparent bg-accent px-4 py-2 text-sm font-bold tracking-tight text-on-accent shadow-[0_10px_26px_rgba(31,122,77,0.24)] transition-[transform,background-color,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-accent-deep active:translate-y-0"
                 >
                   <Leaf
                     size={16}

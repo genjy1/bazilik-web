@@ -51,11 +51,11 @@ function EngineCard({ item }: { item: (typeof ENGINE)[number] }) {
       const glow = el.querySelector<HTMLElement>("[data-engine-glow]");
       if (!inner) return;
 
-      const rotX = gsap.quickTo(inner, "rotateX", {
+      const rotX = gsap.quickTo(inner, "rotationX", {
         duration: 0.5,
         ease: "power3.out",
       });
-      const rotY = gsap.quickTo(inner, "rotateY", {
+      const rotY = gsap.quickTo(inner, "rotationY", {
         duration: 0.5,
         ease: "power3.out",
       });

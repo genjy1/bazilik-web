@@ -35,7 +35,7 @@ export default function HomePage() {
           eyebrow={HOME.eyebrow}
           title={
             <>
-              План твоего специалиста —
+              План твоего специалиста —{" "}
               <br />
               которому легко следовать
             </>

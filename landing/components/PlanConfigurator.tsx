@@ -19,7 +19,7 @@ import { Chip } from "./ui/Chip";
 const hours = (n: number) => n.toFixed(1).replace(".", ",");
 
 const toggleBase =
-  "rounded-full border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.1em] transition-colors";
+  "inline-flex min-h-11 items-center justify-center rounded-full border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.1em] transition-colors";
 const toggleOn = "border-transparent bg-accent text-on-accent";
 const toggleOff = "border-line bg-ground text-muted hover:border-accent hover:text-accent-deep";
 

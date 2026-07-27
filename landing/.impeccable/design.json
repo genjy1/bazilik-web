@@ -1,0 +1,220 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-27T00:00:00.000Z",
+  "title": "Design System: Базилик (Bazilik)",
+  "extensions": {
+    "colorMeta": {
+      "accent": {
+        "role": "primary",
+        "displayName": "Emerald",
+        "canonical": "#1f7a4d",
+        "tonalRamp": ["#0f3d27", "#1a6640", "#248e5a", "#2eb774", "#48d18d", "#7ddeae", "#aeeacc", "#def7eb"]
+      },
+      "accent-deep": {
+        "role": "primary",
+        "displayName": "Emerald Deep",
+        "canonical": "#12583a",
+        "tonalRamp": ["#0d402a", "#166a46", "#1e9462", "#27bf7e", "#40d897", "#78e3b5", "#aaeed1", "#ddf8ed"]
+      },
+      "accent-soft": {
+        "role": "primary",
+        "displayName": "Emerald Soft",
+        "canonical": "#ddece3",
+        "tonalRamp": ["#1b3124", "#2e523c", "#407354", "#52936c", "#6cad86", "#96c4a9", "#bedac9", "#e5f0e9"]
+      },
+      "herb": {
+        "role": "secondary",
+        "displayName": "Olive Herb",
+        "canonical": "#5e7238",
+        "tonalRamp": ["#2a3319", "#47562a", "#63783b", "#7f9a4c", "#98b365", "#b6c992", "#d1ddbb", "#edf2e4"]
+      },
+      "amber": {
+        "role": "secondary",
+        "displayName": "Spice Amber",
+        "canonical": "#b26d24",
+        "tonalRamp": ["#40270d", "#6a4115", "#945b1e", "#bf7527", "#d88e40", "#e4af77", "#eecdaa", "#f8ebdd"]
+      },
+      "gold": {
+        "role": "tertiary",
+        "displayName": "Warm Gold",
+        "canonical": "#b8863a",
+        "tonalRamp": ["#3a2a12", "#61471f", "#88632b", "#ae7f37", "#c89951", "#d8b683", "#e7d1b1", "#f5ede0"]
+      },
+      "danger": {
+        "role": "semantic",
+        "displayName": "Danger Red",
+        "canonical": "#c0392b",
+        "tonalRamp": ["#3f130e", "#681f17", "#922b21", "#bc382a", "#d55143", "#e1837a", "#ecb2ac", "#f8e0de"]
+      },
+      "glow": {
+        "role": "tertiary",
+        "displayName": "Ambient Glow",
+        "canonical": "rgba(53,176,110,0.16)",
+        "tonalRamp": ["#123b25", "#1e623d", "#298956", "#35b06e", "#4fca88", "#82d9aa", "#b1e7ca", "#e0f6ea"]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "#f7f6f1",
+        "tonalRamp": ["#312d1c", "#514b2e", "#726941", "#928853", "#aca16d", "#c4bc97", "#dad5be", "#f0eee5"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Oat Surface",
+        "canonical": "#efede4",
+        "tonalRamp": ["#302c1c", "#504a2f", "#706842", "#908555", "#aa9f6f", "#c2bb99", "#d9d4bf", "#f0eee5"]
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Oat Panel",
+        "canonical": "#e9e7dd",
+        "tonalRamp": ["#2e2c1e", "#4d4932", "#6c6646", "#8b835a", "#a59d74", "#bfb99c", "#d7d3c1", "#efeee6"]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#e1dfd4",
+        "tonalRamp": ["#2d2b1f", "#4b4834", "#696449", "#87815e", "#a19a78", "#bcb79f", "#d5d2c3", "#eeede7"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#16231c",
+        "tonalRamp": ["#1e2f26", "#314e3f", "#456e58", "#598d71", "#72a68a", "#9bc0ac", "#c0d8cb", "#e6efea"]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "#5c675f",
+        "tonalRamp": ["#242825", "#3c433e", "#545e57", "#6c7970", "#869389", "#a9b2ab", "#c9cfcb", "#e9ecea"]
+      },
+      "secondary": {
+        "role": "neutral",
+        "displayName": "Espresso",
+        "canonical": "#2a2116",
+        "tonalRamp": ["#32271a", "#54422c", "#755c3d", "#97764f", "#b09068", "#c7b094", "#dccebc", "#f1ebe4"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero title only, one per page." },
+      "headline": { "displayName": "Headline", "purpose": "Numbered section titles (SectionKicker)." },
+      "title": { "displayName": "Title", "purpose": "Card titles, panel headers, nav brand." },
+      "body": { "displayName": "Body", "purpose": "Lead paragraphs and primary prose." },
+      "body-sm": { "displayName": "Body Small", "purpose": "Secondary/supporting copy — footer links, card descriptions, hypotheses answers." },
+      "stat": { "displayName": "Stat", "purpose": "Large numeric displays — proof-strip counters, macro values, configurator summary numbers." },
+      "label": { "displayName": "Label / Mono", "purpose": "Eyebrows, nav links, toggle buttons — the system's signature texture, primary size." },
+      "label-sm": { "displayName": "Label Small", "purpose": "Compact mono-caps — stat captions, chip text, footer group headings." },
+      "kicker-number": { "displayName": "Kicker Number", "purpose": "The bold mono step-number (\"01\") beside a Headline in SectionKicker." },
+      "scale.body-base": { "displayName": "Body Base", "purpose": "The plain CSS body element's un-clamped default (17px), one step below Body's lead clamp." },
+      "scale.body-sm-tight": { "displayName": "Body Small (tight)", "purpose": "Body-sm's tighter edge (14px) — e.g. recipe-assembly shopping rows." },
+      "scale.label-xs": { "displayName": "Label Extra Small", "purpose": "Label-sm's tightest edge (9px) — the home-panel calendar's day-of-week labels." }
+    },
+    "shadows": [
+      { "name": "primary-action-glow", "value": "0 2px 6px rgba(31,122,77,0.26), 0 12px 30px rgba(31,122,77,0.22)", "purpose": "Primary button resting shadow." },
+      { "name": "compact-accent-lift", "value": "0 12px 28px rgba(31,122,77,0.24)", "purpose": "Smaller emerald CTAs and compact chain pills." },
+      { "name": "card-hover-lift", "value": "0 18px 44px rgba(0,0,0,0.35)", "purpose": "Engine card hover state, neutral/structural." },
+      { "name": "panel-resting", "value": "0 24px 80px rgba(18,88,58,0.10)", "purpose": "Large content panels floating slightly above the page." }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "power3.out (GSAP) ≈ cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Default easing for reveals, hovers, and nav transitions." },
+      { "name": "duration-hover", "value": "0.2s–0.4s", "purpose": "Hover/lift/color transitions on buttons and cards." },
+      { "name": "duration-reveal", "value": "0.6s–0.8s with 0.05–0.1s stagger", "purpose": "Scroll-triggered entrance animations." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call-to-action pill: emerald fill, white text, colored ambient glow, lifts on hover.",
+      "html": "<a href=\"#\" class=\"ds-btn-primary\">Как это работает<svg class=\"ds-btn-arrow\" width=\"17\" height=\"17\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M13 5l7 7-7 7\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 9999px; padding: 14px 24px; font-size: 15px; font-weight: 700; letter-spacing: -0.01em; white-space: nowrap; background: var(--color-accent, #1f7a4d); color: var(--color-on-accent, #fff); border: 1px solid transparent; box-shadow: 0 2px 6px rgba(31,122,77,0.26), 0 12px 30px rgba(31,122,77,0.22); transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s; text-decoration: none; } .ds-btn-primary:hover { background: var(--color-accent-deep, #12583a); transform: translateY(-2px); } .ds-btn-primary:active { transform: translateY(0); } .ds-btn-primary:focus-visible { outline: 2px solid var(--color-accent, #1f7a4d); outline-offset: 3px; } .ds-btn-arrow { transition: transform 0.2s; } .ds-btn-primary:hover .ds-btn-arrow { transform: translateX(2px); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Quieter pill button: oat surface fill, hairline border, no shadow, no lift.",
+      "html": "<a href=\"#\" class=\"ds-btn-secondary\">Что внутри движка</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 9999px; padding: 14px 24px; font-size: 15px; font-weight: 700; letter-spacing: -0.01em; white-space: nowrap; background: var(--color-surface, #efede4); color: var(--color-ink, #16231c); border: 1px solid var(--color-line, #e1dfd4); transition: border-color 0.2s, color 0.2s; text-decoration: none; } .ds-btn-secondary:hover { border-color: var(--color-accent, #1f7a4d); color: var(--color-accent-deep, #12583a); } .ds-btn-secondary:focus-visible { outline: 2px solid var(--color-accent, #1f7a4d); outline-offset: 3px; }"
+    },
+    {
+      "name": "Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Small mono-caps tag with a tinted background matching its semantic tone (accent/herb/amber/neutral).",
+      "html": "<span class=\"ds-chip ds-chip-accent\">пересобрано</span>",
+      "css": ".ds-chip { display: inline-block; white-space: nowrap; border-radius: 9999px; border: 1px solid; padding: 4px 10px; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 10.5px; letter-spacing: 0.05em; } .ds-chip-accent { background: color-mix(in srgb, var(--color-accent, #1f7a4d) 12%, transparent); color: var(--color-accent-deep, #12583a); border-color: color-mix(in srgb, var(--color-accent, #1f7a4d) 30%, transparent); } .ds-chip-herb { background: color-mix(in srgb, var(--color-herb, #5e7238) 15%, transparent); color: var(--color-herb, #5e7238); border-color: color-mix(in srgb, var(--color-herb, #5e7238) 35%, transparent); }"
+    },
+    {
+      "name": "Toggle Button",
+      "kind": "input",
+      "refersTo": "toggle-active",
+      "description": "Pill-shaped selectable input (configurator): solid emerald when active, hairline-bordered ground background when inactive.",
+      "html": "<div style=\"display:flex; gap:8px; flex-wrap:wrap;\"><button type=\"button\" aria-pressed=\"true\" class=\"ds-toggle ds-toggle-on\">Похудение</button><button type=\"button\" aria-pressed=\"false\" class=\"ds-toggle ds-toggle-off\">Набор массы</button></div>",
+      "css": ".ds-toggle { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; border-radius: 9999px; border: 1px solid; padding: 8px 16px; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; transition: background-color 0.2s, color 0.2s, border-color 0.2s; cursor: pointer; } .ds-toggle-on { border-color: transparent; background: var(--color-accent, #1f7a4d); color: var(--color-on-accent, #fff); } .ds-toggle-off { border-color: var(--color-line, #e1dfd4); background: var(--color-ground, #f7f6f1); color: var(--color-muted, #5c675f); } .ds-toggle-off:hover { border-color: var(--color-accent, #1f7a4d); color: var(--color-accent-deep, #12583a); } .ds-toggle:focus-visible { outline: 2px solid var(--color-accent, #1f7a4d); outline-offset: 2px; }"
+    },
+    {
+      "name": "Engine Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Standard content card: 16px radius, hairline border, oat-surface fill, icon badge, hover lift with neutral shadow.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-icon\"><svg width=\"21\" height=\"21\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"3\"/><path d=\"M12 2v4M12 18v4M2 12h4M18 12h4\"/></svg></div><h3 class=\"ds-card-title\">Вероятностное состояние</h3><p class=\"ds-card-body\">Не требуем вносить каждый продукт. 90% полезной точности лучше, чем 100% ручного учёта.</p></article>",
+      "css": ".ds-card { border-radius: 16px; border: 1px solid var(--color-line, #e1dfd4); background: var(--color-surface, #efede4); padding: 24px; transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s; } .ds-card:hover { border-color: color-mix(in srgb, var(--color-accent, #1f7a4d) 35%, transparent); box-shadow: 0 18px 44px rgba(0,0,0,0.35); transform: translateY(-4px); } .ds-card-icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; margin-bottom: 16px; background: color-mix(in srgb, var(--color-accent, #1f7a4d) 13%, transparent); color: var(--color-accent-deep, #12583a); } .ds-card-title { margin: 0 0 10px; font-size: 18px; font-weight: 800; letter-spacing: -0.03em; color: var(--color-ink, #16231c); } .ds-card-body { margin: 0; font-size: 15px; color: var(--color-muted, #5c675f); }"
+    },
+    {
+      "name": "Plan Panel",
+      "kind": "custom",
+      "refersTo": "card",
+      "description": "Signature large data panel (24px radius): the live-computed macro/shopping summary that anchors the recipe-assembly and configurator moments.",
+      "html": "<div class=\"ds-panel\"><div class=\"ds-panel-head\"><span class=\"ds-panel-title\">Курица с томатами и базиликом</span><span class=\"ds-panel-meta\">порция</span></div><div class=\"ds-panel-grid\"><div class=\"ds-macro\"><span class=\"ds-macro-dot\"></span><span class=\"ds-macro-value\">540</span><div class=\"ds-macro-label\">ккал</div></div><div class=\"ds-macro\"><span class=\"ds-macro-dot\" style=\"background:var(--color-herb,#5e7238)\"></span><span class=\"ds-macro-value\">44</span><div class=\"ds-macro-label\">белки, г</div></div></div></div>",
+      "css": ".ds-panel { border-radius: 24px; border: 1px solid var(--color-line, #e1dfd4); background: color-mix(in srgb, var(--color-surface, #efede4) 90%, transparent); padding: 20px; box-shadow: 0 24px 80px rgba(18,88,58,0.10); } .ds-panel-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--color-line, #e1dfd4); } .ds-panel-title { font-size: 15px; font-weight: 800; letter-spacing: -0.02em; color: var(--color-ink, #16231c); } .ds-panel-meta { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-muted, #5c675f); } .ds-panel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; } .ds-macro { border-radius: 16px; border: 1px solid var(--color-line, #e1dfd4); background: var(--color-ground, #f7f6f1); padding: 12px 14px; } .ds-macro-dot { display: inline-block; width: 6px; height: 6px; border-radius: 9999px; background: var(--color-accent, #1f7a4d); margin-right: 8px; } .ds-macro-value { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; color: var(--color-ink, #16231c); font-variant-numeric: tabular-nums; } .ds-macro-label { margin-top: 2px; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-muted, #5c675f); }"
+    },
+    {
+      "name": "Nav Bar",
+      "kind": "nav",
+      "refersTo": "button-secondary",
+      "description": "Sticky translucent header with mono-caps links and an animated active-section underline marker.",
+      "html": "<header class=\"ds-nav\"><div class=\"ds-nav-inner\"><span class=\"ds-nav-brand\">Базилик</span><nav class=\"ds-nav-links\"><a href=\"#\" class=\"ds-nav-link ds-nav-link-active\">Как работает</a><a href=\"#\" class=\"ds-nav-link\">Сборка</a><a href=\"#\" class=\"ds-nav-link\">Механики</a></nav></div></header>",
+      "css": ".ds-nav { position: sticky; top: 0; border-bottom: 1px solid transparent; background: color-mix(in srgb, var(--color-ground, #f7f6f1) 75%, transparent); backdrop-filter: blur(20px); transition: background-color 0.3s, border-color 0.3s; } .ds-nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; max-width: 1180px; margin: 0 auto; padding: 0 24px; } .ds-nav-brand { font-size: 18px; font-weight: 800; letter-spacing: -0.02em; color: var(--color-ink, #16231c); } .ds-nav-links { display: flex; gap: 24px; } .ds-nav-link { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-muted, #5c675f); text-decoration: none; transition: color 0.2s; } .ds-nav-link:hover, .ds-nav-link-active { color: var(--color-accent-deep, #12583a); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Test Kitchen Ledger",
+    "overview": "Three ideas run through this system at once, and none of them is decorative flourish. The Ledger: everything reads like it was written by someone who keeps honest books — a receipt-textured mono type for every label, metric, and eyebrow; body copy that hedges its own claims instead of overselling them; a footer that literally prints its own accent hex like a supplier code. The Emerald Pantry: warmth and abundance carried entirely by one color — a deep, confident emerald (#1F7A4D) sitting on warm paper-and-oatmeal neutrals, never cold, never clinical. The Test Kitchen: this is a product that says out loud it's still being validated, and the flagship interaction (the scroll-driven 3D dish assembly) makes that literal — you watch raw ingredients become a plan in real time, and scrolling back undoes it just as honestly.\n\nThe system is warm, restrained, and editorial. It avoids two failure modes on either side of it: glossy food-influencer photography and clinical health-app sterility. Instead it sits closer to a well-run kitchen's own paperwork — warm, plain-spoken, precise — with a single saturated color allowed to carry all the warmth and energy the palette needs.",
+    "keyCharacteristics": [
+      "Warm paper-and-oatmeal neutrals (never white, never cold gray) with a single confident emerald accent doing all the color work.",
+      "Mono-caps labels (IBM Plex Mono, uppercase, wide tracking) everywhere a number, status, or eyebrow appears — the 'ledger' texture.",
+      "Flat, tonal-layered surfaces at rest; shadow appears only as a deliberate accent on the handful of elements meant to feel lifted.",
+      "Full-pill shape language for anything actionable (buttons, toggles, tags); generous 16–24px rounding for anything that contains content (cards, panels).",
+      "Motion and 3D are used to demonstrate the product's actual mechanism (ingredient reuse, scroll-as-cooking-time), not to decorate."
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Emerald is the only saturated color that reads as 'brand' on the page — herb/amber/gold are semantic garnishes for specific data (waste %, macros), never substitutes for the primary accent.", "section": "colors" },
+      { "name": "The Dark Mirror Rule", "body": "Every token flips to a dark-mode counterpart via prefers-color-scheme or an explicit data-theme attribute; no surface should hardcode a light-mode hex where the CSS variable is available. The .inverted variant used by the recipe-assembly section is a deliberate exception, not a pattern to spread.", "section": "colors" },
+      { "name": "The Mono-Caps-Never-For-Prose Rule", "body": "IBM Plex Mono uppercase is reserved for short labels, numbers, and status words. It never carries a sentence — the moment it would need to wrap, switch back to Manrope.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest, separated by tonal steps, not shadows. Shadow appears only in response to hover/importance, and when it does, prefer the element's own color over generic gray.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do let Emerald (#1f7a4d / dark-mode #35b06e) be the only saturated brand color on any given screen; everything else is neutral or a rare semantic accent (herb/amber/gold).",
+      "Do use IBM Plex Mono uppercase with wide tracking (0.1–0.22em) for every label, eyebrow, stat caption, and status — it's the system's signature texture, not an occasional accent.",
+      "Do keep surfaces flat by default and reserve shadow for the specific moments something is meant to feel lifted, using a color-matched shadow when the element itself is emerald.",
+      "Do use full-pill shape for anything actionable, generous 16–24px rounding for anything that holds content, and a 1px hairline border on nearly every container.",
+      "Do give every interactive control a 44px minimum touch target (min-h-11/min-w-11) even when its compact mono-caps label would render shorter on its own.",
+      "Do respect prefers-reduced-motion: every current animation has a static/reduced fallback baked in — new motion must too."
+    ],
+    "donts": [
+      "Don't introduce a second saturated brand color, a gradient-heavy hero, or glossy lifestyle food photography.",
+      "Don't use generic gray drop shadows; every shadow in the system is either color-matched to its element or a very low-opacity, large, soft neutral shadow.",
+      "Don't set mono-caps type on anything long enough to wrap onto a second line — it's a label typeface, not a paragraph typeface.",
+      "Don't spread the .inverted dark-flip pattern to more sections just for visual variety; it currently marks exactly one moment as cinematically distinct from the rest of the page.",
+      "Don't treat the configurator's live numbers as real product output in new copy — the system's own disclaimer language is a durable brand commitment, not boilerplate to trim."
+    ]
+  }
+}

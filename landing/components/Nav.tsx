@@ -240,7 +240,7 @@ export function Nav({ links }: { links: readonly NavLink[] }) {
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Закрыть меню" : "Открыть меню"}
             aria-expanded={open}
-            className="inline-flex items-center justify-center rounded-full border border-line bg-surface p-2.5 text-ink lg:hidden"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full border border-line bg-surface p-2.5 text-ink lg:hidden"
           >
             {open ? <X size={16} /> : <Menu size={16} />}
           </button>

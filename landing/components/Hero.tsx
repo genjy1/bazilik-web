@@ -121,7 +121,7 @@ export function Hero() {
               <span data-hero-line className="block whitespace-nowrap">
                 {HERO.titleTop}
               </span>
-            </span>
+            </span>{" "}
             <span className="block overflow-hidden pb-[0.08em]">
               <span
                 data-hero-line

@@ -60,7 +60,7 @@ export function ThemeToggle() {
       type="button"
       onClick={toggle}
       aria-label="Переключить тему"
-      className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-2 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-colors hover:border-accent hover:text-accent-deep"
+      className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-2 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-colors hover:border-accent hover:text-accent-deep"
     >
       <Icon size={13} strokeWidth={2.2} />
       Тема
