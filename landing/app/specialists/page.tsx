@@ -1,24 +1,29 @@
 import type { Metadata } from "next";
-import { AudienceSection } from "@/components/AudienceSection";
+import { AmbientIngredients } from "@/components/AmbientIngredients";
+import { AudienceHero } from "@/components/AudienceHero";
 import { BackgroundFX } from "@/components/BackgroundFX";
 import { CtaSection } from "@/components/CtaSection";
+import { ExistingClientsSection } from "@/components/ExistingClientsSection";
 import { Footer } from "@/components/Footer";
 import { Hypotheses } from "@/components/Hypotheses";
+import { MarketplaceSection } from "@/components/MarketplaceSection";
 import { Nav } from "@/components/Nav";
+import { PainList } from "@/components/PainList";
 import { Process } from "@/components/Process";
 import { SectionDivider } from "@/components/SectionDivider";
-import { ProsPanel } from "@/components/panels/ProsPanel";
+import { WinWinSection } from "@/components/WinWinSection";
+import { BasilikToggleProvider } from "@/lib/basilikToggle";
 import { FOOTER_GROUPS_SPECIALISTS, NAV_LINKS_SPECIALISTS, PROS } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Базилик для специалистов — конструктор планов питания",
+  title: "Базилик для специалистов — планы питания вместо Word и PDF",
   description:
-    "Конструктор планов вместо Word и Excel: рецепты, автоматический КБЖУ, список покупок и маркетплейс готовых планов.",
+    "Конструктор планов для диетологов, нутрициологов и коучей: рецепты, автоматический КБЖУ, маркетплейс готовых планов и доступ для уже купивших клиентов.",
 };
 
 export default function SpecialistsPage() {
   return (
-    <>
+    <BasilikToggleProvider>
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-100 focus:rounded-br-xl focus:bg-accent focus:px-4 focus:py-2.5 focus:text-on-accent"
@@ -27,29 +32,45 @@ export default function SpecialistsPage() {
       </a>
 
       <BackgroundFX />
+      <AmbientIngredients />
       <Nav links={NAV_LINKS_SPECIALISTS} />
 
       <main id="main">
-        <AudienceSection
-          id="pros"
+        <AudienceHero
           eyebrow={PROS.eyebrow}
-          title={PROS.title}
-          lead={PROS.lead}
-          checks={PROS.checks}
-          media={<ProsPanel />}
+          h1={PROS.hero.h1}
+          lead={PROS.hero.lead}
+          caption={PROS.hero.chainCaption}
         />
 
         <SectionDivider />
-        <Process />
+        <PainList title={PROS.pain.title} items={PROS.pain.items} />
 
         <SectionDivider />
-        <Hypotheses />
+        <WinWinSection />
 
         <SectionDivider />
-        <CtaSection />
+        <Process
+          kickerN="04"
+          title="Как это работает"
+          lead="Три шага — от рецепта до тарелки клиента, без единого PDF."
+          steps={PROS.process}
+        />
+
+        <SectionDivider />
+        <MarketplaceSection />
+
+        <SectionDivider />
+        <ExistingClientsSection />
+
+        <SectionDivider />
+        <Hypotheses n="07" />
+
+        <SectionDivider />
+        <CtaSection final={PROS.final} showChain hideRoute="/specialists" />
       </main>
 
       <Footer groups={FOOTER_GROUPS_SPECIALISTS} />
-    </>
+    </BasilikToggleProvider>
   );
 }

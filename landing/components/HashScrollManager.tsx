@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { ScrollTrigger } from "@/lib/gsap";
+import { MOTION_QUERIES, ScrollTrigger } from "@/lib/gsap";
 
 const EXTRA_GAP = 8;
 
@@ -19,6 +19,9 @@ function scrollToHash(hash: string, behavior: ScrollBehavior) {
   const target = targetFromHash(hash);
   if (!target) return;
 
+  const reduced = window.matchMedia(MOTION_QUERIES.reduced).matches;
+  const effectiveBehavior: ScrollBehavior = reduced ? "auto" : behavior;
+
   requestAnimationFrame(() => {
     ScrollTrigger.refresh();
 
@@ -30,7 +33,7 @@ function scrollToHash(hash: string, behavior: ScrollBehavior) {
       headerHeight -
       EXTRA_GAP;
 
-    window.scrollTo({ top: Math.max(0, top), behavior });
+    window.scrollTo({ top: Math.max(0, top), behavior: effectiveBehavior });
   });
 }
 

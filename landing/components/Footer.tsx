@@ -22,9 +22,9 @@ export function Footer({ groups }: { groups: readonly FooterGroup[] }) {
 
           {groups.map((g) => (
             <div key={g.title}>
-              <h4 className="mb-3.5 font-mono text-[10.5px] font-semibold uppercase tracking-[0.18em] text-muted">
+              <h3 className="mb-3.5 font-mono text-[10.5px] font-semibold uppercase tracking-[0.18em] text-muted">
                 {g.title}
-              </h4>
+              </h3>
               <ul className="grid gap-2.5">
                 {g.links.map((l) => (
                   <li key={l.href}>

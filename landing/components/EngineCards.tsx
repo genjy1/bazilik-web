@@ -96,9 +96,9 @@ function EngineCard({ item }: { item: (typeof ENGINE)[number] }) {
       const onLeave = () => {
         rotX(0);
         rotY(0);
-        gsap.to(inner, { scale: 1, y: 0, duration: 0.5, ease: "power3.out" });
+        gsap.to(inner, { scale: 1, y: 0, duration: 0.25, ease: "power3.out" });
         if (glow) {
-          gsap.to(glow, { opacity: 0, duration: 0.45, ease: "power2.out" });
+          gsap.to(glow, { opacity: 0, duration: 0.2, ease: "power2.out" });
         }
       };
 
@@ -210,7 +210,7 @@ export function EngineCards() {
 
       gsap.fromTo(
         marks,
-        { scale: 0, rotate: -25 },
+        { scale: 0.9, rotate: -25 },
         {
           scale: 1,
           rotate: 0,

@@ -19,6 +19,7 @@
   --secondary: #2a2116;
   --herb: #5e7238;
   --amber: #b26d24;
+  --amber-deep: #87531c;
   --gold: #b8863a;
   --danger: #c0392b;
   --on-accent: #ffffff;
@@ -39,6 +40,7 @@
     --secondary: #c9c2b4;
     --herb: #9bb169;
     --amber: #e4a24e;
+    --amber-deep: #e4a24e;
     --gold: #e0bd5a;
     --danger: #e15c4d;
     --on-accent: #07120c;
@@ -58,6 +60,7 @@
   --secondary: #c9c2b4;
   --herb: #9bb169;
   --amber: #e4a24e;
+  --amber-deep: #e4a24e;
   --gold: #e0bd5a;
   --danger: #e15c4d;
   --on-accent: #07120c;
@@ -76,6 +79,7 @@
   --color-secondary: var(--secondary);
   --color-herb: var(--herb);
   --color-amber: var(--amber);
+  --color-amber-deep: var(--amber-deep);
   --color-gold: var(--gold);
   --color-danger: var(--danger);
   --color-on-accent: var(--on-accent);
@@ -102,6 +106,7 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    transition: background-color 200ms ease, color 200ms ease;
   }
 
   h1,
@@ -169,6 +174,7 @@
     --accent-soft: #16301f;
     --herb: #9bb169;
     --amber: #e4a24e;
+    --amber-deep: #e4a24e;
     --on-accent: #07120c;
 
     background: var(--ground);

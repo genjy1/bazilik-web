@@ -9,7 +9,10 @@ import { ASSEMBLY } from "@/lib/content";
 import {
   MOTION_QUERIES,
   ScrollTrigger,
+  clamp01,
+  easeOut,
   gsap,
+  remap,
   useIsomorphicLayoutEffect,
 } from "@/lib/gsap";
 
@@ -38,12 +41,8 @@ const lerp3 = (a: V3, b: V3, t: number): V3 => [
   lerp(a[1], b[1], t),
   lerp(a[2], b[2], t),
 ];
-const clamp01 = (v: number) => (v < 0 ? 0 : v > 1 ? 1 : v);
-/** Линейный ремап в [0,1] с отсечкой по краям. */
-const remap = (v: number, a: number, b: number) => clamp01((v - a) / (b - a));
 const easeInOut = (t: number) =>
   t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-const easeOut = (t: number) => 1 - Math.pow(1 - t, 3);
 
 /**
  * Хореография одного продукта: откуда влетает (from), где ложится на тарелку
@@ -246,37 +245,38 @@ export function RecipeAssembly() {
       const dishGroup = new THREE.Group();
       scene.add(dishGroup);
 
-      // --- тарелка: диск + чуть утопленное дно, чтобы читался объём ---
-      const plateMat = track(
+      // --- миска: точёный (lathe) профиль стенки с закруглённым бортиком —
+      // плоский диск не читается как посуда, а разрез с бортиком даёт и
+      // внутреннюю полость, и блик по кромке в одном меше.
+      const bowlMat = track(
         new THREE.MeshStandardMaterial({
-          color: 0xf3efe6,
-          roughness: 0.3,
+          color: 0xf6f1e6,
+          roughness: 0.42,
           metalness: 0.02,
           transparent: true,
-          envMapIntensity: 0.5,
+          envMapIntensity: 0.55,
         }),
         mats,
       );
-      const wellMat = track(
-        new THREE.MeshStandardMaterial({
-          color: 0xe7e1d4,
-          roughness: 0.35,
-          transparent: true,
-          envMapIntensity: 0.5,
-        }),
-        mats,
-      );
+      const bowlProfile = [
+        [0.0, -0.07],
+        [0.5, -0.065],
+        [0.58, -0.05],
+        [0.92, 0.02],
+        [1.12, 0.075],
+        [1.18, 0.1],
+        [1.15, 0.115],
+        [1.08, 0.1],
+        [0.95, 0.06],
+        [0.55, 0.015],
+        [0.0, 0.02],
+      ].map(([r, y]) => new THREE.Vector2(r, y));
       const plate = new THREE.Mesh(
-        track(new THREE.CylinderGeometry(1.2, 1.02, 0.09, 56), geos),
-        plateMat,
+        track(new THREE.LatheGeometry(bowlProfile, 56), geos),
+        bowlMat,
       );
-      const well = new THREE.Mesh(
-        track(new THREE.CylinderGeometry(0.92, 0.92, 0.02, 48), geos),
-        wellMat,
-      );
-      well.position.y = 0.05;
-      dishGroup.add(plate, well);
-      const plateMats = [plateMat, wellMat];
+      dishGroup.add(plate);
+      const plateMats = [bowlMat];
 
       // --- продукты: каждый — группа с собственным набором материалов ---
       type Item = { group: THREE.Group; mats: THREE.Material[]; move: Move };
@@ -511,10 +511,9 @@ export function RecipeAssembly() {
       dishGroup.rotation.x = -0.06;
 
       applyScene = (p: number) => {
-        // Тарелка появляется первой, к концу сцены растворяется.
+        // Миска появляется первой, к концу сцены растворяется.
         const plateScale = easeOut(remap(p, 0.04, 0.3));
         plate.scale.setScalar(plateScale || 0.0001);
-        well.scale.setScalar(plateScale || 0.0001);
         const plateOpacity =
           remap(p, 0.04, 0.12) * (1 - remap(p, 0.74, 0.97));
         for (const m of plateMats) m.opacity = plateOpacity;

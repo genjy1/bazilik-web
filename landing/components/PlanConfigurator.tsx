@@ -12,7 +12,7 @@ import {
   type Goal,
   type Pace,
 } from "@/lib/configurator";
-import { MOTION_QUERIES, gsap, useIsomorphicLayoutEffect } from "@/lib/gsap";
+import { EASE, MOTION_QUERIES, gsap, useIsomorphicLayoutEffect } from "@/lib/gsap";
 import { AnimatedNumber } from "./ui/AnimatedNumber";
 import { Chip } from "./ui/Chip";
 
@@ -58,12 +58,23 @@ export function PlanConfigurator() {
   );
 
   const dishesRef = useRef<HTMLUListElement>(null);
+  const prevDishesRef = useRef<readonly string[]>(plan.dishes);
 
   // Список блюд меняется составом, а не значением — числа тут не перетекают,
-  // поэтому подсвечиваем сам факт пересборки.
+  // поэтому подсвечиваем сам факт пересборки, но только когда состав
+  // действительно другой: Цель и Темп не влияют на dishes (см. estimatePlan),
+  // и их клики не должны переигрывать анимацию впустую.
   useIsomorphicLayoutEffect(() => {
     const el = dishesRef.current;
     if (!el) return;
+
+    const prev = prevDishesRef.current;
+    prevDishesRef.current = plan.dishes;
+
+    const unchanged =
+      prev.length === plan.dishes.length &&
+      prev.every((name, i) => name === plan.dishes[i]);
+    if (unchanged) return;
 
     const mm = gsap.matchMedia();
 
@@ -74,7 +85,7 @@ export function PlanConfigurator() {
       gsap.fromTo(
         el.children,
         { opacity: 0, y: 8 },
-        { opacity: 1, y: 0, duration: 0.35, stagger: 0.05, ease: "power2.out" },
+        { opacity: 1, y: 0, duration: 0.2, stagger: 0.05, ease: EASE },
       );
     });
 

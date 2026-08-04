@@ -1,24 +1,29 @@
 import type { Metadata } from "next";
-import { AudienceSection } from "@/components/AudienceSection";
+import { AmbientIngredients } from "@/components/AmbientIngredients";
+import { AudienceHero } from "@/components/AudienceHero";
 import { BackgroundFX } from "@/components/BackgroundFX";
+import { ComparisonSection } from "@/components/ComparisonSection";
 import { CtaSection } from "@/components/CtaSection";
+import { DishAssemblyScene } from "@/components/DishAssemblyScene";
 import { Footer } from "@/components/Footer";
+import { GoalsSection } from "@/components/GoalsSection";
 import { Hypotheses } from "@/components/Hypotheses";
 import { Nav } from "@/components/Nav";
-import { Process } from "@/components/Process";
+import { PainChaos } from "@/components/PainChaos";
 import { SectionDivider } from "@/components/SectionDivider";
-import { HomePanel } from "@/components/panels/HomePanel";
+import { TakesSection } from "@/components/TakesSection";
+import { BasilikToggleProvider } from "@/lib/basilikToggle";
 import { FOOTER_GROUPS_HOME, HOME, NAV_LINKS_HOME } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Базилик дома — план недели без «что на ужин»",
+  title: "Базилик дома — готовь то, что уже есть",
   description:
-    "Купленный план ложится в календарь. Дальше — открыть текущий приём пищи и готовить пошагово, без «что на ужин» и списков от руки.",
+    "Меню на неделю, список покупок и готовка по шагам — без «что на ужин» и без выброшенной еды.",
 };
 
 export default function HomePage() {
   return (
-    <>
+    <BasilikToggleProvider>
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-100 focus:rounded-br-xl focus:bg-accent focus:px-4 focus:py-2.5 focus:text-on-accent"
@@ -27,35 +32,43 @@ export default function HomePage() {
       </a>
 
       <BackgroundFX />
+      <AmbientIngredients />
       <Nav links={NAV_LINKS_HOME} />
 
       <main id="main">
-        <AudienceSection
-          id="home"
+        <AudienceHero
           eyebrow={HOME.eyebrow}
-          title={
+          h1={
             <>
-              План твоего специалиста —{" "}
-              <br />
-              которому легко следовать
+              {HOME.hero.titleTop} <span className="text-accent-deep">{HOME.hero.titleAccent}</span>
             </>
           }
-          lead={HOME.lead}
-          checks={HOME.checks}
-          media={<HomePanel />}
+          lead={HOME.hero.lead}
+          caption={HOME.hero.chainCaption}
         />
 
         <SectionDivider />
-        <Process />
+        <PainChaos />
 
         <SectionDivider />
-        <Hypotheses />
+        <TakesSection />
+
+        <DishAssemblyScene />
 
         <SectionDivider />
-        <CtaSection />
+        <ComparisonSection />
+
+        <SectionDivider />
+        <GoalsSection />
+
+        <SectionDivider />
+        <Hypotheses n="07" />
+
+        <SectionDivider />
+        <CtaSection final={HOME.final} showChain hideRoute="/home" />
       </main>
 
       <Footer groups={FOOTER_GROUPS_HOME} />
-    </>
+    </BasilikToggleProvider>
   );
 }
