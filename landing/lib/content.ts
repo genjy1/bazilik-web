@@ -298,7 +298,7 @@ export const HOME = {
     },
   ] as ReadonlyArray<{ title: string; body: string; scene: HomeTakeScene }>,
 
-  /** «Как это работает» — те же 3 шага двигают сцену сборки блюда (DishAssemblyScene). */
+  /** «Как это работает» — те же 3 шага подписывают экраны телефона в PhoneStepsScene. */
   process: [
     {
       title: "Скажи, на сколько человек и какие цели",

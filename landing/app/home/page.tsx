@@ -4,11 +4,11 @@ import { AudienceHero } from "@/components/AudienceHero";
 import { BackgroundFX } from "@/components/BackgroundFX";
 import { ComparisonSection } from "@/components/ComparisonSection";
 import { CtaSection } from "@/components/CtaSection";
-import { DishAssemblyScene } from "@/components/DishAssemblyScene";
 import { Footer } from "@/components/Footer";
 import { GoalsSection } from "@/components/GoalsSection";
 import { Nav } from "@/components/Nav";
 import { PainChaos } from "@/components/PainChaos";
+import { PhoneStepsScene } from "@/components/PhoneStepsScene";
 import { SectionDivider } from "@/components/SectionDivider";
 import { TakesSection } from "@/components/TakesSection";
 import { BasilikToggleProvider } from "@/lib/basilikToggle";
@@ -52,7 +52,7 @@ export default function HomePage() {
         <SectionDivider />
         <TakesSection />
 
-        <DishAssemblyScene />
+        <PhoneStepsScene />
 
         <SectionDivider />
         <ComparisonSection />
