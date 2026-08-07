@@ -39,11 +39,13 @@ export default function HomePage() {
           eyebrow={HOME.eyebrow}
           h1={
             <>
-              {HOME.hero.titleTop} <span className="text-accent-deep">{HOME.hero.titleAccent}</span>
+              <span className="block">{HOME.hero.titleTop}</span>
+              <span className="block text-accent-deep">{HOME.hero.titleAccent}</span>
             </>
           }
           lead={HOME.hero.lead}
           caption={HOME.hero.chainCaption}
+          size="lg"
         />
 
         <SectionDivider />
@@ -61,7 +63,7 @@ export default function HomePage() {
         <GoalsSection />
 
         <SectionDivider />
-        <CtaSection final={HOME.final} showChain hideRoute="/home" />
+        <CtaSection final={HOME.final} hideRoute="/home" />
       </main>
 
       <Footer groups={FOOTER_GROUPS_HOME} />

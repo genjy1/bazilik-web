@@ -39,7 +39,7 @@ export default function SpecialistsPage() {
           eyebrow={PROS.eyebrow}
           h1={PROS.hero.h1}
           lead={PROS.hero.lead}
-          caption={PROS.hero.chainCaption}
+          showChain={false}
         />
 
         <SectionDivider />
@@ -63,7 +63,7 @@ export default function SpecialistsPage() {
         <ExistingClientsSection />
 
         <SectionDivider />
-        <CtaSection final={PROS.final} showChain hideRoute="/specialists" />
+        <CtaSection final={PROS.final} hideRoute="/specialists" />
       </main>
 
       <Footer groups={FOOTER_GROUPS_SPECIALISTS} />

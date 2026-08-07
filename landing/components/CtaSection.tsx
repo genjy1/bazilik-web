@@ -1,5 +1,4 @@
-import { AUDIENCE_ROUTES, BASILIK_TOGGLE, CHAIN_BEFORE, CTA } from "@/lib/content";
-import { BasilikChain } from "./BasilikChain";
+import { AUDIENCE_ROUTES, CTA } from "@/lib/content";
 import { PlanConfigurator } from "./PlanConfigurator";
 import { Button } from "./ui/Button";
 import { Reveal } from "./ui/Reveal";
@@ -15,18 +14,15 @@ type FinalCopy = {
  * Порядок принципиален — просить пять минут человека логичнее после того,
  * как он сам увидел, что план реагирует на его настройки.
  *
- * На аудиторных страницах (/specialists, /home) финальный экран повторяет
- * тумблер «Включить Базилик» из геро (общее состояние через
- * `BasilikToggleProvider`) — передаётся через `final`/`showChain`, чтобы
- * корневая страница осталась на прежней копии без изменений.
+ * Тумблер «Включить Базилик» живёт только в геро (AudienceHero) — повтор
+ * здесь, внизу страницы, дублировал действие, которого мы и так ждём в
+ * самом верхнем блоке, поэтому в финальном экране его больше нет.
  */
 export function CtaSection({
   final,
-  showChain = false,
   hideRoute,
 }: {
   final?: FinalCopy;
-  showChain?: boolean;
   /** Убирает из «в свой сценарий» ссылку на текущую страницу (аудиторные страницы не должны линковать сами на себя). */
   hideRoute?: string;
 } = {}) {
@@ -49,22 +45,6 @@ export function CtaSection({
             <p className="mt-4 max-w-[62ch] text-[clamp(16px,2vw,19px)] text-muted">
               {final ? final.lead : CTA.lead}
             </p>
-          </Reveal>
-        )}
-
-        {showChain && (
-          <Reveal delay={160}>
-            <div className="mt-8 rounded-2xl border border-line bg-surface p-5 shadow-[0_24px_80px_rgba(18,88,58,0.10)] md:p-6">
-              <BasilikChain
-                chain={CHAIN_BEFORE}
-                keepLabel={BASILIK_TOGGLE.keepLabel}
-                statusOff={BASILIK_TOGGLE.statusOff}
-                statusOn={BASILIK_TOGGLE.statusOn}
-                buttonOff={BASILIK_TOGGLE.buttonOff}
-                buttonOn={BASILIK_TOGGLE.buttonOn}
-                compact
-              />
-            </div>
           </Reveal>
         )}
 
