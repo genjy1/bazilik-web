@@ -25,11 +25,6 @@ export function ExistingClientsSection() {
             </Reveal>
           ))}
         </ul>
-
-        <Reveal delay={220} className="mt-10 border-t border-line pt-8">
-          <h3 className="text-[15.5px] font-bold tracking-tight">{PROS.embed.title}</h3>
-          <p className="mt-1.5 max-w-[62ch] text-[14.5px] text-muted">{PROS.embed.body}</p>
-        </Reveal>
       </div>
     </section>
   );
