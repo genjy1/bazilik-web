@@ -41,13 +41,12 @@ function CompareSlider({ row }: { row: Row }) {
         handle.setAttribute("aria-valuenow", String(Math.round(percent)));
       };
 
-      if (reduced) {
-        setPercent(width / 2);
-        return;
-      }
-
       gsap.set(handle, { x: width / 2 });
       setPercent(width / 2);
+
+      if (reduced) {
+        return;
+      }
 
       const draggable = Draggable.create(handle, {
         type: "x",
@@ -154,7 +153,7 @@ function CompareSlider({ row }: { row: Row }) {
             aria-valuemax={100}
             aria-valuenow={50}
             aria-label={`Сравнение «обычное приложение / Базилик»: ${row.title}`}
-            className="absolute inset-y-0 left-1/2 z-10 w-0.5 -translate-x-1/2 cursor-ew-resize bg-accent"
+            className="absolute inset-y-0 left-0 z-10 w-0.5 cursor-ew-resize bg-accent"
           >
             <div className="absolute top-1/2 left-1/2 grid size-11 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-accent bg-surface text-accent shadow-[0_6px_18px_rgba(0,0,0,0.2)]">
               <span aria-hidden="true" className="font-mono text-[11px]">

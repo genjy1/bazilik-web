@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { HOME } from "@/lib/content";
 import { MOTION_QUERIES, gsap, useIsomorphicLayoutEffect } from "@/lib/gsap";
 import { SectionKicker } from "./SectionKicker";
@@ -8,7 +8,22 @@ import { Counter } from "./ui/Counter";
 import { Chip } from "./ui/Chip";
 import { Reveal } from "./ui/Reveal";
 
-const R = 42;
+type GoalsMode = "track" | "enjoy";
+
+const MODES: ReadonlyArray<{ key: GoalsMode; label: string }> = [
+  { key: "track", label: "Следить за питанием" },
+  { key: "enjoy", label: "Вкусно поесть" },
+];
+
+/** Чем кормим семью, когда цель — не граммы, а стол без «доедаем что есть». */
+const ENJOY_TAGS = [
+  "Любимые блюда семьи",
+  "Разнообразие на неделю",
+  "Быстрые будние ужины",
+  "Без «доедаем, что есть»",
+];
+
+const R = 58;
 const CIRCUMFERENCE = 2 * Math.PI * R;
 
 /** Декоративная заполненность колец — премиум-крючок, не расчёт (Apple Activity-стиль). */
@@ -49,18 +64,18 @@ function MacroRing({ macroKey, label, value }: { macroKey: string; label: string
   }, [macroKey]);
 
   return (
-    <div className="flex flex-col items-center gap-2">
-      <div className="relative size-24">
-        <svg viewBox="0 0 100 100" className="size-24 -rotate-90">
-          <circle cx={50} cy={50} r={R} fill="none" stroke="var(--line)" strokeWidth={8} />
+    <div className="flex flex-col items-center gap-3">
+      <div className="relative size-36 md:size-40">
+        <svg viewBox="0 0 140 140" className="size-36 -rotate-90 md:size-40">
+          <circle cx={70} cy={70} r={R} fill="none" stroke="var(--line)" strokeWidth={11} />
           <circle
             ref={ref}
-            cx={50}
-            cy={50}
+            cx={70}
+            cy={70}
             r={R}
             fill="none"
             stroke="var(--accent)"
-            strokeWidth={8}
+            strokeWidth={11}
             strokeLinecap="round"
             strokeDasharray={CIRCUMFERENCE}
           />
@@ -69,11 +84,11 @@ function MacroRing({ macroKey, label, value }: { macroKey: string; label: string
           <Counter
             value={value}
             prefix="≈"
-            className="text-[20px] font-extrabold tracking-tight tabular-nums"
+            className="text-[32px] font-extrabold tracking-tight tabular-nums md:text-[36px]"
           />
         </div>
       </div>
-      <div className="font-mono text-[10px] uppercase tracking-wide text-muted">{label}</div>
+      <div className="font-mono text-[11px] uppercase tracking-wide text-muted">{label}</div>
     </div>
   );
 }
@@ -82,6 +97,7 @@ function MacroRing({ macroKey, label, value }: { macroKey: string; label: string
 export function GoalsSection() {
   const { goals } = HOME;
   const chipsRef = useRef<HTMLDivElement>(null);
+  const [mode, setMode] = useState<GoalsMode>("track");
 
   useIsomorphicLayoutEffect(() => {
     const el = chipsRef.current;
@@ -117,27 +133,61 @@ export function GoalsSection() {
       <div className="mx-auto max-w-[1180px] px-6">
         <SectionKicker n="06" title={goals.title} lead={goals.lead} />
 
-        <div className="mt-10 flex flex-wrap items-center gap-10">
-          {goals.macros.map((m) => (
-            <MacroRing key={m.key} macroKey={m.key} label={m.label} value={m.value} />
+        <div className="mt-8 inline-flex rounded-full border border-line bg-surface p-1">
+          {MODES.map((m) => (
+            <button
+              key={m.key}
+              type="button"
+              onClick={() => setMode(m.key)}
+              aria-pressed={mode === m.key}
+              className={`rounded-full px-4 py-2 text-[13.5px] font-bold tracking-tight transition-colors ${
+                mode === m.key ? "bg-accent text-on-accent" : "text-muted hover:text-ink"
+              }`}
+            >
+              {m.label}
+            </button>
           ))}
-
-          <div ref={chipsRef} className="flex flex-1 flex-wrap gap-2.5">
-            {goals.diets.map((diet) => (
-              <span key={diet} data-chip>
-                <Chip tone="herb" className="px-3.5 py-1.5 text-[12px] normal-case">
-                  {diet}
-                </Chip>
-              </span>
-            ))}
-          </div>
         </div>
 
-        <Reveal delay={120}>
-          <p className="mt-6 max-w-[62ch] font-mono text-[10.5px] tracking-wide text-muted">
-            {goals.disclaimer}
-          </p>
-        </Reveal>
+        {mode === "track" ? (
+          <div className="mt-10">
+            <div className="flex flex-wrap justify-center gap-10 sm:justify-start">
+              {goals.macros.map((m) => (
+                <MacroRing key={m.key} macroKey={m.key} label={m.label} value={m.value} />
+              ))}
+            </div>
+
+            <div ref={chipsRef} className="mt-8 flex flex-wrap gap-2.5">
+              {goals.diets.map((diet) => (
+                <span key={diet} data-chip>
+                  <Chip tone="herb" className="px-3.5 py-1.5 text-[12px] normal-case">
+                    {diet}
+                  </Chip>
+                </span>
+              ))}
+            </div>
+
+            <Reveal delay={120}>
+              <p className="mt-6 max-w-[62ch] font-mono text-[10.5px] tracking-wide text-muted">
+                {goals.disclaimer}
+              </p>
+            </Reveal>
+          </div>
+        ) : (
+          <div className="mt-10 max-w-[62ch]">
+            <p className="text-[17px] text-ink">
+              Не считать граммы, а просто вкусно накормить семью — тоже цель. Базилик держит
+              баланс сам, а тебе остаётся выбрать, что приготовить.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2.5">
+              {ENJOY_TAGS.map((tag) => (
+                <Chip key={tag} tone="herb" className="px-3.5 py-1.5 text-[12px] normal-case">
+                  {tag}
+                </Chip>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
