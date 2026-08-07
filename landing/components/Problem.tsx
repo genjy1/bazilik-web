@@ -11,7 +11,7 @@ const PROBLEM_ITEMS: ReadonlyArray<{ icon: LucideIcon; title: string; body: stri
   },
   {
     icon: ShoppingCart,
-    title: "Поход в магазин — не по расписанию",
+    title: "Закупка — не по расписанию",
     body: "Забыл один ингредиент — и это ещё один поход, ещё один потерянный вечер.",
   },
   {
