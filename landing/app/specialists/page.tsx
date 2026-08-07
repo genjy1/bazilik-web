@@ -5,7 +5,6 @@ import { BackgroundFX } from "@/components/BackgroundFX";
 import { CtaSection } from "@/components/CtaSection";
 import { ExistingClientsSection } from "@/components/ExistingClientsSection";
 import { Footer } from "@/components/Footer";
-import { Hypotheses } from "@/components/Hypotheses";
 import { MarketplaceSection } from "@/components/MarketplaceSection";
 import { Nav } from "@/components/Nav";
 import { PainList } from "@/components/PainList";
@@ -62,9 +61,6 @@ export default function SpecialistsPage() {
 
         <SectionDivider />
         <ExistingClientsSection />
-
-        <SectionDivider />
-        <Hypotheses n="07" />
 
         <SectionDivider />
         <CtaSection final={PROS.final} showChain hideRoute="/specialists" />

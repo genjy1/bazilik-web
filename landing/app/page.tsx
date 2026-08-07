@@ -4,7 +4,6 @@ import { CtaSection } from "@/components/CtaSection";
 import { Engine } from "@/components/Engine";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
-import { Hypotheses } from "@/components/Hypotheses";
 import { Nav } from "@/components/Nav";
 import { Problem } from "@/components/Problem";
 import { Process } from "@/components/Process";
@@ -45,9 +44,6 @@ export default function Page() {
 
         <SectionDivider />
         <Process />
-
-        <SectionDivider />
-        <Hypotheses />
 
         <SectionDivider />
         <CtaSection />

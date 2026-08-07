@@ -7,7 +7,6 @@ import { CtaSection } from "@/components/CtaSection";
 import { DishAssemblyScene } from "@/components/DishAssemblyScene";
 import { Footer } from "@/components/Footer";
 import { GoalsSection } from "@/components/GoalsSection";
-import { Hypotheses } from "@/components/Hypotheses";
 import { Nav } from "@/components/Nav";
 import { PainChaos } from "@/components/PainChaos";
 import { SectionDivider } from "@/components/SectionDivider";
@@ -60,9 +59,6 @@ export default function HomePage() {
 
         <SectionDivider />
         <GoalsSection />
-
-        <SectionDivider />
-        <Hypotheses n="07" />
 
         <SectionDivider />
         <CtaSection final={HOME.final} showChain hideRoute="/home" />

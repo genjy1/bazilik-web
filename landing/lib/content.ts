@@ -15,20 +15,17 @@ export const NAV_LINKS_ROOT = [
   { href: "#assembly", label: "Сборка" },
   { href: "#engine", label: "Механики" },
   { href: "#audience", label: "Для кого" },
-  { href: "#open", label: "Что проверяем" },
   { href: "#cta", label: "Попробовать" },
 ] as const;
 
 export const NAV_LINKS_SPECIALISTS = [
   { href: "#pros", label: "О продукте" },
-  { href: "#open", label: "Что проверяем" },
   { href: "#cta", label: "Попробовать" },
   { href: "/home", label: "Дома" },
 ] as const;
 
 export const NAV_LINKS_HOME = [
   { href: "#top", label: "О продукте" },
-  { href: "#open", label: "Что проверяем" },
   { href: "#cta", label: "Попробовать" },
   { href: "/specialists", label: "Специалистам" },
 ] as const;
@@ -422,28 +419,6 @@ export const PROCESS = [
   },
 ] as const;
 
-export const HYPOTHESES = [
-  {
-    label: "Гипотеза · главная продуктовая ставка",
-    question:
-      "Примут ли люди «предполагаемое» состояние запасов вместо ручного учёта?",
-    answer:
-      "Мы ставим на то, что 90% полезной точности без ввода данных лучше, чем 100% точности ценой ежедневной рутины. Это ставка, а не факт.",
-  },
-  {
-    label: "Гипотеза · экономика",
-    question: "Сколько специалисты и семьи готовы платить за такой инструмент?",
-    answer:
-      "Мы спрашиваем не только «сколько готовы платить», но и «сколько платите сейчас» — намерение всегда завышено, факт честнее.",
-  },
-  {
-    label: "Оговорка · доказательная база",
-    question: "«Усталость от решений» — эмоция, а не аргумент.",
-    answer:
-      "Рецензируемые обзоры прямо говорят о нехватке доказательств связи усталости от решений именно с выбором еды. Поэтому мы опираемся на измеримое: время, лишние походы, отходы и расходы.",
-  },
-] as const;
-
 export const CTA = {
   eyebrow: "Попробовать",
   title: "Соберите неделю прямо здесь",
@@ -464,7 +439,6 @@ export const FOOTER_GROUPS_ROOT = [
     links: [
       { href: "#how", label: "Как работает" },
       { href: "#engine", label: "Механики" },
-      { href: "#open", label: "Что проверяем" },
     ],
   },
   {
@@ -481,7 +455,6 @@ export const FOOTER_GROUPS_SPECIALISTS = [
     title: "Продукт",
     links: [
       { href: "#pros", label: "О продукте" },
-      { href: "#open", label: "Что проверяем" },
     ],
   },
   {
@@ -495,7 +468,6 @@ export const FOOTER_GROUPS_HOME = [
     title: "Продукт",
     links: [
       { href: "#top", label: "О продукте" },
-      { href: "#open", label: "Что проверяем" },
     ],
   },
   {
