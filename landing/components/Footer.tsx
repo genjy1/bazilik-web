@@ -41,9 +41,8 @@ export function Footer({ groups }: { groups: readonly FooterGroup[] }) {
           ))}
         </div>
 
-        <div className="mt-11 flex flex-wrap justify-between gap-4 border-t border-line pt-5.5 font-mono text-[10.5px] uppercase tracking-[0.1em] text-muted">
+        <div className="mt-11 border-t border-line pt-5.5 font-mono text-[10.5px] uppercase tracking-[0.1em] text-muted">
           <span>© {new Date().getFullYear()} Базилик · Bazilik</span>
-          <span>Изумруд · #1F7A4D</span>
         </div>
       </div>
     </footer>
