@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, type RefObject } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
@@ -51,6 +51,63 @@ export const MOTION_QUERIES = {
   motion: MOTION_OK,
   reduced: "(prefers-reduced-motion: reduce)",
 } as const;
+
+/**
+ * Запускает цикл только пока элемент виден — не тратит кадры за кадром экрана.
+ * `delayMs` разносит старт нескольких карточек во времени: без него все сцены
+ * начинают анимацию в один и тот же кадр, и внимание распыляется сразу на все.
+ * Общий хук для PainChaos (/home) и PainList (/specialists) — обе страницы
+ * заводят циклические мини-сцены на карточках боли по одной и той же схеме.
+ */
+export function useLoopWhileVisible(
+  ref: RefObject<HTMLElement | null>,
+  build: (el: HTMLElement) => (() => void) | void,
+  delayMs = 0,
+) {
+  useIsomorphicLayoutEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const mm = gsap.matchMedia();
+    let stop: (() => void) | undefined;
+
+    mm.add(MOTION_QUERIES, (ctx) => {
+      const { reduced } = ctx.conditions as { reduced: boolean };
+      if (reduced) return;
+
+      const start = () => {
+        const delayed = gsap.delayedCall(delayMs / 1000, () => {
+          const cleanup = build(el);
+          stop = cleanup ?? undefined;
+        });
+        stop = () => delayed.kill();
+      };
+
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting && !stop) {
+              start();
+            } else if (!entry.isIntersecting && stop) {
+              stop();
+              stop = undefined;
+            }
+          }
+        },
+        { threshold: 0.3 },
+      );
+      io.observe(el);
+
+      return () => {
+        io.disconnect();
+        stop?.();
+        stop = undefined;
+      };
+    });
+
+    return () => mm.revert();
+  }, []);
+}
 
 /** Общие хелперы для скролл-сцен, где прогресс 0..1 — чистая функция. */
 export const clamp01 = (v: number) => (v < 0 ? 0 : v > 1 ? 1 : v);

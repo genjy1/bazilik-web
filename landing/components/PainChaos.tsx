@@ -1,69 +1,13 @@
 "use client";
 
-import { Trash2 } from "lucide-react";
-import { useRef, type ReactElement, type RefObject } from "react";
+import { ShoppingBag, Trash2 } from "lucide-react";
+import { useRef, type ReactElement } from "react";
 import type { HomePainKind } from "@/lib/content";
 import { HOME } from "@/lib/content";
-import { MOTION_QUERIES, gsap, useIsomorphicLayoutEffect } from "@/lib/gsap";
+import { gsap, useLoopWhileVisible } from "@/lib/gsap";
 import { SectionKicker } from "./SectionKicker";
 import { Ingredient } from "./ui/Ingredient";
 import { Reveal } from "./ui/Reveal";
-
-/**
- * Запускает цикл только пока карточка видна — не тратит кадры за кадром экрана.
- * `delayMs` разносит старт нескольких карточек во времени: без него все сцены
- * начинают анимацию в один и тот же кадр (все становятся видимы почти
- * одновременно), и внимание распыляется на четыре сцены сразу.
- */
-function useLoopWhileVisible(
-  ref: RefObject<HTMLElement | null>,
-  build: (el: HTMLElement) => (() => void) | void,
-  delayMs = 0,
-) {
-  useIsomorphicLayoutEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const mm = gsap.matchMedia();
-    let stop: (() => void) | undefined;
-
-    mm.add(MOTION_QUERIES, (ctx) => {
-      const { reduced } = ctx.conditions as { reduced: boolean };
-      if (reduced) return;
-
-      const start = () => {
-        const delayed = gsap.delayedCall(delayMs / 1000, () => {
-          const cleanup = build(el);
-          stop = cleanup ?? undefined;
-        });
-        stop = () => delayed.kill();
-      };
-
-      const io = new IntersectionObserver(
-        (entries) => {
-          for (const entry of entries) {
-            if (entry.isIntersecting && !stop) {
-              start();
-            } else if (!entry.isIntersecting && stop) {
-              stop();
-              stop = undefined;
-            }
-          }
-        },
-        { threshold: 0.3 },
-      );
-      io.observe(el);
-
-      return () => {
-        io.disconnect();
-        stop?.();
-        stop = undefined;
-      };
-    });
-
-    return () => mm.revert();
-  }, []);
-}
 
 /** «Что на ужин?» — вопрос сам себя переспрашивает. */
 function DinnerScene({ delay = 0 }: { delay?: number }) {
@@ -92,8 +36,8 @@ function DinnerScene({ delay = 0 }: { delay?: number }) {
   return <span ref={ref}>ужин</span>;
 }
 
-/** Лук выкатывается за край карточки и возвращается — «сбегал ещё раз». */
-function OnionScene({ delay = 0 }: { delay?: number }) {
+/** Забытый пункт списка выкатывается за край карточки и возвращается — «сбегал ещё раз». */
+function ForgotScene({ delay = 0 }: { delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
   useLoopWhileVisible(ref, (el) => {
     // Ограниченное число повторов — сцена "сбегал ещё раз" делает свою мысль
@@ -105,8 +49,8 @@ function OnionScene({ delay = 0 }: { delay?: number }) {
     return () => tl.kill();
   }, delay);
   return (
-    <div ref={ref} className="size-8 shrink-0">
-      <Ingredient id="onion" className="h-full w-full" />
+    <div ref={ref} className="flex size-8 shrink-0 items-center justify-center">
+      <ShoppingBag size={22} className="text-muted" aria-hidden="true" />
     </div>
   );
 }
@@ -187,7 +131,7 @@ function ReceiptScene({ delay = 0 }: { delay?: number }) {
 
 const SCENES: Record<HomePainKind, (props: { delay?: number }) => ReactElement> = {
   dinner: DinnerScene,
-  onion: OnionScene,
+  forgot: ForgotScene,
   expiry: ExpiryScene,
   receipt: ReceiptScene,
 };

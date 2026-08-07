@@ -43,7 +43,7 @@ export default function SpecialistsPage() {
         />
 
         <SectionDivider />
-        <PainList title={PROS.pain.title} items={PROS.pain.items} />
+        <PainList />
 
         <SectionDivider />
         <WinWinSection />

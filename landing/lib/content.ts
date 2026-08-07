@@ -117,6 +117,8 @@ export const BASILIK_TOGGLE = {
  * Специалисты (b2b2c) — весь текст страницы /specialists одним пакетом,
  * по разделам инструкции instructions/landing-b2b2c.md.
  */
+export type ProsPainKind = "clone" | "manual" | "request" | "expiry" | "search";
+
 export const PROS = {
   eyebrow: "Нутрициологам · диетологам · фитнес-коучам",
 
@@ -128,12 +130,12 @@ export const PROS = {
   pain: {
     title: "Узнаёте?",
     items: [
-      "Каждому клиенту собираете план заново — хотя блюда во многом повторяются.",
-      "КБЖУ на каждое блюдо считаете руками или в стороннем калькуляторе.",
-      "Клиент пишет «надоело это блюдо» или «у меня аллергия» — и вы пересобираете план вечером после работы.",
-      "Отдали план в PDF — клиент теряет его к среде и перестаёт готовить.",
-      "Новых клиентов ищете сами: сарафан да соцсети, стабильного потока нет.",
-    ],
+      { text: "Каждому клиенту собираете план заново — хотя блюда во многом повторяются.", kind: "clone" },
+      { text: "КБЖУ на каждое блюдо считаете руками или в стороннем калькуляторе.", kind: "manual" },
+      { text: "Клиент пишет «надоело это блюдо» или «у меня аллергия» — и вы пересобираете план вечером после работы.", kind: "request" },
+      { text: "Отдали план в PDF — клиент теряет его к среде и перестаёт готовить.", kind: "expiry" },
+      { text: "Новых клиентов ищете сами: сарафан да соцсети, стабильного потока нет.", kind: "search" },
+    ] as ReadonlyArray<{ text: string; kind: ProsPainKind }>,
   },
 
   winWin: {
@@ -243,7 +245,7 @@ export const PROS = {
 } as const;
 
 export type HomeTakeScene = "calendar" | "list" | "scanner" | "waste" | "budget";
-export type HomePainKind = "dinner" | "onion" | "expiry" | "receipt";
+export type HomePainKind = "dinner" | "forgot" | "expiry" | "receipt";
 
 /**
  * Дома (b2c) — весь текст страницы /home одним пакетом, по разделам
@@ -263,7 +265,7 @@ export const HOME = {
     title: "Знакомо?",
     items: [
       { text: "«Что сегодня на ужин?» — и так каждый вечер.", kind: "dinner" },
-      { text: "Забыл лук — идёшь в магазин ещё раз.", kind: "onion" },
+      { text: "Забыл один продукт — идёшь в магазин ещё раз.", kind: "forgot" },
       { text: "Половина зелени вянет в холодильнике.", kind: "expiry" },
       { text: "Список покупок пишешь на бумажке, дома выясняется, что забыл.", kind: "receipt" },
     ] as ReadonlyArray<{ text: string; kind: HomePainKind }>,
