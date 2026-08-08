@@ -31,9 +31,7 @@ function CompareSlider({ row }: { row: Row }) {
 
     const mm = gsap.matchMedia();
 
-    mm.add(MOTION_QUERIES, (ctx) => {
-      const { reduced } = ctx.conditions as { reduced: boolean };
-
+    mm.add(MOTION_QUERIES, () => {
       let width = container.clientWidth;
       const setPercent = (px: number) => {
         const percent = gsap.utils.clamp(0, 100, (px / width) * 100);
@@ -43,10 +41,6 @@ function CompareSlider({ row }: { row: Row }) {
 
       gsap.set(handle, { x: width / 2 });
       setPercent(width / 2);
-
-      if (reduced) {
-        return;
-      }
 
       const draggable = Draggable.create(handle, {
         type: "x",
@@ -119,10 +113,10 @@ function CompareSlider({ row }: { row: Row }) {
         >
           {/* Базилик — нижний слой, виден целиком. */}
           <div className="absolute inset-0 flex items-start bg-accent-soft/60 px-5 py-4 sm:items-center">
-            <p className="max-w-[70%] pt-5 text-[13.5px] font-medium text-accent-deep sm:pt-0">
+            <p className="max-w-[34ch] pt-5 text-[13.5px] font-medium text-accent-deep sm:pt-0">
               {row.right}
             </p>
-            <span className="absolute top-2.5 right-3 font-mono text-[9px] uppercase tracking-[0.14em] text-accent-deep/70">
+            <span className="absolute top-2.5 right-3 font-mono text-[9px] uppercase tracking-[0.14em] text-accent-deep">
               Базилик
             </span>
           </div>
@@ -134,7 +128,7 @@ function CompareSlider({ row }: { row: Row }) {
             style={{ width: "50%" }}
           >
             <div className="flex h-full min-w-max items-start px-5 py-4 sm:items-center">
-              <p className="w-[min(70vw,320px)] pt-5 text-[13.5px] text-muted sm:pt-0">
+              <p className="w-[34ch] pt-5 text-[13.5px] text-muted sm:pt-0">
                 {row.left}
               </p>
               <span className="absolute top-2.5 left-3 font-mono text-[9px] uppercase tracking-[0.14em] text-muted">
@@ -153,9 +147,9 @@ function CompareSlider({ row }: { row: Row }) {
             aria-valuemax={100}
             aria-valuenow={50}
             aria-label={`Сравнение «обычное приложение / Базилик»: ${row.title}`}
-            className="absolute inset-y-0 left-0 z-10 w-0.5 cursor-ew-resize bg-accent"
+            className="group absolute inset-y-0 left-0 z-10 w-0.5 cursor-ew-resize bg-accent focus-visible:outline-none"
           >
-            <div className="absolute top-1/2 left-1/2 grid size-11 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-accent bg-surface text-accent shadow-[0_6px_18px_rgba(0,0,0,0.2)]">
+            <div className="absolute top-1/2 left-1/2 grid size-11 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-accent bg-surface text-accent shadow-[0_6px_18px_rgba(0,0,0,0.2)] group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-accent group-focus-visible:outline-offset-3">
               <span aria-hidden="true" className="font-mono text-[11px]">
                 ↔
               </span>
@@ -183,7 +177,7 @@ export function ComparisonSection() {
         </div>
 
         <Reveal delay={120}>
-          <p className="mt-8 text-[15.5px] font-bold tracking-tight text-accent-deep">
+          <p className="mt-8 rounded-xl border-l-[3px] border-line border-l-accent bg-accent-soft/50 px-5 py-4 text-[15.5px] font-bold tracking-tight text-accent-deep">
             {comparison.outro}
           </p>
         </Reveal>
