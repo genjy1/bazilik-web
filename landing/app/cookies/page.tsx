@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BrandMark } from "@/components/BrandMark";
 import { Footer } from "@/components/Footer";
-import { FOOTER_GROUPS_ROOT } from "@/lib/content";
+import { FOOTER_GROUPS_LEGAL } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Использование cookie — Базилик",
@@ -34,7 +34,7 @@ export default function CookiesPage() {
         </p>
       </main>
 
-      <Footer groups={FOOTER_GROUPS_ROOT} />
+      <Footer groups={FOOTER_GROUPS_LEGAL} />
     </>
   );
 }

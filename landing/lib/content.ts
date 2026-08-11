@@ -471,3 +471,17 @@ export const FOOTER_GROUPS_HOME = [
     links: [{ href: "/specialists", label: "Специалистам" }],
   },
 ] as const;
+
+/**
+ * Для служебных страниц без якорей (например /cookies): только реальные
+ * маршруты, без #-ссылок, которые валидны лишь на своей странице.
+ */
+export const FOOTER_GROUPS_LEGAL = [
+  {
+    title: "Для кого",
+    links: [
+      { href: "/specialists", label: "Специалистам" },
+      { href: "/home", label: "Дома" },
+    ],
+  },
+] as const;

@@ -109,6 +109,12 @@
     transition: background-color 200ms ease, color 200ms ease;
   }
 
+  /* Баннер cookie зафиксирован снизу и не выделяет себе места в потоке —
+     без этого он на коротких экранах перекрывает последние строки футера. */
+  body:has(> [aria-label="Уведомление об использовании cookie"]) {
+    padding-bottom: 96px;
+  }
+
   h1,
   h2,
   h3,

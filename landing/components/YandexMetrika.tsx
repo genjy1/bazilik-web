@@ -23,13 +23,11 @@ export function YandexMetrika() {
         `}
       </Script>
       <noscript>
-        <div>
-          <img
-            src={`https://mc.yandex.ru/watch/${COUNTER_ID}`}
-            style={{ position: "absolute", left: "-9999px" }}
-            alt=""
-          />
-        </div>
+        <img
+          src={`https://mc.yandex.ru/watch/${COUNTER_ID}`}
+          style={{ position: "absolute", left: "-9999px" }}
+          alt=""
+        />
       </noscript>
     </>
   );
