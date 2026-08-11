@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Mono, Manrope } from "next/font/google";
+import { CookieConsent } from "@/components/CookieConsent";
 import { InlineScript } from "@/components/InlineScript";
 import { HashScrollManager } from "@/components/HashScrollManager";
+import { YandexMetrika } from "@/components/YandexMetrika";
 import "./globals.css";
 
 /**
@@ -94,6 +96,8 @@ export default function RootLayout({
       <body className="antialiased" suppressHydrationWarning>
         <HashScrollManager />
         {children}
+        <CookieConsent />
+        <YandexMetrika />
       </body>
     </html>
   );
