@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Mono, Manrope } from "next/font/google";
 import { CookieConsent } from "@/components/CookieConsent";
 import { InlineScript } from "@/components/InlineScript";
 import { HashScrollManager } from "@/components/HashScrollManager";
@@ -7,35 +6,15 @@ import { YandexMetrika } from "@/components/YandexMetrika";
 import "./globals.css";
 
 /**
- * Бренд-бук требует гротеск с весом 800 и трекингом −0.03…−0.05em плюс
- * моноширинный в капсе для эйбрау и метрик. Manrope и IBM Plex Mono
- * закрывают обе роли и, что критично для русского лендинга, имеют
- * полноценную кириллицу — иначе браузер подставил бы системный шрифт
- * и вся типографика поехала бы.
+ * Шрифт лендинга — тот же, что в приложениях: системный гротеск и системный
+ * моноширинный (бренд-бук §04). SwiftUI рисует текст через `.system`, Compose —
+ * через `FontFamily.Default`, то есть SF Pro на iOS и Roboto на Android; веб
+ * повторяет это стеком в `--font-sans` / `--font-mono` в globals.css.
  *
- * Под предметную область — операционный слой планирования питания —
- * IBM Plex Mono подходит лучше «терминального» JetBrains Mono: он
- * гуманистичный и тёплый, читается как шрифт кассового чека и накладной,
- * то есть попадает в регистр списков покупок и кухонной ведомости.
- * Начертания перечислены явно: у IBM Plex Mono на Google Fonts нет
- * вариативной версии, а вёрстка использует 400/500/600/700.
- *
- * next/font самостоятельно хостит файлы и подставляет метрики запасного
- * шрифта, поэтому внешних запросов в рантайме нет и текст не прыгает.
+ * От веб-шрифтов (Manrope + IBM Plex Mono) отказались: сайт расходился с
+ * продуктом по начертанию. Заодно ушли запросы next/font и подмена метрик —
+ * системный шрифт уже стоит на устройстве и рисуется первым кадром.
  */
-const sans = Manrope({
-  subsets: ["latin", "cyrillic"],
-  variable: "--font-brand-sans",
-  display: "swap",
-});
-
-const mono = IBM_Plex_Mono({
-  subsets: ["latin", "cyrillic"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-brand-mono",
-  display: "swap",
-});
-
 const DESCRIPTION =
   "Базилик — операционный слой планирования питания. Неделя собирается на переиспользование ингредиентов, список покупок появляется сам, план пересобирается под остатки. Без ручного учёта запасов.";
 
@@ -84,7 +63,6 @@ export default function RootLayout({
     <html
       lang="ru"
       data-scroll-behavior="smooth"
-      className={`${sans.variable} ${mono.variable}`}
       suppressHydrationWarning
     >
       <head>

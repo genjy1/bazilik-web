@@ -1,105 +1,22 @@
-"use client";
-
-import { useRef } from "react";
+import { Check, X } from "lucide-react";
 import { HOME } from "@/lib/content";
-import {
-  Draggable,
-  MOTION_QUERIES,
-  gsap,
-  useIsomorphicLayoutEffect,
-} from "@/lib/gsap";
 import { SectionKicker } from "./SectionKicker";
 import { Reveal } from "./ui/Reveal";
 
 type Row = { title: string; left: string; right: string };
 
 /**
- * Один ряд сравнения «обычное приложение / Базилик» с перетаскиваемым
- * разделителем (landing-b2c-motion.md §6). Левый слой обрезается по ширине
- * и лежит поверх правого — классический приём before/after.
+ * Один ряд сравнения «обычное приложение / Базилик» (landing-b2c-motion.md §6
+ * — формат split, разделитель по центру).
+ *
+ * Разделитель раньше можно было тащить мышкой (before/after слайдер), но
+ * спека называет этот приём опциональным, и работает он только там, где обе
+ * половины занимают всю ширину кадра. Здесь в каждой половине — короткий
+ * абзац, поэтому при сдвиге разделителя вправо открывалась не сторона
+ * «после», а пустая заливка. Обе колонки показаны одновременно: сравнение
+ * читается сразу, без единого действия, и одинаково выглядит без JS.
  */
-function CompareSlider({ row }: { row: Row }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const leftRef = useRef<HTMLDivElement>(null);
-  const handleRef = useRef<HTMLDivElement>(null);
-
-  useIsomorphicLayoutEffect(() => {
-    const container = containerRef.current;
-    const left = leftRef.current;
-    const handle = handleRef.current;
-    if (!container || !left || !handle) return;
-
-    const mm = gsap.matchMedia();
-
-    mm.add(MOTION_QUERIES, () => {
-      let width = container.clientWidth;
-      const setPercent = (px: number) => {
-        const percent = gsap.utils.clamp(0, 100, (px / width) * 100);
-        left.style.width = `${percent}%`;
-        handle.setAttribute("aria-valuenow", String(Math.round(percent)));
-      };
-
-      gsap.set(handle, { x: width / 2 });
-      setPercent(width / 2);
-
-      const draggable = Draggable.create(handle, {
-        type: "x",
-        bounds: { minX: 0, maxX: width },
-        onDrag: function onDrag(this: Draggable) {
-          setPercent(this.x);
-        },
-      })[0];
-
-      // Тот же разделитель управляется клавиатурой — стрелки двигают его
-      // на 5% ширины, Home/End прыгают к краям (доступность: без этого
-      // сравнение "обычное приложение / Базилик" недоступно с клавиатуры
-      // и скринридеру вовсе).
-      const moveTo = (x: number) => {
-        const clampedX = gsap.utils.clamp(0, width, x);
-        gsap.set(handle, { x: clampedX });
-        draggable.update();
-        setPercent(clampedX);
-      };
-
-      const onKeyDown = (e: KeyboardEvent) => {
-        const step = width * 0.05;
-        if (e.key === "ArrowLeft") {
-          e.preventDefault();
-          moveTo(draggable.x - step);
-        } else if (e.key === "ArrowRight") {
-          e.preventDefault();
-          moveTo(draggable.x + step);
-        } else if (e.key === "Home") {
-          e.preventDefault();
-          moveTo(0);
-        } else if (e.key === "End") {
-          e.preventDefault();
-          moveTo(width);
-        }
-      };
-      handle.addEventListener("keydown", onKeyDown);
-
-      // Ширина контейнера может измениться (ресайз, поворот экрана) —
-      // держим bounds и позицию разделителя в актуальном состоянии.
-      const onResize = () => {
-        width = container.clientWidth;
-        draggable.applyBounds({ minX: 0, maxX: width });
-        const clampedX = gsap.utils.clamp(0, width, draggable.x);
-        gsap.set(handle, { x: clampedX });
-        setPercent(clampedX);
-      };
-      window.addEventListener("resize", onResize);
-
-      return () => {
-        window.removeEventListener("resize", onResize);
-        handle.removeEventListener("keydown", onKeyDown);
-        draggable.kill();
-      };
-    });
-
-    return () => mm.revert();
-  }, []);
-
+function CompareRow({ row }: { row: Row }) {
   return (
     <div>
       <Reveal>
@@ -107,53 +24,33 @@ function CompareSlider({ row }: { row: Row }) {
       </Reveal>
 
       <Reveal delay={60}>
-        <div
-          ref={containerRef}
-          className="relative mt-3 h-44 overflow-hidden rounded-xl border border-line select-none sm:h-32"
-        >
-          {/* Базилик — нижний слой, виден целиком. */}
-          <div className="absolute inset-0 flex items-start bg-accent-soft/60 px-5 py-4 sm:items-center">
-            <p className="max-w-[34ch] pt-5 text-[13.5px] font-medium text-accent-deep sm:pt-0">
-              {row.right}
-            </p>
-            <span className="absolute top-2.5 right-3 font-mono text-[9px] uppercase tracking-[0.14em] text-accent-deep">
+        {/* Обе ячейки лежат в одной grid-строке, поэтому тянутся до общей
+            высоты сами — фиксировать её (как при слайдере) больше не нужно. */}
+        <div className="mt-3 grid overflow-hidden rounded-xl border border-line sm:grid-cols-2">
+          {/* «Как у всех» — приглушённая половина: тот же кегль, но без цвета. */}
+          <div className="bg-ground px-5 py-4 sm:px-6 sm:py-5">
+            <span className="flex items-center gap-1.5 font-mono text-[9px] font-semibold uppercase tracking-[0.14em] text-muted">
+              <X aria-hidden="true" className="size-3 shrink-0" />
+              обычное приложение
+            </span>
+            {/* Ширину абзаца не подрезаем: в колонке 1180/2 он и так
+                ложится в комфортные ~70 знаков, а обрезка оставляла справа
+                ровно ту пустоту, из-за которой сравнение и не читалось. */}
+            <p className="mt-2.5 text-[14.5px] text-muted">{row.left}</p>
+          </div>
+
+          {/* «Как у нас» — акцентная половина. Её левая граница и есть тот
+              самый центральный разделитель из спеки, только неподвижный;
+              на узком экране колонки встают друг под друга, и он
+              превращается в верхнюю границу. */}
+          <div className="border-t-2 border-t-accent bg-accent-soft/60 px-5 py-4 sm:border-t-0 sm:border-l-2 sm:border-l-accent sm:px-6 sm:py-5">
+            <span className="flex items-center gap-1.5 font-mono text-[9px] font-semibold uppercase tracking-[0.14em] text-accent-deep">
+              <Check aria-hidden="true" className="size-3 shrink-0" />
               Базилик
             </span>
-          </div>
-
-          {/* Обычное приложение — верхний слой, обрезается разделителем. */}
-          <div
-            ref={leftRef}
-            className="absolute inset-y-0 left-0 overflow-hidden bg-ground"
-            style={{ width: "50%" }}
-          >
-            <div className="flex h-full min-w-max items-start px-5 py-4 sm:items-center">
-              <p className="w-[34ch] pt-5 text-[13.5px] text-muted sm:pt-0">
-                {row.left}
-              </p>
-              <span className="absolute top-2.5 left-3 font-mono text-[9px] uppercase tracking-[0.14em] text-muted">
-                обычное приложение
-              </span>
-            </div>
-          </div>
-
-          {/* Разделитель. */}
-          <div
-            ref={handleRef}
-            role="slider"
-            tabIndex={0}
-            aria-orientation="horizontal"
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-valuenow={50}
-            aria-label={`Сравнение «обычное приложение / Базилик»: ${row.title}`}
-            className="group absolute inset-y-0 left-0 z-10 w-0.5 cursor-ew-resize bg-accent focus-visible:outline-none"
-          >
-            <div className="absolute top-1/2 left-1/2 grid size-11 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-accent bg-surface text-accent shadow-[0_6px_18px_rgba(0,0,0,0.2)] group-focus-visible:outline group-focus-visible:outline-2 group-focus-visible:outline-accent group-focus-visible:outline-offset-3">
-              <span aria-hidden="true" className="font-mono text-[11px]">
-                ↔
-              </span>
-            </div>
+            <p className="mt-2.5 text-[14.5px] font-medium text-ink">
+              {row.right}
+            </p>
           </div>
         </div>
       </Reveal>
@@ -172,7 +69,7 @@ export function ComparisonSection() {
 
         <div className="mt-10 grid gap-8">
           {comparison.rows.map((row) => (
-            <CompareSlider key={row.title} row={row} />
+            <CompareRow key={row.title} row={row} />
           ))}
         </div>
 

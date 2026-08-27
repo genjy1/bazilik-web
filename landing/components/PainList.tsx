@@ -172,14 +172,14 @@ const SCENES: Record<ProsPainKind, (props: { delay?: number }) => ReactElement> 
   search: SearchScene,
 };
 
-/** Небольшой хаотичный перекос на карточку — та же нервная деталь, что и на /home. */
+/** Небольшой хаотичный перекос на карточку — та же нервная деталь, что и на главной. */
 const TILTS = ["rotate-[-2deg]", "rotate-[1.5deg]", "rotate-[-1deg]", "rotate-[2deg]", "rotate-[-1.5deg]"];
 
 /** Разносит старт сцен по карточкам — иначе все срываются в одном кадре. */
 const SCENE_STAGGER_MS = 300;
 
 /**
- * Боли специалиста — тот же приём, что и PainChaos на /home: карточки с
+ * Боли специалиста — тот же приём, что и PainChaos на главной: карточки с
  * лёгким перекосом и зацикленной мини-сценой, а не плоский список.
  */
 export function PainList() {

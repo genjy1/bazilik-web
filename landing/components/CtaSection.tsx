@@ -20,13 +20,19 @@ type FinalCopy = {
  */
 export function CtaSection({
   final,
-  hideRoute,
+  hideRoutes = [],
 }: {
   final?: FinalCopy;
-  /** Убирает из «в свой сценарий» ссылку на текущую страницу (аудиторные страницы не должны линковать сами на себя). */
-  hideRoute?: string;
+  /**
+   * Убирает из «в свой сценарий» перечисленные маршруты: страница аудитории
+   * не должна линковать сама на себя. Когда скрыты все маршруты (главная в
+   * MVP — без раздела «Специалистам»), развилка не рендерится вовсе.
+   */
+  hideRoutes?: readonly string[];
 } = {}) {
-  const routes = AUDIENCE_ROUTES.filter((route) => route.href !== hideRoute);
+  const routes = AUDIENCE_ROUTES.filter(
+    (route) => !hideRoutes.includes(route.href),
+  );
   return (
     <section id="cta" className="py-16 md:py-28">
       <div className="mx-auto max-w-[1180px] px-6">

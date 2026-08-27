@@ -36,11 +36,11 @@ function DinnerScene({ delay = 0 }: { delay?: number }) {
   return <span ref={ref}>ужин</span>;
 }
 
-/** Забытый пункт списка выкатывается за край карточки и возвращается — «сбегал ещё раз». */
+/** Пакет уезжает за край карточки и возвращается — «ещё одна закупка». */
 function ForgotScene({ delay = 0 }: { delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
   useLoopWhileVisible(ref, (el) => {
-    // Ограниченное число повторов — сцена "сбегал ещё раз" делает свою мысль
+    // Ограниченное число повторов — сцена "ещё одна закупка" делает свою мысль
     // за пару проходов и успокаивается, а не крутится, пока карточка видна.
     const tl = gsap.timeline({ repeat: 2, repeatDelay: 1.1 });
     tl.to(el, { x: 46, opacity: 0, duration: 0.6, ease: "power1.in" })

@@ -4,6 +4,7 @@ import { useRef, type ReactNode } from "react";
 import { BASILIK_TOGGLE, CHAIN_BEFORE } from "@/lib/content";
 import { MOTION_QUERIES, gsap, useIsomorphicLayoutEffect } from "@/lib/gsap";
 import { BasilikChain } from "./BasilikChain";
+import { BasilikToggleButton } from "./BasilikToggleButton";
 
 /**
  * Геро обеих аудиторных страниц: H1 + лид + тумблер «Включить Базилик».
@@ -48,7 +49,11 @@ export function AudienceHero({
         .from(q("[data-ahero-lead]"), { opacity: 0, y: 16 }, "-=0.55");
 
       if (showChain) {
-        tl.from(q("[data-ahero-chain]"), { opacity: 0, y: 18 }, "-=0.5");
+        tl.from(q("[data-ahero-chain]"), { opacity: 0, y: 18 }, "-=0.5").from(
+          q("[data-ahero-toggle]"),
+          { opacity: 0, y: 14 },
+          "-=0.5",
+        );
       }
     });
 
@@ -79,22 +84,31 @@ export function AudienceHero({
         </p>
 
         {showChain && (
-          <div
-            data-ahero-chain
-            className="mt-9 rounded-2xl border border-line bg-surface p-5 shadow-[0_24px_80px_rgba(18,88,58,0.10)] md:p-6"
-          >
-            <BasilikChain
-              chain={CHAIN_BEFORE}
-              keepLabel={BASILIK_TOGGLE.keepLabel}
-              statusOff={BASILIK_TOGGLE.statusOff}
-              statusOn={BASILIK_TOGGLE.statusOn}
-              buttonOff={BASILIK_TOGGLE.buttonOff}
-              buttonOn={BASILIK_TOGGLE.buttonOn}
-            />
-            {caption && (
-              <p className="mt-4 max-w-[52ch] text-[14px] text-muted">{caption}</p>
-            )}
-          </div>
+          <>
+            <div
+              data-ahero-chain
+              className="mt-9 rounded-2xl border border-line bg-surface p-5 shadow-[0_24px_80px_rgba(18,88,58,0.10)] md:p-6"
+            >
+              <BasilikChain
+                chain={CHAIN_BEFORE}
+                keepLabel={BASILIK_TOGGLE.keepLabel}
+                statusOff={BASILIK_TOGGLE.statusOff}
+                statusOn={BASILIK_TOGGLE.statusOn}
+              />
+              {caption && (
+                <p className="mt-4 max-w-[52ch] text-[14px] text-muted">{caption}</p>
+              )}
+            </div>
+
+            {/* Тумблер вынесен из карточки: это не настройка виджета,
+                а единственное действие, которое просит первый экран. */}
+            <div data-ahero-toggle className="mt-7 flex justify-center">
+              <BasilikToggleButton
+                labelOff={BASILIK_TOGGLE.buttonOff}
+                labelOn={BASILIK_TOGGLE.buttonOn}
+              />
+            </div>
+          </>
         )}
       </div>
     </section>

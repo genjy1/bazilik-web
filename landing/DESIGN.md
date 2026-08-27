@@ -20,55 +20,55 @@ colors:
   glow: "rgba(53,176,110,0.16)"
 typography:
   display:
-    fontFamily: "Manrope, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"Segoe UI\", Roboto, Arial, sans-serif"
+    fontFamily: "-apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"Segoe UI\", Roboto, Arial, sans-serif"
     fontSize: "clamp(40px, 8.6vw, 104px)"
     fontWeight: 800
     lineHeight: 0.92
     letterSpacing: "-0.055em"
   headline:
-    fontFamily: "Manrope, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"Segoe UI\", Roboto, Arial, sans-serif"
+    fontFamily: "-apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"Segoe UI\", Roboto, Arial, sans-serif"
     fontSize: "clamp(30px, 4.6vw, 52px)"
     fontWeight: 800
     lineHeight: 1.05
     letterSpacing: "-0.035em"
   title:
-    fontFamily: "Manrope, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"Segoe UI\", Roboto, Arial, sans-serif"
+    fontFamily: "-apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"Segoe UI\", Roboto, Arial, sans-serif"
     fontSize: "18px"
     fontWeight: 800
     lineHeight: 1.05
     letterSpacing: "-0.03em"
   body:
-    fontFamily: "Manrope, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"Segoe UI\", Roboto, Arial, sans-serif"
+    fontFamily: "-apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"Segoe UI\", Roboto, Arial, sans-serif"
     fontSize: "clamp(16px, 2vw, 19px)"
     fontWeight: 400
     lineHeight: 1.6
     letterSpacing: "normal"
   body-sm:
-    fontFamily: "Manrope, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"Segoe UI\", Roboto, Arial, sans-serif"
+    fontFamily: "-apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"Segoe UI\", Roboto, Arial, sans-serif"
     fontSize: "15px"
     fontWeight: 400
     lineHeight: 1.5
     letterSpacing: "normal"
   stat:
-    fontFamily: "Manrope, -apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"Segoe UI\", Roboto, Arial, sans-serif"
+    fontFamily: "-apple-system, BlinkMacSystemFont, \"Helvetica Neue\", \"Segoe UI\", Roboto, Arial, sans-serif"
     fontSize: "clamp(26px, 4vw, 42px)"
     fontWeight: 800
     lineHeight: 1
     letterSpacing: "-0.04em"
   label:
-    fontFamily: "\"IBM Plex Mono\", ui-monospace, \"SF Mono\", Menlo, Consolas, monospace"
+    fontFamily: "ui-monospace, \"SF Mono\", Menlo, Consolas, monospace"
     fontSize: "11px"
     fontWeight: 600
     lineHeight: 1.3
     letterSpacing: "0.14em"
   label-sm:
-    fontFamily: "\"IBM Plex Mono\", ui-monospace, \"SF Mono\", Menlo, Consolas, monospace"
+    fontFamily: "ui-monospace, \"SF Mono\", Menlo, Consolas, monospace"
     fontSize: "10px"
     fontWeight: 600
     lineHeight: 1.3
     letterSpacing: "0.12em"
   kicker-number:
-    fontFamily: "\"IBM Plex Mono\", ui-monospace, \"SF Mono\", Menlo, Consolas, monospace"
+    fontFamily: "ui-monospace, \"SF Mono\", Menlo, Consolas, monospace"
     fontSize: "13px"
     fontWeight: 700
     lineHeight: 1.3
@@ -139,7 +139,7 @@ The system is warm, restrained, and editorial. It avoids two failure modes on ei
 
 **Key Characteristics:**
 - Warm paper-and-oatmeal neutrals (never white, never cold gray) with a single confident emerald accent doing all the color work.
-- Mono-caps labels (IBM Plex Mono, uppercase, wide tracking) everywhere a number, status, or eyebrow appears — the "ledger" texture.
+- Mono-caps labels (system mono, uppercase, wide tracking) everywhere a number, status, or eyebrow appears — the "ledger" texture.
 - Flat, tonal-layered surfaces at rest; shadow appears only as a deliberate accent on the handful of elements meant to feel lifted.
 - Full-pill shape language for anything actionable (buttons, toggles, tags); generous 16–24px rounding for anything that contains content (cards, panels).
 - Motion and 3D are used to demonstrate the product's actual mechanism (ingredient reuse, scroll-as-cooking-time), not to decorate.
@@ -175,18 +175,18 @@ Warm, low-saturation paper neutrals hold the page down; a single emerald accent 
 
 ## Typography
 
-**Display/Headline/Title Font:** Manrope (with system sans fallback)
-**Body Font:** Manrope
-**Label/Mono Font:** IBM Plex Mono
+**Display/Headline/Title Font:** System sans — `-apple-system` / `BlinkMacSystemFont` / Helvetica Neue / Segoe UI / Roboto
+**Body Font:** the same system sans
+**Label/Mono Font:** System mono — `ui-monospace` / SF Mono / Menlo / Consolas
 
-**Character:** A single confident grotesk carries every weight of voice from hero to caption, paired with a warm, humanist mono (chosen deliberately over a "terminal" mono like JetBrains Mono) that reads like a receipt or delivery note — fitting for a shopping-list-and-kitchen-ledger register, not a developer-tool one.
+**Character:** No web font is loaded. The landing renders in the platform's own grotesk and its own mono — the same stacks the iOS and Android apps draw with (SwiftUI `.system`, Compose `FontFamily.Default`), as brand book §04 specifies. A single confident grotesk carries every weight of voice from hero to caption; the mono is the ledger register — receipts, delivery notes, shopping lists — never a developer-tool one. The trade is deliberate: letterforms shift between macOS, Windows and Android instead of being pinned by a downloaded face, and in exchange the site matches the product and paints on the first frame.
 
 ### Hierarchy
 - **Display** (800, `clamp(40px,8.6vw,104px)`, line-height 0.92, tracking −0.055em): hero title only. Each line animates in from its own overflow-hidden mask; lines must not wrap, so copy length is tuned to the clamp.
 - **Headline** (800, `clamp(30px,4.6vw,52px)`, line-height 1.05, tracking −0.035em): numbered section titles (paired with a small mono step-number like "01").
 - **Title** (800, ~18px, tracking −0.03em): card titles, panel headers, nav brand.
 - **Body** (400, `clamp(16px,2vw,19px)`, line-height 1.6): lead paragraphs and primary prose. Caps around 58–66ch measure. The plain CSS body default (outside any component override) sits at a flat 17px, one step below the lead clamp's floor — treat that as this role's un-clamped base size, not a separate step.
-- **Body-sm** (400, 14–15px, line-height 1.5): secondary/supporting copy — footer link lists, card and engine-card descriptions, hypotheses answers, list-item bodies. One step down from Body, still Manrope, never mono.
+- **Body-sm** (400, 14–15px, line-height 1.5): secondary/supporting copy — footer link lists, card and engine-card descriptions, hypotheses answers, list-item bodies. One step down from Body, still the system sans, never mono.
 - **Stat** (800, `clamp(26px,4vw,42px)`, line-height 1, tracking −0.04em, tabular-nums): large numeric displays — proof-strip counters, recipe-assembly macro values, configurator summary numbers. Always paired with a Label-sm caption underneath, never with its own descriptive sentence.
 - **Label** (600, 11px, tracking 0.14em, uppercase): the mono register's primary size — eyebrows, nav links, toggle buttons, chip-adjacent copy. This is the system's most load-bearing typographic role; it appears more often than body text in most sections.
 - **Label-sm** (600, 9–10.5px, tracking 0.1–0.12em, uppercase): the mono register's compact size — stat captions, chip text, footer group headings. Same voice as Label, smaller stage.
@@ -195,7 +195,7 @@ Warm, low-saturation paper neutrals hold the page down; a single emerald accent 
 Three further static steps appear outside these named roles and are enumerated in the frontmatter's `typography.scale` rather than given their own role, since each is the same voice one step tighter, not a new register: `17px` (Body's un-clamped CSS default), `14px` (Body-sm's tighter edge — e.g. recipe-assembly shopping rows), and `9px` (Label-sm's tightest edge — the day-of-week labels in the home-panel calendar preview).
 
 ### Named Rules
-**The Mono-Caps-Never-For-Prose Rule.** IBM Plex Mono uppercase is reserved for short labels, numbers, and status words. It never carries a sentence — the moment it would need to wrap, switch back to Manrope.
+**The Mono-Caps-Never-For-Prose Rule.** The mono in uppercase is reserved for short labels, numbers, and status words. It never carries a sentence — the moment it would need to wrap, switch back to the sans.
 
 ## Layout
 
@@ -266,7 +266,7 @@ A single pinned, scroll-scrubbed 3D scene (three.js, dynamically loaded, rendere
 
 ### Do:
 - **Do** let Emerald (`#1f7a4d` / dark-mode `#35b06e`) be the only saturated brand color on any given screen; everything else is neutral or a rare semantic accent (herb/amber/gold).
-- **Do** use IBM Plex Mono uppercase with wide tracking (0.1–0.22em) for every label, eyebrow, stat caption, and status — it's the system's signature texture, not an occasional accent.
+- **Do** use the system mono uppercase with wide tracking (0.1–0.22em) for every label, eyebrow, stat caption, and status — it's the system's signature texture, not an occasional accent.
 - **Do** keep surfaces flat by default and reserve shadow for the specific moments something is meant to feel lifted, using a color-matched shadow when the element itself is emerald.
 - **Do** use full-pill shape for anything actionable, generous 16–24px rounding for anything that holds content, and a 1px hairline border on nearly every container.
 - **Do** give every interactive control a 44px minimum touch target (`min-h-11`/`min-w-11`) even when its compact mono-caps label would render shorter on its own — pill height should never be purely a function of font-size and padding.

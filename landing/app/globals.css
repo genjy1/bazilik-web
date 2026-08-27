@@ -23,6 +23,12 @@
   --gold: #b8863a;
   --danger: #c0392b;
   --on-accent: #ffffff;
+
+  /* Корпус телефона в сцене «Как это работает» — токеном, а не хардкодом:
+     на тёмной теме почти чёрная рамка сливалась с фоном, и от телефона
+     оставались только экраны, висящие в воздухе. */
+  --phone-frame: #151517;
+  --phone-shadow: 0 30px 50px -24px rgba(0, 0, 0, 0.5);
 }
 
 /* Системная тёмная тема — только если пользователь не выбрал светлую вручную. */
@@ -44,6 +50,11 @@
     --gold: #e0bd5a;
     --danger: #e15c4d;
     --on-accent: #07120c;
+
+    /* Тёмная тема: корпус светлее фона, плюс волосяная кромка и мягкое
+       свечение — чёрная тень на тёмном фоне силуэт не рисует. */
+    --phone-frame: #333b36;
+    --phone-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22), 0 30px 60px -26px rgba(0, 0, 0, 0.85), 0 0 70px -28px rgba(53, 176, 110, 0.4);
   }
 }
 
@@ -64,6 +75,11 @@
   --gold: #e0bd5a;
   --danger: #e15c4d;
   --on-accent: #07120c;
+
+  /* Тёмная тема: корпус светлее фона, плюс волосяная кромка и мягкое
+     свечение — чёрная тень на тёмном фоне силуэт не рисует. */
+  --phone-frame: #333b36;
+  --phone-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22), 0 30px 60px -26px rgba(0, 0, 0, 0.85), 0 0 70px -28px rgba(53, 176, 110, 0.4);
 }
 
 @theme inline {
@@ -84,12 +100,15 @@
   --color-danger: var(--danger);
   --color-on-accent: var(--on-accent);
 
-  /* Переменные подставляет next/font в layout; системный стек остаётся
-     запасным вариантом, если файл шрифта не догрузится. */
-  --font-sans: var(--font-brand-sans), -apple-system, BlinkMacSystemFont,
-    "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
-  --font-mono: var(--font-brand-mono), ui-monospace, "SF Mono", Menlo, Consolas,
-    monospace;
+  /* Бренд-бук §04 «Типографика» задаёт системный гротеск и системный
+     моноширинный — ровно те стеки, которыми рисуют iOS- и Android-приложения
+     (SwiftUI `.system` → SF Pro, Compose `FontFamily.Default` → Roboto;
+     моно — SF Mono / Menlo). Лендинг берёт их же, чтобы сайт и продукт
+     читались одним шрифтом; веб-шрифты не подключаются вовсе, поэтому
+     нет ни лишних запросов, ни сдвига текста при подмене начертания. */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI",
+    Roboto, Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 }
 
 @layer base {
@@ -182,6 +201,11 @@
     --amber: #e4a24e;
     --amber-deep: #e4a24e;
     --on-accent: #07120c;
+
+    /* Тёмная тема: корпус светлее фона, плюс волосяная кромка и мягкое
+       свечение — чёрная тень на тёмном фоне силуэт не рисует. */
+    --phone-frame: #333b36;
+    --phone-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22), 0 30px 60px -26px rgba(0, 0, 0, 0.85), 0 0 70px -28px rgba(53, 176, 110, 0.4);
 
     background: var(--ground);
     color: var(--ink);

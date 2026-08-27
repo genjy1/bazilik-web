@@ -63,7 +63,7 @@ export default function SpecialistsPage() {
         <ExistingClientsSection />
 
         <SectionDivider />
-        <CtaSection final={PROS.final} hideRoute="/specialists" />
+        <CtaSection final={PROS.final} hideRoutes={["/specialists"]} />
       </main>
 
       <Footer groups={FOOTER_GROUPS_SPECIALISTS} />

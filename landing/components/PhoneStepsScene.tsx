@@ -5,11 +5,11 @@ import { useRef, type ReactNode } from "react";
 import { HOME } from "@/lib/content";
 import {
   ScrollTrigger,
-  clamp01,
   gsap,
   remap,
   useIsomorphicLayoutEffect,
 } from "@/lib/gsap";
+import { BrandMark } from "./BrandMark";
 import { SectionKicker } from "./SectionKicker";
 import { Ingredient } from "./ui/Ingredient";
 import type { IngredientId } from "@/lib/ingredients";
@@ -38,25 +38,144 @@ const STAGE_QUERIES = {
   flat: "(prefers-reduced-motion: reduce), (max-width: 767px)",
 } as const;
 
+/** Габариты макета телефона; высота нужна ещё и подгонке сцены под экран. */
+const SHELL_SIZE = "h-[500px] w-[244px]";
+const PHONE_H = 500;
+const RING_RADIUS = 320;
+const PERSPECTIVE = 1400;
+/**
+ * Передняя грань кольца вынесена на себя к камере, поэтому рисуется крупнее
+ * своей коробки — подгонка обязана считать по видимой высоте, иначе телефон
+ * вылезает за сцену ровно на этот запас (так он и обрезался снизу).
+ */
+const DEPTH_GAIN = PERSPECTIVE / (PERSPECTIVE - RING_RADIUS);
+/** Воздух над и под телефоном, который подгонка обязана сохранить. */
+const FIT_GUTTER = 72;
+
+/**
+ * Раскадровка кольца: на «полке» телефон стоит лицом к зрителю и не двигается,
+ * между полками кольцо доворачивается на 120°. Контент экрана рисуется внутри
+ * своей полки и успевает замереть до следующего поворота — раньше окна контента
+ * наезжали на поворот, и экран приезжал к зрителю недорисованным: список
+ * дочёркивался уже после того, как телефон прошёл центр.
+ *
+ * Полки: 0 — [0, 0.18], 1 — [0.36, 0.58], 2 — [0.76, 1].
+ */
+const TURNS = [
+  [0.18, 0.36],
+  [0.58, 0.76],
+] as const;
+
+/** Границы шагов для трёхсегментного индикатора в шапке. */
+const STEP_SPANS = [
+  [0, 0.36],
+  [0.36, 0.76],
+  [0.76, 1],
+] as const;
+
+const smoothstep = (t: number) => t * t * (3 - 2 * t);
+
 type ShoppingItem = { id: IngredientId; name: string };
 
 const SHOPPING: readonly ShoppingItem[] = [
   { id: "chicken", name: "Куриное филе" },
   { id: "tomato", name: "Помидоры" },
+  { id: "pasta", name: "Паста" },
+  { id: "onion", name: "Лук" },
   { id: "basil", name: "Базилик" },
   { id: "garlic", name: "Чеснок" },
 ];
 
-const COOK_STEPS = ["Обжарить курицу", "Добавить томаты", "Всыпать базилик", "Подавать"];
+const COOK_STEPS = [
+  "Отварить пасту",
+  "Обжарить курицу",
+  "Добавить томаты",
+  "Всыпать базилик",
+  "Подавать",
+];
 
-const GOALS_PREVIEW = ["Похудение", "Поддержание", "Набор массы"];
+/** Цель по питанию — одиночный выбор. */
+const DIET_GOALS = [
+  { label: "Похудение" },
+  { label: "Поддержание", on: true },
+  { label: "Набор массы" },
+];
+
+/**
+ * Что важно в быту — множественный выбор. Для «дома» это и есть настоящая
+ * мотивация: цель по КБЖУ вторична рядом с «накормить семью» и «тратить меньше».
+ */
+const LIFE_GOALS = [
+  { label: "Накормить семью", on: true },
+  { label: "Меньше готовить" },
+  { label: "Меньше закупаться" },
+  { label: "Экономить деньги", on: true },
+];
+
+const productWord = (n: number) => {
+  const tail10 = n % 10;
+  const tail100 = n % 100;
+  if (tail10 === 1 && tail100 !== 11) return "продукт";
+  if (tail10 >= 2 && tail10 <= 4 && (tail100 < 12 || tail100 > 14)) return "продукта";
+  return "продуктов";
+};
 
 function PhoneShell({ children }: { children: ReactNode }) {
   return (
-    <div className="relative h-[420px] w-[204px] shrink-0 rounded-[36px] border-[6px] border-[#151517] bg-[#151517] shadow-[0_30px_50px_-24px_rgba(0,0,0,0.5)] md:h-[472px] md:w-[228px]">
-      <div className="absolute top-0 left-1/2 z-10 h-5 w-24 -translate-x-1/2 rounded-b-2xl bg-[#151517]" />
+    <div
+      className={`relative ${SHELL_SIZE} shrink-0 rounded-[36px] border-[6px] border-[var(--phone-frame)] bg-[var(--phone-frame)] shadow-[var(--phone-shadow)]`}
+    >
+      <div className="absolute top-0 left-1/2 z-10 h-5 w-24 -translate-x-1/2 rounded-b-2xl bg-[var(--phone-frame)]" />
       <div className="relative h-full w-full overflow-hidden rounded-[30px] bg-ground">
         {children}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Задняя крышка. Без неё грани, повёрнутые от зрителя, показывали свой же экран
+ * зеркально — читался вывернутый текст, и карусель выглядела сломанной.
+ */
+function PhoneBack() {
+  return (
+    <div
+      className={`relative ${SHELL_SIZE} shrink-0 rounded-[36px] border-[6px] border-[var(--phone-frame)] bg-[var(--phone-frame)] shadow-[var(--phone-shadow)]`}
+    >
+      {/* Крышка берёт цвет рамки телефона, а рельеф даёт полупрозрачный
+          градиент — тогда она остаётся правильной и в тёмной теме. */}
+      <div className="relative h-full w-full overflow-hidden rounded-[30px] bg-[var(--phone-frame)]">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-[linear-gradient(160deg,rgba(255,255,255,0.1)_0%,rgba(0,0,0,0.34)_65%)]"
+        />
+        <div className="absolute top-5 left-5 grid size-12 place-items-center rounded-2xl bg-black/35">
+          <span className="size-5 rounded-full bg-black/60 ring-1 ring-white/10" />
+        </div>
+        <BrandMark className="absolute top-1/2 left-1/2 size-10 -translate-x-1/2 -translate-y-1/2 opacity-20" />
+      </div>
+    </div>
+  );
+}
+
+/** Грань карусели: экран спереди, крышка сзади, обе с отсечкой изнанки. */
+function PhoneSlot({ index, children }: { index: number; children: ReactNode }) {
+  return (
+    <div
+      data-phone={index}
+      className="absolute inset-0"
+      style={{ transformStyle: "preserve-3d" }}
+    >
+      <div data-face className="absolute inset-0" style={{ backfaceVisibility: "hidden" }}>
+        <PhoneShell>{children}</PhoneShell>
+      </div>
+      <div
+        data-face
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+      >
+        <PhoneBack />
       </div>
     </div>
   );
@@ -71,13 +190,31 @@ function ScreenHeader({ step, title }: { step: string; title: string }) {
   );
 }
 
-/** Экран 1 — вводные: сколько человек и какая цель. Статичный, без скролл-прогресса. */
+function FieldLabel({ children }: { children: ReactNode }) {
+  return (
+    <div className="font-mono text-[9px] tracking-[0.12em] text-muted uppercase">{children}</div>
+  );
+}
+
+function Chip({ label, on = false }: { label: string; on?: boolean }) {
+  return (
+    <span
+      className={`rounded-full border px-2.5 py-[3px] text-[10px] font-bold tracking-tight ${
+        on ? "border-transparent bg-accent text-on-accent" : "border-line text-muted"
+      }`}
+    >
+      {label}
+    </span>
+  );
+}
+
+/** Экран 1 — вводные: сколько человек и какие цели. Статичный, без прогресса. */
 function AudienceScreen() {
   return (
-    <div className="flex h-full flex-col gap-5 p-5">
+    <div className="flex h-full flex-col p-5">
       <ScreenHeader step="Шаг 1" title="Расскажи о себе" />
 
-      <div className="rounded-2xl border border-line bg-surface p-3.5">
+      <div className="mt-4 rounded-2xl border border-line bg-surface p-3.5">
         <div className="flex items-center gap-1.5 font-mono text-[9px] tracking-[0.12em] text-muted uppercase">
           <Users size={12} aria-hidden="true" /> На сколько человек
         </div>
@@ -92,20 +229,20 @@ function AudienceScreen() {
         </div>
       </div>
 
-      <div>
-        <div className="font-mono text-[9px] tracking-[0.12em] text-muted uppercase">Цель</div>
-        <div className="mt-2.5 flex flex-wrap gap-1.5">
-          {GOALS_PREVIEW.map((g, i) => (
-            <span
-              key={g}
-              className={`rounded-full border px-2.5 py-1 text-[10.5px] font-bold tracking-tight ${
-                i === 1
-                  ? "border-transparent bg-accent text-on-accent"
-                  : "border-line text-muted"
-              }`}
-            >
-              {g}
-            </span>
+      <div className="mt-4">
+        <FieldLabel>Цель</FieldLabel>
+        <div className="mt-2 flex flex-wrap gap-1.5">
+          {DIET_GOALS.map((g) => (
+            <Chip key={g.label} label={g.label} on={g.on} />
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-3.5">
+        <FieldLabel>Что важно</FieldLabel>
+        <div className="mt-2 flex flex-wrap gap-1.5">
+          {LIFE_GOALS.map((g) => (
+            <Chip key={g.label} label={g.label} on={g.on} />
           ))}
         </div>
       </div>
@@ -124,10 +261,10 @@ function AudienceScreen() {
  */
 function ShoppingScreen({ animated = false }: { animated?: boolean }) {
   return (
-    <div className="flex h-full flex-col gap-4 p-5">
+    <div className="flex h-full flex-col p-5">
       <ScreenHeader step="Шаг 2" title="Купи по готовому списку" />
 
-      <ul className="flex flex-col gap-2">
+      <ul className="mt-4 flex flex-col gap-1.5">
         {SHOPPING.map((item) => (
           <li
             key={item.id}
@@ -153,8 +290,11 @@ function ShoppingScreen({ animated = false }: { animated?: boolean }) {
         ))}
       </ul>
 
-      <div className="mt-auto flex items-center gap-1.5 font-mono text-[9.5px] tracking-[0.1em] text-muted uppercase">
-        <ShoppingCart size={12} aria-hidden="true" /> {SHOPPING.length} продукта · 1 поход
+      <div className="mt-auto flex items-center gap-2 rounded-xl border border-line bg-surface px-3 py-2.5">
+        <ShoppingCart size={13} className="text-accent" aria-hidden="true" />
+        <span className="font-mono text-[9.5px] tracking-[0.1em] text-muted uppercase">
+          {SHOPPING.length} {productWord(SHOPPING.length)} · 1 поход
+        </span>
       </div>
     </div>
   );
@@ -163,10 +303,19 @@ function ShoppingScreen({ animated = false }: { animated?: boolean }) {
 /** Экран 3 — готовка по шагам. Тот же приём: шаги отмечаются по скролл-прогрессу. */
 function CookScreen({ animated = false }: { animated?: boolean }) {
   return (
-    <div className="flex h-full flex-col gap-4 p-5">
+    <div className="flex h-full flex-col p-5">
       <ScreenHeader step="Шаг 3" title="Готовь по шагам" />
 
-      <ol className="flex flex-col gap-2">
+      <div className="mt-4 rounded-2xl border border-line bg-surface p-3.5">
+        <div className="text-[13px] font-bold tracking-tight text-ink">Курица с томатами</div>
+        <div className="mt-1.5 flex items-center gap-2 font-mono text-[9px] tracking-[0.1em] text-muted uppercase">
+          <span>25 мин</span>
+          <span className="size-1 rounded-full bg-line" aria-hidden="true" />
+          <span>4 порции</span>
+        </div>
+      </div>
+
+      <ol className="mt-3.5 flex flex-col gap-1.5">
         {COOK_STEPS.map((step, i) => (
           <li
             key={step}
@@ -198,73 +347,108 @@ function CookScreen({ animated = false }: { animated?: boolean }) {
   );
 }
 
-const RING_RADIUS = 264;
-
 export function PhoneStepsScene() {
   const rootRef = useRef<HTMLElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLElement>(null);
+  const fitRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
 
   useIsomorphicLayoutEffect(() => {
     const root = rootRef.current;
     const stage = stageRef.current;
+    const header = headerRef.current;
+    const fit = fitRef.current;
     const ring = ringRef.current;
-    if (!root || !stage || !ring) return;
+    if (!root || !stage || !header || !fit || !ring) return;
 
     const captions = Array.from(root.querySelectorAll<HTMLElement>("[data-caption]"));
-    const progressFill = root.querySelector<HTMLElement>("[data-progress]");
+    const segments = Array.from(root.querySelectorAll<HTMLElement>("[data-progress-seg]"));
     const slots = Array.from(ring.querySelectorAll<HTMLElement>("[data-phone]"));
+    const faces = slots.map((slot) =>
+      Array.from(slot.querySelectorAll<HTMLElement>("[data-face]")),
+    );
     const shopRows = Array.from(ring.querySelectorAll<HTMLElement>("[data-shop-row]"));
     const shopChecks = Array.from(ring.querySelectorAll<HTMLElement>("[data-shop-check]"));
     const cookRows = Array.from(ring.querySelectorAll<HTMLElement>("[data-cook-row]"));
     const cookMarks = Array.from(ring.querySelectorAll<HTMLElement>("[data-cook-mark]"));
     const cookDone = ring.querySelector<HTMLElement>("[data-cook-done]");
 
+    /** Телефон выше свободного места — ужимаем сцену целиком, а не режем её. */
+    function fitScene() {
+      const gutter = Math.min(FIT_GUTTER, stage!.clientHeight * 0.09);
+      const avail = stage!.clientHeight - header!.offsetHeight - gutter;
+      const scale = Math.max(0.45, Math.min(1, avail / (PHONE_H * DEPTH_GAIN)));
+      fit!.style.transform = `scale(${scale})`;
+    }
+
     function applyOverlay(p: number) {
+      // Подпись держится всю свою полку: гаснет в начале своего поворота,
+      // следующая загорается во второй половине того же поворота.
       captions.forEach((el, i) => {
-        const third = 1 / captions.length;
-        const start = i * third;
-        const end = start + third;
-        const fade = Math.min(remap(p, start, start + 0.06), 1 - remap(p, end - 0.06, end));
-        el.style.opacity = String(i === captions.length - 1 ? remap(p, start, start + 0.06) : fade);
+        const inTurn = TURNS[i - 1];
+        const outTurn = TURNS[i];
+        const appear = inTurn
+          ? remap(p, inTurn[0] + (inTurn[1] - inTurn[0]) * 0.45, inTurn[1])
+          : 1;
+        const leave = outTurn
+          ? 1 - remap(p, outTurn[0], outTurn[0] + (outTurn[1] - outTurn[0]) * 0.55)
+          : 1;
+        const o = Math.min(appear, leave);
+        el.style.opacity = String(o);
+        el.style.transform = `translateY(${(1 - o) * 6}px)`;
       });
 
-      if (progressFill) progressFill.style.transform = `scaleX(${clamp01(p)})`;
+      // Индикатор: пройденные шаги залиты целиком, текущий заполняется. Даже
+      // в самом начале активный сегмент виден — иначе шапка читается пустой.
+      segments.forEach((el, i) => {
+        const [from, to] = STEP_SPANS[i];
+        const fill = remap(p, from, to);
+        const active = p >= from && p < to;
+        el.style.transform = `scaleX(${active ? 0.12 + fill * 0.88 : fill})`;
+      });
 
-      // Список покупок — окно шага 2, галочки проставляются построчно.
+      // Список покупок — рисуется на полке шага 2 и замирает до поворота.
       shopRows.forEach((el, i) => {
-        const rf = remap(p, 0.38 + i * 0.045, 0.48 + i * 0.045);
+        const rf = remap(p, 0.375 + i * 0.016, 0.425 + i * 0.016);
         el.style.opacity = String(rf);
         el.style.transform = `translateX(${(1 - rf) * -8}px)`;
       });
       shopChecks.forEach((el, i) => {
-        el.style.opacity = String(remap(p, 0.42 + i * 0.045, 0.52 + i * 0.045));
+        el.style.opacity = String(remap(p, 0.4 + i * 0.016, 0.445 + i * 0.016));
       });
 
-      // Шаги готовки — окно шага 3, отмечаются по одному, последний = «готово».
+      // Шаги готовки — полка шага 3, отмечаются по одному, в конце «готово».
       cookRows.forEach((el, i) => {
-        const rf = remap(p, 0.72 + i * 0.045, 0.8 + i * 0.045);
+        const rf = remap(p, 0.765 + i * 0.02, 0.815 + i * 0.02);
         el.style.opacity = String(rf);
         el.style.transform = `translateX(${(1 - rf) * -8}px)`;
       });
       cookMarks.forEach((el, i) => {
-        const done = remap(p, 0.76 + i * 0.045, 0.82 + i * 0.045);
+        const done = remap(p, 0.785 + i * 0.02, 0.825 + i * 0.02);
         el.style.borderColor = done > 0.5 ? "transparent" : "";
         el.style.background = done > 0.5 ? "var(--accent)" : "";
         el.style.color = done > 0.5 ? "var(--on-accent)" : "";
       });
-      if (cookDone) cookDone.style.opacity = String(remap(p, 0.92, 1));
+      if (cookDone) cookDone.style.opacity = String(remap(p, 0.885, 0.935));
 
-      // Карусель: телефон i развёрнут «к камере», когда его базовый угол
-      // (i * 120°) компенсирован вращением кольца — та же тригонометрия
-      // определяет, насколько остальные телефоны притемнены сбоку.
-      const ringDeg = -p * 240;
+      // Карусель: кольцо стоит на полке и доворачивается на 120° между ними.
+      // Та же тригонометрия говорит, насколько грань отвёрнута, — по ней гасим
+      // боковые телефоны.
+      const ringDeg =
+        -120 *
+        (smoothstep(remap(p, TURNS[0][0], TURNS[0][1])) +
+          smoothstep(remap(p, TURNS[1][0], TURNS[1][1])));
       ring!.style.transform = `rotateY(${ringDeg}deg)`;
       slots.forEach((el, i) => {
         const angle = (i * 120 + ringDeg) * (Math.PI / 180);
         const factor = (Math.cos(angle) + 1) / 2;
-        el.style.opacity = String(0.35 + factor * 0.65);
-        el.style.filter = `brightness(${0.7 + factor * 0.3})`;
+        const opacity = String(0.5 + factor * 0.5);
+        const filter = `brightness(${0.72 + factor * 0.28})`;
+        faces[i].forEach((face) => {
+          face.style.opacity = opacity;
+          face.style.filter = filter;
+        });
       });
     }
 
@@ -280,20 +464,34 @@ export function PhoneStepsScene() {
         el.style.transform = `rotateY(${i * 120}deg) translateZ(${RING_RADIUS}px)`;
       });
 
+      fitScene();
       applyOverlay(0);
+
+      // Высота шапки меняется и после первого кадра — от подгрузки шрифта до
+      // смены высоты окна. Меряем её наблюдателем, иначе подгонка один раз
+      // считает по недоверстанной шапке и телефон упирается в края сцены.
+      const ro = new ResizeObserver(() => fitScene());
+      ro.observe(header!);
+      ro.observe(stage!);
 
       const st = ScrollTrigger.create({
         trigger: stage,
         start: "top top",
-        end: () => "+=" + window.innerHeight * 2.2,
+        end: () => "+=" + window.innerHeight * 2.4,
         pin: stage,
         anticipatePin: 1,
         invalidateOnRefresh: true,
         onUpdate: (self) => applyOverlay(self.progress),
-        onRefresh: (self) => applyOverlay(self.progress),
+        onRefresh: (self) => {
+          fitScene();
+          applyOverlay(self.progress);
+        },
       });
 
-      return () => st.kill();
+      return () => {
+        ro.disconnect();
+        st.kill();
+      };
     });
 
     // Плоский (мобиль/reduced) вариант — просто конечное состояние оверлеев,
@@ -307,11 +505,9 @@ export function PhoneStepsScene() {
 
   return (
     <section ref={rootRef} id="how" className="relative">
-      <div className="mx-auto max-w-[1180px] px-6 pt-16 md:pt-24">
-        <SectionKicker n="04" title="Три шага — и неделя спланирована" />
-      </div>
-
-      {/* Десктоп: пин-сцена с 3D-каруселью телефонов. */}
+      {/* Десктоп: пин-сцена с 3D-каруселью телефонов. Заголовок секции живёт
+          внутри пина — иначе на закреплённом экране висела одна подпись без
+          всякой привязки, а до пина под заголовком зияла пустая полоса. */}
       <div
         ref={stageRef}
         className="relative hidden h-screen w-full overflow-hidden bg-ground motion-safe:md:block"
@@ -326,52 +522,66 @@ export function PhoneStepsScene() {
         />
 
         <div className="relative mx-auto flex h-full max-w-[1180px] flex-col px-6">
-          <header className="pt-20 md:pt-24">
-            <div className="relative h-6 max-w-[52ch]">
+          <header ref={headerRef} className="pt-[clamp(76px,8.5vh,100px)]">
+            <div className="flex flex-wrap items-baseline gap-3.5">
+              <span className="font-mono text-[13px] font-bold tracking-[0.14em] text-accent">
+                04
+              </span>
+              <h2 className="text-[clamp(28px,3.6vw,46px)]">
+                Три шага — и неделя спланирована
+              </h2>
+            </div>
+
+            <div className="relative mt-4 h-7 max-w-[52ch]">
               {HOME.process.map((step, i) => (
                 <p
                   key={step.caption}
                   data-caption
-                  className="absolute inset-x-0 top-0 text-[15px] text-muted"
+                  className="absolute inset-x-0 top-0 flex items-baseline gap-2.5 text-[15px] text-muted"
                   style={{ opacity: i === 0 ? 1 : 0 }}
                 >
+                  <span className="font-mono text-[11px] font-bold tracking-[0.14em] text-accent">
+                    0{i + 1}
+                  </span>
                   {step.caption}
                 </p>
               ))}
             </div>
 
-            <div className="mt-5 h-[3px] w-44 overflow-hidden rounded-full bg-line">
-              <div
-                data-progress
-                className="h-full origin-left bg-accent"
-                style={{ transform: "scaleX(0)" }}
-              />
+            <div className="mt-3 flex items-center gap-1.5">
+              {HOME.process.map((step) => (
+                <div
+                  key={step.caption}
+                  className="h-[3px] w-12 overflow-hidden rounded-full bg-line"
+                >
+                  <div
+                    data-progress-seg
+                    className="h-full origin-left rounded-full bg-accent"
+                    style={{ transform: "scaleX(0)" }}
+                  />
+                </div>
+              ))}
             </div>
           </header>
 
-          <div
-            className="relative flex flex-1 items-center justify-center"
-            style={{ perspective: "1400px" }}
-          >
-            <div
-              ref={ringRef}
-              className="relative h-[420px] w-[204px] md:h-[472px] md:w-[228px]"
-              style={{ transformStyle: "preserve-3d" }}
-            >
-              <div data-phone={0} className="absolute inset-0">
-                <PhoneShell>
-                  <AudienceScreen />
-                </PhoneShell>
-              </div>
-              <div data-phone={1} className="absolute inset-0">
-                <PhoneShell>
-                  <ShoppingScreen animated />
-                </PhoneShell>
-              </div>
-              <div data-phone={2} className="absolute inset-0">
-                <PhoneShell>
-                  <CookScreen animated />
-                </PhoneShell>
+          <div className="relative flex flex-1 items-center justify-center">
+            <div ref={fitRef} style={{ transform: "scale(1)" }}>
+              <div style={{ perspective: `${PERSPECTIVE}px` }}>
+                <div
+                  ref={ringRef}
+                  className={`relative ${SHELL_SIZE}`}
+                  style={{ transformStyle: "preserve-3d" }}
+                >
+                  <PhoneSlot index={0}>
+                    <AudienceScreen />
+                  </PhoneSlot>
+                  <PhoneSlot index={1}>
+                    <ShoppingScreen animated />
+                  </PhoneSlot>
+                  <PhoneSlot index={2}>
+                    <CookScreen animated />
+                  </PhoneSlot>
+                </div>
               </div>
             </div>
           </div>
@@ -380,6 +590,9 @@ export function PhoneStepsScene() {
 
       {/* Мобиль / prefers-reduced-motion: статичная колонка тех же трёх экранов. */}
       <div className="motion-safe:md:hidden">
+        <div className="mx-auto max-w-[1180px] px-6 pt-16 md:pt-24">
+          <SectionKicker n="04" title="Три шага — и неделя спланирована" />
+        </div>
         <div className="mx-auto flex max-w-[1180px] flex-col items-center gap-8 px-6 py-12">
           {HOME.process.map((step, i) => (
             <div key={step.caption} className="flex flex-col items-center gap-4">
