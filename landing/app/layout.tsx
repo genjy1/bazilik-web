@@ -3,6 +3,7 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { InlineScript } from "@/components/InlineScript";
 import { HashScrollManager } from "@/components/HashScrollManager";
 import { YandexMetrika } from "@/components/YandexMetrika";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 /**
@@ -19,12 +20,29 @@ const DESCRIPTION =
   "Базилик — операционный слой планирования питания. Неделя собирается на переиспользование ингредиентов, список покупок появляется сам, план пересобирается под остатки. Без ручного учёта запасов.";
 
 export const metadata: Metadata = {
+  /**
+   * Базовый адрес для всех URL-полей метаданных ниже и в дочерних сегментах:
+   * с ним `canonical` и `og:url` пишутся относительными путями, а абсолютный
+   * адрес собирается в одном месте. Без него относительный путь в таком поле
+   * — ошибка сборки, а не тихая деградация.
+   */
+  metadataBase: new URL(SITE_URL),
   title: "Базилик — готовь то, что уже есть",
   description: DESCRIPTION,
+  /**
+   * Самоссылающийся canonical. У лендинга нет дублей по параметрам, но он
+   * фиксирует одну версию адреса — иначе `/`, `/?utm_source=...` и вариант с
+   * www расходятся как разные страницы с одинаковым текстом.
+   */
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Базилик — готовь то, что уже есть",
     description:
       "Планирование питания без ручного учёта: неделя на переиспользование, список сам, план подстраивается под остатки.",
+    url: "/",
+    siteName: "Базилик",
     locale: "ru_RU",
     type: "website",
   },

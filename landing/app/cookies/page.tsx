@@ -7,6 +7,22 @@ import { FOOTER_GROUPS_LEGAL } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Использование cookie — Базилик",
   description: "Информация об использовании файлов cookie на сайте Базилик.",
+  alternates: {
+    canonical: "/cookies",
+  },
+  /**
+   * Блок нужен целиком ради `url`: дочерний `openGraph` не сливается с
+   * родительским, а замещает его. Без своего блока страница наследовала бы
+   * `og:url` корневого layout и представлялась бы главной при репосте.
+   */
+  openGraph: {
+    title: "Использование cookie — Базилик",
+    description: "Информация об использовании файлов cookie на сайте Базилик.",
+    url: "/cookies",
+    siteName: "Базилик",
+    locale: "ru_RU",
+    type: "website",
+  },
 };
 
 export default function CookiesPage() {
