@@ -150,8 +150,8 @@
     "semantic_hash": "959340c9a413a1577361321a7b60bbb0"
   },
   "components/ui/Counter.tsx": {
-    "mtime": 1787601102.0941737,
-    "ast_hash": "da7c2ba8b893871d68ad404136cf005f",
+    "mtime": 1787600958.110319,
+    "ast_hash": "dcb5e601709a015fd00fa6c742ddde44",
     "semantic_hash": ""
   },
   "components/ui/Parallax.tsx": {
@@ -185,8 +185,8 @@
     "semantic_hash": ""
   },
   "lib/gsap.ts": {
-    "mtime": 1787601090.6064072,
-    "ast_hash": "a8d6e9320925fa9f51529039488113d8",
+    "mtime": 1787600939.1533194,
+    "ast_hash": "f8d7e5219c90af205276cc0ddd78e9e5",
     "semantic_hash": ""
   },
   "lib/images.ts": {
@@ -345,8 +345,8 @@
     "semantic_hash": ""
   },
   "components/GoalsSection.tsx": {
-    "mtime": 1787601113.3543797,
-    "ast_hash": "c48343042233a4086653ea11b955f493",
+    "mtime": 1787600986.008115,
+    "ast_hash": "e3a3861010f4e5fa62730f4a3090b654",
     "semantic_hash": ""
   },
   "components/MarketplaceSection.tsx": {

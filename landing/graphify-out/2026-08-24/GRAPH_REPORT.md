@@ -1,11 +1,11 @@
 # Graph Report - landing  (2026-08-24)
 
 ## Corpus Check
-- 105 files · ~122,310 words
+- 105 files · ~122,435 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 720 nodes · 1022 edges · 46 communities (41 shown, 5 thin omitted)
+- 721 nodes · 1029 edges · 45 communities (40 shown, 5 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 20 edges (avg confidence: 0.56)
 - Token cost: 0 input · 0 output
 
@@ -15,19 +15,19 @@
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- PainChaos.tsx
+- GoalsSection.tsx
 - Anti-Slop Frontend Design Skill (design-taste-frontend)
 - compilerOptions
 - PlanConfigurator.tsx
-- gsap.ts
+- Hero.tsx
 - devDependencies
 - 001 — Fix scale(0) entrance on engine icon marks
 - Three.js Fundamentals Skill
-- specialists/page.tsx
+- gsap.ts
 - PhoneStepsScene.tsx
 - layout.tsx
-- EngineCards.tsx
-- Nav.tsx
+- Engine.tsx
+- cookies/page.tsx
 - BrandMark3D.tsx
 - eslint.config.mjs
 - next.config.ts
@@ -36,19 +36,18 @@
 - Animation Standards Reference
 - Design System: Базилик (Bazilik)
 - Animation Audit Playbook
-- Chip.tsx
+- AudienceHero.tsx
 - Apple Design
 - Workflow
 - Glossary
 - Finding Animation Opportunities
-- app/page.tsx
-- Reveal.tsx
+- specialists/page.tsx
+- Nav.tsx
 - Лендинг B2C — визуал и анимации
 - Лендинг B2B2C
 - Product
 - Лендинг B2C
 - The list
-- GoalsSection.tsx
 - Design Engineering
 - content.ts
 - Component Building Principles
@@ -75,16 +74,16 @@
 10. `useLoopWhileVisible()` - 12 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `FillRing()` --calls--> `isPastScrollStart()`  [EXTRACTED]
+  components/GoalsSection.tsx → lib/gsap.ts
+- `WeekRing()` --calls--> `isPastScrollStart()`  [EXTRACTED]
+  components/GoalsSection.tsx → lib/gsap.ts
 - `DinnerScene()` --calls--> `useLoopWhileVisible()`  [EXTRACTED]
   components/PainChaos.tsx → lib/gsap.ts
 - `ForgotScene()` --calls--> `useLoopWhileVisible()`  [EXTRACTED]
   components/PainChaos.tsx → lib/gsap.ts
 - `ExpiryScene()` --calls--> `useLoopWhileVisible()`  [EXTRACTED]
   components/PainChaos.tsx → lib/gsap.ts
-- `ReceiptScene()` --calls--> `useLoopWhileVisible()`  [EXTRACTED]
-  components/PainChaos.tsx → lib/gsap.ts
-- `CloneScene()` --calls--> `useLoopWhileVisible()`  [EXTRACTED]
-  components/PainList.tsx → lib/gsap.ts
 
 ## Import Cycles
 - None detected.
@@ -94,11 +93,11 @@
 - **Three.js Skill Family (animation, fundamentals, geometry, interaction, lighting, loaders, materials)** — _agents_skills_threejs_animation_skill_skill, _agents_skills_threejs_fundamentals_skill_skill, _agents_skills_threejs_geometry_skill_skill, _agents_skills_threejs_interaction_skill_skill, _agents_skills_threejs_lighting_skill_skill, _agents_skills_threejs_loaders_skill_skill, _agents_skills_threejs_materials_skill_skill [EXTRACTED 1.00]
 - **Project Root Documentation Set (AGENTS.md, CLAUDE.md, README.md)** — agents_doc, claude_doc, readme_doc [EXTRACTED 1.00]
 
-## Communities (46 total, 5 thin omitted)
+## Communities (45 total, 5 thin omitted)
 
-### Community 0 - "PainChaos.tsx"
-Cohesion: 0.17
-Nodes (16): DinnerScene(), ExpiryScene(), ForgotScene(), ReceiptScene(), SCENES, TILTS, CloneScene(), ExpiryScene() (+8 more)
+### Community 0 - "GoalsSection.tsx"
+Cohesion: 0.06
+Nodes (45): ComparisonSection(), Row, ExistingClientsSection(), FillRing(), GoalsMode, GoalsSection(), MODES, RING_FILL (+37 more)
 
 ### Community 1 - "Anti-Slop Frontend Design Skill (design-taste-frontend)"
 Cohesion: 0.10
@@ -109,12 +108,12 @@ Cohesion: 0.07
 Nodes (28): dom, dom.iterable, esnext, **/*.mts, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules (+20 more)
 
 ### Community 3 - "PlanConfigurator.tsx"
-Cohesion: 0.13
-Nodes (17): PlanConfigurator(), AnimatedNumber(), Props, BASE, Config, DEFAULT_CONFIG, Diet, DIETS (+9 more)
+Cohesion: 0.15
+Nodes (16): PlanConfigurator(), AnimatedNumber(), BASE, Config, DEFAULT_CONFIG, Diet, DIETS, DISHES (+8 more)
 
-### Community 4 - "gsap.ts"
-Cohesion: 0.07
-Nodes (32): AudienceHero(), CheckItem, BasilikChain(), Props, BasilikToggleButton(), JourneyBand(), NODES, PATH_D (+24 more)
+### Community 4 - "Hero.tsx"
+Cohesion: 0.08
+Nodes (23): CheckItem, JourneyBand(), NODES, PATH_D, playWhileVisible(), SHAPES, HomePanel(), week (+15 more)
 
 ### Community 5 - "devDependencies"
 Cohesion: 0.05
@@ -128,25 +127,25 @@ Nodes (39): 001 — Fix scale(0) entrance on engine icon marks, Boundaries, Prob
 Cohesion: 0.27
 Nodes (16): Three.js Animation Skill, Three.js Fundamentals Skill, Three.js Geometry Skill, Three.js Interaction Skill, Three.js Lighting Skill, Three.js Loaders Skill, Three.js Materials Skill, Three.js AnimationMixer/AnimationClip/AnimationAction System (+8 more)
 
-### Community 8 - "specialists/page.tsx"
-Cohesion: 0.15
-Nodes (11): metadata, ExistingClientsSection(), HIGHLIGHTS, MarketplaceSection(), PainList(), SectionDivider(), CheckItem, WinWinSection() (+3 more)
+### Community 8 - "gsap.ts"
+Cohesion: 0.16
+Nodes (12): lerp(), lerp3(), MACRO_DOT, Move, MOVES, V3, Props, ASSEMBLY (+4 more)
 
 ### Community 9 - "PhoneStepsScene.tsx"
 Cohesion: 0.06
-Nodes (33): AmbientIngredients(), ITEMS, COOK_STEPS, DIET_GOALS, LIFE_GOALS, productWord(), SHOPPING, ShoppingItem (+25 more)
+Nodes (29): COOK_STEPS, DIET_GOALS, LIFE_GOALS, productWord(), SHOPPING, ShoppingItem, ShoppingScreen(), STAGE_QUERIES (+21 more)
 
 ### Community 10 - "layout.tsx"
 Cohesion: 0.22
 Nodes (8): metadata, viewport, CookieConsent(), HashScrollManager(), scrollToHash(), targetFromHash(), InlineScript(), YandexMetrika()
 
-### Community 11 - "EngineCards.tsx"
-Cohesion: 0.21
-Nodes (7): EngineCards(), icons, BrandMark3D, BrandScene(), subscribe(), ENGINE, EngineIcon
+### Community 11 - "Engine.tsx"
+Cohesion: 0.38
+Nodes (4): EngineCards(), BrandMark3D, BrandScene(), subscribe()
 
-### Community 12 - "Nav.tsx"
-Cohesion: 0.16
-Nodes (12): metadata, BrandMark(), Footer(), FooterGroup, Nav(), NavLink, listeners, readTheme() (+4 more)
+### Community 12 - "cookies/page.tsx"
+Cohesion: 0.33
+Nodes (5): metadata, BrandMark(), Footer(), FooterGroup, FOOTER_GROUPS_LEGAL
 
 ### Community 18 - "Animation Standards Reference"
 Cohesion: 0.07
@@ -160,9 +159,9 @@ Nodes (25): Buttons, Cards / Containers, Chips & Pills, Colors, Components, Desi
 Cohesion: 0.09
 Nodes (21): 1. Purpose & frequency, 2. Easing & duration, 3. Physicality & origin, 4. Interruptibility, 5. Performance, 6. Accessibility, 7. Cohesion & tokens, 8. Missed opportunities (+13 more)
 
-### Community 21 - "Chip.tsx"
-Cohesion: 0.20
-Nodes (12): HomePanel(), week, plans, ProsPanel(), Chip(), Pill(), Tone, tones (+4 more)
+### Community 21 - "AudienceHero.tsx"
+Cohesion: 0.22
+Nodes (10): AudienceHero(), BasilikChain(), Props, BasilikToggleButton(), BasilikToggleContext, BasilikToggleProvider(), BasilikToggleValue, useBasilikToggle() (+2 more)
 
 ### Community 22 - "Apple Design"
 Cohesion: 0.10
@@ -180,13 +179,13 @@ Nodes (17): Animation Vocabulary, Easing — how speed changes over an animation
 Cohesion: 0.12
 Nodes (15): 1. Frequency — how often will a user see this?, 2. Purpose — why does this animate?, 3. Speed — can it stay inside budget?, 4. Function — does motion help or hinder here?, Finding Animation Opportunities, Hard Rules, Operating Posture, Part 1 — Opportunities table (+7 more)
 
-### Community 26 - "app/page.tsx"
-Cohesion: 0.16
-Nodes (10): BackgroundFX(), BLOBS, ComparisonSection(), Row, PainChaos(), PhoneStepsScene(), TakesSection(), FOOTER_GROUPS_HOME (+2 more)
+### Community 26 - "specialists/page.tsx"
+Cohesion: 0.13
+Nodes (15): metadata, AmbientIngredients(), ITEMS, BackgroundFX(), BLOBS, CtaSection(), PainList(), PhoneStepsScene() (+7 more)
 
-### Community 27 - "Reveal.tsx"
-Cohesion: 0.25
-Nodes (8): PROBLEM_ITEMS, Process(), Props, Step, SectionKicker(), Props, Reveal(), PROCESS
+### Community 27 - "Nav.tsx"
+Cohesion: 0.31
+Nodes (7): Nav(), NavLink, listeners, readTheme(), subscribe(), Theme, ThemeToggle()
 
 ### Community 28 - "Лендинг B2C — визуал и анимации"
 Cohesion: 0.15
@@ -208,17 +207,13 @@ Nodes (10): 1. Первый экран (Hero) — с интерактивом «
 Cohesion: 0.20
 Nodes (9): Charts, Common mismatches to catch, How to use this, Interaction & performance, Motion & visuals, Picking The Right Library, State & styling, The list (+1 more)
 
-### Community 33 - "GoalsSection.tsx"
-Cohesion: 0.16
-Nodes (7): GoalsMode, GoalsSection(), MODES, RING_FILL, Counter(), Props, STATS
-
 ### Community 34 - "Design Engineering"
 Cohesion: 0.22
 Nodes (8): Accessibility, Design Engineering, Initial Response, prefers-reduced-motion, Review Checklist, Review Format (Required), Stagger Animations, Touch device hover states
 
 ### Community 35 - "content.ts"
-Cohesion: 0.24
-Nodes (7): CtaSection(), FinalCopy, ASSEMBLY, AUDIENCE_ROUTES, CTA, FOOTER_GROUPS_ROOT, NAV_LINKS_ROOT
+Cohesion: 0.21
+Nodes (9): FinalCopy, icons, AUDIENCE_ROUTES, CTA, ENGINE, EngineIcon, FOOTER_GROUPS_ROOT, HomeTakeScene (+1 more)
 
 ### Community 36 - "Component Building Principles"
 Cohesion: 0.25
@@ -268,7 +263,7 @@ Nodes (4): Debugging Animations, Frame-by-frame inspection, Slow motion testing,
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `MOTION_QUERIES` connect `gsap.ts` to `GoalsSection.tsx`, `PlanConfigurator.tsx`, `specialists/page.tsx`, `PhoneStepsScene.tsx`, `layout.tsx`, `EngineCards.tsx`, `Nav.tsx`, `app/page.tsx`?**
+- **Why does `MOTION_QUERIES` connect `gsap.ts` to `GoalsSection.tsx`, `content.ts`, `Hero.tsx`, `PlanConfigurator.tsx`, `PhoneStepsScene.tsx`, `layout.tsx`, `AudienceHero.tsx`, `specialists/page.tsx`, `Nav.tsx`?**
   _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **Why does `Design Engineering` connect `Design Engineering` to `Component Building Principles`, `The Animation Decision Framework`, `clip-path for Animation`, `Performance Rules`, `Gesture and Drag Interactions`, `CSS Transform Mastery`, `The Sonner Principles (Building Loved Components)`, `Spring Animations`, `Core Philosophy`, `Debugging Animations`?**
   _High betweenness centrality (0.007) - this node is a cross-community bridge._
@@ -278,7 +273,7 @@ _Questions this graph is uniquely positioned to answer:_
   _`Anti-Slop Frontend Design Skill (design-taste-frontend)` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `metadata`, `metadata`, `viewport` to the rest of the system?**
   _391 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `GoalsSection.tsx` be split into smaller, more focused modules?**
+  _Cohesion score 0.05673076923076923 - nodes in this community are weakly interconnected._
 - **Should `Anti-Slop Frontend Design Skill (design-taste-frontend)` be split into smaller, more focused modules?**
   _Cohesion score 0.10099573257467995 - nodes in this community are weakly interconnected._
-- **Should `compilerOptions` be split into smaller, more focused modules?**
-  _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._
