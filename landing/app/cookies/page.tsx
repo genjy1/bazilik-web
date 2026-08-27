@@ -1,29 +1,40 @@
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import Link from "next/link";
 import { BrandMark } from "@/components/BrandMark";
 import { Footer } from "@/components/Footer";
 import { FOOTER_GROUPS_LEGAL } from "@/lib/content";
 
-export const metadata: Metadata = {
-  title: "Использование cookie — Базилик",
-  description: "Информация об использовании файлов cookie на сайте Базилик.",
-  alternates: {
-    canonical: "/cookies",
-  },
-  /**
-   * Блок нужен целиком ради `url`: дочерний `openGraph` не сливается с
-   * родительским, а замещает его. Без своего блока страница наследовала бы
-   * `og:url` корневого layout и представлялась бы главной при репосте.
-   */
-  openGraph: {
+/**
+ * Блок `openGraph` нужен целиком ради `url`: дочерний `openGraph` не
+ * сливается с родительским, а замещает его — без своего блока страница
+ * наследовала бы `og:url` корневого layout и представлялась бы главной
+ * при репосте. По той же причине картинка переносится через `parent`,
+ * иначе она пропала бы вместе с остальными унаследованными полями.
+ */
+export async function generateMetadata(
+  _props: unknown,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const parentImages = (await parent).openGraph?.images ?? [];
+
+  return {
     title: "Использование cookie — Базилик",
     description: "Информация об использовании файлов cookie на сайте Базилик.",
-    url: "/cookies",
-    siteName: "Базилик",
-    locale: "ru_RU",
-    type: "website",
-  },
-};
+    alternates: {
+      canonical: "/cookies",
+    },
+    openGraph: {
+      title: "Использование cookie — Базилик",
+      description:
+        "Информация об использовании файлов cookie на сайте Базилик.",
+      url: "/cookies",
+      siteName: "Базилик",
+      locale: "ru_RU",
+      type: "website",
+      images: parentImages,
+    },
+  };
+}
 
 export default function CookiesPage() {
   return (

@@ -3,6 +3,7 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { InlineScript } from "@/components/InlineScript";
 import { HashScrollManager } from "@/components/HashScrollManager";
 import { YandexMetrika } from "@/components/YandexMetrika";
+import { schemaJson } from "@/lib/schema";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -110,6 +111,13 @@ export default function RootLayout({
     >
       <head>
         <InlineScript html={BOOT_SCRIPT} />
+        {/* JSON-LD, а не InlineScript: тот подменяет type на text/plain при
+            гидратации, и разметка перестала бы читаться. Здесь скрипт
+            ничего не выполняет — это данные, и type обязан остаться. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: schemaJson() }}
+        />
       </head>
       {/* Расширения браузера дописывают в <body> свои атрибуты до гидратации
           (Grammarly, ColorZilla и подобные) — без этого React считает такой
