@@ -1,3 +1,20 @@
 /product/*
 .claude
 .idea
+
+# local tooling scratch output
+/.agents/
+/.impeccable/
+/.playwright-mcp/
+/skills-lock.json
+
+# Пустой lock в корне: из-за него Next.js считает корнем репозиторий,
+# а не landing/. Настоящий лок — landing/package-lock.json.
+/package-lock.json
+
+# Рабочие файлы: скриншоты, выгрузки, локальная база
+/off.png
+/off2.png
+/on.png
+landing/export.csv
+*.emdb
