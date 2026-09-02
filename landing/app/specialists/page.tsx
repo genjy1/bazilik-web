@@ -13,6 +13,7 @@ import { SectionDivider } from "@/components/SectionDivider";
 import { WinWinSection } from "@/components/WinWinSection";
 import { BasilikToggleProvider } from "@/lib/basilikToggle";
 import { FOOTER_GROUPS_SPECIALISTS, NAV_LINKS_SPECIALISTS, PROS } from "@/lib/content";
+import { OG_SHARED, inheritedOgImages } from "@/lib/site";
 
 const TITLE = "Базилик для специалистов — планы питания вместо Word и PDF";
 
@@ -22,15 +23,14 @@ const TITLE = "Базилик для специалистов — планы п�
  * Дочерний `openGraph` замещает родительский целиком, а не дополняет его,
  * поэтому объявленный здесь блок отрезал бы страницу от `opengraph-image.tsx`
  * в корне: `og:image` пропал бы, а `twitter:card` откатился бы в `summary`.
- * Через аргумент `parent` картинка родителя переносится явно — так и
- * описано в docs/01-app/03-api-reference/04-functions/generate-metadata.md.
+ * Через аргумент `parent` картинка родителя переносится явно (см.
+ * `inheritedOgImages`) — так и описано в
+ * docs/01-app/03-api-reference/04-functions/generate-metadata.md.
  */
 export async function generateMetadata(
   _props: unknown,
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
-  const parentImages = (await parent).openGraph?.images ?? [];
-
   return {
     title: TITLE,
     description:
@@ -60,14 +60,12 @@ export async function generateMetadata(
       canonical: "/specialists",
     },
     openGraph: {
+      ...OG_SHARED,
       title: TITLE,
       description:
         "Конструктор планов для диетологов, нутрициологов и коучей: рецепты, автоматический КБЖУ и маркетплейс готовых планов.",
       url: "/specialists",
-      siteName: "Базилик",
-      locale: "ru_RU",
-      type: "website",
-      images: parentImages,
+      images: await inheritedOgImages(parent),
     },
   };
 }

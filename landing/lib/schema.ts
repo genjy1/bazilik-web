@@ -1,4 +1,4 @@
-import { SITE_URL, absoluteUrl } from "@/lib/site";
+import { SITE_NAME, SITE_URL, absoluteUrl } from "@/lib/site";
 
 /**
  * Структурированные данные (JSON-LD) для всего сайта.
@@ -28,13 +28,13 @@ const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
 const APPLICATION_ID = `${SITE_URL}/#application`;
 
-export const SCHEMA_GRAPH = {
+const SCHEMA_GRAPH = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
       "@id": ORGANIZATION_ID,
-      name: "Базилик",
+      name: SITE_NAME,
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
@@ -45,14 +45,14 @@ export const SCHEMA_GRAPH = {
       "@type": "WebSite",
       "@id": WEBSITE_ID,
       url: SITE_URL,
-      name: "Базилик",
+      name: SITE_NAME,
       inLanguage: "ru-RU",
       publisher: { "@id": ORGANIZATION_ID },
     },
     {
       "@type": "SoftwareApplication",
       "@id": APPLICATION_ID,
-      name: "Базилик",
+      name: SITE_NAME,
       applicationCategory: "LifestyleApplication",
       inLanguage: "ru-RU",
       description:
@@ -66,7 +66,12 @@ export const SCHEMA_GRAPH = {
  * `<` экранируется, иначе строка вида `</script>` внутри значения закрыла бы
  * тег раньше времени. Данные здесь свои и статичные, но правило дешёвое, а
  * забыть его в момент, когда в граф попадёт пользовательский текст, легко.
+ *
+ * Константа, а не функция: граф не зависит ни от маршрута, ни от запроса, а
+ * layout вставляет его в каждую страницу — незачем сериализовать объект и
+ * гонять регулярку по всей строке на каждый рендер.
  */
-export function schemaJson(): string {
-  return JSON.stringify(SCHEMA_GRAPH).replace(/</g, "\\u003c");
-}
+export const SCHEMA_JSON = JSON.stringify(SCHEMA_GRAPH).replace(
+  /</g,
+  "\\u003c",
+);

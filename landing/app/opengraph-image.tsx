@@ -1,5 +1,8 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
-import { SITE_URL } from "@/lib/site";
+import { HERO } from "@/lib/content";
+import { HOME_TITLE, SITE_NAME, SITE_URL } from "@/lib/site";
 
 /**
  * Карточка ссылки для соцсетей и мессенджеров (1200×630).
@@ -9,27 +12,32 @@ import { SITE_URL } from "@/lib/site";
  *
  * Рисуется кодом, а не лежит картинкой в public/: макет тогда правится в
  * репозитории вместе с текстом, а не в графическом редакторе, и не может
- * разойтись со слоганом на странице.
+ * разойтись со слоганом на странице. Чтобы это было правдой, а не намерением,
+ * весь текст карточки приходит оттуда же, откуда его берёт страница:
+ * заголовок — из `HOME_TITLE`, слоган — из `HERO` в content.ts.
  */
-export const alt =
-  "Базилик — меню на неделю: готовь то, что уже есть";
+export const alt = HOME_TITLE;
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 /**
- * Знак из BrandMark.tsx, один в один по геометрии (гардрейлы бренд-бука
- * запрещают править пути и перекрашивать изумруд). Токены подставлены
- * литералами: у ImageResponse нет ни CSS-переменных, ни каскада.
+ * Знак читается из public/logo.svg, а не переписывается сюда строкой.
+ *
+ * Копий геометрии и без того две: JSX в BrandMark.tsx (ему нужны CSS-токены
+ * и темизация) и статический файл для JSON-LD. Третья, литералом рядом с
+ * макетом карточки, — та, которую забудут: гардрейлы бренд-бука запрещают
+ * править пути и перекрашивать изумруд, а правка, дошедшая до двух копий из
+ * трёх, разводит карточку ссылки со знаком на самой странице.
+ *
+ * Чтение синхронно с рендером и происходит на сборке: маршрут статический,
+ * и `process.cwd()` здесь — корень проекта (так же читают шрифт в
+ * docs/01-app/03-api-reference/03-file-conventions/01-metadata/opengraph-image.md).
  */
-const LEAF = "M50 72 C 37 62 36 36 50 20 C 64 36 63 62 50 72 Z";
-const MARK = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <path d="M50 90 L50 72" fill="none" stroke="#16231C" stroke-width="6" stroke-linecap="round"/>
-  <path d="${LEAF}" transform="rotate(-42 50 72)" fill="#1F7A4D"/>
-  <path d="${LEAF}" transform="rotate(42 50 72)" fill="#1F7A4D"/>
-  <path d="${LEAF}" fill="#12583A"/>
-</svg>`;
-const MARK_URI = `data:image/svg+xml;base64,${Buffer.from(MARK).toString("base64")}`;
+async function markUri(): Promise<string> {
+  const svg = await readFile(join(process.cwd(), "public", "logo.svg"));
+  return `data:image/svg+xml;base64,${svg.toString("base64")}`;
+}
 
 /**
  * Подпись-домен в нижнем углу. Берётся из `SITE_URL`, а не пишется строкой:
@@ -45,7 +53,9 @@ const MARK_URI = `data:image/svg+xml;base64,${Buffer.from(MARK).toString("base64
 const HOST = new URL(SITE_URL).host;
 const SIGNATURE = HOST.endsWith(".vercel.app") ? null : HOST;
 
-export default function Image() {
+export default async function Image() {
+  const MARK_URI = await markUri();
+
   return new ImageResponse(
     (
       <div
@@ -70,7 +80,7 @@ export default function Image() {
               letterSpacing: "-0.02em",
             }}
           >
-            Базилик
+            {SITE_NAME}
           </div>
         </div>
 
@@ -89,9 +99,9 @@ export default function Image() {
               color: "#16231C",
             }}
           >
-            <div style={{ display: "flex" }}>Готовь то,</div>
+            <div style={{ display: "flex" }}>{HERO.titleTop}</div>
             <div style={{ display: "flex", color: "#12583A" }}>
-              что уже есть.
+              {HERO.titleAccent}
             </div>
           </div>
           <div

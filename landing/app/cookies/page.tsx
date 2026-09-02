@@ -3,35 +3,36 @@ import Link from "next/link";
 import { BrandMark } from "@/components/BrandMark";
 import { Footer } from "@/components/Footer";
 import { FOOTER_GROUPS_LEGAL } from "@/lib/content";
+import { OG_SHARED, inheritedOgImages } from "@/lib/site";
+
+const TITLE = "Использование cookie — Базилик";
+const DESCRIPTION =
+  "Информация об использовании файлов cookie на сайте Базилик.";
 
 /**
  * Блок `openGraph` нужен целиком ради `url`: дочерний `openGraph` не
  * сливается с родительским, а замещает его — без своего блока страница
  * наследовала бы `og:url` корневого layout и представлялась бы главной
- * при репосте. По той же причине картинка переносится через `parent`,
- * иначе она пропала бы вместе с остальными унаследованными полями.
+ * при репосте. Остальные поля возвращаются спредом из `OG_SHARED`, а
+ * картинка — через `inheritedOgImages`, иначе она пропала бы вместе с
+ * остальными унаследованными полями.
  */
 export async function generateMetadata(
   _props: unknown,
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
-  const parentImages = (await parent).openGraph?.images ?? [];
-
   return {
-    title: "Использование cookie — Базилик",
-    description: "Информация об использовании файлов cookie на сайте Базилик.",
+    title: TITLE,
+    description: DESCRIPTION,
     alternates: {
       canonical: "/cookies",
     },
     openGraph: {
-      title: "Использование cookie — Базилик",
-      description:
-        "Информация об использовании файлов cookie на сайте Базилик.",
+      ...OG_SHARED,
+      title: TITLE,
+      description: DESCRIPTION,
       url: "/cookies",
-      siteName: "Базилик",
-      locale: "ru_RU",
-      type: "website",
-      images: parentImages,
+      images: await inheritedOgImages(parent),
     },
   };
 }

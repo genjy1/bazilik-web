@@ -3,8 +3,8 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { InlineScript } from "@/components/InlineScript";
 import { HashScrollManager } from "@/components/HashScrollManager";
 import { YandexMetrika } from "@/components/YandexMetrika";
-import { schemaJson } from "@/lib/schema";
-import { SITE_URL } from "@/lib/site";
+import { SCHEMA_JSON } from "@/lib/schema";
+import { HOME_TITLE, OG_SHARED, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 /**
@@ -17,20 +17,6 @@ import "./globals.css";
  * продуктом по начертанию. Заодно ушли запросы next/font и подмена метрик —
  * системный шрифт уже стоит на устройстве и рисуется первым кадром.
  */
-/**
- * Заголовок и описание главной.
- *
- * Раньше в title стоял только слоган: «Базилик — готовь то, что уже есть».
- * Для продукта без запуска и узнаваемости это проигрышный ход — по запросу
- * «Базилик» ищут траву, а категорийного слова в заголовке не было вовсе.
- * Слоган сохранён (бренд-бук §Голос), но теперь после категории.
- *
- * «Меню на неделю», а не «план питания»: главная — это аудитория «дома»
- * (см. HOME в content.ts), а «план питания» в русском поиске тянет за собой
- * диетологический контекст, то есть намерение страницы /specialists.
- */
-const TITLE = "Базилик — меню на неделю: готовь то, что уже есть";
-
 /**
  * Прошлое описание занимало 193 знака при пороге ~160 и обрезалось ровно на
  * «план пересобирается под остат…» — на той самой механике, которая и есть
@@ -48,7 +34,7 @@ export const metadata: Metadata = {
    * — ошибка сборки, а не тихая деградация.
    */
   metadataBase: new URL(SITE_URL),
-  title: TITLE,
+  title: HOME_TITLE,
   description: DESCRIPTION,
   /**
    * Самоссылающийся canonical. У лендинга нет дублей по параметрам, но он
@@ -59,18 +45,16 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
+    ...OG_SHARED,
     /**
      * Тот же заголовок, что и в <title>: в ленте мессенджера ссылку видит
      * человек, который о продукте не слышал, и «меню на неделю» объясняет
      * карточку лучше, чем один слоган.
      */
-    title: TITLE,
+    title: HOME_TITLE,
     description:
       "Планирование питания без ручного учёта: неделя на переиспользование, список сам, план подстраивается под остатки.",
     url: "/",
-    siteName: "Базилик",
-    locale: "ru_RU",
-    type: "website",
   },
   icons: {
     icon: {
@@ -116,7 +100,7 @@ export default function RootLayout({
             ничего не выполняет — это данные, и type обязан остаться. */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: schemaJson() }}
+          dangerouslySetInnerHTML={{ __html: SCHEMA_JSON }}
         />
       </head>
       {/* Расширения браузера дописывают в <body> свои атрибуты до гидратации
