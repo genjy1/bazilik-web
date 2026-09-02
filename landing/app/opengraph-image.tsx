@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { SITE_URL } from "@/lib/site";
 
 /**
  * Карточка ссылки для соцсетей и мессенджеров (1200×630).
@@ -29,6 +30,20 @@ const MARK = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" widt
   <path d="${LEAF}" fill="#12583A"/>
 </svg>`;
 const MARK_URI = `data:image/svg+xml;base64,${Buffer.from(MARK).toString("base64")}`;
+
+/**
+ * Подпись-домен в нижнем углу. Берётся из `SITE_URL`, а не пишется строкой:
+ * весь смысл рисовать карточку кодом — в том, что она не расходится с сайтом,
+ * а вписанный руками домен разошёлся первым же. На карточке стоял
+ * `bazilik.ru` — адрес, которого у продукта нет.
+ *
+ * Технический домен деплоя не показывается вовсе: `bazilik-web.vercel.app`
+ * в подписи ссылки читается как черновик, а не как продукт, и на карточке
+ * это дороже, чем отсутствие строки. Появится свой домен — подпись вернётся
+ * сама, менять здесь ничего не придётся.
+ */
+const HOST = new URL(SITE_URL).host;
+const SIGNATURE = HOST.endsWith(".vercel.app") ? null : HOST;
 
 export default function Image() {
   return new ImageResponse(
@@ -93,9 +108,14 @@ export default function Image() {
           </div>
         </div>
 
+        {/* Полоска остаётся, даже когда подписи нет: на ней держится нижний
+            край композиции, а без всего блока `space-between` утянул бы
+            заголовок вниз и карточка перекомпоновалась бы целиком. */}
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
           <div style={{ width: 56, height: 4, background: "#1F7A4D" }} />
-          <div style={{ fontSize: 26, color: "#5C675F" }}>bazilik.ru</div>
+          {SIGNATURE ? (
+            <div style={{ fontSize: 26, color: "#5C675F" }}>{SIGNATURE}</div>
+          ) : null}
         </div>
       </div>
     ),
