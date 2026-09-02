@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import { AmbientIngredients } from "@/components/AmbientIngredients";
 import { AudienceHero } from "@/components/AudienceHero";
 import { BackgroundFX } from "@/components/BackgroundFX";
@@ -14,11 +14,63 @@ import { WinWinSection } from "@/components/WinWinSection";
 import { BasilikToggleProvider } from "@/lib/basilikToggle";
 import { FOOTER_GROUPS_SPECIALISTS, NAV_LINKS_SPECIALISTS, PROS } from "@/lib/content";
 
-export const metadata: Metadata = {
-  title: "Базилик для специалистов — планы питания вместо Word и PDF",
-  description:
-    "Конструктор планов для диетологов, нутрициологов и коучей: рецепты, автоматический КБЖУ, маркетплейс готовых планов и доступ для уже купивших клиентов.",
-};
+const TITLE = "Базилик для специалистов — планы питания вместо Word и PDF";
+
+/**
+ * Не `const metadata`, а `generateMetadata` — только ради картинки.
+ *
+ * Дочерний `openGraph` замещает родительский целиком, а не дополняет его,
+ * поэтому объявленный здесь блок отрезал бы страницу от `opengraph-image.tsx`
+ * в корне: `og:image` пропал бы, а `twitter:card` откатился бы в `summary`.
+ * Через аргумент `parent` картинка родителя переносится явно — так и
+ * описано в docs/01-app/03-api-reference/04-functions/generate-metadata.md.
+ */
+export async function generateMetadata(
+  _props: unknown,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const parentImages = (await parent).openGraph?.images ?? [];
+
+  return {
+    title: TITLE,
+    description:
+      "Конструктор планов для диетологов, нутрициологов и коучей: рецепты, автоматический КБЖУ, маркетплейс готовых планов и доступ для уже купивших клиентов.",
+    /**
+     * Раздел не входит в MVP и до запуска не должен попадать в выдачу.
+     * Из sitemap.xml маршрут убран (см. `SITEMAP_ROUTES`), но карта сайта
+     * индексацию не запрещает — она лишь помогает страницу найти. Запрет
+     * даёт только `noindex`: страница остаётся открытой по прямой ссылке,
+     * которую можно дать партнёру или клиенту, но в поиск не уходит.
+     *
+     * `follow` оставлен: со страницы есть ссылки на главную и в футер,
+     * обрывать этот путь незачем.
+     *
+     * Снимать одновременно с возвратом маршрута в `SITEMAP_ROUTES`.
+     */
+    robots: {
+      index: false,
+      follow: true,
+    },
+    /**
+     * Canonical остаётся и при `noindex`: он отвечает не за индексацию, а за
+     * то, какой адрес считать основным, если страницу откроют по ссылке с
+     * параметрами.
+     */
+    alternates: {
+      canonical: "/specialists",
+    },
+    openGraph: {
+      title: TITLE,
+      description:
+        "Конструктор планов для диетологов, нутрициологов и коучей: рецепты, автоматический КБЖУ и маркетплейс готовых планов.",
+      url: "/specialists",
+      siteName: "Базилик",
+      locale: "ru_RU",
+      type: "website",
+      images: parentImages,
+    },
+  };
+}
 
 export default function SpecialistsPage() {
   return (
