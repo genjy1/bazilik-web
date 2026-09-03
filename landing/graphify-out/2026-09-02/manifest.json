@@ -1,7 +1,7 @@
 {
   "app/layout.tsx": {
-    "mtime": 1788429132.9357786,
-    "ast_hash": "2d48987eb6fc2e7a72b5be76db9e139b",
+    "mtime": 1787848168.6748586,
+    "ast_hash": "7771c061b448c4547fb315926077e27e",
     "semantic_hash": ""
   },
   "app/page.tsx": {
@@ -10,8 +10,8 @@
     "semantic_hash": ""
   },
   "app/specialists/page.tsx": {
-    "mtime": 1788429132.9378831,
-    "ast_hash": "acb2b582b87592cf11324eb4d4474b19",
+    "mtime": 1788123690.467852,
+    "ast_hash": "b414bada20bc6324683b748edd47efb5",
     "semantic_hash": ""
   },
   "components/AudienceLinks.tsx": {
@@ -305,8 +305,8 @@
     "semantic_hash": "9346a4897ff955555ddedb7bebf77adb"
   },
   "CLAUDE.md": {
-    "mtime": 1788430843.8644907,
-    "ast_hash": "79194c284b837f1b08995cd94544fdf4",
+    "mtime": 1785165341.2452016,
+    "ast_hash": "b0517ee048d45b5cd5463430230eb52f",
     "semantic_hash": ""
   },
   "README.md": {
@@ -510,8 +510,8 @@
     "semantic_hash": ""
   },
   "app/cookies/page.tsx": {
-    "mtime": 1788429132.935261,
-    "ast_hash": "c8f02532d0813d14844d037e9411f456",
+    "mtime": 1787848321.3808382,
+    "ast_hash": "31587de812534e53ceb0b0bba6253526",
     "semantic_hash": ""
   },
   "components/BasilikToggleButton.tsx": {
@@ -520,8 +520,8 @@
     "semantic_hash": ""
   },
   "components/CookieConsent.tsx": {
-    "mtime": 1788430843.5126605,
-    "ast_hash": "548f03fe75308d695ae6bf6290aba5f1",
+    "mtime": 1786478050.46474,
+    "ast_hash": "30c60ee39e2e73cc19977c01b27bfa4c",
     "semantic_hash": ""
   },
   "components/PhoneStepsScene.tsx": {
@@ -530,18 +530,18 @@
     "semantic_hash": ""
   },
   "components/YandexMetrika.tsx": {
-    "mtime": 1788430843.541704,
-    "ast_hash": "d1cc0aa78aae7987cd355ffc5427dd17",
+    "mtime": 1786478615.6572087,
+    "ast_hash": "5c8437aac1564fc5f16889c54b7a2777",
     "semantic_hash": ""
   },
   "app/manifest.ts": {
-    "mtime": 1788429132.936294,
-    "ast_hash": "e2b15d0cb68cf05d70ccbce4883a59e7",
+    "mtime": 1788352661.138594,
+    "ast_hash": "c697ebfdc5019194822799075fcf1fd0",
     "semantic_hash": ""
   },
   "app/opengraph-image.tsx": {
-    "mtime": 1788429132.936814,
-    "ast_hash": "2894b47681f38e79623dbe5e16667126",
+    "mtime": 1788352507.2941196,
+    "ast_hash": "4c0457f17cb14f0d0b50e265974ec1bb",
     "semantic_hash": ""
   },
   "app/robots.ts": {
@@ -550,18 +550,18 @@
     "semantic_hash": ""
   },
   "app/sitemap.ts": {
-    "mtime": 1788429132.9373655,
-    "ast_hash": "c1306697b86c15062483006840454abb",
+    "mtime": 1787841766.728179,
+    "ast_hash": "e6e81cedd3d29b1a6f74a2dd3417b511",
     "semantic_hash": ""
   },
   "lib/schema.ts": {
-    "mtime": 1788429132.9378831,
-    "ast_hash": "adf9bd3cad46dc434eac83cf69cd4f6a",
+    "mtime": 1787848159.0585718,
+    "ast_hash": "6653fb601513401ae2e3affaca38f311",
     "semantic_hash": ""
   },
   "lib/site.ts": {
-    "mtime": 1788429132.9384005,
-    "ast_hash": "0e165f7aa26cb3597afe1fda62a7b3d6",
+    "mtime": 1788123681.3794808,
+    "ast_hash": "a5ca4a70ceae80cc08febfc1f9ffe3a4",
     "semantic_hash": ""
   },
   ".agents/product-marketing.md": {
@@ -570,33 +570,23 @@
     "semantic_hash": ""
   },
   "public/icon-192.png": {
-    "mtime": 1788429132.9394443,
-    "ast_hash": "a2636f0cbf5397b774a92b623f680de6",
+    "mtime": 1788352604.59,
+    "ast_hash": "e34a47913453fe0a65bf4ab3989587b9",
     "semantic_hash": ""
   },
   "public/icon-512.png": {
-    "mtime": 1788429132.9394443,
-    "ast_hash": "05bd482a8730788e1ce2943fadca255c",
+    "mtime": 1788352604.661,
+    "ast_hash": "cc21645220567d9f79d272297559ee64",
     "semantic_hash": ""
   },
   "public/icon-maskable-512.png": {
-    "mtime": 1788429132.9399679,
-    "ast_hash": "ca5ca88b79592b614ba3c6a4270f4860",
+    "mtime": 1788352604.725,
+    "ast_hash": "ef2e7553c20a185089afcc394f2ea9d0",
     "semantic_hash": ""
   },
   "public/logo.svg": {
-    "mtime": 1788429132.9404855,
-    "ast_hash": "d836d62bd2d4cce200fc4308676800ff",
-    "semantic_hash": ""
-  },
-  "public/apple-touch-icon.png": {
-    "mtime": 1788429132.93892,
-    "ast_hash": "5becafab3f548a90f46a464877ca6f6f",
-    "semantic_hash": ""
-  },
-  "lib/cookieConsent.ts": {
-    "mtime": 1788430843.4836068,
-    "ast_hash": "dec1ae1d2f0b266c6b56e17176bb7f0b",
+    "mtime": 1787848139.7383416,
+    "ast_hash": "f3a2538f4bfcf694b84221481c2f2fc6",
     "semantic_hash": ""
   }
 }
