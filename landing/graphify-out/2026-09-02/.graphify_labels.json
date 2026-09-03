@@ -11,7 +11,7 @@
   "9": "PhoneStepsScene.tsx",
   "10": "layout.tsx",
   "11": "EngineCards.tsx",
-  "12": "cookies/page.tsx",
+  "12": "Nav.tsx",
   "13": "BrandMark3D.tsx",
   "14": "eslint.config.mjs",
   "15": "next.config.ts",
@@ -34,7 +34,7 @@
   "32": "The list",
   "33": "GoalsSection.tsx",
   "34": "Design Engineering",
-  "35": "app/page.tsx",
+  "35": "MOTION_QUERIES",
   "36": "Component Building Principles",
   "37": "The Animation Decision Framework",
   "38": "clip-path for Animation",
@@ -45,6 +45,5 @@
   "43": "Spring Animations",
   "44": "Core Philosophy",
   "45": "Debugging Animations",
-  "46": "manifest.ts",
-  "47": "alt"
+  "46": "manifest.ts"
 }

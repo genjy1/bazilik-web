@@ -1,35 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
-const KEY = "bazilik-cookie-consent";
+import { acceptCookies, useCookieConsent } from "@/lib/cookieConsent";
 
 /**
- * Баннер рендерится пустым и на сервере, и при первой клиентской отрисовке
- * (localStorage недоступен на сервере) — расхождения гидратации нет,
- * появление откладывается на эффект после монтирования.
+ * Баннер не попадает ни в серверную разметку, ни в первую клиентскую
+ * отрисовку: пока согласие не прочитано из localStorage, хук отдаёт `null`
+ * и компонент рендерится пустым — расхождения гидратации нет, а появление
+ * откладывается до первого клиентского снапшота.
+ *
+ * Само согласие живёт в lib/cookieConsent: его читает ещё и YandexMetrika,
+ * чтобы не стартовать до нажатия «Понятно».
  */
 export function CookieConsent() {
-  const [visible, setVisible] = useState(false);
+  const accepted = useCookieConsent();
 
-  useEffect(() => {
-    try {
-      if (localStorage.getItem(KEY) !== "accepted") setVisible(true);
-    } catch {
-      setVisible(true);
-    }
-  }, []);
-
-  function accept() {
-    try {
-      localStorage.setItem(KEY, "accepted");
-    } catch {
-      // приватный режим — баннер просто будет появляться заново
-    }
-    setVisible(false);
-  }
-
-  if (!visible) return null;
+  if (accepted !== false) return null;
 
   return (
     <div
@@ -49,7 +34,7 @@ export function CookieConsent() {
         </p>
         <button
           type="button"
-          onClick={accept}
+          onClick={acceptCookies}
           className="inline-flex min-h-10 shrink-0 items-center rounded-full bg-accent px-5 py-2.5 text-[13.5px] font-bold text-on-accent transition-colors hover:bg-accent-deep"
         >
           Понятно
