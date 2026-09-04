@@ -52,7 +52,11 @@ function RingFrame({
   return (
     <div className="flex flex-col items-center gap-3">
       <div className="relative size-36 md:size-40">
-        <svg viewBox="0 0 140 140" className="size-36 -rotate-90 md:size-40">
+        <svg
+          viewBox="0 0 140 140"
+          className="size-36 -rotate-90 md:size-40"
+          aria-hidden="true"
+        >
           {children}
         </svg>
         <div className="absolute inset-0 grid place-items-center">

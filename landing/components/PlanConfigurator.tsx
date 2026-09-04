@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useId, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import {
   DEFAULT_CONFIG,
@@ -32,9 +32,16 @@ function Group({
   label: string;
   children: ReactNode;
 }) {
+  // Группа с именем: читалка объявляет «Цель, группа» при входе в кнопки,
+  // иначе «похудение» и «без лактозы» звучат без контекста.
+  const labelId = useId();
+
   return (
-    <div>
-      <div className="mb-2.5 font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
+    <div role="group" aria-labelledby={labelId}>
+      <div
+        id={labelId}
+        className="mb-2.5 font-mono text-[10px] uppercase tracking-[0.16em] text-muted"
+      >
         {label}
       </div>
       <div className="flex flex-wrap gap-2">{children}</div>
@@ -187,7 +194,7 @@ export function PlanConfigurator() {
 
         <div className="mt-5 grid gap-2.5 sm:grid-cols-3">
           <div className="rounded-2xl border border-line bg-surface px-4 py-3">
-            <div className="text-lg font-extrabold tracking-tight text-herb-ink">
+            <div className="text-lg font-extrabold tracking-tight text-herb-deep">
               −<AnimatedNumber value={plan.waste} />%
             </div>
             <div className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">

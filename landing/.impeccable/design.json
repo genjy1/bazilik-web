@@ -28,10 +28,10 @@
         "canonical": "#5e7238",
         "tonalRamp": ["#2a3319", "#47562a", "#63783b", "#7f9a4c", "#98b365", "#b6c992", "#d1ddbb", "#edf2e4"]
       },
-      "herb-ink": {
+      "herb-deep": {
         "role": "secondary",
-        "displayName": "Herb Ink",
-        "canonical": "#4a5c2c",
+        "displayName": "Herb Deep",
+        "canonical": "#4a5b2c",
         "tonalRamp": ["#1f2712", "#374520", "#4f632e", "#67813c", "#829d54", "#a3b97e", "#c5d3a9", "#e6ecd9"]
       },
       "amber": {
@@ -172,9 +172,9 @@
       "name": "Chip",
       "kind": "chip",
       "refersTo": "chip",
-      "description": "Small mono tag with a tinted background matching its semantic tone. The herb tone sets its text in Herb Ink so it clears 4.5:1 on its own fill.",
+      "description": "Small mono tag with a tinted background matching its semantic tone. The herb tone sets its text in Herb Deep so it clears 4.5:1 on its own fill.",
       "html": "<div style=\"display:flex; gap:8px; flex-wrap:wrap;\"><span class=\"ds-chip ds-chip-accent\">Курица с булгуром</span><span class=\"ds-chip ds-chip-herb\">пересобрано</span><span class=\"ds-chip ds-chip-neutral\">1 пуч</span></div>",
-      "css": ".ds-chip { display: inline-block; white-space: nowrap; border-radius: 9999px; border: 1px solid; padding: 4px 10px; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 10.5px; letter-spacing: 0.05em; } .ds-chip-accent { background: color-mix(in srgb, var(--color-accent, #1f7a4d) 12%, transparent); color: var(--color-accent-deep, #12583a); border-color: color-mix(in srgb, var(--color-accent, #1f7a4d) 30%, transparent); } .ds-chip-herb { background: color-mix(in srgb, var(--color-herb, #5e7238) 15%, transparent); color: var(--color-herb-ink, #4a5c2c); border-color: color-mix(in srgb, var(--color-herb, #5e7238) 35%, transparent); } .ds-chip-neutral { background: var(--color-surface, #efede4); color: var(--color-ink, #16231c); border-color: var(--color-line, #e1dfd4); }"
+      "css": ".ds-chip { display: inline-block; white-space: nowrap; border-radius: 9999px; border: 1px solid; padding: 4px 10px; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 10.5px; letter-spacing: 0.05em; } .ds-chip-accent { background: color-mix(in srgb, var(--color-accent, #1f7a4d) 12%, transparent); color: var(--color-accent-deep, #12583a); border-color: color-mix(in srgb, var(--color-accent, #1f7a4d) 30%, transparent); } .ds-chip-herb { background: color-mix(in srgb, var(--color-herb, #5e7238) 15%, transparent); color: var(--color-herb-deep, #4a5b2c); border-color: color-mix(in srgb, var(--color-herb, #5e7238) 35%, transparent); } .ds-chip-neutral { background: var(--color-surface, #efede4); color: var(--color-ink, #16231c); border-color: var(--color-line, #e1dfd4); }"
     },
     {
       "name": "Toggle Button",
@@ -198,7 +198,7 @@
       "refersTo": "card",
       "description": "Signature large data panel (24px radius): the live-computed macro summary that anchors the configurator, with stat-sm numbers over label-sm captions.",
       "html": "<div class=\"ds-panel\"><div class=\"ds-panel-head\"><span class=\"ds-panel-title\">Неделя по вашим настройкам</span><span class=\"ds-chip ds-chip-herb\">пересобрано</span></div><div class=\"ds-panel-grid\"><div class=\"ds-macro\"><span class=\"ds-macro-value\">2000</span><div class=\"ds-macro-label\">ккал / день</div></div><div class=\"ds-macro\"><span class=\"ds-macro-value\">100 г</span><div class=\"ds-macro-label\">белок / день</div></div><div class=\"ds-macro\"><span class=\"ds-macro-value\">21</span><div class=\"ds-macro-label\">приёмов пищи</div></div><div class=\"ds-macro\"><span class=\"ds-macro-value\">1</span><div class=\"ds-macro-label\">поход в магазин</div></div></div></div>",
-      "css": ".ds-panel { border-radius: 24px; border: 1px solid var(--color-line, #e1dfd4); background: var(--color-ground, #f7f6f1); padding: 24px; } .ds-panel-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--color-line, #e1dfd4); } .ds-panel-title { font-size: 15px; font-weight: 800; letter-spacing: -0.02em; color: var(--color-ink, #16231c); } .ds-panel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; } .ds-macro-value { font-size: 26px; font-weight: 800; letter-spacing: -0.04em; color: var(--color-ink, #16231c); font-variant-numeric: tabular-nums; } .ds-macro-label { margin-top: 4px; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-muted, #5c675f); } .ds-chip { display: inline-block; white-space: nowrap; border-radius: 9999px; border: 1px solid; padding: 4px 10px; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 10.5px; letter-spacing: 0.05em; } .ds-chip-herb { background: color-mix(in srgb, var(--color-herb, #5e7238) 15%, transparent); color: var(--color-herb-ink, #4a5c2c); border-color: color-mix(in srgb, var(--color-herb, #5e7238) 35%, transparent); }"
+      "css": ".ds-panel { border-radius: 24px; border: 1px solid var(--color-line, #e1dfd4); background: var(--color-ground, #f7f6f1); padding: 24px; } .ds-panel-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--color-line, #e1dfd4); } .ds-panel-title { font-size: 15px; font-weight: 800; letter-spacing: -0.02em; color: var(--color-ink, #16231c); } .ds-panel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; } .ds-macro-value { font-size: 26px; font-weight: 800; letter-spacing: -0.04em; color: var(--color-ink, #16231c); font-variant-numeric: tabular-nums; } .ds-macro-label { margin-top: 4px; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-muted, #5c675f); } .ds-chip { display: inline-block; white-space: nowrap; border-radius: 9999px; border: 1px solid; padding: 4px 10px; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 10.5px; letter-spacing: 0.05em; } .ds-chip-herb { background: color-mix(in srgb, var(--color-herb, #5e7238) 15%, transparent); color: var(--color-herb-deep, #4a5b2c); border-color: color-mix(in srgb, var(--color-herb, #5e7238) 35%, transparent); }"
     },
     {
       "name": "Nav Bar",
@@ -221,7 +221,7 @@
     ],
     "rules": [
       { "name": "The One Accent Rule", "body": "Emerald is the only saturated color that reads as \"brand\" on the page — herb/amber/gold are semantic garnishes for specific data (waste %, meal slots, expiry), never substitutes for the primary accent.", "section": "colors" },
-      { "name": "The Dark Mirror Rule", "body": "Every token flips to a dark-mode counterpart (Emerald → #35b06e, Warm Paper → #0e1712, Herb Ink → #9bb169) via prefers-color-scheme or an explicit data-theme attribute. No surface hardcodes a light-mode value where the CSS variable is available, and that includes shadows and gradients: they are tokens too. This project is dark-mode-complete, not dark-mode-partial.", "section": "colors" },
+      { "name": "The Dark Mirror Rule", "body": "Every token flips to a dark-mode counterpart (Emerald → #35b06e, Warm Paper → #0e1712, Herb Deep → #9bb169) via prefers-color-scheme or an explicit data-theme attribute. No surface hardcodes a light-mode value where the CSS variable is available, and that includes shadows and gradients: they are tokens too. This project is dark-mode-complete, not dark-mode-partial.", "section": "colors" },
       { "name": "The Realistic Ingredient Rule", "body": "The drawn ingredients in lib/ingredients.ts use realistic food colors outside the token set on purpose — a food brand cannot afford a grey tomato. Those hex values are the ingredient palette, not UI colors: never recolor them to brand tokens, and never borrow them for interface elements.", "section": "colors" },
       { "name": "The Mono-Caps-Never-For-Prose Rule", "body": "The mono in uppercase is reserved for short labels, numbers, and status words. It never carries a sentence — the moment it would need to wrap, switch back to the sans.", "section": "typography" },
       { "name": "The Ten-Pixel Floor Rule", "body": "Readable text stops at 10 px. Anything smaller lives only inside a container marked aria-hidden, where it is drawn detail rather than content.", "section": "typography" },
@@ -229,7 +229,7 @@
       { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest, separated by tonal steps and hairlines, not shadows. Shadow appears only for importance, and when it does it is a named token, never an rgba literal in a class.", "section": "elevation" }
     ],
     "dos": [
-      "Do let Emerald (#1f7a4d / dark-mode #35b06e) be the only saturated brand color on any given screen; everything else is neutral or a rare semantic accent (herb/amber/gold), and olive text is always Herb Ink.",
+      "Do let Emerald (#1f7a4d / dark-mode #35b06e) be the only saturated brand color on any given screen; everything else is neutral or a rare semantic accent (herb/amber/gold), and olive text is always Herb Deep.",
       "Do use the system mono uppercase with wide tracking (0.1–0.22em) for every label, stat caption, and status — it's the system's signature texture, not an occasional accent — and keep it at 10px or larger wherever it is meant to be read.",
       "Do keep surfaces flat by default and reserve shadow for the specific moments something is meant to feel lifted, always through a --shadow-* token so dark mode gets its own value.",
       "Do use full-pill shape for anything actionable, generous 12–24px rounding for anything that holds content, and a 1px hairline border on nearly every container, callouts included.",

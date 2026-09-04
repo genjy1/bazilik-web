@@ -13,7 +13,7 @@ colors:
   accent-soft: "#ddece3"
   secondary: "#2a2116"
   herb: "#5e7238"
-  herb-ink: "#4a5c2c"
+  herb-deep: "#4a5b2c"
   amber: "#b26d24"
   amber-deep: "#87531c"
   gold: "#b8863a"
@@ -146,7 +146,7 @@ components:
     rounded: "{rounded.pill}"
     padding: "4px 10px"
   chip-herb:
-    textColor: "{colors.herb-ink}"
+    textColor: "{colors.herb-deep}"
     rounded: "{rounded.pill}"
     padding: "4px 10px"
   toggle-active:
@@ -191,7 +191,7 @@ Warm, low-saturation paper neutrals hold the page down; a single emerald accent 
 
 ### Secondary (optional accents)
 - **Olive Herb** (`#5e7238`): the "reuse / positive outcome" color — fills and dots only: the checkmark badges in the specialists sections, the lunch slot in the calendar scene, the herb chip's tinted background. Don't use it interchangeably with Emerald; it marks a distinct semantic (organic, reduction), not a second brand color.
-- **Herb Ink** (`#4a5c2c`): the text-safe olive. Herb on its own 15 % tint measures 4.07:1, which fails AA for the 10.5–12 px chips it lives on; Herb Ink measures 6.4:1 there. Any olive *text* (chip labels, the waste stat) takes Herb Ink; any olive *fill* keeps Herb.
+- **Herb Deep** (`#4a5b2c`): the text-safe olive. Herb on its own 15 % tint measures 4.07:1, which fails AA for the 10.5–12 px chips it lives on; Herb Deep measures 6.4:1 there. Any olive *text* (chip labels, the waste stat) takes Herb Deep; any olive *fill* keeps Herb.
 - **Spice Amber** (`#b26d24`) / **Amber Deep** (`#87531c`) / **Warm Gold** (`#b8863a`): sparing use for the dinner slot, the expiry badges in the pain scenes and chip tones; keep all three rare — they read as garnish, not structure. Amber text uses Amber Deep for contrast.
 - **Danger Red** (`#c0392b`): reserved for actual error/destructive states and the two "crossed out" strokes in the receipt and scanner scenes; not present in marketing copy, don't invent uses for it.
 - **Ambient Glow** (`rgba(53,176,110,0.16)`, `--glow`): the dark-mode emerald at 16 % alpha, used only for the large out-of-focus radial gradient behind the phone stage. Deliberately the same value in both themes because it stages a moment rather than rendering brand-colored UI; still a token so no component carries the rgba literal.
@@ -208,7 +208,7 @@ Warm, low-saturation paper neutrals hold the page down; a single emerald accent 
 ### Named Rules
 **The One Accent Rule.** Emerald is the only saturated color that reads as "brand" on the page — herb/amber/gold are semantic garnishes for specific data (waste %, meal slots, expiry), never substitutes for the primary accent.
 
-**The Dark Mirror Rule.** Every token flips to a dark-mode counterpart (Emerald → `#35b06e`, Warm Paper → `#0e1712`, Herb Ink → `#9bb169`) via `prefers-color-scheme` or an explicit `data-theme` attribute; the frontmatter above lists the light/canonical values. No surface hardcodes a light-mode value where the CSS variable is available, and that includes shadows and gradients: they are tokens too (see Elevation). This project is dark-mode-complete, not dark-mode-partial.
+**The Dark Mirror Rule.** Every token flips to a dark-mode counterpart (Emerald → `#35b06e`, Warm Paper → `#0e1712`, Herb Deep → `#9bb169`) via `prefers-color-scheme` or an explicit `data-theme` attribute; the frontmatter above lists the light/canonical values. No surface hardcodes a light-mode value where the CSS variable is available, and that includes shadows and gradients: they are tokens too (see Elevation). This project is dark-mode-complete, not dark-mode-partial.
 
 **The Realistic Ingredient Rule.** The drawn ingredients in `lib/ingredients.ts` (tomato, basil, chicken, egg, garlic, dill, onion, pepper, pasta) use realistic food colors outside the token set on purpose — a food brand cannot afford a grey tomato. Those hex values are the ingredient palette, not UI colors: never recolor them to brand tokens, and never borrow them for interface elements.
 
@@ -289,7 +289,7 @@ The one radius outside the pill/12/16/24/36 scale is the `:focus-visible` outlin
 - **The Basilik toggle** (`BasilikToggleButton`): the hero's single ask, larger than any other control (`min-h-14`, 16–18px extrabold). Off: solid emerald with `--shadow-accent-strong` and a slow 1 → 1.03 breathing pulse on its wrapper. On: Emerald Soft fill, Emerald Deep text, `--shadow-accent-soft`, no pulse — the collapsed chain beside it now carries the color.
 
 ### Chips & Pills
-- **Chip:** small mono pill (10.5px; 12px in the goals section), tinted background + matching text color per "tone" (accent / herb / amber / neutral), thin matching-tone border. The herb tone sets its text in Herb Ink, not Herb. Used for statuses, tags, dish names, and inline metadata.
+- **Chip:** small mono pill (10.5px; 12px in the goals section), tinted background + matching text color per "tone" (accent / herb / amber / neutral), thin matching-tone border. The herb tone sets its text in Herb Deep, not Herb. Used for statuses, tags, dish names, and inline metadata.
 - **Toggle button** (configurator, goals mode switch): same pill shape and mono-caps type as a Chip, but functions as a real input — active state is solid emerald + white text, inactive is ground background + hairline border + muted text, `aria-pressed` reflects state. Every toggle button, plus the theme toggle, the mobile menu button and the cookie button, holds a 44px minimum touch target (`min-h-11`, and `min-w-11` for icon-only squares).
 
 ### Cards / Containers
@@ -320,7 +320,7 @@ A single pinned, scroll-scrubbed stage (`h-screen`, 2.4 viewport-heights of scro
 ## Do's and Don'ts
 
 ### Do:
-- **Do** let Emerald (`#1f7a4d` / dark-mode `#35b06e`) be the only saturated brand color on any given screen; everything else is neutral or a rare semantic accent (herb/amber/gold), and olive *text* is always Herb Ink.
+- **Do** let Emerald (`#1f7a4d` / dark-mode `#35b06e`) be the only saturated brand color on any given screen; everything else is neutral or a rare semantic accent (herb/amber/gold), and olive *text* is always Herb Deep.
 - **Do** use the system mono uppercase with wide tracking (0.1–0.22em) for every label, stat caption, and status — it's the system's signature texture, not an occasional accent — and keep it at 10px or larger wherever it is meant to be read.
 - **Do** keep surfaces flat by default and reserve shadow for the specific moments something is meant to feel lifted, always through a `--shadow-*` token so dark mode gets its own value.
 - **Do** use full-pill shape for anything actionable, generous 12–24px rounding for anything that holds content, and a 1px hairline border on nearly every container, callouts included.

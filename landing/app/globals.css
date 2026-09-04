@@ -18,6 +18,9 @@
   --accent-soft: #ddece3;
   --secondary: #2a2116;
   --herb: #5e7238;
+  /* Текст на травяной подложке (Chip tone="herb"): сам --herb на bg-herb/15
+     даёт 4.06:1 — ниже AA для мелкого текста. Тёмный вариант — 5.7:1. */
+  --herb-deep: #4a5b2c;
   --amber: #b26d24;
   --amber-deep: #87531c;
   --gold: #b8863a;
@@ -40,11 +43,6 @@
   --shadow-accent-soft: 0 6px 18px rgba(31, 122, 77, 0.12);
   --shadow-panel: 0 24px 80px rgba(18, 88, 58, 0.1);
   --glow: rgba(53, 176, 110, 0.16);
-
-  /* Текстовый оттенок оливкового: сам --herb (#5e7238) на своей же заливке
-     даёт 4.07:1 и не проходит AA для мелких плашек. Заливки и точки остаются
-     на --herb, текст берёт --herb-ink. */
-  --herb-ink: #4a5c2c;
 }
 
 /* Системная тёмная тема — только если пользователь не выбрал светлую вручную. */
@@ -61,6 +59,7 @@
     --accent-soft: #16301f;
     --secondary: #c9c2b4;
     --herb: #9bb169;
+    --herb-deep: #9bb169;
     --amber: #e4a24e;
     --amber-deep: #e4a24e;
     --gold: #e0bd5a;
@@ -78,7 +77,6 @@
     --shadow-accent-soft: 0 6px 18px rgba(53, 176, 110, 0.12);
     --shadow-panel: 0 24px 80px rgba(0, 0, 0, 0.45);
     --glow: rgba(53, 176, 110, 0.16);
-    --herb-ink: #9bb169;
   }
 }
 
@@ -94,6 +92,7 @@
   --accent-soft: #16301f;
   --secondary: #c9c2b4;
   --herb: #9bb169;
+  --herb-deep: #9bb169;
   --amber: #e4a24e;
   --amber-deep: #e4a24e;
   --gold: #e0bd5a;
@@ -111,7 +110,6 @@
   --shadow-accent-soft: 0 6px 18px rgba(53, 176, 110, 0.12);
   --shadow-panel: 0 24px 80px rgba(0, 0, 0, 0.45);
   --glow: rgba(53, 176, 110, 0.16);
-  --herb-ink: #9bb169;
 }
 
 @theme inline {
@@ -126,7 +124,7 @@
   --color-accent-soft: var(--accent-soft);
   --color-secondary: var(--secondary);
   --color-herb: var(--herb);
-  --color-herb-ink: var(--herb-ink);
+  --color-herb-deep: var(--herb-deep);
   --color-amber: var(--amber);
   --color-amber-deep: var(--amber-deep);
   --color-gold: var(--gold);
@@ -183,6 +181,25 @@
     outline: 2px solid var(--accent);
     outline-offset: 3px;
     border-radius: 4px;
+  }
+
+  /* Липкая шапка (64px): элемент, получивший фокус с клавиатуры, и цель
+     якоря не должны уезжать под неё (WCAG 2.4.11). */
+  [id],
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  summary,
+  [tabindex] {
+    scroll-margin-top: 80px;
+  }
+
+  /* main и разделы получают фокус программно после якоря — рамка вокруг
+     всего раздела не нужна, дальше Tab идёт по его ссылкам. */
+  [tabindex="-1"]:focus-visible {
+    outline: none;
   }
 
   ::selection {

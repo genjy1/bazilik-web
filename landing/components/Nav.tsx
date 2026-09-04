@@ -2,7 +2,7 @@
 
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BrandMark } from "./BrandMark";
 import { ThemeToggle } from "./ui/ThemeToggle";
 import {
@@ -30,6 +30,18 @@ export function Nav({ links }: { links: readonly NavLink[] }) {
   const menuRef = useRef<HTMLDivElement>(null);
   const markerRef = useRef<HTMLSpanElement>(null);
   const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+
+  // Escape закрывает мобильное меню — ожидаемый выход с клавиатуры.
+  useEffect(() => {
+    if (!open) return;
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
 
   // Подложка и граница шапки появляются, как только страницу прокрутили.
   useIsomorphicLayoutEffect(() => {

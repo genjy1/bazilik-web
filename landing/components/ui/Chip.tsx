@@ -2,10 +2,12 @@ import type { ReactNode } from "react";
 
 type Tone = "accent" | "herb" | "amber" | "neutral";
 
+/* Текст — всегда «deep»-вариант цвета: на полупрозрачной подложке базовый
+   тон даёт ~4:1 и не проходит AA для мелкого моно-капса. */
 const tones: Record<Tone, string> = {
   accent: "bg-accent/12 text-accent-deep border-accent/30",
-  herb: "bg-herb/15 text-herb-ink border-herb/35",
-  amber: "bg-amber/15 text-amber border-amber/35",
+  herb: "bg-herb/15 text-herb-deep border-herb/35",
+  amber: "bg-amber/15 text-amber-deep border-amber/35",
   neutral: "bg-surface text-ink border-line",
 };
 
