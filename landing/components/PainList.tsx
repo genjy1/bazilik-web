@@ -66,7 +66,7 @@ function ManualScene({ delay = 0 }: { delay?: number }) {
       <span data-kbju className="font-mono text-[11px] font-bold text-muted">
         412
       </span>
-      <span className="font-mono text-[10px] text-muted/70">ккал</span>
+      <span className="font-mono text-[10px] text-muted">ккал</span>
     </div>
   );
 }

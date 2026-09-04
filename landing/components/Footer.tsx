@@ -22,9 +22,12 @@ export function Footer({ groups }: { groups: readonly FooterGroup[] }) {
 
           {groups.map((g) => (
             <div key={g.title}>
-              <h3 className="mb-3.5 font-mono text-[10.5px] font-semibold uppercase tracking-[0.18em] text-muted">
+              {/* h2, а не h3: на /cookies перед футером только h1, и h3
+                  ломает порядок заголовков; на остальных страницах футер
+                  идёт после h2-разделов и h2 здесь ровно на своём уровне. */}
+              <h2 className="mb-3.5 font-mono text-[10.5px] font-semibold uppercase tracking-[0.18em] text-muted">
                 {g.title}
-              </h3>
+              </h2>
               <ul className="grid gap-2.5">
                 {g.links.map((l) => (
                   <li key={l.href}>

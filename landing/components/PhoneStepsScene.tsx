@@ -185,7 +185,7 @@ function ScreenHeader({ step, title }: { step: string; title: string }) {
   return (
     <div>
       <div className="font-mono text-[9px] tracking-[0.14em] text-muted uppercase">{step}</div>
-      <h4 className="mt-1 text-[15px] font-extrabold tracking-tight text-ink">{title}</h4>
+      <h3 className="mt-1 text-[15px] font-extrabold tracking-tight text-ink">{title}</h3>
     </div>
   );
 }

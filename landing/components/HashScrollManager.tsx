@@ -34,6 +34,12 @@ function scrollToHash(hash: string, behavior: ScrollBehavior) {
       EXTRA_GAP;
 
     window.scrollTo({ top: Math.max(0, top), behavior: effectiveBehavior });
+
+    // Фокус переезжает на цель: без этого после «К содержимому» и якорей
+    // шапки Tab продолжает с прежнего места, а не из открытого раздела.
+    // preventScroll — прокрутка уже задана выше с поправкой на шапку.
+    if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
+    target.focus({ preventScroll: true });
   });
 }
 

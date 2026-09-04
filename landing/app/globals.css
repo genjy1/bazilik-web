@@ -18,6 +18,9 @@
   --accent-soft: #ddece3;
   --secondary: #2a2116;
   --herb: #5e7238;
+  /* Текст на травяной подложке (Chip tone="herb"): сам --herb на bg-herb/15
+     даёт 4.06:1 — ниже AA для мелкого текста. Тёмный вариант — 5.7:1. */
+  --herb-deep: #4a5b2c;
   --amber: #b26d24;
   --amber-deep: #87531c;
   --gold: #b8863a;
@@ -45,6 +48,7 @@
     --accent-soft: #16301f;
     --secondary: #c9c2b4;
     --herb: #9bb169;
+    --herb-deep: #9bb169;
     --amber: #e4a24e;
     --amber-deep: #e4a24e;
     --gold: #e0bd5a;
@@ -70,6 +74,7 @@
   --accent-soft: #16301f;
   --secondary: #c9c2b4;
   --herb: #9bb169;
+  --herb-deep: #9bb169;
   --amber: #e4a24e;
   --amber-deep: #e4a24e;
   --gold: #e0bd5a;
@@ -94,6 +99,7 @@
   --color-accent-soft: var(--accent-soft);
   --color-secondary: var(--secondary);
   --color-herb: var(--herb);
+  --color-herb-deep: var(--herb-deep);
   --color-amber: var(--amber);
   --color-amber-deep: var(--amber-deep);
   --color-gold: var(--gold);
@@ -148,6 +154,25 @@
     outline: 2px solid var(--accent);
     outline-offset: 3px;
     border-radius: 4px;
+  }
+
+  /* Липкая шапка (64px): элемент, получивший фокус с клавиатуры, и цель
+     якоря не должны уезжать под неё (WCAG 2.4.11). */
+  [id],
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  summary,
+  [tabindex] {
+    scroll-margin-top: 80px;
+  }
+
+  /* main и разделы получают фокус программно после якоря — рамка вокруг
+     всего раздела не нужна, дальше Tab идёт по его ссылкам. */
+  [tabindex="-1"]:focus-visible {
+    outline: none;
   }
 
   ::selection {

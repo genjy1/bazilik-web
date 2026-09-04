@@ -32,7 +32,9 @@ export default function Page() {
           eyebrow={HOME.eyebrow}
           h1={
             <>
-              <span className="block">{HOME.hero.titleTop}</span>
+              {/* Пробел между блоками: без него имя заголовка склеивается
+                  в «Готовь то,что уже есть.» */}
+              <span className="block">{HOME.hero.titleTop}</span>{" "}
               <span className="block text-accent-deep">{HOME.hero.titleAccent}</span>
             </>
           }
