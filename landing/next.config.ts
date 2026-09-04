@@ -13,6 +13,16 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      /**
+       * `/index` Next отдаёт как корень со статусом 200: дубль главной под
+       * другим адресом. Canonical его и так склеивает, но редирект честнее —
+       * робот не тратит обход на второй URL того же документа.
+       */
+      {
+        source: "/index",
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
 

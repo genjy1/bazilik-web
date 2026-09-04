@@ -44,8 +44,17 @@ export function Footer({ groups }: { groups: readonly FooterGroup[] }) {
           ))}
         </div>
 
-        <div className="mt-11 border-t border-line pt-5.5 font-mono text-[10.5px] uppercase tracking-[0.1em] text-muted">
+        <div className="mt-11 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-t border-line pt-5.5 font-mono text-[10.5px] uppercase tracking-[0.1em] text-muted">
           <span>© {new Date().getFullYear()} Базилик · Bazilik</span>
+          {/* До этого /cookies была достижима только из баннера согласия,
+              который рисуется на клиенте и исчезает после «Понятно»:
+              в серверном HTML на неё не вело ничего. */}
+          <a
+            href="/cookies"
+            className="text-muted transition-colors hover:text-accent-deep"
+          >
+            Cookie
+          </a>
         </div>
       </div>
     </footer>

@@ -65,7 +65,7 @@ export async function generateMetadata(
       description:
         "Конструктор планов для диетологов, нутрициологов и коучей: рецепты, автоматический КБЖУ и маркетплейс готовых планов.",
       url: "/specialists",
-      images: await inheritedOgImages(parent),
+      images: await inheritedOgImages(parent, TITLE),
     },
   };
 }
