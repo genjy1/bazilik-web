@@ -308,7 +308,7 @@ Each of the five benefit cards ends in a mini app screen: a slim header with a m
 
 ### Navigation
 - Sticky, 64px, blurred/translucent until scrolled past 12px, then gains a hairline bottom border and a more opaque ground fill (soft threshold, not a hard swap).
-- Desktop links are mono-caps 11px with wide tracking, each a 44px-tall flex item; an animated underline marker slides beneath whichever section is centered in the viewport (ScrollTrigger-driven, not `:hover`) and sits 6px above the link's bottom edge.
+- Desktop links are mono-caps 11px with wide tracking, each a 44px-tall flex item; an animated underline marker slides beneath whichever section is centered in the viewport (ScrollTrigger-driven, not `:hover`) and sits 7px below the bottom edge of the link's text (measured, not the 44px link box).
 - Mobile collapses into a height-animated panel (measured against actual content height) with staggered item entrance and `inert` while closed; items are 44px rows; the toggle button is a plain hairline-bordered circle, not styled as a primary/secondary button.
 
 ### Section Kicker

@@ -1,7 +1,12 @@
 "use client";
 
 import { useRef } from "react";
-import { MOTION_QUERIES, WIDE_QUERY, gsap, useIsomorphicLayoutEffect } from "@/lib/gsap";
+import {
+  WIDE_MOTION_QUERIES,
+  type WideMotionConditions,
+  gsap,
+  useIsomorphicLayoutEffect,
+} from "@/lib/gsap";
 
 /**
  * Фоновый слой: три изумрудных пятна, медленно дрейфующих под контентом,
@@ -46,8 +51,8 @@ export function BackgroundFX() {
 
     // На узких экранах пятна стоят на месте: три слоя по 700–800px с блюром
     // в вечном движении — самая дорогая отрисовка страницы на слабом GPU.
-    mm.add({ ...MOTION_QUERIES, wide: WIDE_QUERY }, (ctx) => {
-      const { reduced, wide } = ctx.conditions as { reduced: boolean; wide: boolean };
+    mm.add(WIDE_MOTION_QUERIES, (ctx) => {
+      const { reduced, wide } = ctx.conditions as WideMotionConditions;
       if (reduced || !wide) return;
 
       const q = gsap.utils.selector(el);

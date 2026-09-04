@@ -7,6 +7,7 @@ import { BrandMark } from "./BrandMark";
 import { ThemeToggle } from "./ui/ThemeToggle";
 import {
   MOTION_QUERIES,
+  REDUCED_MOTION,
   ScrollTrigger,
   gsap,
   useIsomorphicLayoutEffect,
@@ -121,46 +122,45 @@ export function Nav({ links }: { links: readonly NavLink[] }) {
       return;
     }
 
-    const mm = gsap.matchMedia();
+    // Не gsap.matchMedia: его revert() в cleanup откатывал маркер к исходному
+    // состоянию (x 0, y 0, ширина 0, opacity 0) при каждой смене раздела, и
+    // подчёркивание не переезжало от ссылки к ссылке, а каждый раз выезжало
+    // из левого верхнего угла шапки. Твин с overwrite сам продолжает движение
+    // с текущего места; reduced-motion читаем напрямую.
+    const reduced = window.matchMedia(REDUCED_MOTION).matches;
 
-    mm.add(MOTION_QUERIES, (ctx) => {
-      const { reduced } = ctx.conditions as { reduced: boolean };
+    const move = () => {
+      const target = linkRefs.current[active];
+      if (!target) return;
 
-      const move = () => {
-        const target = linkRefs.current[active];
-        if (!target) return;
+      // Подчёркивание привязано к тексту, а не к коробке ссылки: коробка
+      // растянута до 44px ради зоны нажатия, и отсчёт от её края уводил
+      // маркер на 16px под буквы. Меряем сам текст и ставим маркер на
+      // фиксированный зазор под ним.
+      const range = document.createRange();
+      range.selectNodeContents(target);
+      const text = range.getBoundingClientRect();
+      const y = text.bottom - nav.getBoundingClientRect().top + MARKER_GAP;
 
-        // Подчёркивание привязано к тексту, а не к коробке ссылки: коробка
-        // растянута до 44px ради зоны нажатия, и отсчёт от её края уводил
-        // маркер на 16px под буквы. Меряем сам текст и ставим маркер на
-        // фиксированный зазор под ним.
-        const range = document.createRange();
-        range.selectNodeContents(target);
-        const text = range.getBoundingClientRect();
-        const y = text.bottom - nav.getBoundingClientRect().top + MARKER_GAP;
+      gsap.to(marker, {
+        x: target.offsetLeft,
+        y,
+        width: target.offsetWidth,
+        opacity: 1,
+        duration: reduced ? 0 : 0.4,
+        ease: "power3.out",
+        overwrite: true,
+      });
+    };
 
-        gsap.to(marker, {
-          x: target.offsetLeft,
-          y,
-          width: target.offsetWidth,
-          opacity: 1,
-          duration: reduced ? 0 : 0.4,
-          ease: "power3.out",
-          overwrite: true,
-        });
-      };
+    move();
 
-      move();
+    // Ширина ссылок меняется вместе с раскладкой, поэтому позицию
+    // пересчитываем, а не запоминаем один раз.
+    const ro = new ResizeObserver(move);
+    ro.observe(nav);
 
-      // Ширина ссылок меняется вместе с раскладкой, поэтому позицию
-      // пересчитываем, а не запоминаем один раз.
-      const ro = new ResizeObserver(move);
-      ro.observe(nav);
-
-      return () => ro.disconnect();
-    });
-
-    return () => mm.revert();
+    return () => ro.disconnect();
   }, [active]);
 
   // Разворачивание мобильного меню по фактической высоте содержимого.

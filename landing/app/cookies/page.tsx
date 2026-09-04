@@ -55,7 +55,7 @@ export default function CookiesPage() {
         <div className="mx-auto flex max-w-[1180px] items-center px-6 py-5">
           <Link
             href="/"
-            className="flex items-center gap-2.5 text-[18px] font-extrabold tracking-tight"
+            className="flex min-h-11 items-center gap-2.5 text-[18px] font-extrabold tracking-tight"
           >
             <BrandMark className="size-6.5" />
             Базилик

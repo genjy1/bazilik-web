@@ -13,12 +13,13 @@ import {
   type Pace,
 } from "@/lib/configurator";
 import { EASE, MOTION_QUERIES, gsap, useIsomorphicLayoutEffect } from "@/lib/gsap";
+import { plural } from "@/lib/plural";
 import { AnimatedNumber } from "./ui/AnimatedNumber";
 import { Chip } from "./ui/Chip";
 
 const hours = (n: number) => n.toFixed(1).replace(".", ",");
-/** «1 поход», «2 похода» — подпись обязана согласоваться с числом. */
-const tripsWord = (n: number) => (n === 1 ? "поход" : "похода");
+/** «1 поход», «2 похода», «5 походов» — подпись обязана согласоваться с числом. */
+const tripsWord = (n: number) => plural(n, ["поход", "похода", "походов"]);
 
 const toggleBase =
   "inline-flex min-h-11 items-center justify-center rounded-full border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.1em] transition-colors";

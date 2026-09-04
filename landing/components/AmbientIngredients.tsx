@@ -2,7 +2,13 @@
 
 import { useRef } from "react";
 import { Ingredient } from "./ui/Ingredient";
-import { MOTION_OK, MOTION_QUERIES, WIDE_QUERY, gsap, useIsomorphicLayoutEffect } from "@/lib/gsap";
+import {
+  MOTION_OK,
+  WIDE_MOTION_QUERIES,
+  type WideMotionConditions,
+  gsap,
+  useIsomorphicLayoutEffect,
+} from "@/lib/gsap";
 
 /**
  * Фоновый слой дрейфующих ингредиентов — сквозной мотив всей страницы
@@ -40,8 +46,8 @@ export function AmbientIngredients() {
     // Дрейф и параллакс — только на широких экранах: на телефоне девять
     // бесконечных твинов плюс скраб по скроллу жгут батарею ради листьев,
     // которые в одну колонку почти не видны. Статичная раскладка остаётся.
-    mm.add({ ...MOTION_QUERIES, wide: WIDE_QUERY }, (ctx) => {
-      const { reduced, wide } = ctx.conditions as { reduced: boolean; wide: boolean };
+    mm.add(WIDE_MOTION_QUERIES, (ctx) => {
+      const { reduced, wide } = ctx.conditions as WideMotionConditions;
       if (reduced || !wide) return;
 
       const outers = gsap.utils.toArray<HTMLElement>(el.querySelectorAll("[data-drift]"));
