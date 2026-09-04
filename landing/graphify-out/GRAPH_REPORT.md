@@ -1,16 +1,16 @@
-# Graph Report - landing  (2026-09-04)
+# Graph Report - landing  (2026-09-03)
 
 ## Corpus Check
-- 114 files · ~131,876 words
+- 113 files · ~131,242 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 769 nodes · 1105 edges · 49 communities (43 shown, 6 thin omitted)
+- 764 nodes · 1089 edges · 48 communities (42 shown, 6 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 23 edges (avg confidence: 0.55)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `15673a29`
+- Built from commit: `72b16834`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -23,7 +23,7 @@
 - devDependencies
 - 001 — Fix scale(0) entrance on engine icon marks
 - Three.js Fundamentals Skill
-- Process.tsx
+- specialists/page.tsx
 - PhoneStepsScene.tsx
 - layout.tsx
 - EngineCards.tsx
@@ -56,24 +56,23 @@
 - clip-path for Animation
 - Performance Rules
 - Gesture and Drag Interactions
-- ComparisonSection.tsx
 - CSS Transform Mastery
 - The Sonner Principles (Building Loved Components)
 - Spring Animations
 - Core Philosophy
-- alt
 - Debugging Animations
+- alt
 
 ## God Nodes (most connected - your core abstractions)
 1. `Anti-Slop Frontend Design Skill (design-taste-frontend)` - 23 edges
 2. `Apple Design` - 20 edges
 3. `MOTION_QUERIES` - 18 edges
-4. `Reveal()` - 17 edges
+4. `Reveal()` - 16 edges
 5. `compilerOptions` - 16 edges
 6. `Design Engineering` - 16 edges
 7. `Animation Standards Reference` - 16 edges
-8. `SectionKicker()` - 14 edges
-9. `Product Marketing Context` - 14 edges
+8. `Product Marketing Context` - 14 edges
+9. `SectionKicker()` - 13 edges
 10. `Glossary` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
@@ -96,7 +95,7 @@
 - **Three.js Skill Family (animation, fundamentals, geometry, interaction, lighting, loaders, materials)** — _agents_skills_threejs_animation_skill_skill, _agents_skills_threejs_fundamentals_skill_skill, _agents_skills_threejs_geometry_skill_skill, _agents_skills_threejs_interaction_skill_skill, _agents_skills_threejs_lighting_skill_skill, _agents_skills_threejs_loaders_skill_skill, _agents_skills_threejs_materials_skill_skill [EXTRACTED 1.00]
 - **Project Root Documentation Set (AGENTS.md, CLAUDE.md, README.md)** — agents_doc, claude_doc, readme_doc [EXTRACTED 1.00]
 
-## Communities (49 total, 6 thin omitted)
+## Communities (48 total, 6 thin omitted)
 
 ### Community 0 - "PainChaos.tsx"
 Cohesion: 0.17
@@ -108,19 +107,19 @@ Nodes (38): Anti-Slop Frontend Design Skill (design-taste-frontend), GSAP Core S
 
 ### Community 2 - "compilerOptions"
 Cohesion: 0.07
-Nodes (28): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+20 more)
+Nodes (28): dom, dom.iterable, esnext, **/*.mts, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules (+20 more)
 
 ### Community 3 - "PlanConfigurator.tsx"
-Cohesion: 0.13
-Nodes (17): PlanConfigurator(), AnimatedNumber(), Props, BASE, Config, DEFAULT_CONFIG, Diet, DIETS (+9 more)
+Cohesion: 0.08
+Nodes (29): HomePanel(), week, plans, ProsPanel(), PlanConfigurator(), AnimatedNumber(), Props, Chip() (+21 more)
 
 ### Community 4 - "gsap.ts"
-Cohesion: 0.06
-Nodes (40): CheckItem, BasilikChain(), Props, BasilikToggleButton(), JourneyBand(), NODES, PATH_D, playWhileVisible() (+32 more)
+Cohesion: 0.08
+Nodes (28): CheckItem, BasilikChain(), Props, BasilikToggleButton(), JourneyBand(), NODES, PATH_D, playWhileVisible() (+20 more)
 
 ### Community 5 - "devDependencies"
 Cohesion: 0.05
-Nodes (40): dependencies, gsap, lucide-react, next, react, react-dom, three, devDependencies (+32 more)
+Nodes (40): eslint, eslint-config-next, gsap, lucide-react, next, dependencies, gsap, lucide-react (+32 more)
 
 ### Community 6 - "001 — Fix scale(0) entrance on engine icon marks"
 Cohesion: 0.04
@@ -130,17 +129,17 @@ Nodes (39): 001 — Fix scale(0) entrance on engine icon marks, Boundaries, Prob
 Cohesion: 0.27
 Nodes (16): Three.js Animation Skill, Three.js Fundamentals Skill, Three.js Geometry Skill, Three.js Interaction Skill, Three.js Lighting Skill, Three.js Loaders Skill, Three.js Materials Skill, Three.js AnimationMixer/AnimationClip/AnimationAction System (+8 more)
 
-### Community 8 - "Process.tsx"
-Cohesion: 0.40
-Nodes (4): Process(), Props, Step, PROCESS
+### Community 8 - "specialists/page.tsx"
+Cohesion: 0.18
+Nodes (9): PainList(), Process(), Props, Step, SectionDivider(), BasilikToggleContext, BasilikToggleProvider(), BasilikToggleValue (+1 more)
 
 ### Community 9 - "PhoneStepsScene.tsx"
-Cohesion: 0.05
-Nodes (35): AmbientIngredients(), ITEMS, COOK_STEPS, DIET_GOALS, LIFE_GOALS, PhoneStepsScene(), productWord(), SHOPPING (+27 more)
+Cohesion: 0.06
+Nodes (34): AmbientIngredients(), ITEMS, COOK_STEPS, DIET_GOALS, LIFE_GOALS, productWord(), SHOPPING, ShoppingItem (+26 more)
 
 ### Community 10 - "layout.tsx"
-Cohesion: 0.07
-Nodes (30): metadata, viewport, Image(), markUri(), size, robots(), sitemap(), CookieConsent() (+22 more)
+Cohesion: 0.08
+Nodes (28): metadata, viewport, Image(), markUri(), size, robots(), sitemap(), CookieConsent() (+20 more)
 
 ### Community 11 - "EngineCards.tsx"
 Cohesion: 0.21
@@ -183,12 +182,12 @@ Cohesion: 0.12
 Nodes (15): 1. Frequency — how often will a user see this?, 2. Purpose — why does this animate?, 3. Speed — can it stay inside budget?, 4. Function — does motion help or hinder here?, Finding Animation Opportunities, Hard Rules, Operating Posture, Part 1 — Opportunities table (+7 more)
 
 ### Community 26 - "content.ts"
-Cohesion: 0.20
-Nodes (10): CtaSection(), FinalCopy, AUDIENCE_ROUTES, BASILIK_TOGGLE, CHAIN_BEFORE, CTA, FOOTER_GROUPS_ROOT, FOOTER_GROUPS_SPECIALISTS (+2 more)
+Cohesion: 0.22
+Nodes (9): CtaSection(), FinalCopy, AUDIENCE_ROUTES, CTA, FOOTER_GROUPS_ROOT, FOOTER_GROUPS_SPECIALISTS, NAV_LINKS_ROOT, NAV_LINKS_SPECIALISTS (+1 more)
 
 ### Community 27 - "Reveal.tsx"
-Cohesion: 0.24
-Nodes (7): HIGHLIGHTS, PROBLEM_ITEMS, SectionKicker(), Props, Reveal(), CheckItem, PROS
+Cohesion: 0.18
+Nodes (10): ExistingClientsSection(), HIGHLIGHTS, MarketplaceSection(), PROBLEM_ITEMS, SectionKicker(), Props, Reveal(), CheckItem (+2 more)
 
 ### Community 28 - "Лендинг B2C — визуал и анимации"
 Cohesion: 0.15
@@ -219,8 +218,8 @@ Cohesion: 0.22
 Nodes (8): Accessibility, Design Engineering, Initial Response, prefers-reduced-motion, Review Checklist, Review Format (Required), Stagger Animations, Touch device hover states
 
 ### Community 35 - "app/page.tsx"
-Cohesion: 0.15
-Nodes (13): AudienceHero(), BackgroundFX(), BLOBS, ExistingClientsSection(), FaqSection(), MarketplaceSection(), PainList(), SectionDivider() (+5 more)
+Cohesion: 0.18
+Nodes (9): AudienceHero(), BackgroundFX(), BLOBS, ComparisonSection(), Row, PhoneStepsScene(), FOOTER_GROUPS_HOME, HOME (+1 more)
 
 ### Community 36 - "Component Building Principles"
 Cohesion: 0.25
@@ -242,40 +241,36 @@ Nodes (6): CSS animations beat JS under load, CSS variables are inheritable, Fra
 Cohesion: 0.33
 Nodes (6): Damping at boundaries, Friction instead of hard stops, Gesture and Drag Interactions, Momentum-based dismissal, Multi-touch protection, Pointer capture for drag
 
-### Community 41 - "ComparisonSection.tsx"
-Cohesion: 0.40
-Nodes (3): ComparisonSection(), Row, HOME
-
-### Community 42 - "CSS Transform Mastery"
+### Community 41 - "CSS Transform Mastery"
 Cohesion: 0.40
 Nodes (5): 3D transforms for depth, CSS Transform Mastery, scale() scales children too, transform-origin, translateY with percentages
 
-### Community 43 - "The Sonner Principles (Building Loved Components)"
+### Community 42 - "The Sonner Principles (Building Loved Components)"
 Cohesion: 0.40
 Nodes (5): Asymmetric enter/exit timing, Cohesion matters, Review your work the next day, The opacity + height combination, The Sonner Principles (Building Loved Components)
 
-### Community 44 - "Spring Animations"
+### Community 43 - "Spring Animations"
 Cohesion: 0.40
 Nodes (5): Interruptibility advantage, Spring Animations, Spring-based mouse interactions, Spring configuration, When to use springs
 
-### Community 45 - "Core Philosophy"
+### Community 44 - "Core Philosophy"
 Cohesion: 0.50
 Nodes (4): Beauty is leverage, Core Philosophy, Taste is trained, not innate, Unseen details compound
 
-### Community 48 - "Debugging Animations"
+### Community 45 - "Debugging Animations"
 Cohesion: 0.50
 Nodes (4): Debugging Animations, Frame-by-frame inspection, Slow motion testing, Test on real devices
 
 ## Knowledge Gaps
-- **411 isolated node(s):** `metadata`, `viewport`, `size`, `ITEMS`, `CheckItem` (+406 more)
+- **410 isolated node(s):** `metadata`, `viewport`, `size`, `ITEMS`, `CheckItem` (+405 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `MOTION_QUERIES` connect `gsap.ts` to `GoalsSection.tsx`, `app/page.tsx`, `PlanConfigurator.tsx`, `PhoneStepsScene.tsx`, `layout.tsx`, `EngineCards.tsx`, `cookies/page.tsx`?**
-  _High betweenness centrality (0.012) - this node is a cross-community bridge._
+- **Why does `MOTION_QUERIES` connect `gsap.ts` to `GoalsSection.tsx`, `app/page.tsx`, `PlanConfigurator.tsx`, `specialists/page.tsx`, `PhoneStepsScene.tsx`, `layout.tsx`, `EngineCards.tsx`, `cookies/page.tsx`?**
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **Why does `Design Engineering` connect `Design Engineering` to `Component Building Principles`, `The Animation Decision Framework`, `clip-path for Animation`, `Performance Rules`, `Gesture and Drag Interactions`, `CSS Transform Mastery`, `The Sonner Principles (Building Loved Components)`, `Spring Animations`, `Core Philosophy`, `Debugging Animations`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **Why does `Anti-Slop Frontend Design Skill (design-taste-frontend)` connect `Anti-Slop Frontend Design Skill (design-taste-frontend)` to `Three.js Fundamentals Skill`?**
@@ -283,7 +278,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Are the 2 inferred relationships involving `Anti-Slop Frontend Design Skill (design-taste-frontend)` (e.g. with `GSAP Core Skill` and `GSAP Performance Skill`) actually correct?**
   _`Anti-Slop Frontend Design Skill (design-taste-frontend)` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `metadata`, `viewport`, `size` to the rest of the system?**
-  _411 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _410 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Anti-Slop Frontend Design Skill (design-taste-frontend)` be split into smaller, more focused modules?**
   _Cohesion score 0.10099573257467995 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**

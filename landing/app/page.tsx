@@ -3,7 +3,6 @@ import { AudienceHero } from "@/components/AudienceHero";
 import { BackgroundFX } from "@/components/BackgroundFX";
 import { ComparisonSection } from "@/components/ComparisonSection";
 import { CtaSection } from "@/components/CtaSection";
-import { FaqSection } from "@/components/FaqSection";
 import { Footer } from "@/components/Footer";
 import { GoalsSection } from "@/components/GoalsSection";
 import { Nav } from "@/components/Nav";
@@ -13,7 +12,6 @@ import { SectionDivider } from "@/components/SectionDivider";
 import { TakesSection } from "@/components/TakesSection";
 import { BasilikToggleProvider } from "@/lib/basilikToggle";
 import { FOOTER_GROUPS_HOME, HOME, NAV_LINKS_HOME } from "@/lib/content";
-import { FAQ_SCHEMA_JSON } from "@/lib/schema";
 
 export default function Page() {
   return (
@@ -56,15 +54,6 @@ export default function Page() {
 
         <SectionDivider />
         <GoalsSection />
-
-        <SectionDivider />
-        <FaqSection />
-        {/* Разметка FAQPage только здесь, а не в layout: раздел есть лишь на
-            главной. Не InlineScript — тот подменяет type при гидратации. */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: FAQ_SCHEMA_JSON }}
-        />
 
         <SectionDivider />
         {/* Аудитория «дома» теперь и есть главная, поэтому карточка «Дома»
