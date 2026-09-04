@@ -5,8 +5,8 @@
     "semantic_hash": ""
   },
   "app/page.tsx": {
-    "mtime": 1787600614.8065155,
-    "ast_hash": "688ab80e379270ec269cd01ff4f3bea5",
+    "mtime": 1788467469.1147301,
+    "ast_hash": "21a405e80b6b6f9f633550f9ddc02ea5",
     "semantic_hash": ""
   },
   "app/specialists/page.tsx": {
@@ -50,13 +50,13 @@
     "semantic_hash": ""
   },
   "components/Footer.tsx": {
-    "mtime": 1786138682.4261663,
-    "ast_hash": "89c94355603bfa1a04641e98175f107b",
+    "mtime": 1788467374.7968545,
+    "ast_hash": "04a57ddfcb3567a1d44e99d45416039c",
     "semantic_hash": ""
   },
   "components/HashScrollManager.tsx": {
-    "mtime": 1785513989.6667292,
-    "ast_hash": "9958723c139c6aa87a3dfe61123d7dd4",
+    "mtime": 1788467462.3680222,
+    "ast_hash": "4d4bbfb3f55b76038f9950d9a0d46bbc",
     "semantic_hash": ""
   },
   "components/Hero.tsx": {
@@ -75,13 +75,13 @@
     "semantic_hash": "923d31bf857563cb3b8ccb153f1b5675"
   },
   "components/Nav.tsx": {
-    "mtime": 1785171249.504902,
-    "ast_hash": "496adae3fd546e6e6e50c3b524098813",
+    "mtime": 1788467456.3986435,
+    "ast_hash": "5babd0a2747c2968148a34272ae821e5",
     "semantic_hash": ""
   },
   "components/PlanConfigurator.tsx": {
-    "mtime": 1785513989.667243,
-    "ast_hash": "7e8f29d720ce9d3c2d913c60b87d2dde",
+    "mtime": 1788467466.1485002,
+    "ast_hash": "c1c461fcae8abfddea24e644f8e34b52",
     "semantic_hash": ""
   },
   "components/Problem.tsx": {
@@ -165,8 +165,8 @@
     "semantic_hash": "a0cb1f246c48ec7b84fe077e3f88c3f2"
   },
   "components/ui/ThemeToggle.tsx": {
-    "mtime": 1785171244.5367973,
-    "ast_hash": "22d7bf008cdef699cf1d8b0fb8f145d6",
+    "mtime": 1788467458.6712997,
+    "ast_hash": "b461ecd7a3e26cd934154f412566efde",
     "semantic_hash": ""
   },
   "eslint.config.mjs": {
@@ -305,8 +305,8 @@
     "semantic_hash": "9346a4897ff955555ddedb7bebf77adb"
   },
   "CLAUDE.md": {
-    "mtime": 1788430843.8644907,
-    "ast_hash": "79194c284b837f1b08995cd94544fdf4",
+    "mtime": 1788466877.9434018,
+    "ast_hash": "a223266ac38a736dca720aabd0a793d6",
     "semantic_hash": ""
   },
   "README.md": {
@@ -345,8 +345,8 @@
     "semantic_hash": ""
   },
   "components/GoalsSection.tsx": {
-    "mtime": 1787601113.3543797,
-    "ast_hash": "c48343042233a4086653ea11b955f493",
+    "mtime": 1788467420.6022143,
+    "ast_hash": "7229b717cfa5b2079c2d2d1ccf56ceff",
     "semantic_hash": ""
   },
   "components/MarketplaceSection.tsx": {
@@ -365,8 +365,8 @@
     "semantic_hash": ""
   },
   "components/TakesSection.tsx": {
-    "mtime": 1787600534.423853,
-    "ast_hash": "8428406fdf70baf156c86b0b73edc114",
+    "mtime": 1788467420.6982317,
+    "ast_hash": "5c9145b0edd812302c67e54a3a2ce051",
     "semantic_hash": ""
   },
   "components/WinWinSection.tsx": {
@@ -520,18 +520,18 @@
     "semantic_hash": ""
   },
   "components/CookieConsent.tsx": {
-    "mtime": 1788430843.5126605,
-    "ast_hash": "548f03fe75308d695ae6bf6290aba5f1",
+    "mtime": 1788466877.9434018,
+    "ast_hash": "201dc4f34dcf60f6f2e21447cb67e8a1",
     "semantic_hash": ""
   },
   "components/PhoneStepsScene.tsx": {
-    "mtime": 1787602164.4267678,
-    "ast_hash": "002fd1be29ff849351a7bee15651e769",
+    "mtime": 1788467420.5300353,
+    "ast_hash": "dd8e42d5570c1088caf768d69f682f2b",
     "semantic_hash": ""
   },
   "components/YandexMetrika.tsx": {
-    "mtime": 1788430843.541704,
-    "ast_hash": "d1cc0aa78aae7987cd355ffc5427dd17",
+    "mtime": 1788466877.9439132,
+    "ast_hash": "7c146b3925bc814c4aedea87cb21ea9b",
     "semantic_hash": ""
   },
   "app/manifest.ts": {
@@ -555,18 +555,18 @@
     "semantic_hash": ""
   },
   "lib/schema.ts": {
-    "mtime": 1788429132.9378831,
-    "ast_hash": "adf9bd3cad46dc434eac83cf69cd4f6a",
+    "mtime": 1788467374.7963347,
+    "ast_hash": "11302b626ccc6edc2b723e56e348e90e",
     "semantic_hash": ""
   },
   "lib/site.ts": {
-    "mtime": 1788429132.9384005,
-    "ast_hash": "0e165f7aa26cb3597afe1fda62a7b3d6",
+    "mtime": 1788467374.7968545,
+    "ast_hash": "1da527e95c3013b596cb7ca35e40951d",
     "semantic_hash": ""
   },
   ".agents/product-marketing.md": {
-    "mtime": 1787840603.1055183,
-    "ast_hash": "9050dca7f33063ecd273b1975e50c872",
+    "mtime": 1788467388.0741937,
+    "ast_hash": "ea4a491708d52d0e698cee5f119d7023",
     "semantic_hash": ""
   },
   "public/icon-192.png": {
@@ -595,8 +595,13 @@
     "semantic_hash": ""
   },
   "lib/cookieConsent.ts": {
-    "mtime": 1788430843.4836068,
-    "ast_hash": "dec1ae1d2f0b266c6b56e17176bb7f0b",
+    "mtime": 1788466877.9572804,
+    "ast_hash": "a6b23614889741f853a8a56ce568833a",
+    "semantic_hash": ""
+  },
+  "public/llms.txt": {
+    "mtime": 1788467352.092781,
+    "ast_hash": "83c47e09df85c72760854ba265925418",
     "semantic_hash": ""
   }
 }
