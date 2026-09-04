@@ -10,7 +10,7 @@ export function ExistingClientsSection() {
   return (
     <section className="py-16 md:py-24">
       <div className="mx-auto max-w-[1180px] px-6">
-        <SectionKicker n="06" title={access.title} lead={access.lead} />
+        <SectionKicker title={access.title} lead={access.lead} />
 
         <ul className="mt-8 grid gap-4 md:grid-cols-3">
           {access.items.map((item, i) => (

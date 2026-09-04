@@ -496,7 +496,7 @@ export function TakesSection() {
   return (
     <section className="py-16 md:py-28">
       <div className="mx-auto max-w-[1180px] px-6">
-        <SectionKicker n="03" title="Что ты получаешь" />
+        <SectionKicker title="Что ты получаешь" />
 
         <ul className="mt-10 grid gap-5 sm:grid-cols-2">
           {HOME.takes.map((take, i) => {
@@ -505,10 +505,7 @@ export function TakesSection() {
               <Reveal key={take.title} delay={i * 70} as="li">
                 <div className="flex h-full flex-col justify-between gap-6 rounded-2xl border border-line bg-surface p-7 transition-colors duration-200 hover:border-accent/25 md:p-8">
                   <div>
-                    <span className="font-mono text-[13px] font-bold tracking-[0.14em] text-accent">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <h3 className="mt-2 text-[22px] font-extrabold leading-snug tracking-tight md:text-[24px]">
+                    <h3 className="text-[22px] font-extrabold leading-snug tracking-tight md:text-[24px]">
                       {take.title}
                     </h3>
                     <p className="mt-3 text-[15.5px] leading-relaxed text-muted">{take.body}</p>

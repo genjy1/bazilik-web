@@ -87,7 +87,7 @@ export function AudienceHero({
           <>
             <div
               data-ahero-chain
-              className="mt-9 rounded-2xl border border-line bg-surface p-5 shadow-[0_24px_80px_rgba(18,88,58,0.10)] md:p-6"
+              className="mt-9 rounded-2xl border border-line bg-surface p-5 shadow-[var(--shadow-panel)] md:p-6"
             >
               <BasilikChain
                 chain={CHAIN_BEFORE}

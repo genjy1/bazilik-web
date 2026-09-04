@@ -16,17 +16,12 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  images: {
-    // Фотографии блюд и обложки планов — заглушки с Unsplash до появления
-    // собственного контента. remotePatterns обязателен: без него next/image
-    // откажется оптимизировать внешний хост.
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        pathname: "/**",
-      },
-    ],
+  /**
+   * В корне репозитория лежит второй package-lock.json, и без явного корня
+   * Next на каждой сборке гадает, где проект, и предупреждает об этом.
+   */
+  turbopack: {
+    root: import.meta.dirname,
   },
 };
 

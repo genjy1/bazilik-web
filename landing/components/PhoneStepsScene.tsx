@@ -184,15 +184,15 @@ function PhoneSlot({ index, children }: { index: number; children: ReactNode }) 
 function ScreenHeader({ step, title }: { step: string; title: string }) {
   return (
     <div>
-      <div className="font-mono text-[9px] tracking-[0.14em] text-muted uppercase">{step}</div>
-      <h4 className="mt-1 text-[15px] font-extrabold tracking-tight text-ink">{title}</h4>
+      <div className="font-mono text-[10px] tracking-[0.14em] text-muted uppercase">{step}</div>
+      <h3 className="mt-1 text-[15px] font-extrabold tracking-tight text-ink">{title}</h3>
     </div>
   );
 }
 
 function FieldLabel({ children }: { children: ReactNode }) {
   return (
-    <div className="font-mono text-[9px] tracking-[0.12em] text-muted uppercase">{children}</div>
+    <div className="font-mono text-[10px] tracking-[0.12em] text-muted uppercase">{children}</div>
   );
 }
 
@@ -215,7 +215,7 @@ function AudienceScreen() {
       <ScreenHeader step="Шаг 1" title="Расскажи о себе" />
 
       <div className="mt-4 rounded-2xl border border-line bg-surface p-3.5">
-        <div className="flex items-center gap-1.5 font-mono text-[9px] tracking-[0.12em] text-muted uppercase">
+        <div className="flex items-center gap-1.5 font-mono text-[10px] tracking-[0.12em] text-muted uppercase">
           <Users size={12} aria-hidden="true" /> На сколько человек
         </div>
         <div className="mt-2.5 flex items-center justify-between">
@@ -292,7 +292,7 @@ function ShoppingScreen({ animated = false }: { animated?: boolean }) {
 
       <div className="mt-auto flex items-center gap-2 rounded-xl border border-line bg-surface px-3 py-2.5">
         <ShoppingCart size={13} className="text-accent" aria-hidden="true" />
-        <span className="font-mono text-[9.5px] tracking-[0.1em] text-muted uppercase">
+        <span className="font-mono text-[10px] tracking-[0.1em] text-muted uppercase">
           {SHOPPING.length} {productWord(SHOPPING.length)} · 1 поход
         </span>
       </div>
@@ -308,7 +308,7 @@ function CookScreen({ animated = false }: { animated?: boolean }) {
 
       <div className="mt-4 rounded-2xl border border-line bg-surface p-3.5">
         <div className="text-[13px] font-bold tracking-tight text-ink">Курица с томатами</div>
-        <div className="mt-1.5 flex items-center gap-2 font-mono text-[9px] tracking-[0.1em] text-muted uppercase">
+        <div className="mt-1.5 flex items-center gap-2 font-mono text-[10px] tracking-[0.1em] text-muted uppercase">
           <span>25 мин</span>
           <span className="size-1 rounded-full bg-line" aria-hidden="true" />
           <span>4 порции</span>
@@ -517,20 +517,15 @@ export function PhoneStepsScene() {
           className="pointer-events-none absolute inset-x-0 bottom-0 h-[60%]"
           style={{
             background:
-              "radial-gradient(60% 80% at 50% 100%, rgba(53,176,110,0.16) 0%, transparent 70%)",
+              "radial-gradient(60% 80% at 50% 100%, var(--glow) 0%, transparent 70%)",
           }}
         />
 
         <div className="relative mx-auto flex h-full max-w-[1180px] flex-col px-6">
           <header ref={headerRef} className="pt-[clamp(76px,8.5vh,100px)]">
-            <div className="flex flex-wrap items-baseline gap-3.5">
-              <span className="font-mono text-[13px] font-bold tracking-[0.14em] text-accent">
-                04
-              </span>
-              <h2 className="text-[clamp(28px,3.6vw,46px)]">
-                Три шага — и неделя спланирована
-              </h2>
-            </div>
+            <h2 className="text-[clamp(28px,3.6vw,46px)]">
+              Три шага — и неделя спланирована
+            </h2>
 
             <div className="relative mt-4 h-7 max-w-[52ch]">
               {HOME.process.map((step, i) => (
@@ -591,7 +586,7 @@ export function PhoneStepsScene() {
       {/* Мобиль / prefers-reduced-motion: статичная колонка тех же трёх экранов. */}
       <div className="motion-safe:md:hidden">
         <div className="mx-auto max-w-[1180px] px-6 pt-16 md:pt-24">
-          <SectionKicker n="04" title="Три шага — и неделя спланирована" />
+          <SectionKicker title="Три шага — и неделя спланирована" />
         </div>
         <div className="mx-auto flex max-w-[1180px] flex-col items-center gap-8 px-6 py-12">
           {HOME.process.map((step, i) => (

@@ -4,7 +4,7 @@ type Tone = "accent" | "herb" | "amber" | "neutral";
 
 const tones: Record<Tone, string> = {
   accent: "bg-accent/12 text-accent-deep border-accent/30",
-  herb: "bg-herb/15 text-herb border-herb/35",
+  herb: "bg-herb/15 text-herb-ink border-herb/35",
   amber: "bg-amber/15 text-amber border-amber/35",
   neutral: "bg-surface text-ink border-line",
 };
@@ -28,11 +28,3 @@ export function Chip({
   );
 }
 
-/** Крупная плашка под геро-мета и служебные подписи. */
-export function Pill({ children }: { children: ReactNode }) {
-  return (
-    <span className="inline-block whitespace-nowrap rounded-full border border-line bg-surface px-3 py-1.5 font-mono text-[11px] tracking-wide text-ink">
-      {children}
-    </span>
-  );
-}

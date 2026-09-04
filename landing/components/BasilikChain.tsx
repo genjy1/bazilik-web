@@ -314,7 +314,7 @@ export function BasilikChain({
             <span key={step} className="inline-flex items-center gap-2">
               <span
                 data-compact-morph={`keep-${i}`}
-                className="whitespace-nowrap rounded-full bg-accent px-4 py-2.5 text-[15px] font-extrabold tracking-tight text-on-accent shadow-[0_12px_28px_rgba(31,122,77,0.24)] sm:px-5 sm:text-base"
+                className="whitespace-nowrap rounded-full bg-accent px-4 py-2.5 text-[15px] font-extrabold tracking-tight text-on-accent shadow-[var(--shadow-accent-lift)] sm:px-5 sm:text-base"
               >
                 {step}
               </span>

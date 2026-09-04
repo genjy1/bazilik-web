@@ -76,9 +76,9 @@ export function BasilikToggleButton({
             ? // Включено — кнопка отходит на второй план: рядом уже горит
               // изумрудная свёрнутая цепочка, второй такой же блок с ней спорит.
               "border border-accent/40 bg-accent-soft text-accent-deep " +
-              "shadow-[0_6px_18px_rgba(31,122,77,0.12)] hover:border-accent"
+              "shadow-[var(--shadow-accent-soft)] hover:border-accent"
             : "border border-transparent bg-accent text-on-accent " +
-              "shadow-[0_2px_8px_rgba(31,122,77,0.28),0_18px_44px_rgba(31,122,77,0.28)] " +
+              "shadow-[var(--shadow-accent-strong)] " +
               "hover:bg-accent-deep")
         }
       >
