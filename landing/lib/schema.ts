@@ -1,3 +1,4 @@
+import { HOME } from "@/lib/content";
 import { SITE_NAME, SITE_URL, absoluteUrl } from "@/lib/site";
 
 /**
@@ -71,7 +72,39 @@ const SCHEMA_GRAPH = {
  * layout вставляет его в каждую страницу — незачем сериализовать объект и
  * гонять регулярку по всей строке на каждый рендер.
  */
-export const SCHEMA_JSON = JSON.stringify(SCHEMA_GRAPH).replace(
-  /</g,
-  "\\u003c",
-);
+const escapeJsonLd = (json: string) => json.replace(/</g, "\\u003c");
+
+export const SCHEMA_JSON = escapeJsonLd(JSON.stringify(SCHEMA_GRAPH));
+
+/**
+ * FAQPage — только для главной, поэтому отдельная константа, а не четвёртый
+ * узел общего графа: тот вставляется в layout на каждую страницу, и разметка
+ * вопросов на /cookies утверждала бы то, чего там нет. Вставляется в
+ * app/page.tsx рядом с самим разделом.
+ *
+ * Вопросы и ответы берутся из HOME.faq — той же константы, что рендерит
+ * раздел, — так разметка не может разойтись со страницей. Это же условие
+ * правил Google для FAQPage: в разметке ровно тот текст, что виден.
+ *
+ * Расширенный сниппет за эту разметку Google с 2023 года показывает лишь
+ * государственным и медицинским сайтам, так что здесь она для Яндекса
+ * («Вопросы и ответы» в выдаче) и для языковых моделей, которым структура
+ * «вопрос → ответ» читается надёжнее прозы.
+ *
+ * `isPartOf` связывает страницу с узлом WebSite из общего графа, чтобы
+ * FAQ читался как часть того же сайта, а не как отдельная сущность.
+ */
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": `${SITE_URL}/#faq`,
+  inLanguage: "ru-RU",
+  isPartOf: { "@id": WEBSITE_ID },
+  mainEntity: HOME.faq.items.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
+export const FAQ_SCHEMA_JSON = escapeJsonLd(JSON.stringify(FAQ_SCHEMA));
