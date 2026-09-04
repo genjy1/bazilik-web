@@ -1,7 +1,7 @@
 # Product Marketing Context
 
-**Document version:** v1
-**Last updated:** 2026-08-27
+**Document version:** v1.1
+**Last updated:** 2026-09-03
 
 > **Provenance.** Drafted from the repository — `landing/PRODUCT.md`, `landing/lib/content.ts`, page metadata — not from customer interviews or sales calls. Two markers appear throughout:
 > **[UNVERIFIED]** = inferred from code and marketing copy; plausible, but never tested against a real customer.
@@ -83,7 +83,12 @@ There is no separate financial buyer or technical influencer — the specialist 
 
 ## Competitive Landscape
 
-**[GAP] — the largest hole in this document.** The repo describes competitors only functionally and never names one. `PRODUCT.md` refers to "a neighbouring meal-planning product" without identifying it. Name the actual Russian-market competitors before running competitor, positioning, or comparison-page work.
+**[GAP, partially filled 2026-09-03]** The repo describes competitors only functionally and never names one. `PRODUCT.md` refers to "a neighbouring meal-planning product" without identifying it. The names below come from a web-search baseline run for the AI-SEO audit (queries: «лучшие приложения для планирования меню на неделю», «программа для нутрициолога … КБЖУ»). They are the products AI answers and roundups currently cite — **not** a verified competitive analysis. Positioning, pricing and feature claims about them are **[UNVERIFIED]** until someone opens each one.
+
+- **b2c, cited in Russian-language roundups:** Тарелка (tarelka.site — has its own «лучшие приложения» roundup that gets cited), Brite (britetodo.com — same, publishes the «Топ 10 планировщиков меню» that AI answers pull from), YouMealPlan, «План Меню На Неделю Ужин Дома» (App Store), Nutrola (nutrola.app — publishes the «8 лучших приложений для списка покупок» roundup).
+- **b2c, international apps named in the same answers:** Mealime, Paprika, Plan to Eat, Whisk, Yummly, OurGroceries.
+- **b2b2c / specialists:** Nutrilogic (nutrilogic.ru), НИАП (nplanner.ru), SmartEat (smart-eat.ru), EatTo, MyFitnessPal (used by nutritionists for КБЖУ). The roundup that gets cited is kedu.ru «ТОП сервисов для работы нутрициолога».
+- **Third-party surfaces AI answers cite for this category:** ya.ru/neurum (Яндекс Нейро Q&A threads), 7ya.ru, App Store listings. None mention Базилик.
 
 **Direct:** Meal-planning and pantry apps requiring manual inventory logging — falls short because the logging is the thing users quit, so accuracy decays to zero in practice.
 **Secondary:** Recipe and menu apps serving standalone dishes — falls short because each dish carries its own ingredient set, so leftovers accumulate instead of being designed away.
@@ -211,4 +216,5 @@ The governing rule, from the internal brand book (`brand-book-v50`, referenced i
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*
+- v1.1 (2026-09-03) — Competitive Landscape: added the products and roundup pages that AI answers cite for the category, from the AI-SEO audit's search baseline. Still unverified as a competitive analysis.
 - v1 (2026-08-27) — Initial context, auto-drafted from the repo (`PRODUCT.md`, `lib/content.ts`, page metadata) for the newly installed SEO/GEO skills. Competitors, b2c pricing and all customer-verbatim language are open gaps.

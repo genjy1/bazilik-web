@@ -19,6 +19,9 @@ export const SITE_URL = "https://bazilik-web.vercel.app";
 /** Имя бренда в `og:site_name` и в JSON-LD. */
 export const SITE_NAME = "Базилик";
 
+/** Латинское написание — в футере и в `alternateName` JSON-LD. */
+export const SITE_NAME_LATIN = "Bazilik";
+
 /**
  * Заголовок главной.
  *

@@ -15,6 +15,10 @@ export function Footer({ groups }: { groups: readonly FooterGroup[] }) {
               <BrandMark className="size-6.5" />
               Базилик
             </div>
+            {/* Та же категория, что в <title> и description: «операционный
+                слой планирования питания» — внутренняя формулировка, из
+                description её уже убрали (см. app/layout.tsx), а футер
+                повторял её на каждой странице. */}
             <p className="mt-3.5 max-w-[34ch] text-[14.5px] text-muted">
               Меню на неделю, список покупок и готовка по шагам. Готовь то, что уже есть.
             </p>
