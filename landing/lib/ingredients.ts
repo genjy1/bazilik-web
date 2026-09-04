@@ -141,5 +141,3 @@ export const INGREDIENTS: Record<IngredientId, IngredientSpec> = {
     ],
   },
 };
-
-export const INGREDIENT_IDS: IngredientId[] = Object.keys(INGREDIENTS) as IngredientId[];

@@ -59,7 +59,13 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggle}
-      aria-label="Переключить тему"
+      // Текущее состояние — в имени кнопки: иначе читалка слышит «Переключить
+      // тему» и не знает, что именно изменится по нажатию.
+      aria-label={
+        theme === null
+          ? "Переключить тему"
+          : `Переключить тему, сейчас ${theme === "dark" ? "тёмная" : "светлая"}`
+      }
       className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-2 font-mono text-[11px] uppercase tracking-[0.12em] text-ink transition-colors hover:border-accent hover:text-accent-deep"
     >
       <Icon size={13} strokeWidth={2.2} />

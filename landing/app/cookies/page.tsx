@@ -24,6 +24,17 @@ export async function generateMetadata(
   return {
     title: TITLE,
     description: DESCRIPTION,
+    /**
+     * Пока страница — один абзац «в разработке», в индексе ей нечего делать:
+     * половина sitemap из заглушки — не то, чем встречать первого робота.
+     * `follow` оставлен: ссылки из футера должны обходиться. Снимать вместе
+     * с возвратом маршрута в `SITEMAP_ROUTES` (lib/site.ts), когда появится
+     * текст.
+     */
+    robots: {
+      index: false,
+      follow: true,
+    },
     alternates: {
       canonical: "/cookies",
     },
@@ -32,7 +43,7 @@ export async function generateMetadata(
       title: TITLE,
       description: DESCRIPTION,
       url: "/cookies",
-      images: await inheritedOgImages(parent),
+      images: await inheritedOgImages(parent, TITLE),
     },
   };
 }
@@ -44,7 +55,7 @@ export default function CookiesPage() {
         <div className="mx-auto flex max-w-[1180px] items-center px-6 py-5">
           <Link
             href="/"
-            className="flex items-center gap-2.5 text-[18px] font-extrabold tracking-tight"
+            className="flex min-h-11 items-center gap-2.5 text-[18px] font-extrabold tracking-tight"
           >
             <BrandMark className="size-6.5" />
             Базилик

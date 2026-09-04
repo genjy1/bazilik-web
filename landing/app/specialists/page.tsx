@@ -65,7 +65,7 @@ export async function generateMetadata(
       description:
         "Конструктор планов для диетологов, нутрициологов и коучей: рецепты, автоматический КБЖУ и маркетплейс готовых планов.",
       url: "/specialists",
-      images: await inheritedOgImages(parent),
+      images: await inheritedOgImages(parent, TITLE),
     },
   };
 }
@@ -100,7 +100,6 @@ export default function SpecialistsPage() {
 
         <SectionDivider />
         <Process
-          kickerN="04"
           title="Как это работает"
           lead="Три шага — от рецепта до тарелки клиента, без единого PDF."
           steps={PROS.process}

@@ -1,16 +1,16 @@
-# Graph Report - landing  (2026-09-03)
+# Graph Report - landing  (2026-09-04)
 
 ## Corpus Check
-- 113 files · ~131,242 words
+- 100 files · ~100,157 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 764 nodes · 1089 edges · 48 communities (42 shown, 6 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 23 edges (avg confidence: 0.55)
+- 708 nodes · 996 edges · 44 communities (40 shown, 4 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 22 edges (avg confidence: 0.55)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `72b16834`
+- Built from commit: `05c2b219`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -19,40 +19,36 @@
 - Anti-Slop Frontend Design Skill (design-taste-frontend)
 - compilerOptions
 - PlanConfigurator.tsx
-- gsap.ts
+- AudienceHero.tsx
 - devDependencies
 - 001 — Fix scale(0) entrance on engine icon marks
 - Three.js Fundamentals Skill
 - specialists/page.tsx
 - PhoneStepsScene.tsx
 - layout.tsx
-- EngineCards.tsx
+- Animation Standards Reference
 - cookies/page.tsx
-- BrandMark3D.tsx
+- Animation Audit Playbook
 - eslint.config.mjs
 - next.config.ts
 - postcss.config.mjs
-- Hero Background Image (Salad/Food Bar Spread)
-- Animation Standards Reference
-- Design System: Базилик (Bazilik)
-- Animation Audit Playbook
-- Product Marketing Context
 - Apple Design
 - Workflow
+- Components
 - Glossary
+- Product Marketing Context
 - Finding Animation Opportunities
-- content.ts
-- Reveal.tsx
 - Лендинг B2C — визуал и анимации
 - Лендинг B2B2C
+- The list
+- app/page.tsx
+- Reveal.tsx
+- Design Engineering
+- Component Building Principles
 - Product
 - Лендинг B2C
-- The list
-- GoalsSection.tsx
-- Design Engineering
-- app/page.tsx
-- Component Building Principles
 - The Animation Decision Framework
+- GoalsSection.tsx
 - clip-path for Animation
 - Performance Rules
 - Gesture and Drag Interactions
@@ -66,14 +62,14 @@
 ## God Nodes (most connected - your core abstractions)
 1. `Anti-Slop Frontend Design Skill (design-taste-frontend)` - 23 edges
 2. `Apple Design` - 20 edges
-3. `MOTION_QUERIES` - 18 edges
-4. `Reveal()` - 16 edges
-5. `compilerOptions` - 16 edges
-6. `Design Engineering` - 16 edges
-7. `Animation Standards Reference` - 16 edges
-8. `Product Marketing Context` - 14 edges
-9. `SectionKicker()` - 13 edges
-10. `Glossary` - 13 edges
+3. `compilerOptions` - 16 edges
+4. `Design Engineering` - 16 edges
+5. `Animation Standards Reference` - 16 edges
+6. `Product Marketing Context` - 14 edges
+7. `Reveal()` - 13 edges
+8. `Glossary` - 13 edges
+9. `SectionKicker()` - 12 edges
+10. `useLoopWhileVisible()` - 12 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `generateMetadata()` --calls--> `inheritedOgImages()`  [EXTRACTED]
@@ -95,11 +91,11 @@
 - **Three.js Skill Family (animation, fundamentals, geometry, interaction, lighting, loaders, materials)** — _agents_skills_threejs_animation_skill_skill, _agents_skills_threejs_fundamentals_skill_skill, _agents_skills_threejs_geometry_skill_skill, _agents_skills_threejs_interaction_skill_skill, _agents_skills_threejs_lighting_skill_skill, _agents_skills_threejs_loaders_skill_skill, _agents_skills_threejs_materials_skill_skill [EXTRACTED 1.00]
 - **Project Root Documentation Set (AGENTS.md, CLAUDE.md, README.md)** — agents_doc, claude_doc, readme_doc [EXTRACTED 1.00]
 
-## Communities (48 total, 6 thin omitted)
+## Communities (44 total, 4 thin omitted)
 
 ### Community 0 - "PainChaos.tsx"
-Cohesion: 0.17
-Nodes (16): DinnerScene(), ExpiryScene(), ForgotScene(), PainChaos(), ReceiptScene(), SCENES, TILTS, CloneScene() (+8 more)
+Cohesion: 0.20
+Nodes (14): DinnerScene(), ExpiryScene(), ForgotScene(), ReceiptScene(), SCENES, TILTS, CloneScene(), ExpiryScene() (+6 more)
 
 ### Community 1 - "Anti-Slop Frontend Design Skill (design-taste-frontend)"
 Cohesion: 0.10
@@ -107,19 +103,19 @@ Nodes (38): Anti-Slop Frontend Design Skill (design-taste-frontend), GSAP Core S
 
 ### Community 2 - "compilerOptions"
 Cohesion: 0.07
-Nodes (28): dom, dom.iterable, esnext, **/*.mts, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules (+20 more)
+Nodes (28): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+20 more)
 
 ### Community 3 - "PlanConfigurator.tsx"
-Cohesion: 0.08
-Nodes (29): HomePanel(), week, plans, ProsPanel(), PlanConfigurator(), AnimatedNumber(), Props, Chip() (+21 more)
+Cohesion: 0.12
+Nodes (19): PlanConfigurator(), tripsWord(), AnimatedNumber(), Props, BASE, Config, DEFAULT_CONFIG, Diet (+11 more)
 
-### Community 4 - "gsap.ts"
-Cohesion: 0.08
-Nodes (28): CheckItem, BasilikChain(), Props, BasilikToggleButton(), JourneyBand(), NODES, PATH_D, playWhileVisible() (+20 more)
+### Community 4 - "AudienceHero.tsx"
+Cohesion: 0.22
+Nodes (11): AudienceHero(), BasilikChain(), Props, BasilikToggleButton(), BasilikToggleContext, BasilikToggleProvider(), BasilikToggleValue, useBasilikToggle() (+3 more)
 
 ### Community 5 - "devDependencies"
 Cohesion: 0.05
-Nodes (40): eslint, eslint-config-next, gsap, lucide-react, next, dependencies, gsap, lucide-react (+32 more)
+Nodes (36): dependencies, gsap, lucide-react, next, react, react-dom, devDependencies, eslint (+28 more)
 
 ### Community 6 - "001 — Fix scale(0) entrance on engine icon marks"
 Cohesion: 0.04
@@ -130,72 +126,80 @@ Cohesion: 0.27
 Nodes (16): Three.js Animation Skill, Three.js Fundamentals Skill, Three.js Geometry Skill, Three.js Interaction Skill, Three.js Lighting Skill, Three.js Loaders Skill, Three.js Materials Skill, Three.js AnimationMixer/AnimationClip/AnimationAction System (+8 more)
 
 ### Community 8 - "specialists/page.tsx"
-Cohesion: 0.18
-Nodes (9): PainList(), Process(), Props, Step, SectionDivider(), BasilikToggleContext, BasilikToggleProvider(), BasilikToggleValue (+1 more)
+Cohesion: 0.19
+Nodes (9): BackgroundFX(), BLOBS, ExistingClientsSection(), PainList(), SectionDivider(), clamp01(), remap(), WIDE_MOTION_QUERIES (+1 more)
 
 ### Community 9 - "PhoneStepsScene.tsx"
-Cohesion: 0.06
-Nodes (34): AmbientIngredients(), ITEMS, COOK_STEPS, DIET_GOALS, LIFE_GOALS, productWord(), SHOPPING, ShoppingItem (+26 more)
+Cohesion: 0.05
+Nodes (33): AmbientIngredients(), ITEMS, COOK_STEPS, DIET_GOALS, LIFE_GOALS, productWord(), SHOPPING, ShoppingItem (+25 more)
 
 ### Community 10 - "layout.tsx"
 Cohesion: 0.08
-Nodes (28): metadata, viewport, Image(), markUri(), size, robots(), sitemap(), CookieConsent() (+20 more)
+Nodes (29): metadata, viewport, Image(), markUri(), size, robots(), sitemap(), CookieConsent() (+21 more)
 
-### Community 11 - "EngineCards.tsx"
-Cohesion: 0.21
-Nodes (7): EngineCards(), icons, BrandMark3D, BrandScene(), subscribe(), ENGINE, EngineIcon
+### Community 11 - "Animation Standards Reference"
+Cohesion: 0.07
+Nodes (25): Aggressive Escalation Triggers, Guidelines, Operating Posture, Part 1 — Findings table (REQUIRED), Part 2 — Verdict (REQUIRED), Remedial Preference Hierarchy, Required Output Format, Reviewing Animations (+17 more)
 
 ### Community 12 - "cookies/page.tsx"
 Cohesion: 0.15
 Nodes (14): generateMetadata(), generateMetadata(), BrandMark(), Footer(), FooterGroup, Nav(), NavLink, listeners (+6 more)
 
-### Community 18 - "Animation Standards Reference"
-Cohesion: 0.07
-Nodes (25): Aggressive Escalation Triggers, Guidelines, Operating Posture, Part 1 — Findings table (REQUIRED), Part 2 — Verdict (REQUIRED), Remedial Preference Hierarchy, Required Output Format, Reviewing Animations (+17 more)
-
-### Community 19 - "Design System: Базилик (Bazilik)"
-Cohesion: 0.08
-Nodes (25): Buttons, Cards / Containers, Chips & Pills, Colors, Components, Design System: Базилик (Bazilik), Do:, Do's and Don'ts (+17 more)
-
-### Community 20 - "Animation Audit Playbook"
+### Community 13 - "Animation Audit Playbook"
 Cohesion: 0.09
 Nodes (21): 1. Purpose & frequency, 2. Easing & duration, 3. Physicality & origin, 4. Interruptibility, 5. Performance, 6. Accessibility, 7. Cohesion & tokens, 8. Missed opportunities (+13 more)
+
+### Community 17 - "Apple Design"
+Cohesion: 0.10
+Nodes (20): 10. Gesture design details (the "feel" checklist), 11. Frame-level smoothness, 12. Materials & depth — translucency conveys hierarchy, 13. Multimodal feedback — motion + sound + haptics, 14. Reduced motion & accessibility, 15. Typography — optical sizing, tracking, leading, 16. Design foundations — the eight principles, 17. Process (+12 more)
+
+### Community 18 - "Workflow"
+Cohesion: 0.10
+Nodes (18): Behavior contract, Markup, Reference wiring, Rules, Styles, The Picker, Hard Rules, Invocation Variants (+10 more)
+
+### Community 19 - "Components"
+Cohesion: 0.07
+Nodes (27): Buttons, Cards / Containers, Chips & Pills, Colors, Components, Design System: Базилик (Bazilik), Do:, Do's and Don'ts (+19 more)
+
+### Community 20 - "Glossary"
+Cohesion: 0.11
+Nodes (17): Animation Vocabulary, Easing — how speed changes over an animation, Entrances & Exits — how elements appear and disappear, Examples, Feedback & Interaction — responding to the user's actions, Glossary, Instructions, Looping & Ambient Motion — animations that run on their own (+9 more)
 
 ### Community 21 - "Product Marketing Context"
 Cohesion: 0.13
 Nodes (14): Brand Voice, Changelog, Competitive Landscape, Customer Language, Differentiation, Goals, Objections, Personas (+6 more)
 
-### Community 22 - "Apple Design"
-Cohesion: 0.10
-Nodes (20): 10. Gesture design details (the "feel" checklist), 11. Frame-level smoothness, 12. Materials & depth — translucency conveys hierarchy, 13. Multimodal feedback — motion + sound + haptics, 14. Reduced motion & accessibility, 15. Typography — optical sizing, tracking, leading, 16. Design foundations — the eight principles, 17. Process (+12 more)
-
-### Community 23 - "Workflow"
-Cohesion: 0.10
-Nodes (18): Behavior contract, Markup, Reference wiring, Rules, Styles, The Picker, Hard Rules, Invocation Variants (+10 more)
-
-### Community 24 - "Glossary"
-Cohesion: 0.11
-Nodes (17): Animation Vocabulary, Easing — how speed changes over an animation, Entrances & Exits — how elements appear and disappear, Examples, Feedback & Interaction — responding to the user's actions, Glossary, Instructions, Looping & Ambient Motion — animations that run on their own (+9 more)
-
-### Community 25 - "Finding Animation Opportunities"
+### Community 22 - "Finding Animation Opportunities"
 Cohesion: 0.12
 Nodes (15): 1. Frequency — how often will a user see this?, 2. Purpose — why does this animate?, 3. Speed — can it stay inside budget?, 4. Function — does motion help or hinder here?, Finding Animation Opportunities, Hard Rules, Operating Posture, Part 1 — Opportunities table (+7 more)
 
-### Community 26 - "content.ts"
-Cohesion: 0.22
-Nodes (9): CtaSection(), FinalCopy, AUDIENCE_ROUTES, CTA, FOOTER_GROUPS_ROOT, FOOTER_GROUPS_SPECIALISTS, NAV_LINKS_ROOT, NAV_LINKS_SPECIALISTS (+1 more)
-
-### Community 27 - "Reveal.tsx"
-Cohesion: 0.18
-Nodes (10): ExistingClientsSection(), HIGHLIGHTS, MarketplaceSection(), PROBLEM_ITEMS, SectionKicker(), Props, Reveal(), CheckItem (+2 more)
-
-### Community 28 - "Лендинг B2C — визуал и анимации"
+### Community 23 - "Лендинг B2C — визуал и анимации"
 Cohesion: 0.15
 Nodes (12): 0. Главная идея движения (motion-концепция), 10. Что отдать в производство (ассеты), 1. Фон и постоянные слои (живут всегда), 2. Раздел Hero — тумблер «Базилик выключен → Включить Базилик», 3. Раздел «Знакомо?» (боль) — единственный «нервный» блок, 4. Раздел «Как это работает» — ГЛАВНАЯ scroll-сцена «сборка блюда», 5. Раздел тейков — каждый со своей микроанимацией/инфографикой, 6. Раздел «Чем мы не как все» — сравнение «до / после» (+4 more)
 
-### Community 29 - "Лендинг B2B2C"
+### Community 24 - "Лендинг B2B2C"
 Cohesion: 0.17
 Nodes (11): 1. Первый экран (Hero), 2. Узнаёте?, 3. Win-win: удобно и вам, и клиенту, 4. Как это работает (3 шага), 5. Маркетплейс планов, 6. Дайте доступ тем, кто уже купил, 7. Встраивается в вашу работу, 8. Финальный экран (+3 more)
+
+### Community 25 - "The list"
+Cohesion: 0.20
+Nodes (9): Charts, Common mismatches to catch, How to use this, Interaction & performance, Motion & visuals, Picking The Right Library, State & styling, The list (+1 more)
+
+### Community 26 - "app/page.tsx"
+Cohesion: 0.11
+Nodes (19): ComparisonSection(), Row, CtaSection(), FinalCopy, FaqSection(), PainChaos(), PhoneStepsScene(), Button() (+11 more)
+
+### Community 27 - "Reveal.tsx"
+Cohesion: 0.22
+Nodes (10): Process(), Props, Step, SectionKicker(), Props, Reveal(), CheckItem, WinWinSection() (+2 more)
+
+### Community 28 - "Design Engineering"
+Cohesion: 0.22
+Nodes (8): Accessibility, Design Engineering, Initial Response, prefers-reduced-motion, Review Checklist, Review Format (Required), Stagger Animations, Touch device hover states
+
+### Community 29 - "Component Building Principles"
+Cohesion: 0.25
+Nodes (8): Animate enter states with @starting-style, Buttons must feel responsive, Component Building Principles, Make popovers origin-aware, Never animate from scale(0), Tooltips: skip delay on subsequent hovers, Use blur to mask imperfect transitions, Use CSS transitions over keyframes for interruptible UI
 
 ### Community 30 - "Product"
 Cohesion: 0.17
@@ -205,80 +209,64 @@ Nodes (11): Accessibility & Inclusion, Brand Commitments, Capabilities and Const
 Cohesion: 0.18
 Nodes (10): 1. Первый экран (Hero) — с интерактивом «Включить Базилик», 2. «Знакомо?» (боль), 3. Что ты получаешь (простые тейки), 4. Как это работает (3 шага), 5. Чем мы не как все, 6. Если у тебя есть цель (премиум-крючки), 7. Финальный экран, Лендинг B2C (+2 more)
 
-### Community 32 - "The list"
-Cohesion: 0.20
-Nodes (9): Charts, Common mismatches to catch, How to use this, Interaction & performance, Motion & visuals, Picking The Right Library, State & styling, The list (+1 more)
-
-### Community 33 - "GoalsSection.tsx"
-Cohesion: 0.16
-Nodes (7): GoalsMode, GoalsSection(), MODES, RING_FILL, Counter(), Props, STATS
-
-### Community 34 - "Design Engineering"
-Cohesion: 0.22
-Nodes (8): Accessibility, Design Engineering, Initial Response, prefers-reduced-motion, Review Checklist, Review Format (Required), Stagger Animations, Touch device hover states
-
-### Community 35 - "app/page.tsx"
-Cohesion: 0.18
-Nodes (9): AudienceHero(), BackgroundFX(), BLOBS, ComparisonSection(), Row, PhoneStepsScene(), FOOTER_GROUPS_HOME, HOME (+1 more)
-
-### Community 36 - "Component Building Principles"
-Cohesion: 0.25
-Nodes (8): Animate enter states with @starting-style, Buttons must feel responsive, Component Building Principles, Make popovers origin-aware, Never animate from scale(0), Tooltips: skip delay on subsequent hovers, Use blur to mask imperfect transitions, Use CSS transitions over keyframes for interruptible UI
-
-### Community 37 - "The Animation Decision Framework"
+### Community 32 - "The Animation Decision Framework"
 Cohesion: 0.33
 Nodes (6): 1. Should this animate at all?, 2. What is the purpose?, 3. What easing should it use?, 4. How fast should it be?, Perceived performance, The Animation Decision Framework
 
-### Community 38 - "clip-path for Animation"
+### Community 33 - "GoalsSection.tsx"
+Cohesion: 0.13
+Nodes (11): GoalsMode, GoalsSection(), MODES, RING_FILL, HIGHLIGHTS, MarketplaceSection(), Chip(), Tone (+3 more)
+
+### Community 34 - "clip-path for Animation"
 Cohesion: 0.33
 Nodes (6): clip-path for Animation, Comparison sliders, Hold-to-delete pattern, Image reveals on scroll, Tabs with perfect color transitions, The inset shape
 
-### Community 39 - "Performance Rules"
+### Community 35 - "Performance Rules"
 Cohesion: 0.33
 Nodes (6): CSS animations beat JS under load, CSS variables are inheritable, Framer Motion hardware acceleration caveat, Only animate transform and opacity, Performance Rules, Use WAAPI for programmatic CSS animations
 
-### Community 40 - "Gesture and Drag Interactions"
+### Community 36 - "Gesture and Drag Interactions"
 Cohesion: 0.33
 Nodes (6): Damping at boundaries, Friction instead of hard stops, Gesture and Drag Interactions, Momentum-based dismissal, Multi-touch protection, Pointer capture for drag
 
-### Community 41 - "CSS Transform Mastery"
+### Community 37 - "CSS Transform Mastery"
 Cohesion: 0.40
 Nodes (5): 3D transforms for depth, CSS Transform Mastery, scale() scales children too, transform-origin, translateY with percentages
 
-### Community 42 - "The Sonner Principles (Building Loved Components)"
+### Community 38 - "The Sonner Principles (Building Loved Components)"
 Cohesion: 0.40
 Nodes (5): Asymmetric enter/exit timing, Cohesion matters, Review your work the next day, The opacity + height combination, The Sonner Principles (Building Loved Components)
 
-### Community 43 - "Spring Animations"
+### Community 39 - "Spring Animations"
 Cohesion: 0.40
 Nodes (5): Interruptibility advantage, Spring Animations, Spring-based mouse interactions, Spring configuration, When to use springs
 
-### Community 44 - "Core Philosophy"
+### Community 40 - "Core Philosophy"
 Cohesion: 0.50
 Nodes (4): Beauty is leverage, Core Philosophy, Taste is trained, not innate, Unseen details compound
 
-### Community 45 - "Debugging Animations"
+### Community 41 - "Debugging Animations"
 Cohesion: 0.50
 Nodes (4): Debugging Animations, Frame-by-frame inspection, Slow motion testing, Test on real devices
 
 ## Knowledge Gaps
-- **410 isolated node(s):** `metadata`, `viewport`, `size`, `ITEMS`, `CheckItem` (+405 more)
+- **394 isolated node(s):** `metadata`, `viewport`, `size`, `ITEMS`, `BLOBS` (+389 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `MOTION_QUERIES` connect `gsap.ts` to `GoalsSection.tsx`, `app/page.tsx`, `PlanConfigurator.tsx`, `specialists/page.tsx`, `PhoneStepsScene.tsx`, `layout.tsx`, `EngineCards.tsx`, `cookies/page.tsx`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
-- **Why does `Design Engineering` connect `Design Engineering` to `Component Building Principles`, `The Animation Decision Framework`, `clip-path for Animation`, `Performance Rules`, `Gesture and Drag Interactions`, `CSS Transform Mastery`, `The Sonner Principles (Building Loved Components)`, `Spring Animations`, `Core Philosophy`, `Debugging Animations`?**
+- **Why does `Design Engineering` connect `Design Engineering` to `The Animation Decision Framework`, `clip-path for Animation`, `Performance Rules`, `Gesture and Drag Interactions`, `CSS Transform Mastery`, `The Sonner Principles (Building Loved Components)`, `Spring Animations`, `Core Philosophy`, `Debugging Animations`, `Component Building Principles`?**
+  _High betweenness centrality (0.007) - this node is a cross-community bridge._
+- **Why does `MOTION_QUERIES` connect `AudienceHero.tsx` to `GoalsSection.tsx`, `PlanConfigurator.tsx`, `specialists/page.tsx`, `PhoneStepsScene.tsx`, `layout.tsx`, `cookies/page.tsx`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **Why does `Anti-Slop Frontend Design Skill (design-taste-frontend)` connect `Anti-Slop Frontend Design Skill (design-taste-frontend)` to `Three.js Fundamentals Skill`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **Are the 2 inferred relationships involving `Anti-Slop Frontend Design Skill (design-taste-frontend)` (e.g. with `GSAP Core Skill` and `GSAP Performance Skill`) actually correct?**
   _`Anti-Slop Frontend Design Skill (design-taste-frontend)` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `metadata`, `viewport`, `size` to the rest of the system?**
-  _410 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _394 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Anti-Slop Frontend Design Skill (design-taste-frontend)` be split into smaller, more focused modules?**
   _Cohesion score 0.10099573257467995 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**

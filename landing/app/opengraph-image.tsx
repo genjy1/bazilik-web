@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
-import { HERO } from "@/lib/content";
+import { HOME } from "@/lib/content";
 import { HOME_TITLE, SITE_NAME, SITE_URL } from "@/lib/site";
 
 /**
@@ -14,7 +14,7 @@ import { HOME_TITLE, SITE_NAME, SITE_URL } from "@/lib/site";
  * репозитории вместе с текстом, а не в графическом редакторе, и не может
  * разойтись со слоганом на странице. Чтобы это было правдой, а не намерением,
  * весь текст карточки приходит оттуда же, откуда его берёт страница:
- * заголовок — из `HOME_TITLE`, слоган — из `HERO` в content.ts.
+ * заголовок — из `HOME_TITLE`, слоган — из `HOME.hero` в content.ts.
  */
 export const alt = HOME_TITLE;
 
@@ -99,9 +99,9 @@ export default async function Image() {
               color: "#16231C",
             }}
           >
-            <div style={{ display: "flex" }}>{HERO.titleTop}</div>
+            <div style={{ display: "flex" }}>{HOME.hero.titleTop}</div>
             <div style={{ display: "flex", color: "#12583A" }}>
-              {HERO.titleAccent}
+              {HOME.hero.titleAccent}
             </div>
           </div>
           <div

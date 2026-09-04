@@ -20,21 +20,24 @@ export function Footer({ groups }: { groups: readonly FooterGroup[] }) {
                 description её уже убрали (см. app/layout.tsx), а футер
                 повторял её на каждой странице. */}
             <p className="mt-3.5 max-w-[34ch] text-[14.5px] text-muted">
-              Меню на неделю без ручного учёта запасов. Готовь то, что уже есть.
+              Меню на неделю, список покупок и готовка по шагам. Готовь то, что уже есть.
             </p>
           </div>
 
           {groups.map((g) => (
             <div key={g.title}>
-              <h3 className="mb-3.5 font-mono text-[10.5px] font-semibold uppercase tracking-[0.18em] text-muted">
+              {/* h2, а не h3: на /cookies перед футером только h1, и h3
+                  ломает порядок заголовков; на остальных страницах футер
+                  идёт после h2-разделов и h2 здесь ровно на своём уровне. */}
+              <h2 className="mb-3.5 font-mono text-[10.5px] font-semibold uppercase tracking-[0.18em] text-muted">
                 {g.title}
-              </h3>
-              <ul className="grid gap-2.5">
+              </h2>
+              <ul className="grid gap-0.5">
                 {g.links.map((l) => (
                   <li key={l.href}>
                     <a
                       href={l.href}
-                      className="text-[14.5px] text-ink transition-colors hover:text-accent-deep"
+                      className="inline-flex min-h-11 items-center text-[14.5px] text-ink transition-colors hover:text-accent-deep"
                     >
                       {l.label}
                     </a>
@@ -45,8 +48,17 @@ export function Footer({ groups }: { groups: readonly FooterGroup[] }) {
           ))}
         </div>
 
-        <div className="mt-11 border-t border-line pt-5.5 font-mono text-[10.5px] uppercase tracking-[0.1em] text-muted">
+        <div className="mt-11 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-t border-line pt-5.5 font-mono text-[10.5px] uppercase tracking-[0.1em] text-muted">
           <span>© {new Date().getFullYear()} Базилик · Bazilik</span>
+          {/* До этого /cookies была достижима только из баннера согласия,
+              который рисуется на клиенте и исчезает после «Понятно»:
+              в серверном HTML на неё не вело ничего. */}
+          <a
+            href="/cookies"
+            className="text-muted transition-colors hover:text-accent-deep"
+          >
+            Cookie
+          </a>
         </div>
       </div>
     </footer>

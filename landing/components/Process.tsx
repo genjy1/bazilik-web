@@ -6,7 +6,6 @@ import { Reveal } from "./ui/Reveal";
 type Step = { n: string; title: string; body: string };
 
 type Props = {
-  kickerN?: string;
   title?: ReactNode;
   lead?: string;
   steps?: readonly Step[];
@@ -18,7 +17,6 @@ type Props = {
  * свой набор из 3 шагов через пропсы.
  */
 export function Process({
-  kickerN = "03",
   title = "Полный цикл — от рецепта до тарелки",
   lead = "Специалист создаёт, пользователь живёт. Между ними нет ни одного PDF.",
   steps = PROCESS,
@@ -26,7 +24,7 @@ export function Process({
   return (
     <section className="py-16 md:py-28">
       <div className="mx-auto max-w-[1180px] px-6">
-        <SectionKicker n={kickerN} title={title} lead={lead} />
+        <SectionKicker title={title} lead={lead} />
 
         <ol className="mt-12">
           {steps.map((step, i) => (

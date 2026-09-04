@@ -36,7 +36,7 @@ export function WinWinSection() {
   return (
     <section id="pros" className="py-16 md:py-28">
       <div className="mx-auto max-w-[1180px] px-6">
-        <SectionKicker n="03" title={winWin.title} lead={winWin.lead} />
+        <SectionKicker title={winWin.title} lead={winWin.lead} />
 
         <div className="mt-10 grid gap-10 md:grid-cols-2 md:gap-14">
           <CheckGrid heading={winWin.specialist.heading} items={winWin.specialist.items} />
@@ -44,7 +44,7 @@ export function WinWinSection() {
         </div>
 
         <Reveal delay={120} className="mt-10">
-          <p className="rounded-xl border-l-[3px] border-line border-l-accent bg-accent-soft/50 px-5 py-4 text-[15.5px] font-bold tracking-tight text-accent-deep">
+          <p className="rounded-xl border border-line bg-accent-soft/50 px-5 py-4 text-[15.5px] font-bold tracking-tight text-accent-deep">
             {winWin.summary}
           </p>
         </Reveal>

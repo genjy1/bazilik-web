@@ -29,7 +29,7 @@ function CompareRow({ row }: { row: Row }) {
         <div className="mt-3 grid overflow-hidden rounded-xl border border-line sm:grid-cols-2">
           {/* «Как у всех» — приглушённая половина: тот же кегль, но без цвета. */}
           <div className="bg-ground px-5 py-4 sm:px-6 sm:py-5">
-            <span className="flex items-center gap-1.5 font-mono text-[9px] font-semibold uppercase tracking-[0.14em] text-muted">
+            <span className="flex items-center gap-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-muted">
               <X aria-hidden="true" className="size-3 shrink-0" />
               обычное приложение
             </span>
@@ -43,8 +43,8 @@ function CompareRow({ row }: { row: Row }) {
               самый центральный разделитель из спеки, только неподвижный;
               на узком экране колонки встают друг под друга, и он
               превращается в верхнюю границу. */}
-          <div className="border-t-2 border-t-accent bg-accent-soft/60 px-5 py-4 sm:border-t-0 sm:border-l-2 sm:border-l-accent sm:px-6 sm:py-5">
-            <span className="flex items-center gap-1.5 font-mono text-[9px] font-semibold uppercase tracking-[0.14em] text-accent-deep">
+          <div className="border-t border-line bg-accent-soft/60 px-5 py-4 sm:border-t-0 sm:border-l sm:border-line sm:px-6 sm:py-5">
+            <span className="flex items-center gap-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-accent-deep">
               <Check aria-hidden="true" className="size-3 shrink-0" />
               Базилик
             </span>
@@ -65,7 +65,7 @@ export function ComparisonSection() {
   return (
     <section className="py-16 md:py-28">
       <div className="mx-auto max-w-[1180px] px-6">
-        <SectionKicker n="05" title={comparison.title} lead={comparison.lead} />
+        <SectionKicker title={comparison.title} lead={comparison.lead} />
 
         <div className="mt-10 grid gap-8">
           {comparison.rows.map((row) => (
@@ -74,7 +74,7 @@ export function ComparisonSection() {
         </div>
 
         <Reveal delay={120}>
-          <p className="mt-8 rounded-xl border-l-[3px] border-line border-l-accent bg-accent-soft/50 px-5 py-4 text-[15.5px] font-bold tracking-tight text-accent-deep">
+          <p className="mt-8 rounded-xl border border-line bg-accent-soft/50 px-5 py-4 text-[15.5px] font-bold tracking-tight text-accent-deep">
             {comparison.outro}
           </p>
         </Reveal>

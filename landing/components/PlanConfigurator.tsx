@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useId, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import {
   DEFAULT_CONFIG,
@@ -13,10 +13,13 @@ import {
   type Pace,
 } from "@/lib/configurator";
 import { EASE, MOTION_QUERIES, gsap, useIsomorphicLayoutEffect } from "@/lib/gsap";
+import { plural } from "@/lib/plural";
 import { AnimatedNumber } from "./ui/AnimatedNumber";
 import { Chip } from "./ui/Chip";
 
 const hours = (n: number) => n.toFixed(1).replace(".", ",");
+/** «1 поход», «2 похода», «5 походов» — подпись обязана согласоваться с числом. */
+const tripsWord = (n: number) => plural(n, ["поход", "похода", "походов"]);
 
 const toggleBase =
   "inline-flex min-h-11 items-center justify-center rounded-full border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.1em] transition-colors";
@@ -30,9 +33,16 @@ function Group({
   label: string;
   children: ReactNode;
 }) {
+  // Группа с именем: читалка объявляет «Цель, группа» при входе в кнопки,
+  // иначе «похудение» и «без лактозы» звучат без контекста.
+  const labelId = useId();
+
   return (
-    <div>
-      <div className="mb-2.5 font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
+    <div role="group" aria-labelledby={labelId}>
+      <div
+        id={labelId}
+        className="mb-2.5 font-mono text-[10px] uppercase tracking-[0.16em] text-muted"
+      >
         {label}
       </div>
       <div className="flex flex-wrap gap-2">{children}</div>
@@ -145,13 +155,15 @@ export function PlanConfigurator() {
         </Group>
       </div>
 
-      <div
-        className="rounded-3xl border border-line bg-ground p-6"
-        aria-live="polite"
-      >
+      <div className="rounded-3xl border border-line bg-ground p-6">
+        {/* Живой регион — одна фраза, а не вся панель: иначе каждый клик
+            зачитывал скринридеру семь чисел и все блюда подряд. */}
+        <p className="sr-only" aria-live="polite">
+          {`Неделя пересобрана: ${plan.kcal} ккал и ${plan.protein} г белка в день, ${plan.shopping} ${tripsWord(plan.shopping)} в магазин, минус ${plan.waste} % отходов.`}
+        </p>
         <div className="flex items-baseline justify-between gap-3 border-b border-line pb-4">
           <div className="text-[15px] font-extrabold tracking-tight">
-            Неделя по вашим настройкам
+            Неделя по этим настройкам
           </div>
           <Chip tone="herb">пересобрано</Chip>
         </div>
@@ -168,13 +180,13 @@ export function PlanConfigurator() {
               k: "белок / день",
             },
             { v: <AnimatedNumber value={plan.meals} />, k: "приёмов пищи" },
-            { v: <AnimatedNumber value={plan.shopping} />, k: "похода в магазин" },
+            { v: <AnimatedNumber value={plan.shopping} />, k: `${tripsWord(plan.shopping)} в магазин` },
           ].map((m, i) => (
             <div key={i}>
               <div className="text-[26px] font-extrabold tracking-[-0.04em]">
                 {m.v}
               </div>
-              <div className="mt-1 font-mono text-[9.5px] uppercase tracking-[0.12em] text-muted">
+              <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
                 {m.k}
               </div>
             </div>
@@ -183,10 +195,10 @@ export function PlanConfigurator() {
 
         <div className="mt-5 grid gap-2.5 sm:grid-cols-3">
           <div className="rounded-2xl border border-line bg-surface px-4 py-3">
-            <div className="text-lg font-extrabold tracking-tight text-herb">
+            <div className="text-lg font-extrabold tracking-tight text-herb-deep">
               −<AnimatedNumber value={plan.waste} />%
             </div>
-            <div className="mt-0.5 font-mono text-[9.5px] uppercase tracking-[0.12em] text-muted">
+            <div className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
               отходы
             </div>
           </div>
@@ -194,7 +206,7 @@ export function PlanConfigurator() {
             <div className="text-lg font-extrabold tracking-tight">
               <AnimatedNumber value={plan.reuse} />
             </div>
-            <div className="mt-0.5 font-mono text-[9.5px] uppercase tracking-[0.12em] text-muted">
+            <div className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
               переиспользований
             </div>
           </div>
@@ -202,7 +214,7 @@ export function PlanConfigurator() {
             <div className="text-lg font-extrabold tracking-tight">
               <AnimatedNumber value={plan.activeHours} format={hours} /> ч
             </div>
-            <div className="mt-0.5 font-mono text-[9.5px] uppercase tracking-[0.12em] text-muted">
+            <div className="mt-0.5 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
               активное время
             </div>
           </div>

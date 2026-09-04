@@ -119,7 +119,7 @@ function ReceiptScene({ delay = 0 }: { delay?: number }) {
   }, delay);
 
   return (
-    <div ref={ref} className="w-24 rounded-md border border-line bg-ground p-2 font-mono text-[9px] text-muted">
+    <div ref={ref} className="w-24 rounded-md border border-line bg-ground p-2 font-mono text-[10px] text-muted">
       {["молоко", "лук", "хлеб", "сыр"].map((item) => (
         <div key={item} data-line className="border-b border-dashed border-line/70 py-0.5 last:border-0">
           {item}
@@ -148,7 +148,7 @@ export function PainChaos() {
   return (
     <section className="py-16 md:py-24">
       <div className="mx-auto max-w-[1180px] px-6">
-        <SectionKicker n="02" title={HOME.pain.title} />
+        <SectionKicker title={HOME.pain.title} />
 
         <ul className="mt-8 grid gap-4 sm:grid-cols-2">
           {items.map((item, i) => {

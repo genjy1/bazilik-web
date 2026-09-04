@@ -3,6 +3,7 @@ import { AudienceHero } from "@/components/AudienceHero";
 import { BackgroundFX } from "@/components/BackgroundFX";
 import { ComparisonSection } from "@/components/ComparisonSection";
 import { CtaSection } from "@/components/CtaSection";
+import { FaqSection } from "@/components/FaqSection";
 import { Footer } from "@/components/Footer";
 import { GoalsSection } from "@/components/GoalsSection";
 import { Nav } from "@/components/Nav";
@@ -12,6 +13,7 @@ import { SectionDivider } from "@/components/SectionDivider";
 import { TakesSection } from "@/components/TakesSection";
 import { BasilikToggleProvider } from "@/lib/basilikToggle";
 import { FOOTER_GROUPS_HOME, HOME, NAV_LINKS_HOME } from "@/lib/content";
+import { FAQ_SCHEMA_JSON } from "@/lib/schema";
 
 export default function Page() {
   return (
@@ -32,7 +34,9 @@ export default function Page() {
           eyebrow={HOME.eyebrow}
           h1={
             <>
-              <span className="block">{HOME.hero.titleTop}</span>
+              {/* Пробел между блоками: без него имя заголовка склеивается
+                  в «Готовь то,что уже есть.» */}
+              <span className="block">{HOME.hero.titleTop}</span>{" "}
               <span className="block text-accent-deep">{HOME.hero.titleAccent}</span>
             </>
           }
@@ -55,6 +59,15 @@ export default function Page() {
         <SectionDivider />
         <GoalsSection />
 
+        <SectionDivider />
+        <FaqSection />
+        {/* Разметка FAQPage только здесь, а не в layout: раздел есть лишь на
+            главной. Не InlineScript — тот подменяет type при гидратации,
+            а это данные, и type обязан остаться application/ld+json. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: FAQ_SCHEMA_JSON }}
+        />
         <SectionDivider />
         {/* Аудитория «дома» теперь и есть главная, поэтому карточка «Дома»
             вела бы на саму себя, а «Специалистам» в MVP нет вовсе — развилка
