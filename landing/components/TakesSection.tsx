@@ -389,6 +389,7 @@ function WasteScene() {
 
         <svg
           viewBox="0 0 28 92"
+          aria-hidden="true"
           className="h-full w-7 shrink-0 text-accent"
           fill="none"
           stroke="currentColor"
