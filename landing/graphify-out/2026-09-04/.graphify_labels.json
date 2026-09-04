@@ -7,7 +7,7 @@
   "5": "devDependencies",
   "6": "001 — Fix scale(0) entrance on engine icon marks",
   "7": "Three.js Fundamentals Skill",
-  "8": "Process.tsx",
+  "8": "specialists/page.tsx",
   "9": "PhoneStepsScene.tsx",
   "10": "layout.tsx",
   "11": "EngineCards.tsx",
@@ -40,12 +40,11 @@
   "38": "clip-path for Animation",
   "39": "Performance Rules",
   "40": "Gesture and Drag Interactions",
-  "41": "ComparisonSection.tsx",
-  "42": "CSS Transform Mastery",
-  "43": "The Sonner Principles (Building Loved Components)",
-  "44": "Spring Animations",
-  "45": "Core Philosophy",
+  "41": "CSS Transform Mastery",
+  "42": "The Sonner Principles (Building Loved Components)",
+  "43": "Spring Animations",
+  "44": "Core Philosophy",
+  "45": "Debugging Animations",
   "46": "manifest.ts",
-  "47": "alt",
-  "48": "Debugging Animations"
+  "47": "alt"
 }
