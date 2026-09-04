@@ -4,11 +4,15 @@ import { Check, ChefHat, ShoppingCart, Users } from "lucide-react";
 import { useRef, type ReactNode } from "react";
 import { HOME } from "@/lib/content";
 import {
+  MOTION_OK,
+  REDUCED_MOTION,
   ScrollTrigger,
+  WIDE_QUERY,
   gsap,
   remap,
   useIsomorphicLayoutEffect,
 } from "@/lib/gsap";
+import { plural } from "@/lib/plural";
 import { BrandMark } from "./BrandMark";
 import { SectionKicker } from "./SectionKicker";
 import { Ingredient } from "./ui/Ingredient";
@@ -34,8 +38,8 @@ import type { IngredientId } from "@/lib/ingredients";
    ============================================================ */
 
 const STAGE_QUERIES = {
-  stage: "(prefers-reduced-motion: no-preference) and (min-width: 768px)",
-  flat: "(prefers-reduced-motion: reduce), (max-width: 767px)",
+  stage: `${MOTION_OK} and ${WIDE_QUERY}`,
+  flat: `${REDUCED_MOTION}, (max-width: 767px)`,
 } as const;
 
 /** Габариты макета телефона; высота нужна ещё и подгонке сцены под экран. */
@@ -112,13 +116,7 @@ const LIFE_GOALS = [
   { label: "Экономить деньги", on: true },
 ];
 
-const productWord = (n: number) => {
-  const tail10 = n % 10;
-  const tail100 = n % 100;
-  if (tail10 === 1 && tail100 !== 11) return "продукт";
-  if (tail10 >= 2 && tail10 <= 4 && (tail100 < 12 || tail100 > 14)) return "продукта";
-  return "продуктов";
-};
+const productWord = (n: number) => plural(n, ["продукт", "продукта", "продуктов"]);
 
 function PhoneShell({ children }: { children: ReactNode }) {
   return (

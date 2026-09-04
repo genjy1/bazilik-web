@@ -42,6 +42,8 @@
   --shadow-accent-lift: 0 12px 28px rgba(31, 122, 77, 0.24);
   --shadow-accent-soft: 0 6px 18px rgba(31, 122, 77, 0.12);
   --shadow-panel: 0 24px 80px rgba(18, 88, 58, 0.1);
+  /* Свечение под сценой «Три шага» — один и тот же тёмно-изумрудный в обеих
+     темах, поэтому в тёмных блоках не переопределяется. */
   --glow: rgba(53, 176, 110, 0.16);
 }
 
@@ -76,7 +78,6 @@
     --shadow-accent-lift: 0 12px 28px rgba(53, 176, 110, 0.2);
     --shadow-accent-soft: 0 6px 18px rgba(53, 176, 110, 0.12);
     --shadow-panel: 0 24px 80px rgba(0, 0, 0, 0.45);
-    --glow: rgba(53, 176, 110, 0.16);
   }
 }
 
@@ -109,7 +110,6 @@
   --shadow-accent-lift: 0 12px 28px rgba(53, 176, 110, 0.2);
   --shadow-accent-soft: 0 6px 18px rgba(53, 176, 110, 0.12);
   --shadow-panel: 0 24px 80px rgba(0, 0, 0, 0.45);
-  --glow: rgba(53, 176, 110, 0.16);
 }
 
 @theme inline {

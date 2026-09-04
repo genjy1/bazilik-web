@@ -31,12 +31,19 @@ export const DUR = 0.7;
 
 /** Запрос, по которому все анимации выключаются. */
 export const MOTION_OK = "(prefers-reduced-motion: no-preference)";
+export const REDUCED_MOTION = "(prefers-reduced-motion: reduce)";
 /** Ниже этой ширины фоновые слои не двигаются — см. BackgroundFX и AmbientIngredients. */
 export const WIDE_QUERY = "(min-width: 768px)";
 export const MOTION_QUERIES = {
   motion: MOTION_OK,
-  reduced: "(prefers-reduced-motion: reduce)",
+  reduced: REDUCED_MOTION,
 } as const;
+/**
+ * Те же условия плюс ширина — для декоративных слоёв, которые на узком экране
+ * стоят на месте. Колбэк matchMedia проверяет `reduced || !wide` и выходит.
+ */
+export const WIDE_MOTION_QUERIES = { ...MOTION_QUERIES, wide: WIDE_QUERY } as const;
+export type WideMotionConditions = { reduced: boolean; wide: boolean };
 
 /**
  * Запускает цикл только пока элемент виден — не тратит кадры за кадром экрана.
