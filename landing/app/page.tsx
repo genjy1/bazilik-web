@@ -3,6 +3,7 @@ import { AudienceHero } from "@/components/AudienceHero";
 import { BackgroundFX } from "@/components/BackgroundFX";
 import { ComparisonSection } from "@/components/ComparisonSection";
 import { CtaSection } from "@/components/CtaSection";
+import { FaqSection } from "@/components/FaqSection";
 import { Footer } from "@/components/Footer";
 import { GoalsSection } from "@/components/GoalsSection";
 import { Nav } from "@/components/Nav";
@@ -55,6 +56,8 @@ export default function Page() {
         <SectionDivider />
         <GoalsSection />
 
+        <SectionDivider />
+        <FaqSection />
         <SectionDivider />
         {/* Аудитория «дома» теперь и есть главная, поэтому карточка «Дома»
             вела бы на саму себя, а «Специалистам» в MVP нет вовсе — развилка
