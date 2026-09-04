@@ -4,23 +4,15 @@ import { useEffect, useLayoutEffect, type RefObject } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
-import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
-import { MotionPathPlugin } from "gsap/MotionPathPlugin";
-import { Draggable } from "gsap/Draggable";
-import { InertiaPlugin } from "gsap/InertiaPlugin";
 
 // Регистрация должна произойти один раз и только в браузере.
-// DrawSVG, MorphSVG, Draggable и InertiaPlugin раньше были платными —
-// с gsap 3.13 они входят в пакет.
+// Регистрируем только то, что живые страницы действительно вызывают:
+// каждый плагин отсюда попадает в бандл каждой страницы. MorphSVG,
+// MotionPath, Draggable и Inertia уходили пользователю ~36 КБ gzip без
+// единого вызова. Понадобится плагин — регистрировать в том компоненте,
+// который его использует.
 if (typeof window !== "undefined") {
-  gsap.registerPlugin(
-    ScrollTrigger,
-    DrawSVGPlugin,
-    MorphSVGPlugin,
-    MotionPathPlugin,
-    Draggable,
-    InertiaPlugin,
-  );
+  gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 }
 
 /**
@@ -31,15 +23,7 @@ if (typeof window !== "undefined") {
 export const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
-export {
-  gsap,
-  ScrollTrigger,
-  DrawSVGPlugin,
-  MorphSVGPlugin,
-  MotionPathPlugin,
-  Draggable,
-  InertiaPlugin,
-};
+export { gsap, ScrollTrigger, DrawSVGPlugin };
 
 /** Единая кривая и длительности, чтобы движение по странице было одинаковым. */
 export const EASE = "power3.out";
@@ -47,6 +31,8 @@ export const DUR = 0.7;
 
 /** Запрос, по которому все анимации выключаются. */
 export const MOTION_OK = "(prefers-reduced-motion: no-preference)";
+/** Ниже этой ширины фоновые слои не двигаются — см. BackgroundFX и AmbientIngredients. */
+export const WIDE_QUERY = "(min-width: 768px)";
 export const MOTION_QUERIES = {
   motion: MOTION_OK,
   reduced: "(prefers-reduced-motion: reduce)",

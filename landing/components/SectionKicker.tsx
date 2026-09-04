@@ -1,25 +1,18 @@
 import type { ReactNode } from "react";
 import { Reveal } from "./ui/Reveal";
 
-/** Нумерованный заголовок секции: моно-номер + дисплейный H2. */
-export function SectionKicker({
-  n,
-  title,
-  lead,
-}: {
-  n: string;
-  title: ReactNode;
-  lead?: string;
-}) {
+/**
+ * Заголовок секции: дисплейный H2 и необязательный лид.
+ *
+ * Моно-номера «02…06» убраны: секции лендинга — не последовательность,
+ * а единственный настоящий порядок на странице (три шага в PhoneStepsScene)
+ * нумерует себя сам. Два счётчика рядом читались как один сломанный.
+ */
+export function SectionKicker({ title, lead }: { title: ReactNode; lead?: string }) {
   return (
     <>
       <Reveal>
-        <div className="mb-4.5 flex flex-wrap items-baseline gap-3.5">
-          <span className="font-mono text-[13px] font-bold tracking-[0.14em] text-accent">
-            {n}
-          </span>
-          <h2 className="text-[clamp(30px,4.6vw,52px)]">{title}</h2>
-        </div>
+        <h2 className="mb-4.5 text-[clamp(30px,4.6vw,52px)]">{title}</h2>
       </Reveal>
       {lead && (
         <Reveal delay={80}>

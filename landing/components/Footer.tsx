@@ -16,7 +16,7 @@ export function Footer({ groups }: { groups: readonly FooterGroup[] }) {
               Базилик
             </div>
             <p className="mt-3.5 max-w-[34ch] text-[14.5px] text-muted">
-              Операционный слой планирования питания. Готовь то, что уже есть.
+              Меню на неделю, список покупок и готовка по шагам. Готовь то, что уже есть.
             </p>
           </div>
 
@@ -28,12 +28,12 @@ export function Footer({ groups }: { groups: readonly FooterGroup[] }) {
               <h2 className="mb-3.5 font-mono text-[10.5px] font-semibold uppercase tracking-[0.18em] text-muted">
                 {g.title}
               </h2>
-              <ul className="grid gap-2.5">
+              <ul className="grid gap-0.5">
                 {g.links.map((l) => (
                   <li key={l.href}>
                     <a
                       href={l.href}
-                      className="text-[14.5px] text-ink transition-colors hover:text-accent-deep"
+                      className="inline-flex min-h-11 items-center text-[14.5px] text-ink transition-colors hover:text-accent-deep"
                     >
                       {l.label}
                     </a>

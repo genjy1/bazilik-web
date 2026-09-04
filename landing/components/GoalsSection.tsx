@@ -255,7 +255,6 @@ export function GoalsSection() {
     <section className="relative overflow-hidden py-16 md:py-28">
       <div className="mx-auto max-w-[1180px] px-6">
         <SectionKicker
-          n="06"
           title={goals.title}
           lead={mode === "track" ? goals.lead : goals.enjoy.kicker}
         />
@@ -267,7 +266,7 @@ export function GoalsSection() {
               type="button"
               onClick={() => setMode(m.key)}
               aria-pressed={mode === m.key}
-              className={`rounded-full px-4 py-2 text-[13.5px] font-bold tracking-tight transition-colors ${
+              className={`min-h-11 rounded-full px-4 py-2 text-[13.5px] font-bold tracking-tight transition-colors ${
                 mode === m.key ? "bg-accent text-on-accent" : "text-muted hover:text-ink"
               }`}
             >

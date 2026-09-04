@@ -12,7 +12,7 @@ const base =
 const styles: Record<Variant, string> = {
   primary:
     "bg-accent text-on-accent border border-transparent " +
-    "shadow-[0_2px_6px_rgba(31,122,77,0.26),0_12px_30px_rgba(31,122,77,0.22)] " +
+    "shadow-[var(--shadow-accent)] " +
     "hover:bg-accent-deep",
   secondary:
     "bg-surface text-ink border border-line hover:border-accent hover:text-accent-deep",

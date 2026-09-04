@@ -188,7 +188,7 @@ export function PainList() {
   return (
     <section className="py-16 md:py-24">
       <div className="mx-auto max-w-[1180px] px-6">
-        <SectionKicker n="02" title={title} />
+        <SectionKicker title={title} />
 
         <ul className="mt-8 grid gap-4 sm:grid-cols-2">
           {items.map((item, i) => {

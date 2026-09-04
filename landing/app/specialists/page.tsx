@@ -100,7 +100,6 @@ export default function SpecialistsPage() {
 
         <SectionDivider />
         <Process
-          kickerN="04"
           title="Как это работает"
           lead="Три шага — от рецепта до тарелки клиента, без единого PDF."
           steps={PROS.process}

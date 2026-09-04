@@ -13,7 +13,7 @@ export function MarketplaceSection() {
   return (
     <section className="py-16 md:py-24">
       <div className="mx-auto max-w-[1180px] px-6">
-        <SectionKicker n="05" title={marketplace.title} />
+        <SectionKicker title={marketplace.title} />
         <Reveal delay={80}>
           <p className="mt-2 max-w-[66ch] text-[clamp(16px,2vw,19px)] text-muted">
             {marketplace.body}
