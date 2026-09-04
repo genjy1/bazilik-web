@@ -497,7 +497,7 @@ export function TakesSection() {
   return (
     <section className="py-16 md:py-28">
       <div className="mx-auto max-w-[1180px] px-6">
-        <SectionKicker title="Что ты получаешь" />
+        <SectionKicker title={HOME.takesTitle} lead={HOME.takesLead} />
 
         <ul className="mt-10 grid gap-5 sm:grid-cols-2">
           {HOME.takes.map((take, i) => {
