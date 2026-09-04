@@ -2,8 +2,7 @@
 
 import { useRef } from "react";
 import { Ingredient } from "./ui/Ingredient";
-import { INGREDIENT_IDS } from "@/lib/ingredients";
-import { MOTION_OK, MOTION_QUERIES, gsap, useIsomorphicLayoutEffect } from "@/lib/gsap";
+import { MOTION_OK, MOTION_QUERIES, WIDE_QUERY, gsap, useIsomorphicLayoutEffect } from "@/lib/gsap";
 
 /**
  * Фоновый слой дрейфующих ингредиентов — сквозной мотив всей страницы
@@ -38,9 +37,12 @@ export function AmbientIngredients() {
 
     const mm = gsap.matchMedia();
 
-    mm.add(MOTION_QUERIES, (ctx) => {
-      const { reduced } = ctx.conditions as { reduced: boolean };
-      if (reduced) return;
+    // Дрейф и параллакс — только на широких экранах: на телефоне девять
+    // бесконечных твинов плюс скраб по скроллу жгут батарею ради листьев,
+    // которые в одну колонку почти не видны. Статичная раскладка остаётся.
+    mm.add({ ...MOTION_QUERIES, wide: WIDE_QUERY }, (ctx) => {
+      const { reduced, wide } = ctx.conditions as { reduced: boolean; wide: boolean };
+      if (reduced || !wide) return;
 
       const outers = gsap.utils.toArray<HTMLElement>(el.querySelectorAll("[data-drift]"));
 
@@ -145,11 +147,9 @@ export function AmbientIngredients() {
           }}
         >
           <div data-repel>
-            <Ingredient
-              id={item.id}
-              className="h-full w-full opacity-35"
-              style={{ filter: "blur(0.2px)" }}
-            />
+            {/* Без filter: blur(0.2px) — на глаз он неразличим, а каждый
+                такой фильтр заводил отдельный слой композитора. */}
+            <Ingredient id={item.id} className="h-full w-full opacity-35" />
           </div>
         </div>
       ))}

@@ -24,6 +24,17 @@ export async function generateMetadata(
   return {
     title: TITLE,
     description: DESCRIPTION,
+    /**
+     * Пока страница — один абзац «в разработке», в индексе ей нечего делать:
+     * половина sitemap из заглушки — не то, чем встречать первого робота.
+     * `follow` оставлен: ссылки из футера должны обходиться. Снимать вместе
+     * с возвратом маршрута в `SITEMAP_ROUTES` (lib/site.ts), когда появится
+     * текст.
+     */
+    robots: {
+      index: false,
+      follow: true,
+    },
     alternates: {
       canonical: "/cookies",
     },
@@ -32,7 +43,7 @@ export async function generateMetadata(
       title: TITLE,
       description: DESCRIPTION,
       url: "/cookies",
-      images: await inheritedOgImages(parent),
+      images: await inheritedOgImages(parent, TITLE),
     },
   };
 }

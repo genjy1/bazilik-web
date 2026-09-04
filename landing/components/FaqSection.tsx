@@ -19,7 +19,7 @@ export function FaqSection() {
   return (
     <section id="faq" className="py-16 md:py-28">
       <div className="mx-auto max-w-[1180px] px-6">
-        <SectionKicker n="07" title={faq.title} lead={faq.lead} />
+        <SectionKicker title={faq.title} lead={faq.lead} />
 
         <ul className="mt-10 grid gap-x-10 md:grid-cols-2">
           {faq.items.map((item, i) => (

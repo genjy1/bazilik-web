@@ -13,20 +13,25 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      /**
+       * `/index` Next отдаёт как корень со статусом 200: дубль главной под
+       * другим адресом. Canonical его и так склеивает, но редирект честнее —
+       * робот не тратит обход на второй URL того же документа.
+       */
+      {
+        source: "/index",
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
 
-  images: {
-    // Фотографии блюд и обложки планов — заглушки с Unsplash до появления
-    // собственного контента. remotePatterns обязателен: без него next/image
-    // откажется оптимизировать внешний хост.
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        pathname: "/**",
-      },
-    ],
+  /**
+   * В корне репозитория лежит второй package-lock.json, и без явного корня
+   * Next на каждой сборке гадает, где проект, и предупреждает об этом.
+   */
+  turbopack: {
+    root: import.meta.dirname,
   },
 };
 

@@ -66,8 +66,21 @@ export const OG_SHARED = {
  * только в отладчике ссылок, поэтому шаг вынесен в функцию с именем: его
  * забывают не по невнимательности, а потому что забыть нечего.
  */
-export async function inheritedOgImages(parent: ResolvingMetadata) {
-  return (await parent).openGraph?.images ?? [];
+export async function inheritedOgImages(
+  parent: ResolvingMetadata,
+  alt: string,
+) {
+  const images = (await parent).openGraph?.images ?? [];
+  /**
+   * Картинка общая, а `alt` — нет: у родителя он равен заголовку главной,
+   * и без замены /specialists уносил в `og:image:alt` чужой title. Alt
+   * страницы — её собственный заголовок, как и у корня.
+   */
+  return images.map((image) =>
+    typeof image === "string" || image instanceof URL
+      ? { url: image, alt }
+      : { ...image, alt },
+  );
 }
 
 /**
@@ -96,15 +109,16 @@ export type SiteRoute = {
  * app/specialists/page.tsx. Возвращать маршрут сюда одновременно со снятием
  * того флага, не отдельно от него.
  *
- * `/cookies` — служебная страница: должна быть достижимой, но не должна
- * конкурировать в выдаче с продуктовыми, отсюда минимальный приоритет.
+ * `/cookies` тоже нет, пока это заглушка «Страница в разработке»: она под
+ * `robots.index: false` в app/cookies/page.tsx. Появится текст — снять
+ * флаг и вернуть маршрут сюда одним коммитом, с `priority` около 0.1:
+ * страница служебная и не должна конкурировать в выдаче с продуктовыми.
  *
  * `/home` в списке нет сознательно: он отдаёт 308 на `/` (см. next.config.ts),
  * а редиректы в карте сайта — ошибка обхода, а не подсказка.
  */
 export const SITEMAP_ROUTES: readonly SiteRoute[] = [
   { path: "/", changeFrequency: "monthly", priority: 1 },
-  { path: "/cookies", changeFrequency: "yearly", priority: 0.1 },
 ];
 
 /**

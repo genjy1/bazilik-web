@@ -2,7 +2,7 @@
 
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BrandMark } from "./BrandMark";
 import { ThemeToggle } from "./ui/ThemeToggle";
 import {
@@ -13,6 +13,9 @@ import {
 } from "@/lib/gsap";
 
 type NavLink = { href: string; label: string };
+
+/** Зазор между нижней кромкой букв ссылки и маркером активного раздела, px. */
+const MARKER_GAP = 7;
 
 /**
  * Ссылки навигации — свои на каждой странице (главная и обе аудитории),
@@ -27,6 +30,18 @@ export function Nav({ links }: { links: readonly NavLink[] }) {
   const menuRef = useRef<HTMLDivElement>(null);
   const markerRef = useRef<HTMLSpanElement>(null);
   const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+
+  // Escape закрывает мобильное меню — ожидаемый выход с клавиатуры.
+  useEffect(() => {
+    if (!open) return;
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
 
   // Подложка и граница шапки появляются, как только страницу прокрутили.
   useIsomorphicLayoutEffect(() => {
@@ -115,8 +130,18 @@ export function Nav({ links }: { links: readonly NavLink[] }) {
         const target = linkRefs.current[active];
         if (!target) return;
 
+        // Подчёркивание привязано к тексту, а не к коробке ссылки: коробка
+        // растянута до 44px ради зоны нажатия, и отсчёт от её края уводил
+        // маркер на 16px под буквы. Меряем сам текст и ставим маркер на
+        // фиксированный зазор под ним.
+        const range = document.createRange();
+        range.selectNodeContents(target);
+        const text = range.getBoundingClientRect();
+        const y = text.bottom - nav.getBoundingClientRect().top + MARKER_GAP;
+
         gsap.to(marker, {
           x: target.offsetLeft,
+          y,
           width: target.offsetWidth,
           opacity: 1,
           duration: reduced ? 0 : 0.4,
@@ -179,7 +204,7 @@ export function Nav({ links }: { links: readonly NavLink[] }) {
         <Link
           href="/"
           data-nav-item
-          className="flex items-center gap-2.5 text-[18px] font-extrabold tracking-tight text-ink"
+          className="flex min-h-11 items-center gap-2.5 text-[18px] font-extrabold tracking-tight text-ink"
         >
           <BrandMark className="size-6.5 shrink-0" />
           <span>Базилик</span>
@@ -191,7 +216,7 @@ export function Nav({ links }: { links: readonly NavLink[] }) {
           className="relative hidden gap-6 lg:flex"
         >
           {links.map((l, i) => {
-            const linkClassName = `font-mono text-[11px] uppercase tracking-[0.1em] transition-colors ${
+            const linkClassName = `inline-flex min-h-11 items-center font-mono text-[11px] uppercase tracking-[0.1em] transition-colors ${
               active === i ? "text-accent-deep" : "text-muted hover:text-accent-deep"
             }`;
             const ref = (node: HTMLAnchorElement | null) => {
@@ -229,7 +254,7 @@ export function Nav({ links }: { links: readonly NavLink[] }) {
           <span
             ref={markerRef}
             aria-hidden="true"
-            className="pointer-events-none absolute -bottom-2 left-0 h-0.5 rounded-full bg-accent opacity-0"
+            className="pointer-events-none absolute top-0 left-0 h-0.5 rounded-full bg-accent opacity-0"
           />
         </nav>
 
@@ -258,7 +283,7 @@ export function Nav({ links }: { links: readonly NavLink[] }) {
           <ul className="mx-auto flex max-w-[1180px] flex-col gap-1 px-6 py-4">
             {links.map((l) => {
               const itemClassName =
-                "block rounded-xl px-3 py-2.5 font-mono text-[11px] uppercase tracking-[0.1em] text-muted transition-colors hover:bg-surface hover:text-accent-deep";
+                "flex min-h-11 items-center rounded-xl px-3 py-2.5 font-mono text-[11px] uppercase tracking-[0.1em] text-muted transition-colors hover:bg-surface hover:text-accent-deep";
 
               return (
                 <li key={l.href} data-menu-item>

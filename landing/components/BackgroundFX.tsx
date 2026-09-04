@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { MOTION_QUERIES, gsap, useIsomorphicLayoutEffect } from "@/lib/gsap";
+import { MOTION_QUERIES, WIDE_QUERY, gsap, useIsomorphicLayoutEffect } from "@/lib/gsap";
 
 /**
  * Фоновый слой: три изумрудных пятна, медленно дрейфующих под контентом,
@@ -10,6 +10,9 @@ import { MOTION_QUERIES, gsap, useIsomorphicLayoutEffect } from "@/lib/gsap";
  * Слой фиксированный и один на всю страницу — так браузер анимирует три
  * элемента вместо декоративного градиента в каждой секции. Анимируются
  * только transform и opacity, то есть без перерасчёта раскладки.
+ *
+ * Блюр — 40px, не 64: радиальный градиент и так уходит в прозрачность к
+ * 70 % радиуса, и большее размытие лишь дороже, а не мягче.
  */
 const BLOBS = [
   {
@@ -41,9 +44,11 @@ export function BackgroundFX() {
 
     const mm = gsap.matchMedia();
 
-    mm.add(MOTION_QUERIES, (ctx) => {
-      const { reduced } = ctx.conditions as { reduced: boolean };
-      if (reduced) return;
+    // На узких экранах пятна стоят на месте: три слоя по 700–800px с блюром
+    // в вечном движении — самая дорогая отрисовка страницы на слабом GPU.
+    mm.add({ ...MOTION_QUERIES, wide: WIDE_QUERY }, (ctx) => {
+      const { reduced, wide } = ctx.conditions as { reduced: boolean; wide: boolean };
+      if (reduced || !wide) return;
 
       const q = gsap.utils.selector(el);
 
@@ -87,7 +92,7 @@ export function BackgroundFX() {
         <div
           key={i}
           data-blob
-          className={`absolute rounded-full blur-3xl ${b.className}`}
+          className={`absolute rounded-full blur-2xl ${b.className}`}
           style={{
             background: `radial-gradient(circle, color-mix(in srgb, ${b.color} ${b.strength}%, transparent) 0%, transparent 70%)`,
           }}
