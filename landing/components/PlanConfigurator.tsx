@@ -162,7 +162,7 @@ export function PlanConfigurator() {
         </p>
         <div className="flex items-baseline justify-between gap-3 border-b border-line pb-4">
           <div className="text-[15px] font-extrabold tracking-tight">
-            Неделя по вашим настройкам
+            Неделя по этим настройкам
           </div>
           <Chip tone="herb">пересобрано</Chip>
         </div>
