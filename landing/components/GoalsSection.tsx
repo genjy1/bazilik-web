@@ -32,6 +32,12 @@ const WEEK_DAYS = 7;
 const TICK_STEP = CIRCUMFERENCE / WEEK_DAYS;
 /** Зазор должен быть больше толщины штриха (11), иначе round-caps склеят засечки. */
 const TICK_LEN = TICK_STEP - 18;
+/**
+ * Первая засечка центрируется на 12 часах, а не начинается с них: иначе
+ * закрашенный день висит справа от вершины, а зазор — слева, и кольцо
+ * читается как повёрнутое относительно числа и соседних колец.
+ */
+const TICK_PHASE = TICK_LEN / 2;
 
 const VALUE_CLASS = "text-[32px] font-extrabold tracking-tight tabular-nums md:text-[36px]";
 
@@ -175,9 +181,12 @@ function WeekRing({
 
       const ticks = gsap.utils.toArray<SVGElement>(el.querySelectorAll("[data-tick]"));
 
+      // transformOrigin задаётся уже в from: если он появляется только в to,
+      // GSAP (smoothOrigin для SVG) компенсирует смену точки опоры постоянным
+      // сдвигом, и после анимации засечки остаются смещены на 0.2·R.
       gsap.fromTo(
         ticks,
-        { opacity: 0, scale: 0.8 },
+        { opacity: 0, scale: 0.8, transformOrigin: "50% 50%" },
         {
           opacity: 1,
           scale: 1,
@@ -208,7 +217,7 @@ function WeekRing({
             strokeWidth={11}
             strokeLinecap="round"
             strokeDasharray={`${TICK_LEN} ${CIRCUMFERENCE - TICK_LEN}`}
-            strokeDashoffset={-i * TICK_STEP}
+            strokeDashoffset={TICK_PHASE - i * TICK_STEP}
           />
         ))}
       </g>

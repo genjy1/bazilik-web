@@ -27,7 +27,9 @@ const ITEMS = [
   { id: "garlic", left: "14%", top: "74%", size: 36, rotate: 6, depth: 1 },
   { id: "pepper", left: "60%", top: "82%", size: 42, rotate: -6, depth: 3 },
   { id: "onion", left: "40%", top: "6%", size: 38, rotate: 8, depth: 2 },
-  { id: "pasta", left: "30%", top: "62%", size: 48, rotate: -10, depth: 1 },
+  // Не 30%/62%: на типичном экране эта точка попадает в прозрачную середину
+  // кольца «поход в магазин» в блоке целей и читается как пятно внутри него.
+  { id: "pasta", left: "24%", top: "90%", size: 48, rotate: -10, depth: 1 },
 ] as const;
 
 /** Радиус, в котором лист «расступается» от курсора, и сила смещения. */
