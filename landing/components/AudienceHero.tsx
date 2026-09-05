@@ -84,10 +84,20 @@ export function AudienceHero({
         </p>
 
         {showChain && (
-          <>
+          /*
+           * Карточка с цепочкой и тумблер — одной колонкой, порядок зависит от
+           * ширины. На десктопе цепочка помещается в две строки, и кнопка под
+           * ней видна на первом экране. На телефоне восемь пилюль занимают
+           * четыре сотни пикселей и уносят кнопку за сгиб: на 375×812 она
+           * начиналась на 844 px, а cookie-баннер закрывал ещё 136 px снизу.
+           * Поэтому до `md` кнопка стоит первой — сразу под лидом, — а
+           * карточка за ней. DOM-порядок оставлен как на десктопе: в карточке
+           * нет фокусируемых элементов, порядок Tab от перестановки не меняется.
+           */
+          <div className="flex flex-col">
             <div
               data-ahero-chain
-              className="mt-9 rounded-2xl border border-line bg-surface p-5 shadow-[var(--shadow-panel)] md:p-6"
+              className="mt-6 rounded-2xl border border-line bg-surface p-5 shadow-[var(--shadow-panel)] md:mt-9 md:p-6"
             >
               <BasilikChain
                 chain={CHAIN_BEFORE}
@@ -102,13 +112,16 @@ export function AudienceHero({
 
             {/* Тумблер вынесен из карточки: это не настройка виджета,
                 а единственное действие, которое просит первый экран. */}
-            <div data-ahero-toggle className="mt-7 flex justify-center">
+            <div
+              data-ahero-toggle
+              className="order-first mt-7 flex justify-center md:order-none"
+            >
               <BasilikToggleButton
                 labelOff={BASILIK_TOGGLE.buttonOff}
                 labelOn={BASILIK_TOGGLE.buttonOn}
               />
             </div>
-          </>
+          </div>
         )}
       </div>
     </section>

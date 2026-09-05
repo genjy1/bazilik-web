@@ -154,6 +154,39 @@
       "norm_label": "manifest()"
     },
     {
+      "label": "not-found.tsx",
+      "file_type": "code",
+      "source_file": "app/not-found.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "app_not_found",
+      "community": 12,
+      "community_name": "site.ts",
+      "norm_label": "not-found.tsx"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "app/not-found.tsx",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "app_not_found_metadata",
+      "community": 12,
+      "community_name": "site.ts",
+      "norm_label": "metadata"
+    },
+    {
+      "label": "NotFound()",
+      "file_type": "code",
+      "source_file": "app/not-found.tsx",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "app_not_found_notfound",
+      "community": 12,
+      "community_name": "site.ts",
+      "norm_label": "notfound()"
+    },
+    {
       "label": "opengraph-image.tsx",
       "file_type": "code",
       "source_file": "app/opengraph-image.tsx",
@@ -204,7 +237,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_page",
-      "community": 4,
+      "community": 21,
       "community_name": "app/page.tsx",
       "norm_label": "app/page.tsx"
     },
@@ -215,7 +248,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_page_page",
-      "community": 4,
+      "community": 21,
       "community_name": "app/page.tsx",
       "norm_label": "page()"
     },
@@ -270,8 +303,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_specialists_page",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 21,
+      "community_name": "app/page.tsx",
       "norm_label": "specialists/page.tsx"
     },
     {
@@ -292,8 +325,8 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "app_specialists_page_specialistspage",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 21,
+      "community_name": "app/page.tsx",
       "norm_label": "specialistspage()"
     },
     {
@@ -303,8 +336,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_ambientingredients",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 9,
+      "community_name": "PhoneStepsScene.tsx",
       "norm_label": "ambientingredients.tsx"
     },
     {
@@ -314,8 +347,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "components_ambientingredients_items",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 9,
+      "community_name": "PhoneStepsScene.tsx",
       "norm_label": "items"
     },
     {
@@ -325,8 +358,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "components_ambientingredients_ambientingredients",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 9,
+      "community_name": "PhoneStepsScene.tsx",
       "norm_label": "ambientingredients()"
     },
     {
@@ -336,8 +369,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_audiencehero",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 30,
+      "community_name": "AudienceHero.tsx",
       "norm_label": "audiencehero.tsx"
     },
     {
@@ -347,8 +380,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "components_audiencehero_audiencehero",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 30,
+      "community_name": "AudienceHero.tsx",
       "norm_label": "audiencehero()"
     },
     {
@@ -358,8 +391,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_backgroundfx",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 33,
+      "community_name": "gsap.ts",
       "norm_label": "backgroundfx.tsx"
     },
     {
@@ -369,8 +402,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "components_backgroundfx_blobs",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 33,
+      "community_name": "gsap.ts",
       "norm_label": "blobs"
     },
     {
@@ -380,8 +413,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "components_backgroundfx_backgroundfx",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 33,
+      "community_name": "gsap.ts",
       "norm_label": "backgroundfx()"
     },
     {
@@ -391,8 +424,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_basilikchain",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 30,
+      "community_name": "AudienceHero.tsx",
       "norm_label": "basilikchain.tsx"
     },
     {
@@ -402,8 +435,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "components_basilikchain_props",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 30,
+      "community_name": "AudienceHero.tsx",
       "norm_label": "props"
     },
     {
@@ -413,8 +446,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "components_basilikchain_basilikchain",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 30,
+      "community_name": "AudienceHero.tsx",
       "norm_label": "basilikchain()"
     },
     {
@@ -424,8 +457,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_basiliktogglebutton",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 30,
+      "community_name": "AudienceHero.tsx",
       "norm_label": "basiliktogglebutton.tsx"
     },
     {
@@ -435,8 +468,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "components_basiliktogglebutton_basiliktogglebutton",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 30,
+      "community_name": "AudienceHero.tsx",
       "norm_label": "basiliktogglebutton()"
     },
     {
@@ -469,7 +502,7 @@
       "_origin": "ast",
       "id": "components_comparisonsection",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "comparisonsection.tsx"
     },
     {
@@ -480,7 +513,7 @@
       "_origin": "ast",
       "id": "components_comparisonsection_row",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "row"
     },
     {
@@ -491,7 +524,7 @@
       "_origin": "ast",
       "id": "components_comparisonsection_comparerow",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "comparerow()"
     },
     {
@@ -501,8 +534,8 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "components_comparisonsection_comparisonsection",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 26,
+      "community_name": "Reveal.tsx",
       "norm_label": "comparisonsection()"
     },
     {
@@ -520,7 +553,7 @@
       "label": "CookieConsent()",
       "file_type": "code",
       "source_file": "components/CookieConsent.tsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "components_cookieconsent_cookieconsent",
       "community": 10,
@@ -534,8 +567,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_ctasection",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 21,
+      "community_name": "app/page.tsx",
       "norm_label": "ctasection.tsx"
     },
     {
@@ -545,8 +578,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "components_ctasection_finalcopy",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 21,
+      "community_name": "app/page.tsx",
       "norm_label": "finalcopy"
     },
     {
@@ -556,8 +589,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "components_ctasection_ctasection",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 21,
+      "community_name": "app/page.tsx",
       "norm_label": "ctasection()"
     },
     {
@@ -568,7 +601,7 @@
       "_origin": "ast",
       "id": "components_existingclientssection",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "existingclientssection.tsx"
     },
     {
@@ -578,8 +611,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "components_existingclientssection_existingclientssection",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 21,
+      "community_name": "app/page.tsx",
       "norm_label": "existingclientssection()"
     },
     {
@@ -590,7 +623,7 @@
       "_origin": "ast",
       "id": "components_faqsection",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "faqsection.tsx"
     },
     {
@@ -600,7 +633,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "components_faqsection_faqsection",
-      "community": 4,
+      "community": 21,
       "community_name": "app/page.tsx",
       "norm_label": "faqsection()"
     },
@@ -644,8 +677,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_goalssection",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 31,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "goalssection.tsx"
     },
     {
@@ -655,8 +688,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "components_goalssection_goalsmode",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 31,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "goalsmode"
     },
     {
@@ -666,8 +699,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "components_goalssection_modes",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 31,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "modes"
     },
     {
@@ -677,8 +710,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "components_goalssection_ring_fill",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 31,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "ring_fill"
     },
     {
@@ -688,8 +721,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "components_goalssection_ringframe",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 31,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "ringframe()"
     },
     {
@@ -699,8 +732,8 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "components_goalssection_fillring",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 31,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "fillring()"
     },
     {
@@ -710,8 +743,8 @@
       "source_location": "L150",
       "_origin": "ast",
       "id": "components_goalssection_weekring",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 31,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "weekring()"
     },
     {
@@ -721,8 +754,8 @@
       "source_location": "L220",
       "_origin": "ast",
       "id": "components_goalssection_goalssection",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 31,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "goalssection()"
     },
     {
@@ -799,7 +832,7 @@
       "_origin": "ast",
       "id": "components_marketplacesection",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "marketplacesection.tsx"
     },
     {
@@ -810,7 +843,7 @@
       "_origin": "ast",
       "id": "components_marketplacesection_highlights",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "highlights"
     },
     {
@@ -821,7 +854,7 @@
       "_origin": "ast",
       "id": "components_marketplacesection_marketplacesection",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "marketplacesection()"
     },
     {
@@ -831,8 +864,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_nav",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 12,
+      "community_name": "site.ts",
       "norm_label": "nav.tsx"
     },
     {
@@ -842,8 +875,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "components_nav_navlink",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 12,
+      "community_name": "site.ts",
       "norm_label": "navlink"
     },
     {
@@ -853,8 +886,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "components_nav_nav",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 12,
+      "community_name": "site.ts",
       "norm_label": "nav()"
     },
     {
@@ -864,8 +897,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_painchaos",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "PainChaos.tsx",
       "norm_label": "painchaos.tsx"
     },
     {
@@ -875,8 +908,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "components_painchaos_dinnerscene",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "PainChaos.tsx",
       "norm_label": "dinnerscene()"
     },
     {
@@ -886,8 +919,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "components_painchaos_forgotscene",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "PainChaos.tsx",
       "norm_label": "forgotscene()"
     },
     {
@@ -897,8 +930,8 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "components_painchaos_expiryscene",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "PainChaos.tsx",
       "norm_label": "expiryscene()"
     },
     {
@@ -908,8 +941,8 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "components_painchaos_receiptscene",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "PainChaos.tsx",
       "norm_label": "receiptscene()"
     },
     {
@@ -919,8 +952,8 @@
       "source_location": "L132",
       "_origin": "ast",
       "id": "components_painchaos_scenes",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "PainChaos.tsx",
       "norm_label": "scenes"
     },
     {
@@ -930,8 +963,8 @@
       "source_location": "L140",
       "_origin": "ast",
       "id": "components_painchaos_tilts",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "PainChaos.tsx",
       "norm_label": "tilts"
     },
     {
@@ -941,8 +974,8 @@
       "source_location": "L145",
       "_origin": "ast",
       "id": "components_painchaos_painchaos",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "PainChaos.tsx",
       "norm_label": "painchaos()"
     },
     {
@@ -952,8 +985,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_painlist",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "PainChaos.tsx",
       "norm_label": "painlist.tsx"
     },
     {
@@ -963,8 +996,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "components_painlist_clonescene",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "PainChaos.tsx",
       "norm_label": "clonescene()"
     },
     {
@@ -974,8 +1007,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "components_painlist_manualscene",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "PainChaos.tsx",
       "norm_label": "manualscene()"
     },
     {
@@ -985,8 +1018,8 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "components_painlist_requestscene",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "PainChaos.tsx",
       "norm_label": "requestscene()"
     },
     {
@@ -996,8 +1029,8 @@
       "source_location": "L109",
       "_origin": "ast",
       "id": "components_painlist_expiryscene",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "PainChaos.tsx",
       "norm_label": "expiryscene()"
     },
     {
@@ -1007,8 +1040,8 @@
       "source_location": "L151",
       "_origin": "ast",
       "id": "components_painlist_searchscene",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "PainChaos.tsx",
       "norm_label": "searchscene()"
     },
     {
@@ -1018,8 +1051,8 @@
       "source_location": "L167",
       "_origin": "ast",
       "id": "components_painlist_scenes",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "PainChaos.tsx",
       "norm_label": "scenes"
     },
     {
@@ -1029,8 +1062,8 @@
       "source_location": "L176",
       "_origin": "ast",
       "id": "components_painlist_tilts",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "PainChaos.tsx",
       "norm_label": "tilts"
     },
     {
@@ -1040,8 +1073,8 @@
       "source_location": "L185",
       "_origin": "ast",
       "id": "components_painlist_painlist",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 21,
+      "community_name": "app/page.tsx",
       "norm_label": "painlist()"
     },
     {
@@ -1271,7 +1304,7 @@
       "source_location": "L350",
       "_origin": "ast",
       "id": "components_phonestepsscene_phonestepsscene",
-      "community": 4,
+      "community": 21,
       "community_name": "app/page.tsx",
       "norm_label": "phonestepsscene()"
     },
@@ -1349,7 +1382,7 @@
       "_origin": "ast",
       "id": "components_process",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "process.tsx"
     },
     {
@@ -1360,7 +1393,7 @@
       "_origin": "ast",
       "id": "components_process_step",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "step"
     },
     {
@@ -1371,7 +1404,7 @@
       "_origin": "ast",
       "id": "components_process_props",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "props"
     },
     {
@@ -1382,7 +1415,7 @@
       "_origin": "ast",
       "id": "components_process_process",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "process()"
     },
     {
@@ -1392,7 +1425,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_sectiondivider",
-      "community": 4,
+      "community": 21,
       "community_name": "app/page.tsx",
       "norm_label": "sectiondivider.tsx"
     },
@@ -1403,7 +1436,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "components_sectiondivider_sectiondivider",
-      "community": 4,
+      "community": 21,
       "community_name": "app/page.tsx",
       "norm_label": "sectiondivider()"
     },
@@ -1415,7 +1448,7 @@
       "_origin": "ast",
       "id": "components_sectionkicker",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "sectionkicker.tsx"
     },
     {
@@ -1426,7 +1459,7 @@
       "_origin": "ast",
       "id": "components_sectionkicker_sectionkicker",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "sectionkicker()"
     },
     {
@@ -1624,7 +1657,7 @@
       "_origin": "ast",
       "id": "components_winwinsection",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "winwinsection.tsx"
     },
     {
@@ -1635,7 +1668,7 @@
       "_origin": "ast",
       "id": "components_winwinsection_checkitem",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "checkitem"
     },
     {
@@ -1646,7 +1679,7 @@
       "_origin": "ast",
       "id": "components_winwinsection_checkgrid",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "checkgrid()"
     },
     {
@@ -1657,7 +1690,7 @@
       "_origin": "ast",
       "id": "components_winwinsection_winwinsection",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "winwinsection()"
     },
     {
@@ -1733,8 +1766,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_ui_button",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 12,
+      "community_name": "site.ts",
       "norm_label": "button.tsx"
     },
     {
@@ -1744,8 +1777,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "components_ui_button_variant",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 12,
+      "community_name": "site.ts",
       "norm_label": "variant"
     },
     {
@@ -1755,8 +1788,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "components_ui_button_styles",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 12,
+      "community_name": "site.ts",
       "norm_label": "styles"
     },
     {
@@ -1766,8 +1799,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "components_ui_button_button",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 12,
+      "community_name": "site.ts",
       "norm_label": "button()"
     },
     {
@@ -1777,8 +1810,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_ui_chip",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 31,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "chip.tsx"
     },
     {
@@ -1788,8 +1821,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "components_ui_chip_tone",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 31,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "tone"
     },
     {
@@ -1799,8 +1832,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "components_ui_chip_tones",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 31,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "tones"
     },
     {
@@ -1810,8 +1843,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "components_ui_chip_chip",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 31,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "chip()"
     },
     {
@@ -1821,8 +1854,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_ui_counter",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 31,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "counter.tsx"
     },
     {
@@ -1832,8 +1865,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "components_ui_counter_props",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 31,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "props"
     },
     {
@@ -1843,8 +1876,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "components_ui_counter_counter",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 31,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "counter()"
     },
     {
@@ -1865,8 +1898,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "components_ui_ingredient_ingredient",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 9,
+      "community_name": "PhoneStepsScene.tsx",
       "norm_label": "ingredient()"
     },
     {
@@ -1877,7 +1910,7 @@
       "_origin": "ast",
       "id": "components_ui_reveal",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "reveal.tsx"
     },
     {
@@ -1888,7 +1921,7 @@
       "_origin": "ast",
       "id": "components_ui_reveal_props",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "props"
     },
     {
@@ -1899,7 +1932,7 @@
       "_origin": "ast",
       "id": "components_ui_reveal_reveal",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "reveal()"
     },
     {
@@ -1909,8 +1942,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_ui_themetoggle",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 12,
+      "community_name": "site.ts",
       "norm_label": "themetoggle.tsx"
     },
     {
@@ -1920,8 +1953,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "components_ui_themetoggle_theme",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 12,
+      "community_name": "site.ts",
       "norm_label": "theme"
     },
     {
@@ -1931,8 +1964,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "components_ui_themetoggle_listeners",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 12,
+      "community_name": "site.ts",
       "norm_label": "listeners"
     },
     {
@@ -1942,8 +1975,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "components_ui_themetoggle_subscribe",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 12,
+      "community_name": "site.ts",
       "norm_label": "subscribe()"
     },
     {
@@ -1953,8 +1986,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "components_ui_themetoggle_readtheme",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 12,
+      "community_name": "site.ts",
       "norm_label": "readtheme()"
     },
     {
@@ -1964,8 +1997,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "components_ui_themetoggle_themetoggle",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 12,
+      "community_name": "site.ts",
       "norm_label": "themetoggle()"
     },
     {
@@ -1997,8 +2030,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_basiliktoggle",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 30,
+      "community_name": "AudienceHero.tsx",
       "norm_label": "basiliktoggle.tsx"
     },
     {
@@ -2008,8 +2041,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "lib_basiliktoggle_basiliktogglevalue",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 30,
+      "community_name": "AudienceHero.tsx",
       "norm_label": "basiliktogglevalue"
     },
     {
@@ -2019,8 +2052,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "lib_basiliktoggle_basiliktogglecontext",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 30,
+      "community_name": "AudienceHero.tsx",
       "norm_label": "basiliktogglecontext"
     },
     {
@@ -2030,8 +2063,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "lib_basiliktoggle_basiliktoggleprovider",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 30,
+      "community_name": "AudienceHero.tsx",
       "norm_label": "basiliktoggleprovider()"
     },
     {
@@ -2041,8 +2074,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "lib_basiliktoggle_usebasiliktoggle",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 30,
+      "community_name": "AudienceHero.tsx",
       "norm_label": "usebasiliktoggle()"
     },
     {
@@ -2217,8 +2250,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_content",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 21,
+      "community_name": "app/page.tsx",
       "norm_label": "content.ts"
     },
     {
@@ -2228,8 +2261,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "lib_content_nav_links_specialists",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 21,
+      "community_name": "app/page.tsx",
       "norm_label": "nav_links_specialists"
     },
     {
@@ -2239,8 +2272,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "lib_content_nav_links_home",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 21,
+      "community_name": "app/page.tsx",
       "norm_label": "nav_links_home"
     },
     {
@@ -2250,8 +2283,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "lib_content_audience_routes",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 21,
+      "community_name": "app/page.tsx",
       "norm_label": "audience_routes"
     },
     {
@@ -2261,8 +2294,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "lib_content_chain_before",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 30,
+      "community_name": "AudienceHero.tsx",
       "norm_label": "chain_before"
     },
     {
@@ -2272,8 +2305,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "lib_content_basilik_toggle",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 30,
+      "community_name": "AudienceHero.tsx",
       "norm_label": "basilik_toggle"
     },
     {
@@ -2283,8 +2316,8 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "lib_content_prospainkind",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 21,
+      "community_name": "app/page.tsx",
       "norm_label": "prospainkind"
     },
     {
@@ -2295,7 +2328,7 @@
       "_origin": "ast",
       "id": "lib_content_pros",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "pros"
     },
     {
@@ -2316,8 +2349,8 @@
       "source_location": "L199",
       "_origin": "ast",
       "id": "lib_content_homepainkind",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "PainChaos.tsx",
       "norm_label": "homepainkind"
     },
     {
@@ -2328,7 +2361,7 @@
       "_origin": "ast",
       "id": "lib_content_home",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "home"
     },
     {
@@ -2339,7 +2372,7 @@
       "_origin": "ast",
       "id": "lib_content_process",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "Reveal.tsx",
       "norm_label": "process"
     },
     {
@@ -2349,8 +2382,8 @@
       "source_location": "L417",
       "_origin": "ast",
       "id": "lib_content_cta",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 21,
+      "community_name": "app/page.tsx",
       "norm_label": "cta"
     },
     {
@@ -2360,8 +2393,8 @@
       "source_location": "L431",
       "_origin": "ast",
       "id": "lib_content_footer_groups_specialists",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 21,
+      "community_name": "app/page.tsx",
       "norm_label": "footer_groups_specialists"
     },
     {
@@ -2371,8 +2404,8 @@
       "source_location": "L444",
       "_origin": "ast",
       "id": "lib_content_footer_groups_home",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 21,
+      "community_name": "app/page.tsx",
       "norm_label": "footer_groups_home"
     },
     {
@@ -2492,8 +2525,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_gsap",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 33,
+      "community_name": "gsap.ts",
       "norm_label": "gsap.ts"
     },
     {
@@ -2503,8 +2536,8 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "lib_gsap_motion_queries",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 30,
+      "community_name": "AudienceHero.tsx",
       "norm_label": "motion_queries"
     },
     {
@@ -2514,8 +2547,8 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "lib_gsap_wide_motion_queries",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 33,
+      "community_name": "gsap.ts",
       "norm_label": "wide_motion_queries"
     },
     {
@@ -2525,8 +2558,8 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "lib_gsap_widemotionconditions",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 33,
+      "community_name": "gsap.ts",
       "norm_label": "widemotionconditions"
     },
     {
@@ -2536,8 +2569,8 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "lib_gsap_useloopwhilevisible",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "PainChaos.tsx",
       "norm_label": "useloopwhilevisible()"
     },
     {
@@ -2547,8 +2580,8 @@
       "source_location": "L117",
       "_origin": "ast",
       "id": "lib_gsap_clamp01",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 33,
+      "community_name": "gsap.ts",
       "norm_label": "clamp01()"
     },
     {
@@ -2558,8 +2591,8 @@
       "source_location": "L119",
       "_origin": "ast",
       "id": "lib_gsap_remap",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 33,
+      "community_name": "gsap.ts",
       "norm_label": "remap()"
     },
     {
@@ -2569,8 +2602,8 @@
       "source_location": "L120",
       "_origin": "ast",
       "id": "lib_gsap_easeout",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 33,
+      "community_name": "gsap.ts",
       "norm_label": "easeout()"
     },
     {
@@ -2657,8 +2690,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_schema",
-      "community": 10,
-      "community_name": "layout.tsx",
+      "community": 12,
+      "community_name": "site.ts",
       "norm_label": "schema.ts"
     },
     {
@@ -2668,8 +2701,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "lib_schema_schema_graph",
-      "community": 10,
-      "community_name": "layout.tsx",
+      "community": 12,
+      "community_name": "site.ts",
       "norm_label": "schema_graph"
     },
     {
@@ -2679,8 +2712,8 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "lib_schema_escapejsonld",
-      "community": 10,
-      "community_name": "layout.tsx",
+      "community": 12,
+      "community_name": "site.ts",
       "norm_label": "escapejsonld()"
     },
     {
@@ -2690,8 +2723,8 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "lib_schema_schema_json",
-      "community": 10,
-      "community_name": "layout.tsx",
+      "community": 12,
+      "community_name": "site.ts",
       "norm_label": "schema_json"
     },
     {
@@ -2701,8 +2734,8 @@
       "source_location": "L121",
       "_origin": "ast",
       "id": "lib_schema_faq_schema",
-      "community": 10,
-      "community_name": "layout.tsx",
+      "community": 12,
+      "community_name": "site.ts",
       "norm_label": "faq_schema"
     },
     {
@@ -2712,8 +2745,8 @@
       "source_location": "L134",
       "_origin": "ast",
       "id": "lib_schema_faq_schema_json",
-      "community": 10,
-      "community_name": "layout.tsx",
+      "community": 12,
+      "community_name": "site.ts",
       "norm_label": "faq_schema_json"
     },
     {
@@ -5923,8 +5956,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "design",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_md",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "design.md"
     },
@@ -5934,8 +5967,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L166",
       "_origin": "ast",
-      "id": "design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "design system: \u0431\u0430\u0437\u0438\u043b\u0438\u043a (bazilik)"
     },
@@ -5945,8 +5978,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L168",
       "_origin": "ast",
-      "id": "design_overview",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_overview",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "overview"
     },
@@ -5956,8 +5989,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L183",
       "_origin": "ast",
-      "id": "design_colors",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_colors",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "colors"
     },
@@ -5967,8 +6000,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L187",
       "_origin": "ast",
-      "id": "design_primary",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_primary",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "primary"
     },
@@ -5978,8 +6011,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L192",
       "_origin": "ast",
-      "id": "design_secondary_optional_accents",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_secondary_optional_accents",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "secondary (optional accents)"
     },
@@ -5989,8 +6022,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L199",
       "_origin": "ast",
-      "id": "design_neutral",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_neutral",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "neutral"
     },
@@ -6000,8 +6033,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L208",
       "_origin": "ast",
-      "id": "design_named_rules",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_named_rules",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "named rules"
     },
@@ -6011,8 +6044,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L215",
       "_origin": "ast",
-      "id": "design_typography",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_typography",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "typography"
     },
@@ -6022,8 +6055,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L223",
       "_origin": "ast",
-      "id": "design_hierarchy",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_hierarchy",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "hierarchy"
     },
@@ -6033,8 +6066,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L238",
       "_origin": "ast",
-      "id": "design_named_rules_238",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_named_rules_238",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "named rules"
     },
@@ -6044,8 +6077,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L245",
       "_origin": "ast",
-      "id": "design_layout",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_layout",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "layout"
     },
@@ -6055,8 +6088,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L255",
       "_origin": "ast",
-      "id": "design_elevation_depth",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_elevation_depth",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "elevation & depth"
     },
@@ -6066,8 +6099,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L259",
       "_origin": "ast",
-      "id": "design_shadow_vocabulary",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_shadow_vocabulary",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "shadow vocabulary"
     },
@@ -6077,8 +6110,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L267",
       "_origin": "ast",
-      "id": "design_named_rules_267",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_named_rules_267",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "named rules"
     },
@@ -6088,8 +6121,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L272",
       "_origin": "ast",
-      "id": "design_shapes",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_shapes",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "shapes"
     },
@@ -6099,8 +6132,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L283",
       "_origin": "ast",
-      "id": "design_components",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_components",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "components"
     },
@@ -6110,8 +6143,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L285",
       "_origin": "ast",
-      "id": "design_buttons",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_buttons",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "buttons"
     },
@@ -6121,8 +6154,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L291",
       "_origin": "ast",
-      "id": "design_chips_pills",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_chips_pills",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "chips & pills"
     },
@@ -6132,8 +6165,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L295",
       "_origin": "ast",
-      "id": "design_cards_containers",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_cards_containers",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "cards / containers"
     },
@@ -6143,8 +6176,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L303",
       "_origin": "ast",
-      "id": "design_scene_frames_the_what_you_get_cards",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_scene_frames_the_what_you_get_cards",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "scene frames (the \"what you get\" cards)"
     },
@@ -6154,8 +6187,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L306",
       "_origin": "ast",
-      "id": "design_inputs_fields",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_inputs_fields",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "inputs / fields"
     },
@@ -6165,8 +6198,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L309",
       "_origin": "ast",
-      "id": "design_navigation",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_navigation",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "navigation"
     },
@@ -6176,8 +6209,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L314",
       "_origin": "ast",
-      "id": "design_section_kicker",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_section_kicker",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "section kicker"
     },
@@ -6187,8 +6220,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L317",
       "_origin": "ast",
-      "id": "design_the_phone_steps_scene_signature_component",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_the_phone_steps_scene_signature_component",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "the phone steps scene (signature component)"
     },
@@ -6198,8 +6231,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L320",
       "_origin": "ast",
-      "id": "design_do_s_and_don_ts",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_do_s_and_don_ts",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "do's and don'ts"
     },
@@ -6209,8 +6242,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L322",
       "_origin": "ast",
-      "id": "design_do",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_do",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "do:"
     },
@@ -6220,8 +6253,8 @@
       "source_file": "DESIGN.md",
       "source_location": "L331",
       "_origin": "ast",
-      "id": "design_don_t",
-      "community": 19,
+      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_don_t",
+      "community": 4,
       "community_name": "Components",
       "norm_label": "don't:"
     },
@@ -6639,7 +6672,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_md",
-      "community": 21,
+      "community": 19,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "landing-b2c.md"
     },
@@ -6650,7 +6683,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_b2c",
-      "community": 21,
+      "community": 19,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "\u043b\u0435\u043d\u0434\u0438\u043d\u0433 b2c"
     },
@@ -6661,7 +6694,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_1_\u043f\u0435\u0440\u0432\u044b\u0439_\u044d\u043a\u0440\u0430\u043d_hero_\u0441_\u0438\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043e\u043c_\u0432\u043a\u043b\u044e\u0447\u0438\u0442\u044c_\u0431\u0430\u0437\u0438\u043b\u0438\u043a",
-      "community": 21,
+      "community": 19,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "1. \u043f\u0435\u0440\u0432\u044b\u0438 \u044d\u043a\u0440\u0430\u043d (hero) \u2014 \u0441 \u0438\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043e\u043c \u00ab\u0432\u043a\u043b\u044e\u0447\u0438\u0442\u044c \u0431\u0430\u0437\u0438\u043b\u0438\u043a\u00bb"
     },
@@ -6672,7 +6705,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_\u0446\u0435\u043f\u043e\u0447\u043a\u0430_\u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435_\u0432\u044b\u043a\u043b\u044e\u0447\u0435\u043d\u043e",
-      "community": 21,
+      "community": 19,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "\u0446\u0435\u043f\u043e\u0447\u043a\u0430 (\u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u00ab\u0432\u044b\u043a\u043b\u044e\u0447\u0435\u043d\u043e\u00bb)"
     },
@@ -6683,7 +6716,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_\u043f\u043e\u0441\u043b\u0435_\u043d\u0430\u0436\u0430\u0442\u0438\u044f_\u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435_\u0432\u043a\u043b\u044e\u0447\u0435\u043d\u043e",
-      "community": 21,
+      "community": 19,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "\u043f\u043e\u0441\u043b\u0435 \u043d\u0430\u0436\u0430\u0442\u0438\u044f (\u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u00ab\u0432\u043a\u043b\u044e\u0447\u0435\u043d\u043e\u00bb)"
     },
@@ -6694,7 +6727,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_2_\u0437\u043d\u0430\u043a\u043e\u043c\u043e_\u0431\u043e\u043b\u044c",
-      "community": 21,
+      "community": 19,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "2. \u00ab\u0437\u043d\u0430\u043a\u043e\u043c\u043e?\u00bb (\u0431\u043e\u043b\u044c)"
     },
@@ -6705,7 +6738,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_3_\u0447\u0442\u043e_\u0442\u044b_\u043f\u043e\u043b\u0443\u0447\u0430\u0435\u0448\u044c_\u043f\u0440\u043e\u0441\u0442\u044b\u0435_\u0442\u0435\u0439\u043a\u0438",
-      "community": 21,
+      "community": 19,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "3. \u0447\u0442\u043e \u0442\u044b \u043f\u043e\u043b\u0443\u0447\u0430\u0435\u0448\u044c (\u043f\u0440\u043e\u0441\u0442\u044b\u0435 \u0442\u0435\u0438\u043a\u0438)"
     },
@@ -6716,7 +6749,7 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_4_\u043a\u0430\u043a_\u044d\u0442\u043e_\u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442_3_\u0448\u0430\u0433\u0430",
-      "community": 21,
+      "community": 19,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "4. \u043a\u0430\u043a \u044d\u0442\u043e \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 (3 \u0448\u0430\u0433\u0430)"
     },
@@ -6727,7 +6760,7 @@
       "source_location": "L81",
       "_origin": "ast",
       "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_5_\u0447\u0435\u043c_\u043c\u044b_\u043d\u0435_\u043a\u0430\u043a_\u0432\u0441\u0435",
-      "community": 21,
+      "community": 19,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "5. \u0447\u0435\u043c \u043c\u044b \u043d\u0435 \u043a\u0430\u043a \u0432\u0441\u0435"
     },
@@ -6738,7 +6771,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_6_\u0435\u0441\u043b\u0438_\u0443_\u0442\u0435\u0431\u044f_\u0435\u0441\u0442\u044c_\u0446\u0435\u043b\u044c_\u043f\u0440\u0435\u043c\u0438\u0443\u043c_\u043a\u0440\u044e\u0447\u043a\u0438",
-      "community": 21,
+      "community": 19,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "6. \u0435\u0441\u043b\u0438 \u0443 \u0442\u0435\u0431\u044f \u0435\u0441\u0442\u044c \u0446\u0435\u043b\u044c (\u043f\u0440\u0435\u043c\u0438\u0443\u043c-\u043a\u0440\u044e\u0447\u043a\u0438)"
     },
@@ -6749,7 +6782,7 @@
       "source_location": "L107",
       "_origin": "ast",
       "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_7_\u0444\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0439_\u044d\u043a\u0440\u0430\u043d",
-      "community": 21,
+      "community": 19,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "7. \u0444\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0438 \u044d\u043a\u0440\u0430\u043d"
     },
@@ -8321,6 +8354,136 @@
       "_origin": "ast",
       "source": "app_manifest",
       "target": "app_manifest_manifest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/not-found.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_not_found",
+      "target": "app_not_found_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "app/not-found.tsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_not_found",
+      "target": "app_not_found_notfound",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/not-found.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_not_found",
+      "target": "components_brandmark",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/not-found.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_not_found",
+      "target": "components_brandmark_brandmark",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/not-found.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_not_found",
+      "target": "components_footer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/not-found.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_not_found",
+      "target": "components_footer_footer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/not-found.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_not_found",
+      "target": "components_ui_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/not-found.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_not_found",
+      "target": "components_ui_button_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/not-found.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_not_found",
+      "target": "lib_content",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/not-found.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_not_found",
+      "target": "lib_content_footer_groups_legal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app/not-found.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "app_not_found",
+      "target": "lib_site",
       "confidence_score": 1.0
     },
     {
@@ -9951,7 +10114,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/CookieConsent.tsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_cookieconsent",
@@ -9963,7 +10126,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/CookieConsent.tsx",
-      "source_location": "L3",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_cookieconsent",
@@ -9975,7 +10138,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/CookieConsent.tsx",
-      "source_location": "L3",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_cookieconsent",
@@ -9987,7 +10150,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/CookieConsent.tsx",
-      "source_location": "L3",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_cookieconsent",
@@ -10000,7 +10163,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "components/CookieConsent.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_cookieconsent_cookieconsent",
@@ -16964,8 +17127,8 @@
       "source_location": "L166",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design",
-      "target": "design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_md",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
       "confidence_score": 1.0
     },
     {
@@ -16975,8 +17138,8 @@
       "source_location": "L183",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
-      "target": "design_colors",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_colors",
       "confidence_score": 1.0
     },
     {
@@ -16986,8 +17149,8 @@
       "source_location": "L283",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
-      "target": "design_components",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_components",
       "confidence_score": 1.0
     },
     {
@@ -16997,8 +17160,8 @@
       "source_location": "L320",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
-      "target": "design_do_s_and_don_ts",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_do_s_and_don_ts",
       "confidence_score": 1.0
     },
     {
@@ -17008,8 +17171,8 @@
       "source_location": "L255",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
-      "target": "design_elevation_depth",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_elevation_depth",
       "confidence_score": 1.0
     },
     {
@@ -17019,8 +17182,8 @@
       "source_location": "L245",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
-      "target": "design_layout",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_layout",
       "confidence_score": 1.0
     },
     {
@@ -17030,8 +17193,8 @@
       "source_location": "L168",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
-      "target": "design_overview",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_overview",
       "confidence_score": 1.0
     },
     {
@@ -17041,8 +17204,8 @@
       "source_location": "L272",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
-      "target": "design_shapes",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_shapes",
       "confidence_score": 1.0
     },
     {
@@ -17052,8 +17215,8 @@
       "source_location": "L215",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
-      "target": "design_typography",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_design_system_\u0431\u0430\u0437\u0438\u043b\u0438\u043a_bazilik",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_typography",
       "confidence_score": 1.0
     },
     {
@@ -17063,8 +17226,8 @@
       "source_location": "L208",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_colors",
-      "target": "design_named_rules",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_colors",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_named_rules",
       "confidence_score": 1.0
     },
     {
@@ -17074,8 +17237,8 @@
       "source_location": "L199",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_colors",
-      "target": "design_neutral",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_colors",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_neutral",
       "confidence_score": 1.0
     },
     {
@@ -17085,8 +17248,8 @@
       "source_location": "L187",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_colors",
-      "target": "design_primary",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_colors",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_primary",
       "confidence_score": 1.0
     },
     {
@@ -17096,8 +17259,8 @@
       "source_location": "L192",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_colors",
-      "target": "design_secondary_optional_accents",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_colors",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_secondary_optional_accents",
       "confidence_score": 1.0
     },
     {
@@ -17107,8 +17270,8 @@
       "source_location": "L223",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_typography",
-      "target": "design_hierarchy",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_typography",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_hierarchy",
       "confidence_score": 1.0
     },
     {
@@ -17118,8 +17281,8 @@
       "source_location": "L238",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_typography",
-      "target": "design_named_rules_238",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_typography",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_named_rules_238",
       "confidence_score": 1.0
     },
     {
@@ -17129,8 +17292,8 @@
       "source_location": "L267",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_elevation_depth",
-      "target": "design_named_rules_267",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_elevation_depth",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_named_rules_267",
       "confidence_score": 1.0
     },
     {
@@ -17140,8 +17303,8 @@
       "source_location": "L259",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_elevation_depth",
-      "target": "design_shadow_vocabulary",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_elevation_depth",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_shadow_vocabulary",
       "confidence_score": 1.0
     },
     {
@@ -17151,8 +17314,8 @@
       "source_location": "L285",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_components",
-      "target": "design_buttons",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_components",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_buttons",
       "confidence_score": 1.0
     },
     {
@@ -17162,8 +17325,8 @@
       "source_location": "L295",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_components",
-      "target": "design_cards_containers",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_components",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_cards_containers",
       "confidence_score": 1.0
     },
     {
@@ -17173,8 +17336,8 @@
       "source_location": "L291",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_components",
-      "target": "design_chips_pills",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_components",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_chips_pills",
       "confidence_score": 1.0
     },
     {
@@ -17184,8 +17347,8 @@
       "source_location": "L306",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_components",
-      "target": "design_inputs_fields",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_components",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_inputs_fields",
       "confidence_score": 1.0
     },
     {
@@ -17195,8 +17358,8 @@
       "source_location": "L309",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_components",
-      "target": "design_navigation",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_components",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_navigation",
       "confidence_score": 1.0
     },
     {
@@ -17206,8 +17369,8 @@
       "source_location": "L303",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_components",
-      "target": "design_scene_frames_the_what_you_get_cards",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_components",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_scene_frames_the_what_you_get_cards",
       "confidence_score": 1.0
     },
     {
@@ -17217,8 +17380,8 @@
       "source_location": "L314",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_components",
-      "target": "design_section_kicker",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_components",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_section_kicker",
       "confidence_score": 1.0
     },
     {
@@ -17228,8 +17391,8 @@
       "source_location": "L317",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_components",
-      "target": "design_the_phone_steps_scene_signature_component",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_components",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_the_phone_steps_scene_signature_component",
       "confidence_score": 1.0
     },
     {
@@ -17239,8 +17402,8 @@
       "source_location": "L322",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_do_s_and_don_ts",
-      "target": "design_do",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_do_s_and_don_ts",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_do",
       "confidence_score": 1.0
     },
     {
@@ -17250,8 +17413,8 @@
       "source_location": "L331",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "design_do_s_and_don_ts",
-      "target": "design_don_t",
+      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_do_s_and_don_ts",
+      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_9bd371ee_b20a_4fa4_bc51_9bd1e6ae6e77_scratchpad_wt_review_fixes_landing_design_don_t",
       "confidence_score": 1.0
     },
     {
@@ -19313,5 +19476,5 @@
       "source_file": "CLAUDE.md"
     }
   ],
-  "built_at_commit": "8c20337b1d36703127302c7dc30fa1061842b2bc"
+  "built_at_commit": "84d637802b5c522248e7cea537afe9c366f622ba"
 }

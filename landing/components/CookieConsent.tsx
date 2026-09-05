@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { acceptCookies, useCookieConsent } from "@/lib/cookieConsent";
 
 /**
@@ -13,17 +14,51 @@ import { acceptCookies, useCookieConsent } from "@/lib/cookieConsent";
  */
 export function CookieConsent() {
   const accepted = useCookieConsent();
+  const visible = accepted === false;
+  const ref = useRef<HTMLDivElement>(null);
 
-  if (accepted !== false) return null;
+  /**
+   * Баннер зафиксирован снизу и места в потоке не занимает, поэтому на
+   * коротких экранах закрывал бы последние строки футера. Раньше `body`
+   * получал фиксированные 96 px через `:has(...)`, но на 375 px баннер
+   * складывался в две строки и вырастал до 136 px — отступа не хватало.
+   * Теперь фактическая высота уходит в `--cookie-banner-h` на `<body>`
+   * (globals.css читает её в `padding-bottom`), а ResizeObserver
+   * пересчитывает её при перевёрстке. После «Понятно» переменная снимается.
+   */
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const { style } = document.body;
+    const apply = () => style.setProperty("--cookie-banner-h", `${el.offsetHeight}px`);
+    apply();
+
+    const ro = new ResizeObserver(apply);
+    ro.observe(el);
+
+    return () => {
+      ro.disconnect();
+      style.removeProperty("--cookie-banner-h");
+    };
+  }, [visible]);
+
+  if (!visible) return null;
 
   return (
     <div
+      ref={ref}
       role="region"
       aria-label="Уведомление об использовании cookie"
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-line bg-surface/95 backdrop-blur-xl"
+      /* env(safe-area-inset-bottom): на iPhone без кнопки «Домой» нижние
+         ~34 px экрана заняты индикатором, и кнопка «Понятно» без этого
+         отступа ложилась бы под него. */
+      className="fixed inset-x-0 bottom-0 z-50 border-t border-line bg-surface/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl"
     >
-      <div className="mx-auto flex max-w-[1180px] flex-wrap items-center gap-4 px-6 py-4">
-        <p className="min-w-[240px] flex-1 text-[13.5px] text-muted">
+      {/* Текст и кнопка всегда в один ряд: с `flex-wrap` на узком экране
+          кнопка падала под текст, и баннер занимал шестую часть экрана. */}
+      <div className="mx-auto flex max-w-[1180px] items-center gap-4 px-6 py-4">
+        <p className="min-w-0 flex-1 text-[13.5px] text-muted">
           Мы используем cookie для аналитики и улучшения работы сайта.{" "}
           <a
             href="/cookies"

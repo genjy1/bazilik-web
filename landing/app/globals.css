@@ -159,12 +159,12 @@
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
     transition: background-color 200ms ease, color 200ms ease;
-  }
-
-  /* Баннер cookie зафиксирован снизу и не выделяет себе места в потоке —
-     без этого он на коротких экранах перекрывает последние строки футера. */
-  body:has(> [aria-label="Уведомление об использовании cookie"]) {
-    padding-bottom: 96px;
+    /* Баннер cookie зафиксирован снизу и не выделяет себе места в потоке —
+       без отступа он на коротких экранах перекрывает последние строки
+       футера. Высоту баннера пишет сам CookieConsent (ResizeObserver →
+       переменная на <body>); пока баннера нет, переменной нет и отступ
+       нулевой. */
+    padding-bottom: var(--cookie-banner-h, 0px);
   }
 
   h1,
