@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { HOME } from "@/lib/content";
-import { HOME_TITLE, SITE_NAME, SITE_URL } from "@/lib/site";
+import { HOME_TITLE, OG_IMAGE_SIZE, SITE_NAME, SITE_URL } from "@/lib/site";
 
 /**
  * Карточка ссылки для соцсетей и мессенджеров (1200×630).
@@ -18,7 +18,8 @@ import { HOME_TITLE, SITE_NAME, SITE_URL } from "@/lib/site";
  */
 export const alt = HOME_TITLE;
 
-export const size = { width: 1200, height: 630 };
+/** Размер живёт в site.ts: тот же объект уходит в `primaryImageOfPage` JSON-LD. */
+export const size = OG_IMAGE_SIZE;
 export const contentType = "image/png";
 
 /**
