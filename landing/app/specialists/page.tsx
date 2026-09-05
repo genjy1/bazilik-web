@@ -13,9 +13,16 @@ import { SectionDivider } from "@/components/SectionDivider";
 import { WinWinSection } from "@/components/WinWinSection";
 import { BasilikToggleProvider } from "@/lib/basilikToggle";
 import { FOOTER_GROUPS_SPECIALISTS, NAV_LINKS_SPECIALISTS, PROS } from "@/lib/content";
-import { OG_SHARED, inheritedOgImages } from "@/lib/site";
+import { SPECIALISTS_PAGE_SCHEMA_JSON } from "@/lib/schema";
+import {
+  OG_SHARED,
+  SPECIALISTS_DESCRIPTION,
+  SPECIALISTS_TITLE,
+  inheritedOgImages,
+} from "@/lib/site";
 
-const TITLE = "Базилик для специалистов — планы питания вместо Word и PDF";
+/** Заголовок и описание — в site.ts: те же строки уходят в узел WebPage JSON-LD. */
+const TITLE = SPECIALISTS_TITLE;
 
 /**
  * Не `const metadata`, а `generateMetadata` — только ради картинки.
@@ -33,8 +40,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   return {
     title: TITLE,
-    description:
-      "Конструктор планов для диетологов, нутрициологов и коучей: рецепты, автоматический КБЖУ, маркетплейс готовых планов и доступ для уже купивших клиентов.",
+    description: SPECIALISTS_DESCRIPTION,
     /**
      * Раздел не входит в MVP и до запуска не должен попадать в выдачу.
      * Из sitemap.xml маршрут убран (см. `SITEMAP_ROUTES`), но карта сайта
@@ -113,6 +119,13 @@ export default function SpecialistsPage() {
 
         <SectionDivider />
         <CtaSection final={PROS.final} hideRoutes={["/specialists"]} />
+        {/* Узел WebPage этой страницы. Не InlineScript — тот подменяет type
+            при гидратации, а это данные, и type обязан остаться
+            application/ld+json. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: SPECIALISTS_PAGE_SCHEMA_JSON }}
+        />
       </main>
 
       <Footer groups={FOOTER_GROUPS_SPECIALISTS} />

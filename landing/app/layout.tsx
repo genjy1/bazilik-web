@@ -4,7 +4,7 @@ import { InlineScript } from "@/components/InlineScript";
 import { HashScrollManager } from "@/components/HashScrollManager";
 import { YandexMetrika } from "@/components/YandexMetrika";
 import { SCHEMA_JSON } from "@/lib/schema";
-import { HOME_TITLE, OG_SHARED, SITE_URL } from "@/lib/site";
+import { HOME_DESCRIPTION, HOME_TITLE, OG_SHARED, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 /**
@@ -17,15 +17,6 @@ import "./globals.css";
  * продуктом по начертанию. Заодно ушли запросы next/font и подмена метрик —
  * системный шрифт уже стоит на устройстве и рисуется первым кадром.
  */
-/**
- * Прошлое описание занимало 193 знака при пороге ~160 и обрезалось ровно на
- * «план пересобирается под остат…» — на той самой механике, которая и есть
- * отличие продукта. Заодно ушёл «операционный слой планирования питания»:
- * это внутренняя формулировка, а не то, как о еде говорят дома.
- */
-const DESCRIPTION =
-  "Меню на неделю, список покупок и готовка по шагам. Базилик считает, что купленное ещё есть, и пересобирает план под остатки — без ручного учёта запасов.";
-
 export const metadata: Metadata = {
   /**
    * Базовый адрес для всех URL-полей метаданных ниже и в дочерних сегментах:
@@ -35,7 +26,7 @@ export const metadata: Metadata = {
    */
   metadataBase: new URL(SITE_URL),
   title: HOME_TITLE,
-  description: DESCRIPTION,
+  description: HOME_DESCRIPTION,
   /**
    * Самоссылающийся canonical. У лендинга нет дублей по параметрам, но он
    * фиксирует одну версию адреса — иначе `/`, `/?utm_source=...` и вариант с

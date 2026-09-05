@@ -13,7 +13,7 @@ import { SectionDivider } from "@/components/SectionDivider";
 import { TakesSection } from "@/components/TakesSection";
 import { BasilikToggleProvider } from "@/lib/basilikToggle";
 import { FOOTER_GROUPS_HOME, HOME, NAV_LINKS_HOME } from "@/lib/content";
-import { FAQ_SCHEMA_JSON } from "@/lib/schema";
+import { HOME_PAGE_SCHEMA_JSON } from "@/lib/schema";
 
 export default function Page() {
   return (
@@ -61,12 +61,13 @@ export default function Page() {
 
         <SectionDivider />
         <FaqSection />
-        {/* Разметка FAQPage только здесь, а не в layout: раздел есть лишь на
-            главной. Не InlineScript — тот подменяет type при гидратации,
-            а это данные, и type обязан остаться application/ld+json. */}
+        {/* Разметка страницы (WebPage + FAQPage) только здесь, а не в
+            layout: описание и вопросы есть лишь на главной. Не InlineScript —
+            тот подменяет type при гидратации, а это данные, и type обязан
+            остаться application/ld+json. */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: FAQ_SCHEMA_JSON }}
+          dangerouslySetInnerHTML={{ __html: HOME_PAGE_SCHEMA_JSON }}
         />
         <SectionDivider />
         {/* Аудитория «дома» теперь и есть главная, поэтому карточка «Дома»
