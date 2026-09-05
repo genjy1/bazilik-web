@@ -48,16 +48,36 @@ export const PACES: ReadonlyArray<{ id: Pace; label: string; hint: string }> = [
   { id: "regular", label: "обычный", hint: "без ограничения по времени" },
 ];
 
-/** Блюда помечены тем, чему они противоречат, — так фильтр читается однозначно. */
-const DISHES: ReadonlyArray<{ name: string; conflicts: readonly Diet[] }> = [
-  { name: "Курица с булгуром", conflicts: ["glutenFree", "vegan"] },
-  { name: "Паста с базиликом", conflicts: ["glutenFree"] },
-  { name: "Запечённая треска с овощами", conflicts: ["vegan"] },
-  { name: "Гречка с грибами", conflicts: [] },
-  { name: "Нут с томатами и зеленью", conflicts: [] },
-  { name: "Омлет с творогом", conflicts: ["lactoseFree", "vegan"] },
-  { name: "Рис с тофу и брокколи", conflicts: [] },
-  { name: "Чечевичный суп", conflicts: [] },
+/**
+ * Блюда помечены тем, чему они противоречат (ограничения) и под какие цели
+ * они подходят. Ограничение — жёсткий фильтр, цель — приоритет: первая цель
+ * в списке — основная, остальные — «сойдёт и так». Блюда под основную цель
+ * встают первыми, потом подходящие по совместительству, потом остальные —
+ * так неделя добирается, даже если ограничения сузили пул слишком сильно.
+ */
+const DISHES: ReadonlyArray<{
+  name: string;
+  conflicts: readonly Diet[];
+  goals: readonly Goal[];
+}> = [
+  // Похудение: лёгкие, объёмные, много овощей и клетчатки.
+  { name: "Запечённая треска с овощами", conflicts: ["vegan"], goals: ["loss"] },
+  { name: "Овощное рагу с фасолью", conflicts: [], goals: ["loss"] },
+  { name: "Салат с киноа и авокадо", conflicts: [], goals: ["loss"] },
+  { name: "Тыквенный суп с имбирём", conflicts: [], goals: ["loss"] },
+  { name: "Чечевичный суп", conflicts: [], goals: ["loss", "keep"] },
+  // Поддержание: сбалансированная база на каждый день.
+  { name: "Паста с базиликом", conflicts: ["glutenFree"], goals: ["keep"] },
+  { name: "Гречка с грибами", conflicts: [], goals: ["keep", "loss"] },
+  { name: "Нут с томатами и зеленью", conflicts: [], goals: ["keep"] },
+  { name: "Рис с тофу и брокколи", conflicts: [], goals: ["keep", "gain"] },
+  { name: "Курица с булгуром", conflicts: ["glutenFree", "vegan"], goals: ["keep", "gain"] },
+  // Набор массы: плотнее по калориям и белку.
+  { name: "Омлет с творогом", conflicts: ["lactoseFree", "vegan"], goals: ["gain"] },
+  { name: "Лосось с рисом и авокадо", conflicts: ["vegan"], goals: ["gain"] },
+  { name: "Индейка с бататом", conflicts: ["vegan"], goals: ["gain"] },
+  { name: "Тофу-скрэмбл с фасолью", conflicts: [], goals: ["gain"] },
+  { name: "Паста с чечевицей и тахини", conflicts: ["glutenFree"], goals: ["gain"] },
 ];
 
 const BASE = {
@@ -82,9 +102,18 @@ export function estimatePlan({ goal, diets, pace }: Config): PlanEstimate {
   const factor = GOAL_FACTORS[goal];
   const fast = pace === "fast";
 
-  const dishes = DISHES.filter(
+  const allowed = DISHES.filter(
     (d) => !d.conflicts.some((c) => diets.includes(c)),
-  ).map((d) => d.name);
+  );
+  // Ранг по цели: 0 — основная, 1 — подходит, 2 — нейтральное. Сортировка
+  // стабильная, порядок внутри ранга сохраняется — клик по цели переставляет
+  // состав предсказуемо, а не перемешивает его.
+  const rank = (goals: readonly Goal[]) =>
+    goals[0] === goal ? 0 : goals.includes(goal) ? 1 : 2;
+  const dishes = allowed
+    .map((d, i) => ({ d, i }))
+    .sort((a, b) => rank(a.d.goals) - rank(b.d.goals) || a.i - b.i)
+    .map(({ d }) => d.name);
 
   // Каждое ограничение сужает пул продуктов, поэтому переиспользовать сложнее,
   // а отходов становится чуть больше. Батч-готовка действует в обратную сторону.
