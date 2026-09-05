@@ -20,6 +20,8 @@ import { Chip } from "./ui/Chip";
 const hours = (n: number) => n.toFixed(1).replace(".", ",");
 /** «1 поход», «2 похода», «5 походов» — подпись обязана согласоваться с числом. */
 const tripsWord = (n: number) => plural(n, ["поход", "похода", "походов"]);
+/** «21 приём пищи», а не «21 приёмов»: число оканчивается на единицу. */
+const mealsWord = (n: number) => plural(n, ["приём пищи", "приёма пищи", "приёмов пищи"]);
 
 const toggleBase =
   "inline-flex min-h-11 items-center justify-center rounded-full border px-4 py-2 font-mono text-[11px] uppercase tracking-[0.1em] transition-colors";
@@ -179,7 +181,7 @@ export function PlanConfigurator() {
               ),
               k: "белок / день",
             },
-            { v: <AnimatedNumber value={plan.meals} />, k: "приёмов пищи" },
+            { v: <AnimatedNumber value={plan.meals} />, k: mealsWord(plan.meals) },
             { v: <AnimatedNumber value={plan.shopping} />, k: `${tripsWord(plan.shopping)} в магазин` },
           ].map((m, i) => (
             <div key={i}>

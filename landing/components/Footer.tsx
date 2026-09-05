@@ -1,3 +1,4 @@
+import { SITE_NAME, SITE_NAME_LATIN } from "@/lib/site";
 import { BrandMark } from "./BrandMark";
 
 type FooterGroup = {
@@ -13,12 +14,9 @@ export function Footer({ groups }: { groups: readonly FooterGroup[] }) {
           <div>
             <div className="flex items-center gap-2.5 text-[18px] font-extrabold tracking-tight">
               <BrandMark className="size-6.5" />
-              Базилик
+              {SITE_NAME}
             </div>
-            {/* Та же категория, что в <title> и description: «операционный
-                слой планирования питания» — внутренняя формулировка, из
-                description её уже убрали (см. app/layout.tsx), а футер
-                повторял её на каждой странице. */}
+            {/* Та же категория, что в <title>: «меню на неделю». */}
             <p className="mt-3.5 max-w-[34ch] text-[14.5px] text-muted">
               Меню на неделю, список покупок и готовка по шагам. Готовь то, что уже есть.
             </p>
@@ -49,7 +47,10 @@ export function Footer({ groups }: { groups: readonly FooterGroup[] }) {
         </div>
 
         <div className="mt-11 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-t border-line pt-5.5 font-mono text-[10.5px] uppercase tracking-[0.1em] text-muted">
-          <span>© {new Date().getFullYear()} Базилик · Bazilik</span>
+          {/* Латинское написание — то же, что в alternateName JSON-LD (lib/schema.ts). */}
+          <span>
+            © {new Date().getFullYear()} {SITE_NAME} · {SITE_NAME_LATIN}
+          </span>
           {/* До этого /cookies была достижима только из баннера согласия,
               который рисуется на клиенте и исчезает после «Понятно»:
               в серверном HTML на неё не вело ничего. */}
