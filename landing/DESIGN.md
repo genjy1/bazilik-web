@@ -267,7 +267,7 @@ Flat by default. The system relies on tonal layering (ground → surface → pan
 ### Named Rules
 **The Flat-By-Default Rule.** Surfaces are flat at rest, separated by tonal steps and hairlines, not shadows. Shadow appears only for importance, and when it does it is a named token, never an rgba literal in a class.
 
-Depth beyond the UI layer also comes from two fixed, full-page background layers: three soft blurred emerald/herb blobs (`blur-2xl`, low-opacity radial gradients) and nine drawn ingredients at 35 % opacity. Both drift slowly and parallax with scroll, but only at 768px and above with motion allowed; on phones they sit still. They are ambient, out-of-focus depth cues rather than structural ones.
+Depth beyond the UI layer also comes from two fixed, full-page background layers: three soft blurred emerald/herb blobs (`blur-2xl`, low-opacity radial gradients) and nine drawn ingredients at 35 % opacity. Both drift slowly and parallax with scroll, but only from the `md` breakpoint (48rem, 768px at the browser-default font size) with motion allowed; on phones they sit still. They are ambient, out-of-focus depth cues rather than structural ones.
 
 ## Shapes
 

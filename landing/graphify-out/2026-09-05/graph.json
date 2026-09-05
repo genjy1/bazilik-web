@@ -62,7 +62,7 @@
       "_origin": "ast",
       "id": "app_cookies_page",
       "community": 12,
-      "community_name": "site.ts",
+      "community_name": "cookies/page.tsx",
       "norm_label": "cookies/page.tsx"
     },
     {
@@ -73,7 +73,7 @@
       "_origin": "ast",
       "id": "app_cookies_page_generatemetadata",
       "community": 12,
-      "community_name": "site.ts",
+      "community_name": "cookies/page.tsx",
       "norm_label": "generatemetadata()"
     },
     {
@@ -84,7 +84,7 @@
       "_origin": "ast",
       "id": "app_cookies_page_cookiespage",
       "community": 12,
-      "community_name": "site.ts",
+      "community_name": "cookies/page.tsx",
       "norm_label": "cookiespage()"
     },
     {
@@ -160,8 +160,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_opengraph_image",
-      "community": 12,
-      "community_name": "site.ts",
+      "community": 10,
+      "community_name": "layout.tsx",
       "norm_label": "opengraph-image.tsx"
     },
     {
@@ -171,8 +171,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "app_opengraph_image_size",
-      "community": 12,
-      "community_name": "site.ts",
+      "community": 10,
+      "community_name": "layout.tsx",
       "norm_label": "size"
     },
     {
@@ -182,8 +182,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "app_opengraph_image_markuri",
-      "community": 12,
-      "community_name": "site.ts",
+      "community": 10,
+      "community_name": "layout.tsx",
       "norm_label": "markuri()"
     },
     {
@@ -193,8 +193,8 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "app_opengraph_image_image",
-      "community": 12,
-      "community_name": "site.ts",
+      "community": 10,
+      "community_name": "layout.tsx",
       "norm_label": "image()"
     },
     {
@@ -204,7 +204,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_page",
-      "community": 4,
+      "community": 26,
       "community_name": "app/page.tsx",
       "norm_label": "app/page.tsx"
     },
@@ -215,7 +215,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_page_page",
-      "community": 4,
+      "community": 26,
       "community_name": "app/page.tsx",
       "norm_label": "page()"
     },
@@ -226,8 +226,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_robots",
-      "community": 12,
-      "community_name": "site.ts",
+      "community": 10,
+      "community_name": "layout.tsx",
       "norm_label": "robots.ts"
     },
     {
@@ -237,8 +237,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "app_robots_robots",
-      "community": 12,
-      "community_name": "site.ts",
+      "community": 10,
+      "community_name": "layout.tsx",
       "norm_label": "robots()"
     },
     {
@@ -248,8 +248,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_sitemap",
-      "community": 12,
-      "community_name": "site.ts",
+      "community": 10,
+      "community_name": "layout.tsx",
       "norm_label": "sitemap.ts"
     },
     {
@@ -259,8 +259,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "app_sitemap_sitemap",
-      "community": 12,
-      "community_name": "site.ts",
+      "community": 10,
+      "community_name": "layout.tsx",
       "norm_label": "sitemap()"
     },
     {
@@ -270,7 +270,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app_specialists_page",
-      "community": 26,
+      "community": 8,
       "community_name": "specialists/page.tsx",
       "norm_label": "specialists/page.tsx"
     },
@@ -282,7 +282,7 @@
       "_origin": "ast",
       "id": "app_specialists_page_generatemetadata",
       "community": 12,
-      "community_name": "site.ts",
+      "community_name": "cookies/page.tsx",
       "norm_label": "generatemetadata()"
     },
     {
@@ -292,7 +292,7 @@
       "source_location": "L73",
       "_origin": "ast",
       "id": "app_specialists_page_specialistspage",
-      "community": 26,
+      "community": 8,
       "community_name": "specialists/page.tsx",
       "norm_label": "specialistspage()"
     },
@@ -303,8 +303,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_ambientingredients",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 9,
+      "community_name": "PhoneStepsScene.tsx",
       "norm_label": "ambientingredients.tsx"
     },
     {
@@ -314,8 +314,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "components_ambientingredients_items",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 9,
+      "community_name": "PhoneStepsScene.tsx",
       "norm_label": "items"
     },
     {
@@ -325,8 +325,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "components_ambientingredients_ambientingredients",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 9,
+      "community_name": "PhoneStepsScene.tsx",
       "norm_label": "ambientingredients()"
     },
     {
@@ -337,7 +337,7 @@
       "_origin": "ast",
       "id": "components_audiencehero",
       "community": 4,
-      "community_name": "app/page.tsx",
+      "community_name": "AudienceHero.tsx",
       "norm_label": "audiencehero.tsx"
     },
     {
@@ -348,7 +348,7 @@
       "_origin": "ast",
       "id": "components_audiencehero_audiencehero",
       "community": 4,
-      "community_name": "app/page.tsx",
+      "community_name": "AudienceHero.tsx",
       "norm_label": "audiencehero()"
     },
     {
@@ -358,8 +358,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_backgroundfx",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 8,
+      "community_name": "specialists/page.tsx",
       "norm_label": "backgroundfx.tsx"
     },
     {
@@ -369,8 +369,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "components_backgroundfx_blobs",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 8,
+      "community_name": "specialists/page.tsx",
       "norm_label": "blobs"
     },
     {
@@ -380,8 +380,8 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "components_backgroundfx_backgroundfx",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 8,
+      "community_name": "specialists/page.tsx",
       "norm_label": "backgroundfx()"
     },
     {
@@ -392,7 +392,7 @@
       "_origin": "ast",
       "id": "components_basilikchain",
       "community": 4,
-      "community_name": "app/page.tsx",
+      "community_name": "AudienceHero.tsx",
       "norm_label": "basilikchain.tsx"
     },
     {
@@ -403,7 +403,7 @@
       "_origin": "ast",
       "id": "components_basilikchain_props",
       "community": 4,
-      "community_name": "app/page.tsx",
+      "community_name": "AudienceHero.tsx",
       "norm_label": "props"
     },
     {
@@ -414,7 +414,7 @@
       "_origin": "ast",
       "id": "components_basilikchain_basilikchain",
       "community": 4,
-      "community_name": "app/page.tsx",
+      "community_name": "AudienceHero.tsx",
       "norm_label": "basilikchain()"
     },
     {
@@ -425,7 +425,7 @@
       "_origin": "ast",
       "id": "components_basiliktogglebutton",
       "community": 4,
-      "community_name": "app/page.tsx",
+      "community_name": "AudienceHero.tsx",
       "norm_label": "basiliktogglebutton.tsx"
     },
     {
@@ -436,7 +436,7 @@
       "_origin": "ast",
       "id": "components_basiliktogglebutton_basiliktogglebutton",
       "community": 4,
-      "community_name": "app/page.tsx",
+      "community_name": "AudienceHero.tsx",
       "norm_label": "basiliktogglebutton()"
     },
     {
@@ -447,7 +447,7 @@
       "_origin": "ast",
       "id": "components_brandmark",
       "community": 12,
-      "community_name": "site.ts",
+      "community_name": "cookies/page.tsx",
       "norm_label": "brandmark.tsx"
     },
     {
@@ -458,7 +458,7 @@
       "_origin": "ast",
       "id": "components_brandmark_brandmark",
       "community": 12,
-      "community_name": "site.ts",
+      "community_name": "cookies/page.tsx",
       "norm_label": "brandmark()"
     },
     {
@@ -469,7 +469,7 @@
       "_origin": "ast",
       "id": "components_comparisonsection",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "comparisonsection.tsx"
     },
     {
@@ -480,7 +480,7 @@
       "_origin": "ast",
       "id": "components_comparisonsection_row",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "row"
     },
     {
@@ -491,7 +491,7 @@
       "_origin": "ast",
       "id": "components_comparisonsection_comparerow",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "comparerow()"
     },
     {
@@ -501,7 +501,7 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "components_comparisonsection_comparisonsection",
-      "community": 4,
+      "community": 26,
       "community_name": "app/page.tsx",
       "norm_label": "comparisonsection()"
     },
@@ -535,7 +535,7 @@
       "_origin": "ast",
       "id": "components_ctasection",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "ctasection.tsx"
     },
     {
@@ -546,7 +546,7 @@
       "_origin": "ast",
       "id": "components_ctasection_finalcopy",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "finalcopy"
     },
     {
@@ -557,7 +557,7 @@
       "_origin": "ast",
       "id": "components_ctasection_ctasection",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "ctasection()"
     },
     {
@@ -567,8 +567,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_existingclientssection",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "Reveal.tsx",
       "norm_label": "existingclientssection.tsx"
     },
     {
@@ -578,7 +578,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "components_existingclientssection_existingclientssection",
-      "community": 26,
+      "community": 8,
       "community_name": "specialists/page.tsx",
       "norm_label": "existingclientssection()"
     },
@@ -589,8 +589,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_faqsection",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "Reveal.tsx",
       "norm_label": "faqsection.tsx"
     },
     {
@@ -600,7 +600,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "components_faqsection_faqsection",
-      "community": 4,
+      "community": 26,
       "community_name": "app/page.tsx",
       "norm_label": "faqsection()"
     },
@@ -612,29 +612,29 @@
       "_origin": "ast",
       "id": "components_footer",
       "community": 12,
-      "community_name": "site.ts",
+      "community_name": "cookies/page.tsx",
       "norm_label": "footer.tsx"
     },
     {
       "label": "FooterGroup",
       "file_type": "code",
       "source_file": "components/Footer.tsx",
-      "source_location": "L4",
+      "source_location": "L3",
       "_origin": "ast",
       "id": "components_footer_footergroup",
       "community": 12,
-      "community_name": "site.ts",
+      "community_name": "cookies/page.tsx",
       "norm_label": "footergroup"
     },
     {
       "label": "Footer()",
       "file_type": "code",
       "source_file": "components/Footer.tsx",
-      "source_location": "L9",
+      "source_location": "L8",
       "_origin": "ast",
       "id": "components_footer_footer",
       "community": 12,
-      "community_name": "site.ts",
+      "community_name": "cookies/page.tsx",
       "norm_label": "footer()"
     },
     {
@@ -644,8 +644,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_goalssection",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 33,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "goalssection.tsx"
     },
     {
@@ -655,8 +655,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "components_goalssection_goalsmode",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 33,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "goalsmode"
     },
     {
@@ -666,8 +666,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "components_goalssection_modes",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 33,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "modes"
     },
     {
@@ -677,8 +677,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "components_goalssection_ring_fill",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 33,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "ring_fill"
     },
     {
@@ -688,8 +688,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "components_goalssection_ringframe",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 33,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "ringframe()"
     },
     {
@@ -699,8 +699,8 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "components_goalssection_fillring",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 33,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "fillring()"
     },
     {
@@ -710,8 +710,8 @@
       "source_location": "L150",
       "_origin": "ast",
       "id": "components_goalssection_weekring",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 33,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "weekring()"
     },
     {
@@ -721,8 +721,8 @@
       "source_location": "L220",
       "_origin": "ast",
       "id": "components_goalssection_goalssection",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 33,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "goalssection()"
     },
     {
@@ -798,8 +798,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_marketplacesection",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 33,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "marketplacesection.tsx"
     },
     {
@@ -809,8 +809,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "components_marketplacesection_highlights",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 33,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "highlights"
     },
     {
@@ -820,8 +820,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "components_marketplacesection_marketplacesection",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 33,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "marketplacesection()"
     },
     {
@@ -831,8 +831,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_nav",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 12,
+      "community_name": "cookies/page.tsx",
       "norm_label": "nav.tsx"
     },
     {
@@ -842,8 +842,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "components_nav_navlink",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 12,
+      "community_name": "cookies/page.tsx",
       "norm_label": "navlink"
     },
     {
@@ -853,8 +853,8 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "components_nav_nav",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 12,
+      "community_name": "cookies/page.tsx",
       "norm_label": "nav()"
     },
     {
@@ -864,8 +864,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_painchaos",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 0,
+      "community_name": "PainChaos.tsx",
       "norm_label": "painchaos.tsx"
     },
     {
@@ -875,8 +875,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "components_painchaos_dinnerscene",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 0,
+      "community_name": "PainChaos.tsx",
       "norm_label": "dinnerscene()"
     },
     {
@@ -886,8 +886,8 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "components_painchaos_forgotscene",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 0,
+      "community_name": "PainChaos.tsx",
       "norm_label": "forgotscene()"
     },
     {
@@ -897,8 +897,8 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "components_painchaos_expiryscene",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 0,
+      "community_name": "PainChaos.tsx",
       "norm_label": "expiryscene()"
     },
     {
@@ -908,8 +908,8 @@
       "source_location": "L102",
       "_origin": "ast",
       "id": "components_painchaos_receiptscene",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 0,
+      "community_name": "PainChaos.tsx",
       "norm_label": "receiptscene()"
     },
     {
@@ -919,8 +919,8 @@
       "source_location": "L132",
       "_origin": "ast",
       "id": "components_painchaos_scenes",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 0,
+      "community_name": "PainChaos.tsx",
       "norm_label": "scenes"
     },
     {
@@ -930,8 +930,8 @@
       "source_location": "L140",
       "_origin": "ast",
       "id": "components_painchaos_tilts",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 0,
+      "community_name": "PainChaos.tsx",
       "norm_label": "tilts"
     },
     {
@@ -942,7 +942,7 @@
       "_origin": "ast",
       "id": "components_painchaos_painchaos",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "painchaos()"
     },
     {
@@ -952,8 +952,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_painlist",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 0,
+      "community_name": "PainChaos.tsx",
       "norm_label": "painlist.tsx"
     },
     {
@@ -963,8 +963,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "components_painlist_clonescene",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 0,
+      "community_name": "PainChaos.tsx",
       "norm_label": "clonescene()"
     },
     {
@@ -974,8 +974,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "components_painlist_manualscene",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 0,
+      "community_name": "PainChaos.tsx",
       "norm_label": "manualscene()"
     },
     {
@@ -985,8 +985,8 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "components_painlist_requestscene",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 0,
+      "community_name": "PainChaos.tsx",
       "norm_label": "requestscene()"
     },
     {
@@ -996,8 +996,8 @@
       "source_location": "L109",
       "_origin": "ast",
       "id": "components_painlist_expiryscene",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 0,
+      "community_name": "PainChaos.tsx",
       "norm_label": "expiryscene()"
     },
     {
@@ -1007,8 +1007,8 @@
       "source_location": "L151",
       "_origin": "ast",
       "id": "components_painlist_searchscene",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 0,
+      "community_name": "PainChaos.tsx",
       "norm_label": "searchscene()"
     },
     {
@@ -1018,8 +1018,8 @@
       "source_location": "L167",
       "_origin": "ast",
       "id": "components_painlist_scenes",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 0,
+      "community_name": "PainChaos.tsx",
       "norm_label": "scenes"
     },
     {
@@ -1029,8 +1029,8 @@
       "source_location": "L176",
       "_origin": "ast",
       "id": "components_painlist_tilts",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 0,
+      "community_name": "PainChaos.tsx",
       "norm_label": "tilts"
     },
     {
@@ -1040,7 +1040,7 @@
       "source_location": "L185",
       "_origin": "ast",
       "id": "components_painlist_painlist",
-      "community": 26,
+      "community": 8,
       "community_name": "specialists/page.tsx",
       "norm_label": "painlist()"
     },
@@ -1070,7 +1070,7 @@
       "label": "TURNS",
       "file_type": "code",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L70",
+      "source_location": "L68",
       "_origin": "ast",
       "id": "components_phonestepsscene_turns",
       "community": 9,
@@ -1081,7 +1081,7 @@
       "label": "STEP_SPANS",
       "file_type": "code",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L76",
+      "source_location": "L74",
       "_origin": "ast",
       "id": "components_phonestepsscene_step_spans",
       "community": 9,
@@ -1092,7 +1092,7 @@
       "label": "smoothstep()",
       "file_type": "code",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L82",
+      "source_location": "L80",
       "_origin": "ast",
       "id": "components_phonestepsscene_smoothstep",
       "community": 9,
@@ -1103,7 +1103,7 @@
       "label": "ShoppingItem",
       "file_type": "code",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L84",
+      "source_location": "L82",
       "_origin": "ast",
       "id": "components_phonestepsscene_shoppingitem",
       "community": 9,
@@ -1114,7 +1114,7 @@
       "label": "SHOPPING",
       "file_type": "code",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L86",
+      "source_location": "L84",
       "_origin": "ast",
       "id": "components_phonestepsscene_shopping",
       "community": 9,
@@ -1125,7 +1125,7 @@
       "label": "COOK_STEPS",
       "file_type": "code",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L95",
+      "source_location": "L93",
       "_origin": "ast",
       "id": "components_phonestepsscene_cook_steps",
       "community": 9,
@@ -1136,7 +1136,7 @@
       "label": "DIET_GOALS",
       "file_type": "code",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L104",
+      "source_location": "L102",
       "_origin": "ast",
       "id": "components_phonestepsscene_diet_goals",
       "community": 9,
@@ -1147,7 +1147,7 @@
       "label": "LIFE_GOALS",
       "file_type": "code",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L114",
+      "source_location": "L112",
       "_origin": "ast",
       "id": "components_phonestepsscene_life_goals",
       "community": 9,
@@ -1158,7 +1158,7 @@
       "label": "productWord()",
       "file_type": "code",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L121",
+      "source_location": "L119",
       "_origin": "ast",
       "id": "components_phonestepsscene_productword",
       "community": 9,
@@ -1169,7 +1169,7 @@
       "label": "PhoneShell()",
       "file_type": "code",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L123",
+      "source_location": "L121",
       "_origin": "ast",
       "id": "components_phonestepsscene_phoneshell",
       "community": 9,
@@ -1180,7 +1180,7 @@
       "label": "PhoneBack()",
       "file_type": "code",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L140",
+      "source_location": "L138",
       "_origin": "ast",
       "id": "components_phonestepsscene_phoneback",
       "community": 9,
@@ -1191,7 +1191,7 @@
       "label": "PhoneSlot()",
       "file_type": "code",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L162",
+      "source_location": "L160",
       "_origin": "ast",
       "id": "components_phonestepsscene_phoneslot",
       "community": 9,
@@ -1202,7 +1202,7 @@
       "label": "ScreenHeader()",
       "file_type": "code",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L184",
+      "source_location": "L182",
       "_origin": "ast",
       "id": "components_phonestepsscene_screenheader",
       "community": 9,
@@ -1213,7 +1213,7 @@
       "label": "FieldLabel()",
       "file_type": "code",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L193",
+      "source_location": "L191",
       "_origin": "ast",
       "id": "components_phonestepsscene_fieldlabel",
       "community": 9,
@@ -1224,7 +1224,7 @@
       "label": "Chip()",
       "file_type": "code",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L199",
+      "source_location": "L197",
       "_origin": "ast",
       "id": "components_phonestepsscene_chip",
       "community": 9,
@@ -1235,7 +1235,7 @@
       "label": "AudienceScreen()",
       "file_type": "code",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L212",
+      "source_location": "L210",
       "_origin": "ast",
       "id": "components_phonestepsscene_audiencescreen",
       "community": 9,
@@ -1246,7 +1246,7 @@
       "label": "ShoppingScreen()",
       "file_type": "code",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L262",
+      "source_location": "L260",
       "_origin": "ast",
       "id": "components_phonestepsscene_shoppingscreen",
       "community": 9,
@@ -1257,7 +1257,7 @@
       "label": "CookScreen()",
       "file_type": "code",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L304",
+      "source_location": "L302",
       "_origin": "ast",
       "id": "components_phonestepsscene_cookscreen",
       "community": 9,
@@ -1268,10 +1268,10 @@
       "label": "PhoneStepsScene()",
       "file_type": "code",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L350",
+      "source_location": "L348",
       "_origin": "ast",
       "id": "components_phonestepsscene_phonestepsscene",
-      "community": 4,
+      "community": 26,
       "community_name": "app/page.tsx",
       "norm_label": "phonestepsscene()"
     },
@@ -1309,21 +1309,10 @@
       "norm_label": "tripsword()"
     },
     {
-      "label": "mealsWord()",
-      "file_type": "code",
-      "source_file": "components/PlanConfigurator.tsx",
-      "source_location": "L24",
-      "_origin": "ast",
-      "id": "components_planconfigurator_mealsword",
-      "community": 3,
-      "community_name": "PlanConfigurator.tsx",
-      "norm_label": "mealsword()"
-    },
-    {
       "label": "Group()",
       "file_type": "code",
       "source_file": "components/PlanConfigurator.tsx",
-      "source_location": "L31",
+      "source_location": "L29",
       "_origin": "ast",
       "id": "components_planconfigurator_group",
       "community": 3,
@@ -1334,7 +1323,7 @@
       "label": "PlanConfigurator()",
       "file_type": "code",
       "source_file": "components/PlanConfigurator.tsx",
-      "source_location": "L62",
+      "source_location": "L60",
       "_origin": "ast",
       "id": "components_planconfigurator_planconfigurator",
       "community": 3,
@@ -1348,8 +1337,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_process",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "Reveal.tsx",
       "norm_label": "process.tsx"
     },
     {
@@ -1359,8 +1348,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "components_process_step",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "Reveal.tsx",
       "norm_label": "step"
     },
     {
@@ -1370,8 +1359,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "components_process_props",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "Reveal.tsx",
       "norm_label": "props"
     },
     {
@@ -1381,8 +1370,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "components_process_process",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "Reveal.tsx",
       "norm_label": "process()"
     },
     {
@@ -1392,8 +1381,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_sectiondivider",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 8,
+      "community_name": "specialists/page.tsx",
       "norm_label": "sectiondivider.tsx"
     },
     {
@@ -1403,8 +1392,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "components_sectiondivider_sectiondivider",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 8,
+      "community_name": "specialists/page.tsx",
       "norm_label": "sectiondivider()"
     },
     {
@@ -1414,8 +1403,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_sectionkicker",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "Reveal.tsx",
       "norm_label": "sectionkicker.tsx"
     },
     {
@@ -1425,8 +1414,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "components_sectionkicker_sectionkicker",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "Reveal.tsx",
       "norm_label": "sectionkicker()"
     },
     {
@@ -1623,8 +1612,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_winwinsection",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "Reveal.tsx",
       "norm_label": "winwinsection.tsx"
     },
     {
@@ -1634,8 +1623,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "components_winwinsection_checkitem",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "Reveal.tsx",
       "norm_label": "checkitem"
     },
     {
@@ -1645,8 +1634,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "components_winwinsection_checkgrid",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "Reveal.tsx",
       "norm_label": "checkgrid()"
     },
     {
@@ -1656,8 +1645,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "components_winwinsection_winwinsection",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "Reveal.tsx",
       "norm_label": "winwinsection()"
     },
     {
@@ -1734,7 +1723,7 @@
       "_origin": "ast",
       "id": "components_ui_button",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "button.tsx"
     },
     {
@@ -1745,7 +1734,7 @@
       "_origin": "ast",
       "id": "components_ui_button_variant",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "variant"
     },
     {
@@ -1756,7 +1745,7 @@
       "_origin": "ast",
       "id": "components_ui_button_styles",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "styles"
     },
     {
@@ -1767,7 +1756,7 @@
       "_origin": "ast",
       "id": "components_ui_button_button",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "button()"
     },
     {
@@ -1777,8 +1766,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_ui_chip",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 33,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "chip.tsx"
     },
     {
@@ -1788,8 +1777,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "components_ui_chip_tone",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 33,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "tone"
     },
     {
@@ -1799,8 +1788,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "components_ui_chip_tones",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 33,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "tones"
     },
     {
@@ -1810,8 +1799,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "components_ui_chip_chip",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 33,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "chip()"
     },
     {
@@ -1821,8 +1810,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_ui_counter",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 33,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "counter.tsx"
     },
     {
@@ -1832,8 +1821,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "components_ui_counter_props",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 33,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "props"
     },
     {
@@ -1843,8 +1832,8 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "components_ui_counter_counter",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 33,
+      "community_name": "GoalsSection.tsx",
       "norm_label": "counter()"
     },
     {
@@ -1865,8 +1854,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "components_ui_ingredient_ingredient",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 9,
+      "community_name": "PhoneStepsScene.tsx",
       "norm_label": "ingredient()"
     },
     {
@@ -1876,8 +1865,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_ui_reveal",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "Reveal.tsx",
       "norm_label": "reveal.tsx"
     },
     {
@@ -1887,8 +1876,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "components_ui_reveal_props",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "Reveal.tsx",
       "norm_label": "props"
     },
     {
@@ -1898,8 +1887,8 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "components_ui_reveal_reveal",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "Reveal.tsx",
       "norm_label": "reveal()"
     },
     {
@@ -1909,8 +1898,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "components_ui_themetoggle",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 12,
+      "community_name": "cookies/page.tsx",
       "norm_label": "themetoggle.tsx"
     },
     {
@@ -1920,8 +1909,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "components_ui_themetoggle_theme",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 12,
+      "community_name": "cookies/page.tsx",
       "norm_label": "theme"
     },
     {
@@ -1931,8 +1920,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "components_ui_themetoggle_listeners",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 12,
+      "community_name": "cookies/page.tsx",
       "norm_label": "listeners"
     },
     {
@@ -1942,8 +1931,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "components_ui_themetoggle_subscribe",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 12,
+      "community_name": "cookies/page.tsx",
       "norm_label": "subscribe()"
     },
     {
@@ -1953,8 +1942,8 @@
       "source_location": "L30",
       "_origin": "ast",
       "id": "components_ui_themetoggle_readtheme",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 12,
+      "community_name": "cookies/page.tsx",
       "norm_label": "readtheme()"
     },
     {
@@ -1964,8 +1953,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "components_ui_themetoggle_themetoggle",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 12,
+      "community_name": "cookies/page.tsx",
       "norm_label": "themetoggle()"
     },
     {
@@ -1998,7 +1987,7 @@
       "_origin": "ast",
       "id": "lib_basiliktoggle",
       "community": 4,
-      "community_name": "app/page.tsx",
+      "community_name": "AudienceHero.tsx",
       "norm_label": "basiliktoggle.tsx"
     },
     {
@@ -2009,7 +1998,7 @@
       "_origin": "ast",
       "id": "lib_basiliktoggle_basiliktogglevalue",
       "community": 4,
-      "community_name": "app/page.tsx",
+      "community_name": "AudienceHero.tsx",
       "norm_label": "basiliktogglevalue"
     },
     {
@@ -2020,7 +2009,7 @@
       "_origin": "ast",
       "id": "lib_basiliktoggle_basiliktogglecontext",
       "community": 4,
-      "community_name": "app/page.tsx",
+      "community_name": "AudienceHero.tsx",
       "norm_label": "basiliktogglecontext"
     },
     {
@@ -2031,7 +2020,7 @@
       "_origin": "ast",
       "id": "lib_basiliktoggle_basiliktoggleprovider",
       "community": 4,
-      "community_name": "app/page.tsx",
+      "community_name": "AudienceHero.tsx",
       "norm_label": "basiliktoggleprovider()"
     },
     {
@@ -2042,7 +2031,7 @@
       "_origin": "ast",
       "id": "lib_basiliktoggle_usebasiliktoggle",
       "community": 4,
-      "community_name": "app/page.tsx",
+      "community_name": "AudienceHero.tsx",
       "norm_label": "usebasiliktoggle()"
     },
     {
@@ -2218,7 +2207,7 @@
       "_origin": "ast",
       "id": "lib_content",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "content.ts"
     },
     {
@@ -2229,7 +2218,7 @@
       "_origin": "ast",
       "id": "lib_content_nav_links_specialists",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "nav_links_specialists"
     },
     {
@@ -2240,7 +2229,7 @@
       "_origin": "ast",
       "id": "lib_content_nav_links_home",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "nav_links_home"
     },
     {
@@ -2251,7 +2240,7 @@
       "_origin": "ast",
       "id": "lib_content_audience_routes",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "audience_routes"
     },
     {
@@ -2261,8 +2250,8 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "lib_content_chain_before",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 4,
+      "community_name": "AudienceHero.tsx",
       "norm_label": "chain_before"
     },
     {
@@ -2272,8 +2261,8 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "lib_content_basilik_toggle",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 4,
+      "community_name": "AudienceHero.tsx",
       "norm_label": "basilik_toggle"
     },
     {
@@ -2284,7 +2273,7 @@
       "_origin": "ast",
       "id": "lib_content_prospainkind",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "prospainkind"
     },
     {
@@ -2294,8 +2283,8 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "lib_content_pros",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "Reveal.tsx",
       "norm_label": "pros"
     },
     {
@@ -2317,7 +2306,7 @@
       "_origin": "ast",
       "id": "lib_content_homepainkind",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "homepainkind"
     },
     {
@@ -2328,7 +2317,7 @@
       "_origin": "ast",
       "id": "lib_content_home",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "home"
     },
     {
@@ -2338,8 +2327,8 @@
       "source_location": "L389",
       "_origin": "ast",
       "id": "lib_content_process",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 27,
+      "community_name": "Reveal.tsx",
       "norm_label": "process"
     },
     {
@@ -2350,7 +2339,7 @@
       "_origin": "ast",
       "id": "lib_content_cta",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "cta"
     },
     {
@@ -2361,7 +2350,7 @@
       "_origin": "ast",
       "id": "lib_content_footer_groups_specialists",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "footer_groups_specialists"
     },
     {
@@ -2372,7 +2361,7 @@
       "_origin": "ast",
       "id": "lib_content_footer_groups_home",
       "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community_name": "app/page.tsx",
       "norm_label": "footer_groups_home"
     },
     {
@@ -2383,7 +2372,7 @@
       "_origin": "ast",
       "id": "lib_content_footer_groups_legal",
       "community": 12,
-      "community_name": "site.ts",
+      "community_name": "cookies/page.tsx",
       "norm_label": "footer_groups_legal"
     },
     {
@@ -2492,85 +2481,85 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_gsap",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 8,
+      "community_name": "specialists/page.tsx",
       "norm_label": "gsap.ts"
     },
     {
       "label": "MOTION_QUERIES",
       "file_type": "code",
       "source_file": "lib/gsap.ts",
-      "source_location": "L46",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "lib_gsap_motion_queries",
       "community": 4,
-      "community_name": "app/page.tsx",
+      "community_name": "AudienceHero.tsx",
       "norm_label": "motion_queries"
     },
     {
       "label": "WIDE_MOTION_QUERIES",
       "file_type": "code",
       "source_file": "lib/gsap.ts",
-      "source_location": "L56",
+      "source_location": "L45",
       "_origin": "ast",
       "id": "lib_gsap_wide_motion_queries",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 8,
+      "community_name": "specialists/page.tsx",
       "norm_label": "wide_motion_queries"
     },
     {
       "label": "WideMotionConditions",
       "file_type": "code",
       "source_file": "lib/gsap.ts",
-      "source_location": "L57",
+      "source_location": "L46",
       "_origin": "ast",
       "id": "lib_gsap_widemotionconditions",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 8,
+      "community_name": "specialists/page.tsx",
       "norm_label": "widemotionconditions"
     },
     {
       "label": "useLoopWhileVisible()",
       "file_type": "code",
       "source_file": "lib/gsap.ts",
-      "source_location": "L66",
+      "source_location": "L55",
       "_origin": "ast",
       "id": "lib_gsap_useloopwhilevisible",
-      "community": 26,
-      "community_name": "specialists/page.tsx",
+      "community": 0,
+      "community_name": "PainChaos.tsx",
       "norm_label": "useloopwhilevisible()"
     },
     {
       "label": "clamp01()",
       "file_type": "code",
       "source_file": "lib/gsap.ts",
-      "source_location": "L117",
+      "source_location": "L106",
       "_origin": "ast",
       "id": "lib_gsap_clamp01",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 8,
+      "community_name": "specialists/page.tsx",
       "norm_label": "clamp01()"
     },
     {
       "label": "remap()",
       "file_type": "code",
       "source_file": "lib/gsap.ts",
-      "source_location": "L119",
+      "source_location": "L108",
       "_origin": "ast",
       "id": "lib_gsap_remap",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 8,
+      "community_name": "specialists/page.tsx",
       "norm_label": "remap()"
     },
     {
       "label": "easeOut()",
       "file_type": "code",
       "source_file": "lib/gsap.ts",
-      "source_location": "L120",
+      "source_location": "L109",
       "_origin": "ast",
       "id": "lib_gsap_easeout",
-      "community": 4,
-      "community_name": "app/page.tsx",
+      "community": 8,
+      "community_name": "specialists/page.tsx",
       "norm_label": "easeout()"
     },
     {
@@ -2643,7 +2632,7 @@
       "label": "plural()",
       "file_type": "code",
       "source_file": "lib/plural.ts",
-      "source_location": "L10",
+      "source_location": "L8",
       "_origin": "ast",
       "id": "lib_plural_plural",
       "community": 3,
@@ -2723,8 +2712,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "lib_site",
-      "community": 12,
-      "community_name": "site.ts",
+      "community": 10,
+      "community_name": "layout.tsx",
       "norm_label": "site.ts"
     },
     {
@@ -2735,7 +2724,7 @@
       "_origin": "ast",
       "id": "lib_site_inheritedogimages",
       "community": 12,
-      "community_name": "site.ts",
+      "community_name": "cookies/page.tsx",
       "norm_label": "inheritedogimages()"
     },
     {
@@ -2745,8 +2734,8 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "lib_site_changefrequency",
-      "community": 12,
-      "community_name": "site.ts",
+      "community": 10,
+      "community_name": "layout.tsx",
       "norm_label": "changefrequency"
     },
     {
@@ -2756,8 +2745,8 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "lib_site_siteroute",
-      "community": 12,
-      "community_name": "site.ts",
+      "community": 10,
+      "community_name": "layout.tsx",
       "norm_label": "siteroute"
     },
     {
@@ -2767,8 +2756,8 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "lib_site_sitemap_routes",
-      "community": 12,
-      "community_name": "site.ts",
+      "community": 10,
+      "community_name": "layout.tsx",
       "norm_label": "sitemap_routes"
     },
     {
@@ -2778,8 +2767,8 @@
       "source_location": "L136",
       "_origin": "ast",
       "id": "lib_site_absoluteurl",
-      "community": 12,
-      "community_name": "site.ts",
+      "community": 10,
+      "community_name": "layout.tsx",
       "norm_label": "absoluteurl()"
     },
     {
@@ -3558,8 +3547,8 @@
       "source_file": ".agents/product-marketing.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_md",
-      "community": 6,
+      "id": "agents_product_marketing",
+      "community": 21,
       "community_name": "Product Marketing Context",
       "norm_label": "product-marketing.md"
     },
@@ -3569,8 +3558,8 @@
       "source_file": ".agents/product-marketing.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_product_marketing_context",
-      "community": 6,
+      "id": "agents_product_marketing_product_marketing_context",
+      "community": 21,
       "community_name": "Product Marketing Context",
       "norm_label": "product marketing context"
     },
@@ -3580,8 +3569,8 @@
       "source_file": ".agents/product-marketing.md",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_product_overview",
-      "community": 6,
+      "id": "agents_product_marketing_product_overview",
+      "community": 21,
       "community_name": "Product Marketing Context",
       "norm_label": "product overview"
     },
@@ -3591,8 +3580,8 @@
       "source_file": ".agents/product-marketing.md",
       "source_location": "L28",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_target_audience",
-      "community": 6,
+      "id": "agents_product_marketing_target_audience",
+      "community": 21,
       "community_name": "Product Marketing Context",
       "norm_label": "target audience"
     },
@@ -3602,8 +3591,8 @@
       "source_file": ".agents/product-marketing.md",
       "source_location": "L55",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_personas",
-      "community": 6,
+      "id": "agents_product_marketing_personas",
+      "community": 21,
       "community_name": "Product Marketing Context",
       "norm_label": "personas"
     },
@@ -3613,8 +3602,8 @@
       "source_file": ".agents/product-marketing.md",
       "source_location": "L67",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_problems_pain_points",
-      "community": 6,
+      "id": "agents_product_marketing_problems_pain_points",
+      "community": 21,
       "community_name": "Product Marketing Context",
       "norm_label": "problems & pain points"
     },
@@ -3624,8 +3613,8 @@
       "source_file": ".agents/product-marketing.md",
       "source_location": "L84",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_competitive_landscape",
-      "community": 6,
+      "id": "agents_product_marketing_competitive_landscape",
+      "community": 21,
       "community_name": "Product Marketing Context",
       "norm_label": "competitive landscape"
     },
@@ -3635,8 +3624,8 @@
       "source_file": ".agents/product-marketing.md",
       "source_location": "L98",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_differentiation",
-      "community": 6,
+      "id": "agents_product_marketing_differentiation",
+      "community": 21,
       "community_name": "Product Marketing Context",
       "norm_label": "differentiation"
     },
@@ -3646,8 +3635,8 @@
       "source_file": ".agents/product-marketing.md",
       "source_location": "L113",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_objections",
-      "community": 6,
+      "id": "agents_product_marketing_objections",
+      "community": 21,
       "community_name": "Product Marketing Context",
       "norm_label": "objections"
     },
@@ -3657,8 +3646,8 @@
       "source_file": ".agents/product-marketing.md",
       "source_location": "L129",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_switching_dynamics",
-      "community": 6,
+      "id": "agents_product_marketing_switching_dynamics",
+      "community": 21,
       "community_name": "Product Marketing Context",
       "norm_label": "switching dynamics"
     },
@@ -3668,8 +3657,8 @@
       "source_file": ".agents/product-marketing.md",
       "source_location": "L138",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_customer_language",
-      "community": 6,
+      "id": "agents_product_marketing_customer_language",
+      "community": 21,
       "community_name": "Product Marketing Context",
       "norm_label": "customer language"
     },
@@ -3679,8 +3668,8 @@
       "source_file": ".agents/product-marketing.md",
       "source_location": "L173",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_brand_voice",
-      "community": 6,
+      "id": "agents_product_marketing_brand_voice",
+      "community": 21,
       "community_name": "Product Marketing Context",
       "norm_label": "brand voice"
     },
@@ -3690,8 +3679,8 @@
       "source_file": ".agents/product-marketing.md",
       "source_location": "L183",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_proof_points",
-      "community": 6,
+      "id": "agents_product_marketing_proof_points",
+      "community": 21,
       "community_name": "Product Marketing Context",
       "norm_label": "proof points"
     },
@@ -3701,8 +3690,8 @@
       "source_file": ".agents/product-marketing.md",
       "source_location": "L209",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_goals",
-      "community": 6,
+      "id": "agents_product_marketing_goals",
+      "community": 21,
       "community_name": "Product Marketing Context",
       "norm_label": "goals"
     },
@@ -3712,8 +3701,8 @@
       "source_file": ".agents/product-marketing.md",
       "source_location": "L217",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_changelog",
-      "community": 6,
+      "id": "agents_product_marketing_changelog",
+      "community": 21,
       "community_name": "Product Marketing Context",
       "norm_label": "changelog"
     },
@@ -6231,8 +6220,8 @@
       "source_file": "PRODUCT.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_md",
-      "community": 8,
+      "id": "product",
+      "community": 30,
       "community_name": "Product",
       "norm_label": "product.md"
     },
@@ -6242,8 +6231,8 @@
       "source_file": "PRODUCT.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_product",
-      "community": 8,
+      "id": "product_product",
+      "community": 30,
       "community_name": "Product",
       "norm_label": "product"
     },
@@ -6253,8 +6242,8 @@
       "source_file": "PRODUCT.md",
       "source_location": "L5",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_platform",
-      "community": 8,
+      "id": "product_platform",
+      "community": 30,
       "community_name": "Product",
       "norm_label": "platform"
     },
@@ -6264,8 +6253,8 @@
       "source_file": "PRODUCT.md",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_users",
-      "community": 8,
+      "id": "product_users",
+      "community": 30,
       "community_name": "Product",
       "norm_label": "users"
     },
@@ -6275,8 +6264,8 @@
       "source_file": "PRODUCT.md",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_product_purpose",
-      "community": 8,
+      "id": "product_product_purpose",
+      "community": 30,
       "community_name": "Product",
       "norm_label": "product purpose"
     },
@@ -6286,8 +6275,8 @@
       "source_file": "PRODUCT.md",
       "source_location": "L22",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_positioning",
-      "community": 8,
+      "id": "product_positioning",
+      "community": 30,
       "community_name": "Product",
       "norm_label": "positioning"
     },
@@ -6297,8 +6286,8 @@
       "source_file": "PRODUCT.md",
       "source_location": "L26",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_operating_context",
-      "community": 8,
+      "id": "product_operating_context",
+      "community": 30,
       "community_name": "Product",
       "norm_label": "operating context"
     },
@@ -6308,8 +6297,8 @@
       "source_file": "PRODUCT.md",
       "source_location": "L33",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_capabilities_and_constraints",
-      "community": 8,
+      "id": "product_capabilities_and_constraints",
+      "community": 30,
       "community_name": "Product",
       "norm_label": "capabilities and constraints"
     },
@@ -6319,8 +6308,8 @@
       "source_file": "PRODUCT.md",
       "source_location": "L39",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_brand_commitments",
-      "community": 8,
+      "id": "product_brand_commitments",
+      "community": 30,
       "community_name": "Product",
       "norm_label": "brand commitments"
     },
@@ -6330,8 +6319,8 @@
       "source_file": "PRODUCT.md",
       "source_location": "L45",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_evidence_on_hand",
-      "community": 8,
+      "id": "product_evidence_on_hand",
+      "community": 30,
       "community_name": "Product",
       "norm_label": "evidence on hand"
     },
@@ -6341,8 +6330,8 @@
       "source_file": "PRODUCT.md",
       "source_location": "L51",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_product_principles",
-      "community": 8,
+      "id": "product_product_principles",
+      "community": 30,
       "community_name": "Product",
       "norm_label": "product principles"
     },
@@ -6352,8 +6341,8 @@
       "source_file": "PRODUCT.md",
       "source_location": "L59",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_accessibility_inclusion",
-      "community": 8,
+      "id": "product_accessibility_inclusion",
+      "community": 30,
       "community_name": "Product",
       "norm_label": "accessibility & inclusion"
     },
@@ -6638,8 +6627,8 @@
       "source_file": "instructions/landing-b2c.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_md",
-      "community": 21,
+      "id": "instructions_landing_b2c",
+      "community": 31,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "landing-b2c.md"
     },
@@ -6649,8 +6638,8 @@
       "source_file": "instructions/landing-b2c.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_b2c",
-      "community": 21,
+      "id": "instructions_landing_b2c_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_b2c",
+      "community": 31,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "\u043b\u0435\u043d\u0434\u0438\u043d\u0433 b2c"
     },
@@ -6660,8 +6649,8 @@
       "source_file": "instructions/landing-b2c.md",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_1_\u043f\u0435\u0440\u0432\u044b\u0439_\u044d\u043a\u0440\u0430\u043d_hero_\u0441_\u0438\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043e\u043c_\u0432\u043a\u043b\u044e\u0447\u0438\u0442\u044c_\u0431\u0430\u0437\u0438\u043b\u0438\u043a",
-      "community": 21,
+      "id": "instructions_landing_b2c_1_\u043f\u0435\u0440\u0432\u044b\u0439_\u044d\u043a\u0440\u0430\u043d_hero_\u0441_\u0438\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043e\u043c_\u0432\u043a\u043b\u044e\u0447\u0438\u0442\u044c_\u0431\u0430\u0437\u0438\u043b\u0438\u043a",
+      "community": 31,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "1. \u043f\u0435\u0440\u0432\u044b\u0438 \u044d\u043a\u0440\u0430\u043d (hero) \u2014 \u0441 \u0438\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043e\u043c \u00ab\u0432\u043a\u043b\u044e\u0447\u0438\u0442\u044c \u0431\u0430\u0437\u0438\u043b\u0438\u043a\u00bb"
     },
@@ -6671,8 +6660,8 @@
       "source_file": "instructions/landing-b2c.md",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_\u0446\u0435\u043f\u043e\u0447\u043a\u0430_\u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435_\u0432\u044b\u043a\u043b\u044e\u0447\u0435\u043d\u043e",
-      "community": 21,
+      "id": "instructions_landing_b2c_\u0446\u0435\u043f\u043e\u0447\u043a\u0430_\u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435_\u0432\u044b\u043a\u043b\u044e\u0447\u0435\u043d\u043e",
+      "community": 31,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "\u0446\u0435\u043f\u043e\u0447\u043a\u0430 (\u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u00ab\u0432\u044b\u043a\u043b\u044e\u0447\u0435\u043d\u043e\u00bb)"
     },
@@ -6682,8 +6671,8 @@
       "source_file": "instructions/landing-b2c.md",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_\u043f\u043e\u0441\u043b\u0435_\u043d\u0430\u0436\u0430\u0442\u0438\u044f_\u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435_\u0432\u043a\u043b\u044e\u0447\u0435\u043d\u043e",
-      "community": 21,
+      "id": "instructions_landing_b2c_\u043f\u043e\u0441\u043b\u0435_\u043d\u0430\u0436\u0430\u0442\u0438\u044f_\u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435_\u0432\u043a\u043b\u044e\u0447\u0435\u043d\u043e",
+      "community": 31,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "\u043f\u043e\u0441\u043b\u0435 \u043d\u0430\u0436\u0430\u0442\u0438\u044f (\u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u00ab\u0432\u043a\u043b\u044e\u0447\u0435\u043d\u043e\u00bb)"
     },
@@ -6693,8 +6682,8 @@
       "source_file": "instructions/landing-b2c.md",
       "source_location": "L45",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_2_\u0437\u043d\u0430\u043a\u043e\u043c\u043e_\u0431\u043e\u043b\u044c",
-      "community": 21,
+      "id": "instructions_landing_b2c_2_\u0437\u043d\u0430\u043a\u043e\u043c\u043e_\u0431\u043e\u043b\u044c",
+      "community": 31,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "2. \u00ab\u0437\u043d\u0430\u043a\u043e\u043c\u043e?\u00bb (\u0431\u043e\u043b\u044c)"
     },
@@ -6704,8 +6693,8 @@
       "source_file": "instructions/landing-b2c.md",
       "source_location": "L54",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_3_\u0447\u0442\u043e_\u0442\u044b_\u043f\u043e\u043b\u0443\u0447\u0430\u0435\u0448\u044c_\u043f\u0440\u043e\u0441\u0442\u044b\u0435_\u0442\u0435\u0439\u043a\u0438",
-      "community": 21,
+      "id": "instructions_landing_b2c_3_\u0447\u0442\u043e_\u0442\u044b_\u043f\u043e\u043b\u0443\u0447\u0430\u0435\u0448\u044c_\u043f\u0440\u043e\u0441\u0442\u044b\u0435_\u0442\u0435\u0439\u043a\u0438",
+      "community": 31,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "3. \u0447\u0442\u043e \u0442\u044b \u043f\u043e\u043b\u0443\u0447\u0430\u0435\u0448\u044c (\u043f\u0440\u043e\u0441\u0442\u044b\u0435 \u0442\u0435\u0438\u043a\u0438)"
     },
@@ -6715,8 +6704,8 @@
       "source_file": "instructions/landing-b2c.md",
       "source_location": "L73",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_4_\u043a\u0430\u043a_\u044d\u0442\u043e_\u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442_3_\u0448\u0430\u0433\u0430",
-      "community": 21,
+      "id": "instructions_landing_b2c_4_\u043a\u0430\u043a_\u044d\u0442\u043e_\u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442_3_\u0448\u0430\u0433\u0430",
+      "community": 31,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "4. \u043a\u0430\u043a \u044d\u0442\u043e \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 (3 \u0448\u0430\u0433\u0430)"
     },
@@ -6726,8 +6715,8 @@
       "source_file": "instructions/landing-b2c.md",
       "source_location": "L81",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_5_\u0447\u0435\u043c_\u043c\u044b_\u043d\u0435_\u043a\u0430\u043a_\u0432\u0441\u0435",
-      "community": 21,
+      "id": "instructions_landing_b2c_5_\u0447\u0435\u043c_\u043c\u044b_\u043d\u0435_\u043a\u0430\u043a_\u0432\u0441\u0435",
+      "community": 31,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "5. \u0447\u0435\u043c \u043c\u044b \u043d\u0435 \u043a\u0430\u043a \u0432\u0441\u0435"
     },
@@ -6737,8 +6726,8 @@
       "source_file": "instructions/landing-b2c.md",
       "source_location": "L98",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_6_\u0435\u0441\u043b\u0438_\u0443_\u0442\u0435\u0431\u044f_\u0435\u0441\u0442\u044c_\u0446\u0435\u043b\u044c_\u043f\u0440\u0435\u043c\u0438\u0443\u043c_\u043a\u0440\u044e\u0447\u043a\u0438",
-      "community": 21,
+      "id": "instructions_landing_b2c_6_\u0435\u0441\u043b\u0438_\u0443_\u0442\u0435\u0431\u044f_\u0435\u0441\u0442\u044c_\u0446\u0435\u043b\u044c_\u043f\u0440\u0435\u043c\u0438\u0443\u043c_\u043a\u0440\u044e\u0447\u043a\u0438",
+      "community": 31,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "6. \u0435\u0441\u043b\u0438 \u0443 \u0442\u0435\u0431\u044f \u0435\u0441\u0442\u044c \u0446\u0435\u043b\u044c (\u043f\u0440\u0435\u043c\u0438\u0443\u043c-\u043a\u0440\u044e\u0447\u043a\u0438)"
     },
@@ -6748,8 +6737,8 @@
       "source_file": "instructions/landing-b2c.md",
       "source_location": "L107",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_7_\u0444\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0439_\u044d\u043a\u0440\u0430\u043d",
-      "community": 21,
+      "id": "instructions_landing_b2c_7_\u0444\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0439_\u044d\u043a\u0440\u0430\u043d",
+      "community": 31,
       "community_name": "\u041b\u0435\u043d\u0434\u0438\u043d\u0433 B2C",
       "norm_label": "7. \u0444\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0438 \u044d\u043a\u0440\u0430\u043d"
     },
@@ -6759,8 +6748,8 @@
       "source_file": "plans/001-engine-cards-scale-zero.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_md",
-      "community": 0,
+      "id": "plans_001_engine_cards_scale_zero",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "001-engine-cards-scale-zero.md"
     },
@@ -6770,8 +6759,8 @@
       "source_file": "plans/001-engine-cards-scale-zero.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_001_fix_scale_0_entrance_on_engine_icon_marks",
-      "community": 0,
+      "id": "plans_001_engine_cards_scale_zero_001_fix_scale_0_entrance_on_engine_icon_marks",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "001 \u2014 fix scale(0) entrance on engine icon marks"
     },
@@ -6781,8 +6770,8 @@
       "source_file": "plans/001-engine-cards-scale-zero.md",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_problem",
-      "community": 0,
+      "id": "plans_001_engine_cards_scale_zero_problem",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "problem"
     },
@@ -6792,8 +6781,8 @@
       "source_file": "plans/001-engine-cards-scale-zero.md",
       "source_location": "L40",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_target",
-      "community": 0,
+      "id": "plans_001_engine_cards_scale_zero_target",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "target"
     },
@@ -6803,8 +6792,8 @@
       "source_file": "plans/001-engine-cards-scale-zero.md",
       "source_location": "L66",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_repo_conventions_to_follow",
-      "community": 0,
+      "id": "plans_001_engine_cards_scale_zero_repo_conventions_to_follow",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "repo conventions to follow"
     },
@@ -6814,8 +6803,8 @@
       "source_file": "plans/001-engine-cards-scale-zero.md",
       "source_location": "L77",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_steps",
-      "community": 0,
+      "id": "plans_001_engine_cards_scale_zero_steps",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "steps"
     },
@@ -6825,8 +6814,8 @@
       "source_file": "plans/001-engine-cards-scale-zero.md",
       "source_location": "L81",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_boundaries",
-      "community": 0,
+      "id": "plans_001_engine_cards_scale_zero_boundaries",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "boundaries"
     },
@@ -6836,8 +6825,8 @@
       "source_file": "plans/001-engine-cards-scale-zero.md",
       "source_location": "L89",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_verification",
-      "community": 0,
+      "id": "plans_001_engine_cards_scale_zero_verification",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "verification"
     },
@@ -6847,8 +6836,8 @@
       "source_file": "plans/002-hash-scroll-reduced-motion.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_md",
-      "community": 0,
+      "id": "plans_002_hash_scroll_reduced_motion",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "002-hash-scroll-reduced-motion.md"
     },
@@ -6858,8 +6847,8 @@
       "source_file": "plans/002-hash-scroll-reduced-motion.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_002_gate_smooth_anchor_scrolling_behind_prefers_reduced_motion",
-      "community": 0,
+      "id": "plans_002_hash_scroll_reduced_motion_002_gate_smooth_anchor_scrolling_behind_prefers_reduced_motion",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "002 \u2014 gate smooth anchor scrolling behind prefers-reduced-motion"
     },
@@ -6869,8 +6858,8 @@
       "source_file": "plans/002-hash-scroll-reduced-motion.md",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_problem",
-      "community": 0,
+      "id": "plans_002_hash_scroll_reduced_motion_problem",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "problem"
     },
@@ -6880,8 +6869,8 @@
       "source_file": "plans/002-hash-scroll-reduced-motion.md",
       "source_location": "L50",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_target",
-      "community": 0,
+      "id": "plans_002_hash_scroll_reduced_motion_target",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "target"
     },
@@ -6891,8 +6880,8 @@
       "source_file": "plans/002-hash-scroll-reduced-motion.md",
       "source_location": "L84",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_repo_conventions_to_follow",
-      "community": 0,
+      "id": "plans_002_hash_scroll_reduced_motion_repo_conventions_to_follow",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "repo conventions to follow"
     },
@@ -6902,8 +6891,8 @@
       "source_file": "plans/002-hash-scroll-reduced-motion.md",
       "source_location": "L95",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_steps",
-      "community": 0,
+      "id": "plans_002_hash_scroll_reduced_motion_steps",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "steps"
     },
@@ -6913,8 +6902,8 @@
       "source_file": "plans/002-hash-scroll-reduced-motion.md",
       "source_location": "L104",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_boundaries",
-      "community": 0,
+      "id": "plans_002_hash_scroll_reduced_motion_boundaries",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "boundaries"
     },
@@ -6924,8 +6913,8 @@
       "source_file": "plans/002-hash-scroll-reduced-motion.md",
       "source_location": "L111",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_verification",
-      "community": 0,
+      "id": "plans_002_hash_scroll_reduced_motion_verification",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "verification"
     },
@@ -6935,8 +6924,8 @@
       "source_file": "plans/003-theme-toggle-color-transition.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_md",
-      "community": 0,
+      "id": "plans_003_theme_toggle_color_transition",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "003-theme-toggle-color-transition.md"
     },
@@ -6946,8 +6935,8 @@
       "source_file": "plans/003-theme-toggle-color-transition.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_003_transition_colors_on_theme_toggle_instead_of_snapping",
-      "community": 0,
+      "id": "plans_003_theme_toggle_color_transition_003_transition_colors_on_theme_toggle_instead_of_snapping",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "003 \u2014 transition colors on theme toggle instead of snapping"
     },
@@ -6957,8 +6946,8 @@
       "source_file": "plans/003-theme-toggle-color-transition.md",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_problem",
-      "community": 0,
+      "id": "plans_003_theme_toggle_color_transition_problem",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "problem"
     },
@@ -6968,8 +6957,8 @@
       "source_file": "plans/003-theme-toggle-color-transition.md",
       "source_location": "L52",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_target",
-      "community": 0,
+      "id": "plans_003_theme_toggle_color_transition_target",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "target"
     },
@@ -6979,8 +6968,8 @@
       "source_file": "plans/003-theme-toggle-color-transition.md",
       "source_location": "L76",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_repo_conventions_to_follow",
-      "community": 0,
+      "id": "plans_003_theme_toggle_color_transition_repo_conventions_to_follow",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "repo conventions to follow"
     },
@@ -6990,8 +6979,8 @@
       "source_file": "plans/003-theme-toggle-color-transition.md",
       "source_location": "L87",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_steps",
-      "community": 0,
+      "id": "plans_003_theme_toggle_color_transition_steps",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "steps"
     },
@@ -7001,8 +6990,8 @@
       "source_file": "plans/003-theme-toggle-color-transition.md",
       "source_location": "L91",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_boundaries",
-      "community": 0,
+      "id": "plans_003_theme_toggle_color_transition_boundaries",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "boundaries"
     },
@@ -7012,8 +7001,8 @@
       "source_file": "plans/003-theme-toggle-color-transition.md",
       "source_location": "L99",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_verification",
-      "community": 0,
+      "id": "plans_003_theme_toggle_color_transition_verification",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "verification"
     },
@@ -7023,8 +7012,8 @@
       "source_file": "plans/004-engine-cards-hover-asymmetry.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_md",
-      "community": 0,
+      "id": "plans_004_engine_cards_hover_asymmetry",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "004-engine-cards-hover-asymmetry.md"
     },
@@ -7034,8 +7023,8 @@
       "source_file": "plans/004-engine-cards-hover-asymmetry.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_004_fix_backwards_hover_asymmetry_on_engine_cards",
-      "community": 0,
+      "id": "plans_004_engine_cards_hover_asymmetry_004_fix_backwards_hover_asymmetry_on_engine_cards",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "004 \u2014 fix backwards hover asymmetry on engine cards"
     },
@@ -7045,8 +7034,8 @@
       "source_file": "plans/004-engine-cards-hover-asymmetry.md",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_problem",
-      "community": 0,
+      "id": "plans_004_engine_cards_hover_asymmetry_problem",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "problem"
     },
@@ -7056,8 +7045,8 @@
       "source_file": "plans/004-engine-cards-hover-asymmetry.md",
       "source_location": "L52",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_target",
-      "community": 0,
+      "id": "plans_004_engine_cards_hover_asymmetry_target",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "target"
     },
@@ -7067,8 +7056,8 @@
       "source_file": "plans/004-engine-cards-hover-asymmetry.md",
       "source_location": "L84",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_repo_conventions_to_follow",
-      "community": 0,
+      "id": "plans_004_engine_cards_hover_asymmetry_repo_conventions_to_follow",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "repo conventions to follow"
     },
@@ -7078,8 +7067,8 @@
       "source_file": "plans/004-engine-cards-hover-asymmetry.md",
       "source_location": "L91",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_steps",
-      "community": 0,
+      "id": "plans_004_engine_cards_hover_asymmetry_steps",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "steps"
     },
@@ -7089,8 +7078,8 @@
       "source_file": "plans/004-engine-cards-hover-asymmetry.md",
       "source_location": "L96",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_boundaries",
-      "community": 0,
+      "id": "plans_004_engine_cards_hover_asymmetry_boundaries",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "boundaries"
     },
@@ -7100,8 +7089,8 @@
       "source_file": "plans/004-engine-cards-hover-asymmetry.md",
       "source_location": "L103",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_verification",
-      "community": 0,
+      "id": "plans_004_engine_cards_hover_asymmetry_verification",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "verification"
     },
@@ -7111,8 +7100,8 @@
       "source_file": "plans/005-plan-configurator-dish-reveal.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_md",
-      "community": 0,
+      "id": "plans_005_plan_configurator_dish_reveal",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "005-plan-configurator-dish-reveal.md"
     },
@@ -7122,8 +7111,8 @@
       "source_file": "plans/005-plan-configurator-dish-reveal.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_005_stop_replaying_the_dish_list_reveal_on_every_configurator_click",
-      "community": 0,
+      "id": "plans_005_plan_configurator_dish_reveal_005_stop_replaying_the_dish_list_reveal_on_every_configurator_click",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "005 \u2014 stop replaying the dish-list reveal on every configurator click"
     },
@@ -7133,8 +7122,8 @@
       "source_file": "plans/005-plan-configurator-dish-reveal.md",
       "source_location": "L9",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_problem",
-      "community": 0,
+      "id": "plans_005_plan_configurator_dish_reveal_problem",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "problem"
     },
@@ -7144,8 +7133,8 @@
       "source_file": "plans/005-plan-configurator-dish-reveal.md",
       "source_location": "L78",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_target",
-      "community": 0,
+      "id": "plans_005_plan_configurator_dish_reveal_target",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "target"
     },
@@ -7155,8 +7144,8 @@
       "source_file": "plans/005-plan-configurator-dish-reveal.md",
       "source_location": "L134",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_repo_conventions_to_follow",
-      "community": 0,
+      "id": "plans_005_plan_configurator_dish_reveal_repo_conventions_to_follow",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "repo conventions to follow"
     },
@@ -7166,8 +7155,8 @@
       "source_file": "plans/005-plan-configurator-dish-reveal.md",
       "source_location": "L145",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_steps",
-      "community": 0,
+      "id": "plans_005_plan_configurator_dish_reveal_steps",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "steps"
     },
@@ -7177,8 +7166,8 @@
       "source_file": "plans/005-plan-configurator-dish-reveal.md",
       "source_location": "L152",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_boundaries",
-      "community": 0,
+      "id": "plans_005_plan_configurator_dish_reveal_boundaries",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "boundaries"
     },
@@ -7188,8 +7177,8 @@
       "source_file": "plans/005-plan-configurator-dish-reveal.md",
       "source_location": "L160",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_verification",
-      "community": 0,
+      "id": "plans_005_plan_configurator_dish_reveal_verification",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "verification"
     },
@@ -7199,8 +7188,8 @@
       "source_file": "plans/README.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_readme_md",
-      "community": 0,
+      "id": "plans_readme",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "readme.md"
     },
@@ -7210,8 +7199,8 @@
       "source_file": "plans/README.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_readme_animation_improvement_plans",
-      "community": 0,
+      "id": "plans_readme_animation_improvement_plans",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "animation improvement plans"
     },
@@ -7221,8 +7210,8 @@
       "source_file": "plans/README.md",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_readme_recommended_execution_order",
-      "community": 0,
+      "id": "plans_readme_recommended_execution_order",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "recommended execution order"
     },
@@ -7232,8 +7221,8 @@
       "source_file": "plans/README.md",
       "source_location": "L26",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_readme_dependencies",
-      "community": 0,
+      "id": "plans_readme_dependencies",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "dependencies"
     },
@@ -7243,8 +7232,8 @@
       "source_file": "plans/README.md",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_readme_not_yet_planned_surfaced_in_the_audit_lower_leverage",
-      "community": 0,
+      "id": "plans_readme_not_yet_planned_surfaced_in_the_audit_lower_leverage",
+      "community": 6,
       "community_name": "001 \u2014 Fix scale(0) entrance on engine icon marks",
       "norm_label": "not yet planned (surfaced in the audit, lower leverage)"
     },
@@ -9775,7 +9764,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/Footer.tsx",
-      "source_location": "L2",
+      "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_footer",
@@ -9811,7 +9800,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "components/Footer.tsx",
-      "source_location": "L2",
+      "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_footer",
@@ -10306,7 +10295,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/Footer.tsx",
-      "source_location": "L9",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_footer",
@@ -10317,23 +10306,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/Footer.tsx",
-      "source_location": "L4",
+      "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_footer",
       "target": "components_footer_footergroup",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "components/Footer.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "components_footer",
-      "target": "lib_site",
       "confidence_score": 1.0
     },
     {
@@ -11375,7 +11352,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L212",
+      "source_location": "L210",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene",
@@ -11386,7 +11363,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L199",
+      "source_location": "L197",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene",
@@ -11397,7 +11374,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L95",
+      "source_location": "L93",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene",
@@ -11408,7 +11385,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L304",
+      "source_location": "L302",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene",
@@ -11419,7 +11396,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L104",
+      "source_location": "L102",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene",
@@ -11430,7 +11407,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L193",
+      "source_location": "L191",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene",
@@ -11441,7 +11418,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L114",
+      "source_location": "L112",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene",
@@ -11452,7 +11429,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L140",
+      "source_location": "L138",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene",
@@ -11463,7 +11440,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L123",
+      "source_location": "L121",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene",
@@ -11474,7 +11451,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L162",
+      "source_location": "L160",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene",
@@ -11485,7 +11462,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L350",
+      "source_location": "L348",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene",
@@ -11496,7 +11473,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L121",
+      "source_location": "L119",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene",
@@ -11507,7 +11484,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L184",
+      "source_location": "L182",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene",
@@ -11518,7 +11495,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L86",
+      "source_location": "L84",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene",
@@ -11529,7 +11506,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L84",
+      "source_location": "L82",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene",
@@ -11540,7 +11517,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L262",
+      "source_location": "L260",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene",
@@ -11551,7 +11528,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L82",
+      "source_location": "L80",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene",
@@ -11573,7 +11550,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L76",
+      "source_location": "L74",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene",
@@ -11584,7 +11561,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L70",
+      "source_location": "L68",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene",
@@ -11740,7 +11717,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L121",
+      "source_location": "L119",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene_productword",
@@ -11752,7 +11729,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "components/PhoneStepsScene.tsx",
-      "source_location": "L296",
+      "source_location": "L294",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_phonestepsscene_shoppingscreen",
@@ -11763,7 +11740,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PlanConfigurator.tsx",
-      "source_location": "L31",
+      "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_planconfigurator",
@@ -11785,18 +11762,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components/PlanConfigurator.tsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "components_planconfigurator",
-      "target": "components_planconfigurator_mealsword",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components/PlanConfigurator.tsx",
-      "source_location": "L62",
+      "source_location": "L60",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_planconfigurator",
@@ -12023,7 +11989,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "components/PlanConfigurator.tsx",
-      "source_location": "L164",
+      "source_location": "L162",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_planconfigurator_planconfigurator",
@@ -12046,33 +12012,9 @@
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "components/PlanConfigurator.tsx",
-      "source_location": "L24",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "components_planconfigurator_mealsword",
-      "target": "lib_plural_plural",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "components/PlanConfigurator.tsx",
-      "source_location": "L184",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "components_planconfigurator_planconfigurator",
-      "target": "components_planconfigurator_mealsword",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "components/PlanConfigurator.tsx",
-      "source_location": "L68",
+      "source_location": "L66",
       "weight": 1.0,
       "_origin": "ast",
       "source": "components_planconfigurator_planconfigurator",
@@ -13657,7 +13599,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/gsap.ts",
-      "source_location": "L117",
+      "source_location": "L106",
       "weight": 1.0,
       "_origin": "ast",
       "source": "lib_gsap",
@@ -13668,7 +13610,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/gsap.ts",
-      "source_location": "L120",
+      "source_location": "L109",
       "weight": 1.0,
       "_origin": "ast",
       "source": "lib_gsap",
@@ -13679,7 +13621,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/gsap.ts",
-      "source_location": "L46",
+      "source_location": "L37",
       "weight": 1.0,
       "_origin": "ast",
       "source": "lib_gsap",
@@ -13690,7 +13632,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/gsap.ts",
-      "source_location": "L119",
+      "source_location": "L108",
       "weight": 1.0,
       "_origin": "ast",
       "source": "lib_gsap",
@@ -13701,7 +13643,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/gsap.ts",
-      "source_location": "L66",
+      "source_location": "L55",
       "weight": 1.0,
       "_origin": "ast",
       "source": "lib_gsap",
@@ -13712,7 +13654,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/gsap.ts",
-      "source_location": "L56",
+      "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast",
       "source": "lib_gsap",
@@ -13723,7 +13665,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/gsap.ts",
-      "source_location": "L57",
+      "source_location": "L46",
       "weight": 1.0,
       "_origin": "ast",
       "source": "lib_gsap",
@@ -13735,7 +13677,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "lib/gsap.ts",
-      "source_location": "L119",
+      "source_location": "L108",
       "weight": 1.0,
       "_origin": "ast",
       "source": "lib_gsap_remap",
@@ -13790,7 +13732,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "lib/plural.ts",
-      "source_location": "L10",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "lib_plural",
@@ -14687,8 +14629,8 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_md",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_product_marketing_context",
+      "source": "agents_product_marketing",
+      "target": "agents_product_marketing_product_marketing_context",
       "confidence_score": 1.0
     },
     {
@@ -14698,8 +14640,8 @@
       "source_location": "L173",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_product_marketing_context",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_brand_voice",
+      "source": "agents_product_marketing_product_marketing_context",
+      "target": "agents_product_marketing_brand_voice",
       "confidence_score": 1.0
     },
     {
@@ -14709,8 +14651,8 @@
       "source_location": "L217",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_product_marketing_context",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_changelog",
+      "source": "agents_product_marketing_product_marketing_context",
+      "target": "agents_product_marketing_changelog",
       "confidence_score": 1.0
     },
     {
@@ -14720,8 +14662,8 @@
       "source_location": "L84",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_product_marketing_context",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_competitive_landscape",
+      "source": "agents_product_marketing_product_marketing_context",
+      "target": "agents_product_marketing_competitive_landscape",
       "confidence_score": 1.0
     },
     {
@@ -14731,8 +14673,8 @@
       "source_location": "L138",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_product_marketing_context",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_customer_language",
+      "source": "agents_product_marketing_product_marketing_context",
+      "target": "agents_product_marketing_customer_language",
       "confidence_score": 1.0
     },
     {
@@ -14742,8 +14684,8 @@
       "source_location": "L98",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_product_marketing_context",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_differentiation",
+      "source": "agents_product_marketing_product_marketing_context",
+      "target": "agents_product_marketing_differentiation",
       "confidence_score": 1.0
     },
     {
@@ -14753,8 +14695,8 @@
       "source_location": "L209",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_product_marketing_context",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_goals",
+      "source": "agents_product_marketing_product_marketing_context",
+      "target": "agents_product_marketing_goals",
       "confidence_score": 1.0
     },
     {
@@ -14764,8 +14706,8 @@
       "source_location": "L113",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_product_marketing_context",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_objections",
+      "source": "agents_product_marketing_product_marketing_context",
+      "target": "agents_product_marketing_objections",
       "confidence_score": 1.0
     },
     {
@@ -14775,8 +14717,8 @@
       "source_location": "L55",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_product_marketing_context",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_personas",
+      "source": "agents_product_marketing_product_marketing_context",
+      "target": "agents_product_marketing_personas",
       "confidence_score": 1.0
     },
     {
@@ -14786,8 +14728,8 @@
       "source_location": "L67",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_product_marketing_context",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_problems_pain_points",
+      "source": "agents_product_marketing_product_marketing_context",
+      "target": "agents_product_marketing_problems_pain_points",
       "confidence_score": 1.0
     },
     {
@@ -14797,8 +14739,8 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_product_marketing_context",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_product_overview",
+      "source": "agents_product_marketing_product_marketing_context",
+      "target": "agents_product_marketing_product_overview",
       "confidence_score": 1.0
     },
     {
@@ -14808,8 +14750,8 @@
       "source_location": "L183",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_product_marketing_context",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_proof_points",
+      "source": "agents_product_marketing_product_marketing_context",
+      "target": "agents_product_marketing_proof_points",
       "confidence_score": 1.0
     },
     {
@@ -14819,8 +14761,8 @@
       "source_location": "L129",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_product_marketing_context",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_switching_dynamics",
+      "source": "agents_product_marketing_product_marketing_context",
+      "target": "agents_product_marketing_switching_dynamics",
       "confidence_score": 1.0
     },
     {
@@ -14830,8 +14772,8 @@
       "source_location": "L28",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_product_marketing_context",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_agents_product_marketing_target_audience",
+      "source": "agents_product_marketing_product_marketing_context",
+      "target": "agents_product_marketing_target_audience",
       "confidence_score": 1.0
     },
     {
@@ -17261,8 +17203,8 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_md",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_product",
+      "source": "product",
+      "target": "product_product",
       "confidence_score": 1.0
     },
     {
@@ -17272,8 +17214,8 @@
       "source_location": "L59",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_product",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_accessibility_inclusion",
+      "source": "product_product",
+      "target": "product_accessibility_inclusion",
       "confidence_score": 1.0
     },
     {
@@ -17283,8 +17225,8 @@
       "source_location": "L39",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_product",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_brand_commitments",
+      "source": "product_product",
+      "target": "product_brand_commitments",
       "confidence_score": 1.0
     },
     {
@@ -17294,8 +17236,8 @@
       "source_location": "L33",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_product",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_capabilities_and_constraints",
+      "source": "product_product",
+      "target": "product_capabilities_and_constraints",
       "confidence_score": 1.0
     },
     {
@@ -17305,8 +17247,8 @@
       "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_product",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_evidence_on_hand",
+      "source": "product_product",
+      "target": "product_evidence_on_hand",
       "confidence_score": 1.0
     },
     {
@@ -17316,8 +17258,8 @@
       "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_product",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_operating_context",
+      "source": "product_product",
+      "target": "product_operating_context",
       "confidence_score": 1.0
     },
     {
@@ -17327,8 +17269,8 @@
       "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_product",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_platform",
+      "source": "product_product",
+      "target": "product_platform",
       "confidence_score": 1.0
     },
     {
@@ -17338,8 +17280,8 @@
       "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_product",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_positioning",
+      "source": "product_product",
+      "target": "product_positioning",
       "confidence_score": 1.0
     },
     {
@@ -17349,8 +17291,8 @@
       "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_product",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_product_principles",
+      "source": "product_product",
+      "target": "product_product_principles",
       "confidence_score": 1.0
     },
     {
@@ -17360,8 +17302,8 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_product",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_product_purpose",
+      "source": "product_product",
+      "target": "product_product_purpose",
       "confidence_score": 1.0
     },
     {
@@ -17371,8 +17313,8 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_product",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_product_users",
+      "source": "product_product",
+      "target": "product_users",
       "confidence_score": 1.0
     },
     {
@@ -17635,8 +17577,8 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_md",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_b2c",
+      "source": "instructions_landing_b2c",
+      "target": "instructions_landing_b2c_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_b2c",
       "confidence_score": 1.0
     },
     {
@@ -17646,8 +17588,8 @@
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_b2c",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_1_\u043f\u0435\u0440\u0432\u044b\u0439_\u044d\u043a\u0440\u0430\u043d_hero_\u0441_\u0438\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043e\u043c_\u0432\u043a\u043b\u044e\u0447\u0438\u0442\u044c_\u0431\u0430\u0437\u0438\u043b\u0438\u043a",
+      "source": "instructions_landing_b2c_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_b2c",
+      "target": "instructions_landing_b2c_1_\u043f\u0435\u0440\u0432\u044b\u0439_\u044d\u043a\u0440\u0430\u043d_hero_\u0441_\u0438\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043e\u043c_\u0432\u043a\u043b\u044e\u0447\u0438\u0442\u044c_\u0431\u0430\u0437\u0438\u043b\u0438\u043a",
       "confidence_score": 1.0
     },
     {
@@ -17657,8 +17599,8 @@
       "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_b2c",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_2_\u0437\u043d\u0430\u043a\u043e\u043c\u043e_\u0431\u043e\u043b\u044c",
+      "source": "instructions_landing_b2c_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_b2c",
+      "target": "instructions_landing_b2c_2_\u0437\u043d\u0430\u043a\u043e\u043c\u043e_\u0431\u043e\u043b\u044c",
       "confidence_score": 1.0
     },
     {
@@ -17668,8 +17610,8 @@
       "source_location": "L54",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_b2c",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_3_\u0447\u0442\u043e_\u0442\u044b_\u043f\u043e\u043b\u0443\u0447\u0430\u0435\u0448\u044c_\u043f\u0440\u043e\u0441\u0442\u044b\u0435_\u0442\u0435\u0439\u043a\u0438",
+      "source": "instructions_landing_b2c_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_b2c",
+      "target": "instructions_landing_b2c_3_\u0447\u0442\u043e_\u0442\u044b_\u043f\u043e\u043b\u0443\u0447\u0430\u0435\u0448\u044c_\u043f\u0440\u043e\u0441\u0442\u044b\u0435_\u0442\u0435\u0439\u043a\u0438",
       "confidence_score": 1.0
     },
     {
@@ -17679,8 +17621,8 @@
       "source_location": "L73",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_b2c",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_4_\u043a\u0430\u043a_\u044d\u0442\u043e_\u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442_3_\u0448\u0430\u0433\u0430",
+      "source": "instructions_landing_b2c_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_b2c",
+      "target": "instructions_landing_b2c_4_\u043a\u0430\u043a_\u044d\u0442\u043e_\u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442_3_\u0448\u0430\u0433\u0430",
       "confidence_score": 1.0
     },
     {
@@ -17690,8 +17632,8 @@
       "source_location": "L81",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_b2c",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_5_\u0447\u0435\u043c_\u043c\u044b_\u043d\u0435_\u043a\u0430\u043a_\u0432\u0441\u0435",
+      "source": "instructions_landing_b2c_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_b2c",
+      "target": "instructions_landing_b2c_5_\u0447\u0435\u043c_\u043c\u044b_\u043d\u0435_\u043a\u0430\u043a_\u0432\u0441\u0435",
       "confidence_score": 1.0
     },
     {
@@ -17701,8 +17643,8 @@
       "source_location": "L98",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_b2c",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_6_\u0435\u0441\u043b\u0438_\u0443_\u0442\u0435\u0431\u044f_\u0435\u0441\u0442\u044c_\u0446\u0435\u043b\u044c_\u043f\u0440\u0435\u043c\u0438\u0443\u043c_\u043a\u0440\u044e\u0447\u043a\u0438",
+      "source": "instructions_landing_b2c_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_b2c",
+      "target": "instructions_landing_b2c_6_\u0435\u0441\u043b\u0438_\u0443_\u0442\u0435\u0431\u044f_\u0435\u0441\u0442\u044c_\u0446\u0435\u043b\u044c_\u043f\u0440\u0435\u043c\u0438\u0443\u043c_\u043a\u0440\u044e\u0447\u043a\u0438",
       "confidence_score": 1.0
     },
     {
@@ -17712,8 +17654,8 @@
       "source_location": "L107",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_b2c",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_7_\u0444\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0439_\u044d\u043a\u0440\u0430\u043d",
+      "source": "instructions_landing_b2c_\u043b\u0435\u043d\u0434\u0438\u043d\u0433_b2c",
+      "target": "instructions_landing_b2c_7_\u0444\u0438\u043d\u0430\u043b\u044c\u043d\u044b\u0439_\u044d\u043a\u0440\u0430\u043d",
       "confidence_score": 1.0
     },
     {
@@ -17723,8 +17665,8 @@
       "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_1_\u043f\u0435\u0440\u0432\u044b\u0439_\u044d\u043a\u0440\u0430\u043d_hero_\u0441_\u0438\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043e\u043c_\u0432\u043a\u043b\u044e\u0447\u0438\u0442\u044c_\u0431\u0430\u0437\u0438\u043b\u0438\u043a",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_\u043f\u043e\u0441\u043b\u0435_\u043d\u0430\u0436\u0430\u0442\u0438\u044f_\u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435_\u0432\u043a\u043b\u044e\u0447\u0435\u043d\u043e",
+      "source": "instructions_landing_b2c_1_\u043f\u0435\u0440\u0432\u044b\u0439_\u044d\u043a\u0440\u0430\u043d_hero_\u0441_\u0438\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043e\u043c_\u0432\u043a\u043b\u044e\u0447\u0438\u0442\u044c_\u0431\u0430\u0437\u0438\u043b\u0438\u043a",
+      "target": "instructions_landing_b2c_\u043f\u043e\u0441\u043b\u0435_\u043d\u0430\u0436\u0430\u0442\u0438\u044f_\u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435_\u0432\u043a\u043b\u044e\u0447\u0435\u043d\u043e",
       "confidence_score": 1.0
     },
     {
@@ -17734,8 +17676,8 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_1_\u043f\u0435\u0440\u0432\u044b\u0439_\u044d\u043a\u0440\u0430\u043d_hero_\u0441_\u0438\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043e\u043c_\u0432\u043a\u043b\u044e\u0447\u0438\u0442\u044c_\u0431\u0430\u0437\u0438\u043b\u0438\u043a",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_instructions_landing_b2c_\u0446\u0435\u043f\u043e\u0447\u043a\u0430_\u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435_\u0432\u044b\u043a\u043b\u044e\u0447\u0435\u043d\u043e",
+      "source": "instructions_landing_b2c_1_\u043f\u0435\u0440\u0432\u044b\u0439_\u044d\u043a\u0440\u0430\u043d_hero_\u0441_\u0438\u043d\u0442\u0435\u0440\u0430\u043a\u0442\u0438\u0432\u043e\u043c_\u0432\u043a\u043b\u044e\u0447\u0438\u0442\u044c_\u0431\u0430\u0437\u0438\u043b\u0438\u043a",
+      "target": "instructions_landing_b2c_\u0446\u0435\u043f\u043e\u0447\u043a\u0430_\u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435_\u0432\u044b\u043a\u043b\u044e\u0447\u0435\u043d\u043e",
       "confidence_score": 1.0
     },
     {
@@ -17745,8 +17687,8 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_md",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_001_fix_scale_0_entrance_on_engine_icon_marks",
+      "source": "plans_001_engine_cards_scale_zero",
+      "target": "plans_001_engine_cards_scale_zero_001_fix_scale_0_entrance_on_engine_icon_marks",
       "confidence_score": 1.0
     },
     {
@@ -17756,8 +17698,8 @@
       "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_readme_md",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_md",
+      "source": "plans_readme",
+      "target": "plans_001_engine_cards_scale_zero",
       "confidence_score": 1.0
     },
     {
@@ -17767,8 +17709,8 @@
       "source_location": "L81",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_001_fix_scale_0_entrance_on_engine_icon_marks",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_boundaries",
+      "source": "plans_001_engine_cards_scale_zero_001_fix_scale_0_entrance_on_engine_icon_marks",
+      "target": "plans_001_engine_cards_scale_zero_boundaries",
       "confidence_score": 1.0
     },
     {
@@ -17778,8 +17720,8 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_001_fix_scale_0_entrance_on_engine_icon_marks",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_problem",
+      "source": "plans_001_engine_cards_scale_zero_001_fix_scale_0_entrance_on_engine_icon_marks",
+      "target": "plans_001_engine_cards_scale_zero_problem",
       "confidence_score": 1.0
     },
     {
@@ -17789,8 +17731,8 @@
       "source_location": "L66",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_001_fix_scale_0_entrance_on_engine_icon_marks",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_repo_conventions_to_follow",
+      "source": "plans_001_engine_cards_scale_zero_001_fix_scale_0_entrance_on_engine_icon_marks",
+      "target": "plans_001_engine_cards_scale_zero_repo_conventions_to_follow",
       "confidence_score": 1.0
     },
     {
@@ -17800,8 +17742,8 @@
       "source_location": "L77",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_001_fix_scale_0_entrance_on_engine_icon_marks",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_steps",
+      "source": "plans_001_engine_cards_scale_zero_001_fix_scale_0_entrance_on_engine_icon_marks",
+      "target": "plans_001_engine_cards_scale_zero_steps",
       "confidence_score": 1.0
     },
     {
@@ -17811,8 +17753,8 @@
       "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_001_fix_scale_0_entrance_on_engine_icon_marks",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_target",
+      "source": "plans_001_engine_cards_scale_zero_001_fix_scale_0_entrance_on_engine_icon_marks",
+      "target": "plans_001_engine_cards_scale_zero_target",
       "confidence_score": 1.0
     },
     {
@@ -17822,8 +17764,8 @@
       "source_location": "L89",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_001_fix_scale_0_entrance_on_engine_icon_marks",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_001_engine_cards_scale_zero_verification",
+      "source": "plans_001_engine_cards_scale_zero_001_fix_scale_0_entrance_on_engine_icon_marks",
+      "target": "plans_001_engine_cards_scale_zero_verification",
       "confidence_score": 1.0
     },
     {
@@ -17833,8 +17775,8 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_md",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_002_gate_smooth_anchor_scrolling_behind_prefers_reduced_motion",
+      "source": "plans_002_hash_scroll_reduced_motion",
+      "target": "plans_002_hash_scroll_reduced_motion_002_gate_smooth_anchor_scrolling_behind_prefers_reduced_motion",
       "confidence_score": 1.0
     },
     {
@@ -17844,8 +17786,8 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_readme_md",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_md",
+      "source": "plans_readme",
+      "target": "plans_002_hash_scroll_reduced_motion",
       "confidence_score": 1.0
     },
     {
@@ -17855,8 +17797,8 @@
       "source_location": "L104",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_002_gate_smooth_anchor_scrolling_behind_prefers_reduced_motion",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_boundaries",
+      "source": "plans_002_hash_scroll_reduced_motion_002_gate_smooth_anchor_scrolling_behind_prefers_reduced_motion",
+      "target": "plans_002_hash_scroll_reduced_motion_boundaries",
       "confidence_score": 1.0
     },
     {
@@ -17866,8 +17808,8 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_002_gate_smooth_anchor_scrolling_behind_prefers_reduced_motion",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_problem",
+      "source": "plans_002_hash_scroll_reduced_motion_002_gate_smooth_anchor_scrolling_behind_prefers_reduced_motion",
+      "target": "plans_002_hash_scroll_reduced_motion_problem",
       "confidence_score": 1.0
     },
     {
@@ -17877,8 +17819,8 @@
       "source_location": "L84",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_002_gate_smooth_anchor_scrolling_behind_prefers_reduced_motion",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_repo_conventions_to_follow",
+      "source": "plans_002_hash_scroll_reduced_motion_002_gate_smooth_anchor_scrolling_behind_prefers_reduced_motion",
+      "target": "plans_002_hash_scroll_reduced_motion_repo_conventions_to_follow",
       "confidence_score": 1.0
     },
     {
@@ -17888,8 +17830,8 @@
       "source_location": "L95",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_002_gate_smooth_anchor_scrolling_behind_prefers_reduced_motion",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_steps",
+      "source": "plans_002_hash_scroll_reduced_motion_002_gate_smooth_anchor_scrolling_behind_prefers_reduced_motion",
+      "target": "plans_002_hash_scroll_reduced_motion_steps",
       "confidence_score": 1.0
     },
     {
@@ -17899,8 +17841,8 @@
       "source_location": "L50",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_002_gate_smooth_anchor_scrolling_behind_prefers_reduced_motion",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_target",
+      "source": "plans_002_hash_scroll_reduced_motion_002_gate_smooth_anchor_scrolling_behind_prefers_reduced_motion",
+      "target": "plans_002_hash_scroll_reduced_motion_target",
       "confidence_score": 1.0
     },
     {
@@ -17910,8 +17852,8 @@
       "source_location": "L111",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_002_gate_smooth_anchor_scrolling_behind_prefers_reduced_motion",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_002_hash_scroll_reduced_motion_verification",
+      "source": "plans_002_hash_scroll_reduced_motion_002_gate_smooth_anchor_scrolling_behind_prefers_reduced_motion",
+      "target": "plans_002_hash_scroll_reduced_motion_verification",
       "confidence_score": 1.0
     },
     {
@@ -17921,8 +17863,8 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_md",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_003_transition_colors_on_theme_toggle_instead_of_snapping",
+      "source": "plans_003_theme_toggle_color_transition",
+      "target": "plans_003_theme_toggle_color_transition_003_transition_colors_on_theme_toggle_instead_of_snapping",
       "confidence_score": 1.0
     },
     {
@@ -17932,8 +17874,8 @@
       "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_readme_md",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_md",
+      "source": "plans_readme",
+      "target": "plans_003_theme_toggle_color_transition",
       "confidence_score": 1.0
     },
     {
@@ -17943,8 +17885,8 @@
       "source_location": "L91",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_003_transition_colors_on_theme_toggle_instead_of_snapping",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_boundaries",
+      "source": "plans_003_theme_toggle_color_transition_003_transition_colors_on_theme_toggle_instead_of_snapping",
+      "target": "plans_003_theme_toggle_color_transition_boundaries",
       "confidence_score": 1.0
     },
     {
@@ -17954,8 +17896,8 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_003_transition_colors_on_theme_toggle_instead_of_snapping",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_problem",
+      "source": "plans_003_theme_toggle_color_transition_003_transition_colors_on_theme_toggle_instead_of_snapping",
+      "target": "plans_003_theme_toggle_color_transition_problem",
       "confidence_score": 1.0
     },
     {
@@ -17965,8 +17907,8 @@
       "source_location": "L76",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_003_transition_colors_on_theme_toggle_instead_of_snapping",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_repo_conventions_to_follow",
+      "source": "plans_003_theme_toggle_color_transition_003_transition_colors_on_theme_toggle_instead_of_snapping",
+      "target": "plans_003_theme_toggle_color_transition_repo_conventions_to_follow",
       "confidence_score": 1.0
     },
     {
@@ -17976,8 +17918,8 @@
       "source_location": "L87",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_003_transition_colors_on_theme_toggle_instead_of_snapping",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_steps",
+      "source": "plans_003_theme_toggle_color_transition_003_transition_colors_on_theme_toggle_instead_of_snapping",
+      "target": "plans_003_theme_toggle_color_transition_steps",
       "confidence_score": 1.0
     },
     {
@@ -17987,8 +17929,8 @@
       "source_location": "L52",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_003_transition_colors_on_theme_toggle_instead_of_snapping",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_target",
+      "source": "plans_003_theme_toggle_color_transition_003_transition_colors_on_theme_toggle_instead_of_snapping",
+      "target": "plans_003_theme_toggle_color_transition_target",
       "confidence_score": 1.0
     },
     {
@@ -17998,8 +17940,8 @@
       "source_location": "L99",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_003_transition_colors_on_theme_toggle_instead_of_snapping",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_003_theme_toggle_color_transition_verification",
+      "source": "plans_003_theme_toggle_color_transition_003_transition_colors_on_theme_toggle_instead_of_snapping",
+      "target": "plans_003_theme_toggle_color_transition_verification",
       "confidence_score": 1.0
     },
     {
@@ -18009,8 +17951,8 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_md",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_004_fix_backwards_hover_asymmetry_on_engine_cards",
+      "source": "plans_004_engine_cards_hover_asymmetry",
+      "target": "plans_004_engine_cards_hover_asymmetry_004_fix_backwards_hover_asymmetry_on_engine_cards",
       "confidence_score": 1.0
     },
     {
@@ -18020,8 +17962,8 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_readme_md",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_md",
+      "source": "plans_readme",
+      "target": "plans_004_engine_cards_hover_asymmetry",
       "confidence_score": 1.0
     },
     {
@@ -18031,8 +17973,8 @@
       "source_location": "L96",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_004_fix_backwards_hover_asymmetry_on_engine_cards",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_boundaries",
+      "source": "plans_004_engine_cards_hover_asymmetry_004_fix_backwards_hover_asymmetry_on_engine_cards",
+      "target": "plans_004_engine_cards_hover_asymmetry_boundaries",
       "confidence_score": 1.0
     },
     {
@@ -18042,8 +17984,8 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_004_fix_backwards_hover_asymmetry_on_engine_cards",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_problem",
+      "source": "plans_004_engine_cards_hover_asymmetry_004_fix_backwards_hover_asymmetry_on_engine_cards",
+      "target": "plans_004_engine_cards_hover_asymmetry_problem",
       "confidence_score": 1.0
     },
     {
@@ -18053,8 +17995,8 @@
       "source_location": "L84",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_004_fix_backwards_hover_asymmetry_on_engine_cards",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_repo_conventions_to_follow",
+      "source": "plans_004_engine_cards_hover_asymmetry_004_fix_backwards_hover_asymmetry_on_engine_cards",
+      "target": "plans_004_engine_cards_hover_asymmetry_repo_conventions_to_follow",
       "confidence_score": 1.0
     },
     {
@@ -18064,8 +18006,8 @@
       "source_location": "L91",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_004_fix_backwards_hover_asymmetry_on_engine_cards",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_steps",
+      "source": "plans_004_engine_cards_hover_asymmetry_004_fix_backwards_hover_asymmetry_on_engine_cards",
+      "target": "plans_004_engine_cards_hover_asymmetry_steps",
       "confidence_score": 1.0
     },
     {
@@ -18075,8 +18017,8 @@
       "source_location": "L52",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_004_fix_backwards_hover_asymmetry_on_engine_cards",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_target",
+      "source": "plans_004_engine_cards_hover_asymmetry_004_fix_backwards_hover_asymmetry_on_engine_cards",
+      "target": "plans_004_engine_cards_hover_asymmetry_target",
       "confidence_score": 1.0
     },
     {
@@ -18086,8 +18028,8 @@
       "source_location": "L103",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_004_fix_backwards_hover_asymmetry_on_engine_cards",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_004_engine_cards_hover_asymmetry_verification",
+      "source": "plans_004_engine_cards_hover_asymmetry_004_fix_backwards_hover_asymmetry_on_engine_cards",
+      "target": "plans_004_engine_cards_hover_asymmetry_verification",
       "confidence_score": 1.0
     },
     {
@@ -18097,8 +18039,8 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_md",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_005_stop_replaying_the_dish_list_reveal_on_every_configurator_click",
+      "source": "plans_005_plan_configurator_dish_reveal",
+      "target": "plans_005_plan_configurator_dish_reveal_005_stop_replaying_the_dish_list_reveal_on_every_configurator_click",
       "confidence_score": 1.0
     },
     {
@@ -18108,8 +18050,8 @@
       "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_readme_md",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_md",
+      "source": "plans_readme",
+      "target": "plans_005_plan_configurator_dish_reveal",
       "confidence_score": 1.0
     },
     {
@@ -18119,8 +18061,8 @@
       "source_location": "L152",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_005_stop_replaying_the_dish_list_reveal_on_every_configurator_click",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_boundaries",
+      "source": "plans_005_plan_configurator_dish_reveal_005_stop_replaying_the_dish_list_reveal_on_every_configurator_click",
+      "target": "plans_005_plan_configurator_dish_reveal_boundaries",
       "confidence_score": 1.0
     },
     {
@@ -18130,8 +18072,8 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_005_stop_replaying_the_dish_list_reveal_on_every_configurator_click",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_problem",
+      "source": "plans_005_plan_configurator_dish_reveal_005_stop_replaying_the_dish_list_reveal_on_every_configurator_click",
+      "target": "plans_005_plan_configurator_dish_reveal_problem",
       "confidence_score": 1.0
     },
     {
@@ -18141,8 +18083,8 @@
       "source_location": "L134",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_005_stop_replaying_the_dish_list_reveal_on_every_configurator_click",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_repo_conventions_to_follow",
+      "source": "plans_005_plan_configurator_dish_reveal_005_stop_replaying_the_dish_list_reveal_on_every_configurator_click",
+      "target": "plans_005_plan_configurator_dish_reveal_repo_conventions_to_follow",
       "confidence_score": 1.0
     },
     {
@@ -18152,8 +18094,8 @@
       "source_location": "L145",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_005_stop_replaying_the_dish_list_reveal_on_every_configurator_click",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_steps",
+      "source": "plans_005_plan_configurator_dish_reveal_005_stop_replaying_the_dish_list_reveal_on_every_configurator_click",
+      "target": "plans_005_plan_configurator_dish_reveal_steps",
       "confidence_score": 1.0
     },
     {
@@ -18163,8 +18105,8 @@
       "source_location": "L78",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_005_stop_replaying_the_dish_list_reveal_on_every_configurator_click",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_target",
+      "source": "plans_005_plan_configurator_dish_reveal_005_stop_replaying_the_dish_list_reveal_on_every_configurator_click",
+      "target": "plans_005_plan_configurator_dish_reveal_target",
       "confidence_score": 1.0
     },
     {
@@ -18174,8 +18116,8 @@
       "source_location": "L160",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_005_stop_replaying_the_dish_list_reveal_on_every_configurator_click",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_005_plan_configurator_dish_reveal_verification",
+      "source": "plans_005_plan_configurator_dish_reveal_005_stop_replaying_the_dish_list_reveal_on_every_configurator_click",
+      "target": "plans_005_plan_configurator_dish_reveal_verification",
       "confidence_score": 1.0
     },
     {
@@ -18185,8 +18127,8 @@
       "source_location": "L1",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_readme_md",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_readme_animation_improvement_plans",
+      "source": "plans_readme",
+      "target": "plans_readme_animation_improvement_plans",
       "confidence_score": 1.0
     },
     {
@@ -18196,8 +18138,8 @@
       "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_readme_animation_improvement_plans",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_readme_dependencies",
+      "source": "plans_readme_animation_improvement_plans",
+      "target": "plans_readme_dependencies",
       "confidence_score": 1.0
     },
     {
@@ -18207,8 +18149,8 @@
       "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_readme_animation_improvement_plans",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_readme_not_yet_planned_surfaced_in_the_audit_lower_leverage",
+      "source": "plans_readme_animation_improvement_plans",
+      "target": "plans_readme_not_yet_planned_surfaced_in_the_audit_lower_leverage",
       "confidence_score": 1.0
     },
     {
@@ -18218,8 +18160,8 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
-      "source": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_readme_animation_improvement_plans",
-      "target": "c_users_idont_appdata_local_temp_claude_d_desktop_bazilik_web_60c04860_661b_4d22_94b7_19d26c973b36_scratchpad_wt14_landing_plans_readme_recommended_execution_order",
+      "source": "plans_readme_animation_improvement_plans",
+      "target": "plans_readme_recommended_execution_order",
       "confidence_score": 1.0
     },
     {
@@ -19313,5 +19255,5 @@
       "source_file": "CLAUDE.md"
     }
   ],
-  "built_at_commit": "8c20337b1d36703127302c7dc30fa1061842b2bc"
+  "built_at_commit": "05c2b2197222ca20237c072c84f48f633c8d8d12"
 }

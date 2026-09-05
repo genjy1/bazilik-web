@@ -39,7 +39,9 @@ import type { IngredientId } from "@/lib/ingredients";
 
 const STAGE_QUERIES = {
   stage: `${MOTION_OK} and ${WIDE_QUERY}`,
-  flat: `${REDUCED_MOTION}, (max-width: 767px)`,
+  // `not all and …` — точное отрицание WIDE_QUERY, без второго числа,
+  // которое пришлось бы держать в согласии с первым.
+  flat: `${REDUCED_MOTION}, not all and ${WIDE_QUERY}`,
 } as const;
 
 /** Габариты макета телефона; высота нужна ещё и подгонке сцены под экран. */
@@ -450,8 +452,6 @@ export function PhoneStepsScene() {
       });
     }
 
-    const isReduced = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
     const mm = gsap.matchMedia();
 
     mm.add(STAGE_QUERIES, (ctx) => {
@@ -494,7 +494,7 @@ export function PhoneStepsScene() {
 
     // Плоский (мобиль/reduced) вариант — просто конечное состояние оверлеев,
     // без пина и вращения; сам блок скрыт в разметке под CSS-вариантами.
-    if (isReduced() || window.matchMedia(STAGE_QUERIES.flat).matches) {
+    if (window.matchMedia(STAGE_QUERIES.flat).matches) {
       applyOverlay(1);
     }
 

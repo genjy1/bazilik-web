@@ -52,7 +52,10 @@ export default function CookiesPage() {
   return (
     <>
       <header className="border-b border-line bg-surface">
-        <div className="mx-auto flex max-w-[1180px] items-center px-6 py-5">
+        {/* h-16, как у шапки главной (Nav): при py-5 без фиксированной высоты
+            44-пиксельная зона нажатия ссылки растягивала шапку до 84px, и
+            логотип прыгал на 10px при переходе между страницами. */}
+        <div className="mx-auto flex h-16 max-w-[1180px] items-center px-6">
           <Link
             href="/"
             className="flex min-h-11 items-center gap-2.5 text-[18px] font-extrabold tracking-tight"

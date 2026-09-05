@@ -29,11 +29,20 @@ export { gsap, ScrollTrigger, DrawSVGPlugin };
 export const EASE = "power3.out";
 export const DUR = 0.7;
 
-/** Запрос, по которому все анимации выключаются. */
+/** Запрос, при котором анимации разрешены. */
 export const MOTION_OK = "(prefers-reduced-motion: no-preference)";
+/** Запрос, по которому все анимации выключаются. */
 export const REDUCED_MOTION = "(prefers-reduced-motion: reduce)";
-/** Ниже этой ширины фоновые слои не двигаются — см. BackgroundFX и AmbientIngredients. */
-export const WIDE_QUERY = "(min-width: 768px)";
+/**
+ * Ниже этой ширины фоновые слои не двигаются (BackgroundFX, AmbientIngredients),
+ * а сцена «Три шага» (PhoneStepsScene) не пинится и не крутится.
+ *
+ * В rem, а не в px: это тот же порог, что у Tailwind-варианта `md:` (48rem),
+ * которым PhoneStepsScene показывает и прячет ту же сцену в CSS. В медиазапросах
+ * rem считается от браузерного размера шрифта, и у тех, кто его сменил, px и
+ * rem расходятся — JS и CSS показывали бы разные ветки одной сцены.
+ */
+export const WIDE_QUERY = "(min-width: 48rem)";
 export const MOTION_QUERIES = {
   motion: MOTION_OK,
   reduced: REDUCED_MOTION,
@@ -41,9 +50,11 @@ export const MOTION_QUERIES = {
 /**
  * Те же условия плюс ширина — для декоративных слоёв, которые на узком экране
  * стоят на месте. Колбэк matchMedia проверяет `reduced || !wide` и выходит.
+ * Тип выводится из ключей объекта: переименование ключа не пройдёт мимо
+ * компилятора у тех, кто деструктурирует `ctx.conditions`.
  */
 export const WIDE_MOTION_QUERIES = { ...MOTION_QUERIES, wide: WIDE_QUERY } as const;
-export type WideMotionConditions = { reduced: boolean; wide: boolean };
+export type WideMotionConditions = Record<keyof typeof WIDE_MOTION_QUERIES, boolean>;
 
 /**
  * Запускает цикл только пока элемент виден — не тратит кадры за кадром экрана.

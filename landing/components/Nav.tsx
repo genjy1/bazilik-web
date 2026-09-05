@@ -2,7 +2,7 @@
 
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { BrandMark } from "./BrandMark";
 import { ThemeToggle } from "./ui/ThemeToggle";
 import {
@@ -111,88 +111,127 @@ export function Nav({ links }: { links: readonly NavLink[] }) {
     return () => triggers.forEach((t) => t?.kill());
   }, [links]);
 
-  // Маркер переезжает под активную ссылку.
-  useIsomorphicLayoutEffect(() => {
+  /**
+   * Маркер переезжает под активную ссылку.
+   *
+   * Не gsap.matchMedia: его revert() в cleanup откатывал маркер к исходному
+   * состоянию (x 0, y 0, ширина 0, opacity 0) при каждой смене раздела, и
+   * подчёркивание не переезжало от ссылки к ссылке, а каждый раз выезжало
+   * из левого верхнего угла шапки. Твин с overwrite сам продолжает движение
+   * с текущего места; reduced-motion читаем напрямую при каждом сдвиге.
+   *
+   * Активный индекс лежит в ref, чтобы одна и та же функция обслуживала и
+   * смену раздела, и ResizeObserver, не пересоздавая наблюдатель на каждую
+   * активацию.
+   */
+  const activeRef = useRef<number | null>(null);
+
+  const moveMarker = useCallback(() => {
     const marker = markerRef.current;
     const nav = navRef.current;
     if (!marker || !nav) return;
 
-    if (active === null) {
-      gsap.set(marker, { opacity: 0 });
+    const index = activeRef.current;
+    const target = index === null ? null : linkRefs.current[index];
+    if (!target) {
+      gsap.set(marker, { opacity: 0, overwrite: true });
       return;
     }
 
-    // Не gsap.matchMedia: его revert() в cleanup откатывал маркер к исходному
-    // состоянию (x 0, y 0, ширина 0, opacity 0) при каждой смене раздела, и
-    // подчёркивание не переезжало от ссылки к ссылке, а каждый раз выезжало
-    // из левого верхнего угла шапки. Твин с overwrite сам продолжает движение
-    // с текущего места; reduced-motion читаем напрямую.
-    const reduced = window.matchMedia(REDUCED_MOTION).matches;
+    // Подчёркивание привязано к тексту, а не к коробке ссылки: коробка
+    // растянута до 44px ради зоны нажатия, и отсчёт от её края уводил
+    // маркер на 16px под буквы. Меряем сам текст и ставим маркер на
+    // фиксированный зазор под ним.
+    //
+    // Считаем от offsetTop и высот, а не от getBoundingClientRect: тот
+    // учитывает transform, и пока ссылки ещё въезжают в шапку (gsap.from
+    // с y: -8 в эффекте появления), маркер вставал на 8px выше и там
+    // оставался до следующей смены раздела.
+    const range = document.createRange();
+    range.selectNodeContents(target);
+    const textHeight = range.getBoundingClientRect().height;
+    const x = target.offsetLeft;
+    const y = target.offsetTop + (target.offsetHeight + textHeight) / 2 + MARKER_GAP;
+    const width = target.offsetWidth;
 
-    const move = () => {
-      const target = linkRefs.current[active];
-      if (!target) return;
+    // Пока маркер спрятан (первый активный раздел на странице), ставим его
+    // на место без движения и только проявляем: иначе он выезжал из угла
+    // шапки, вырастая из нулевой ширины.
+    if (Number(gsap.getProperty(marker, "opacity")) === 0) {
+      gsap.set(marker, { x, y, width });
+    }
 
-      // Подчёркивание привязано к тексту, а не к коробке ссылки: коробка
-      // растянута до 44px ради зоны нажатия, и отсчёт от её края уводил
-      // маркер на 16px под буквы. Меряем сам текст и ставим маркер на
-      // фиксированный зазор под ним.
-      const range = document.createRange();
-      range.selectNodeContents(target);
-      const text = range.getBoundingClientRect();
-      const y = text.bottom - nav.getBoundingClientRect().top + MARKER_GAP;
+    gsap.to(marker, {
+      x,
+      y,
+      width,
+      opacity: 1,
+      duration: window.matchMedia(REDUCED_MOTION).matches ? 0 : 0.4,
+      ease: "power3.out",
+      overwrite: true,
+    });
+  }, []);
 
-      gsap.to(marker, {
-        x: target.offsetLeft,
-        y,
-        width: target.offsetWidth,
-        opacity: 1,
-        duration: reduced ? 0 : 0.4,
-        ease: "power3.out",
-        overwrite: true,
-      });
-    };
-
-    move();
+  useIsomorphicLayoutEffect(() => {
+    const nav = navRef.current;
+    if (!nav) return;
 
     // Ширина ссылок меняется вместе с раскладкой, поэтому позицию
     // пересчитываем, а не запоминаем один раз.
-    const ro = new ResizeObserver(move);
+    const ro = new ResizeObserver(moveMarker);
     ro.observe(nav);
 
-    return () => ro.disconnect();
-  }, [active]);
+    return () => {
+      ro.disconnect();
+      if (markerRef.current) gsap.killTweensOf(markerRef.current);
+    };
+  }, [moveMarker]);
 
-  // Разворачивание мобильного меню по фактической высоте содержимого.
+  useIsomorphicLayoutEffect(() => {
+    activeRef.current = active;
+    moveMarker();
+  }, [active, moveMarker]);
+
+  /**
+   * Разворачивание мобильного меню по фактической высоте содержимого.
+   *
+   * Тоже без gsap.matchMedia: его revert() в cleanup снимал inline-высоту
+   * ещё до твина закрытия, полотно схлопывалось в один кадр, а сам твин
+   * закрытия анимировал 0 → 0. Твин с overwrite подхватывает движение с
+   * текущей высоты и при быстром переключении.
+   */
   useIsomorphicLayoutEffect(() => {
     const el = menuRef.current;
     if (!el) return;
 
-    const mm = gsap.matchMedia();
+    const reduced = window.matchMedia(REDUCED_MOTION).matches;
+    const q = gsap.utils.selector(el);
 
-    mm.add(MOTION_QUERIES, (ctx) => {
-      const { reduced } = ctx.conditions as { reduced: boolean };
-      const q = gsap.utils.selector(el);
-
-      gsap.to(el, {
-        height: open ? "auto" : 0,
-        opacity: open ? 1 : 0,
-        duration: reduced ? 0 : 0.32,
-        ease: "power2.out",
-      });
-
-      // Пункты выезжают следом за самим полотном, но только при открытии:
-      // на закрытии это выглядело бы как задержка перед схлопыванием.
-      if (open && !reduced) {
-        gsap.fromTo(
-          q("[data-menu-item]"),
-          { opacity: 0, x: -12 },
-          { opacity: 1, x: 0, duration: 0.35, ease: "power2.out", stagger: 0.05, delay: 0.06 },
-        );
-      }
+    gsap.to(el, {
+      height: open ? "auto" : 0,
+      opacity: open ? 1 : 0,
+      duration: reduced ? 0 : 0.32,
+      ease: "power2.out",
+      overwrite: true,
     });
 
-    return () => mm.revert();
+    // Пункты выезжают следом за самим полотном, но только при открытии:
+    // на закрытии это выглядело бы как задержка перед схлопыванием.
+    if (open && !reduced) {
+      gsap.fromTo(
+        q("[data-menu-item]"),
+        { opacity: 0, x: -12 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.35,
+          ease: "power2.out",
+          stagger: 0.05,
+          delay: 0.06,
+          overwrite: true,
+        },
+      );
+    }
   }, [open]);
 
   return (
