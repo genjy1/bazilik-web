@@ -521,9 +521,20 @@ export function PhoneStepsScene() {
 
         <div className="relative mx-auto flex h-full max-w-[1180px] flex-col px-6">
           <header ref={headerRef} className="pt-[clamp(76px,8.5vh,100px)]">
-            <h2 className="text-[clamp(28px,3.6vw,46px)]">
+            {/* Не <h2>, а role="heading": тот же текст стоит настоящим h2 в
+                мобильной раскладке ниже, и в HTML оба блока присутствуют
+                всегда — робот видел два одинаковых h2 подряд. Для человека
+                видна ровно одна раскладка, и в дереве доступности здесь
+                по-прежнему заголовок второго уровня. Стили h2 из
+                globals.css (вес, трекинг, интерлиньяж, balance) повторены
+                классами, потому что на <p> они сами не приходят. */}
+            <p
+              role="heading"
+              aria-level={2}
+              className="text-[clamp(28px,3.6vw,46px)] font-extrabold leading-[1.05] tracking-[-0.035em] text-balance"
+            >
               Три шага — и неделя спланирована
-            </h2>
+            </p>
 
             <div className="relative mt-4 h-7 max-w-[52ch]">
               {HOME.process.map((step, i) => (

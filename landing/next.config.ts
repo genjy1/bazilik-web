@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { PAGE_LAST_MODIFIED, lastModifiedHeader } from "./lib/lastModified";
 
 const nextConfig: NextConfig = {
   /**
@@ -42,6 +43,17 @@ const nextConfig: NextConfig = {
    */
   async headers() {
     return [
+      /**
+       * `Last-Modified` на HTML-страницах. Статике и странице 404 его
+       * ставит Vercel сам, а пререндеренным маршрутам — нет, и робот Яндекса
+       * не знал, менялась ли страница с прошлого обхода. Даты — те же, что в
+       * `lastmod` sitemap.xml, из одного файла lib/lastModified.ts, и
+       * двигаются рукой только при содержательной правке (объяснение там же).
+       */
+      ...Object.keys(PAGE_LAST_MODIFIED).map((path) => ({
+        source: path,
+        headers: [{ key: "Last-Modified", value: lastModifiedHeader(path) }],
+      })),
       {
         source: "/(.*)",
         headers: [
